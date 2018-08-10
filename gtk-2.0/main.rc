@@ -1774,7 +1774,7 @@ style "separator_menu_item" {
 style "button" {
 
   xthickness = 2
-  ythickness = 2
+  ythickness = 1
 
   # For the sake of sanity style buttons this way
   engine "pixmap" {
