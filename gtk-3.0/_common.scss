@@ -1439,8 +1439,8 @@ searchbar > revealer > box {
  ***************/
 %titlebar,
 headerbar {
-  padding: 0 6px;
-  min-height: 46px;
+  padding: 0 4px;
+  min-height: 32px;
   border-width: 0 0 1px;
   border-style: solid;
   border-color: $alt_borders_color;
@@ -1606,12 +1606,12 @@ headerbar {
   }
 
   &.default-decoration {
-    min-height: 28px;
-    padding: 4px;
+    min-height: 20px;
+    padding: 3px;
 
     button.titlebutton {
-      min-height: 26px;
-      min-width: 26px;
+      min-height: 20px;
+      min-width: 20px;
       margin: 0;
       padding: 0;
     }
@@ -1636,8 +1636,8 @@ headerbar {
   spinbutton,
   separator,
   button {
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
   switch {
     margin-top: 9px;
@@ -1647,8 +1647,8 @@ headerbar {
 
 .background .titlebar {
   &:backdrop, & {
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
   }
 }
 
@@ -1668,14 +1668,14 @@ headerbar {
 headerbar { // headerbar border rounding
 
   window separator:first-child + &,
-  window &:first-child { &:backdrop, & { border-top-left-radius: 7px; }}
-  window &:last-child { &:backdrop, & { border-top-right-radius: 7px; }}
+  window &:first-child { &:backdrop, & { border-top-left-radius: 3px; }}
+  window &:last-child { &:backdrop, & { border-top-right-radius: 3px; }}
 
   window stack & { // tackles the stacked headerbars case
     &:first-child, &:last-child {
       &:backdrop, & {
-        border-top-left-radius: 7px;
-        border-top-right-radius: 7px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
       }
     }
   }
@@ -3736,15 +3736,15 @@ messagedialog { // Message Dialog styling
     background-image: none;
     background-color: $bg_color;
     border-style: none;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
   }
 
   &.csd { // rounded bottom border styling for csd version
     &.background {
       // bigger radius for better antialiasing
-      border-bottom-left-radius: 9px;
-      border-bottom-right-radius: 9px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
 
     .dialog-action-area button {
@@ -3756,12 +3756,12 @@ messagedialog { // Message Dialog styling
 
       &:first-child{
         border-left-style: none;
-        border-bottom-left-radius: 7px;
+        border-bottom-left-radius: 3px;
         -gtk-outline-bottom-left-radius: 5px;
       }
 
       &:last-child {
-        border-bottom-right-radius: 7px;
+        border-bottom-right-radius: 3px;
         -gtk-outline-bottom-right-radius: 5px;
       }
     }
@@ -4287,7 +4287,7 @@ colorchooser .popover.osd { border-radius: 5px; }
  * Window Decorations *
  *********************/
 decoration {
-  border-radius: 7px 7px 0 0;
+  border-radius: 3px 3px 0 0;
   // lamefun trick to get rounded borders regardless of CSD use
   border-width: 0px;
 
