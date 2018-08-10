@@ -8,6 +8,8 @@ $bg_color: if($variant == 'light', #e8e8e7, #33393b);
 $fg_color: if($variant == 'light', #2e3436, #eeeeec);
 
 $selected_fg_color: #ffffff;
+$selected_lt_color: if($variant == 'light', #4a90d9, darken(#4a90d9, 20%));
+$selected_ld_color: if($variant == 'light', #4a90d9, darken(#4a90d9, 20%));
 $selected_bg_color: if($variant == 'light', #4a90d9, darken(#4a90d9, 20%));
 $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 30%), darken($selected_bg_color, 20%));
 $borders_color: if($variant == 'light', darken($bg_color, 20%), darken($bg_color, 10%));
