@@ -2175,7 +2175,7 @@ notebook {
 
           &:backdrop { box-shadow: none; }
 
-          &:checked { box-shadow: inset 0 -3px $selected_lt_color; }
+          &:checked { box-shadow: inset 0 -3px $selected_bg_color; }
         }
       }
     }
@@ -2189,7 +2189,7 @@ notebook {
 
           &:backdrop { box-shadow: none; }
 
-          &:checked { box-shadow: inset 0 3px $selected_lt_color; }
+          &:checked { box-shadow: inset 0 3px $selected_bg_color; }
         }
       }
     }
@@ -2203,7 +2203,7 @@ notebook {
 
           &:backdrop { box-shadow: none; }
 
-          &:checked { box-shadow: inset -3px 0 $selected_lt_color; }
+          &:checked { box-shadow: inset -3px 0 $selected_bg_color; }
         }
       }
     }
@@ -2217,7 +2217,7 @@ notebook {
 
           &:backdrop { box-shadow: none; }
 
-          &:checked { box-shadow: inset 3px 0 $selected_lt_color; }
+          &:checked { box-shadow: inset 3px 0 $selected_bg_color; }
         }
       }
     }
