@@ -43,7 +43,7 @@ style "default" {
   GtkButton::inner-border           = {4, 4, 4, 4}
 
   GtkEntry::state-hint = 1
-  GtkEntry::inner-border = {7, 7, 4, 5}
+  GtkEntry::inner-border = {4, 4, 4, 4}
 
   GtkPaned::handle-size = 9
   GtkHPaned::handle-size = 9
@@ -1199,7 +1199,7 @@ style "default" {
       state    = ACTIVE
       detail   = "entry"
       file     = "assets/entry-active.png"
-      border   = {4, 4, 4, 4}
+      border   = {3, 3, 3, 3}
       stretch  = TRUE
     }
 
@@ -1208,7 +1208,7 @@ style "default" {
       state    = INSENSITIVE
       detail   = "entry"
       file     = "assets/entry-insensitive.png"
-      border   = {4, 4, 4, 4}
+      border   = {3, 3, 3, 3}
       stretch  = TRUE
     }
 
@@ -1216,7 +1216,7 @@ style "default" {
       function = SHADOW
       detail   = "entry"
       file     = "assets/entry.png"
-      border   = {4, 4, 4, 4}
+      border   = {3, 3, 3, 3}
       stretch  = TRUE
     }
 
@@ -1843,8 +1843,8 @@ style "entry" {
 
   # We set this same as the border of the border of the entry
   # This way there's no overlap
-  xthickness = 4
-  ythickness = 4
+  xthickness = 3
+  ythickness = 3
 
 }
 
