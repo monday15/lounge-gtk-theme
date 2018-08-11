@@ -198,7 +198,7 @@
                                           image(darken($c, 2%))) !global;
     background-image: $button_fill;
 //    @include _button_text_shadow($tc, $c);
-    @include _shadows(inset 0 -1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.7), inset 0 1px $_hilight_color, $_button_edge);
+    @include _shadows(0 1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.7), $_button_edge);
   }
 
   @else if $t==hover {
@@ -211,12 +211,12 @@
     @if $variant == 'light' {
       $button_fill: image(lighten($c, 5%)) !global;
 //      @include _button_text_shadow($tc, lighten($c, 6%));
-      @include _shadows(inset 0 -1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.5), inset 0 1px _button_hilight_color(lighten($c, 6%)), $_button_edge);
+      @include _shadows(0 1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.7), $_button_edge);
     }
     @else {
       $button_fill: image(darken($c, 4%)) !global;
 //      @include _button_text_shadow($tc,lighten($c, 6%));
-      @include _shadows(inset 0 -1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.5), inset 0 1px _button_hilight_color(darken($c, 2%)), $_button_edge);
+      @include _shadows(0 1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.7), $_button_edge);
     }
     background-image: $button_fill;
   }
