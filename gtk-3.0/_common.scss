@@ -1359,7 +1359,7 @@ combobox {
 toolbar {
   @extend %toolbar;
 
-  padding: 4px 3px 3px 4px;
+  padding: 3px 4px;
 
   // on OSD
   .osd & { background-color: transparent; }
