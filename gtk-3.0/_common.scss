@@ -2844,7 +2844,7 @@ radio {
 
 %check,
 check {
-  border-radius: 3px;
+  border-radius: 2px;
 
   &:checked { -gtk-icon-source: image(-gtk-recolor(url("assets/check-symbolic.svg")),
                                       -gtk-recolor(url("assets/check-symbolic.symbolic.png"))); }
