@@ -76,9 +76,10 @@ stage {
 
 /* Entries */
 StEntry {
-  border-radius: 3px;
+  border-radius: 0;
   padding: 4px;
-  border-width: 1px;
+  border-width: 0;
+  border-bottom-width: 2px;
   color: $fg_color;
   @include entry(normal);
   //&:hover { @include entry(hover);}
@@ -1250,14 +1251,10 @@ StScrollBar {
   //search entry
   .search-entry {
     width: 320px;
-    padding: 7px 9px;
-    border-radius: 6px;
+    padding: 6px 8px;
     border-color: darken($osd_fg_color,50%);
     color: $osd_fg_color;
-    background-color: $osd_bg_color;
     &:focus {
-      padding: 6px 8px;
-      border-width: 2px;
       border-color: $selected_bg_color;
     }
 

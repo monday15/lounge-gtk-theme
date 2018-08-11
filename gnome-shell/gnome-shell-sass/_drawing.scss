@@ -40,13 +40,13 @@
   $_inner_shadows: inset 0 2px 4px transparentize(black, 0.6);
 
   @if $t==normal {
-    background-color: $base_color;
+    background-color: transparent;
     border-color: $borders_color;
-    @include _shadows($_inner_shadows);
+    box-shadow: none;
 
   }
   @if $t==focus {
-    @include _shadows($_inner_shadows);
+    box-shadow: none;
     border-color: if($fc==$selected_bg_color,
                      $selected_borders_color,
                      darken($fc,35%));
