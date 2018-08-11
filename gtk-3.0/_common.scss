@@ -4076,7 +4076,7 @@ infobar {
       border-color: darken($selected_lt_color, 10%);
     }
 
-    text-shadow: 0 1px darken($selected_lt_color, 10%);
+//    text-shadow: 0 1px darken($selected_lt_color, 10%);
 
     &:backdrop { text-shadow: none; }
 
