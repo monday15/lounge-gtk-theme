@@ -948,18 +948,18 @@ toolbar.inline-toolbar toolbutton:backdrop {
   @extend %linked_middle;
 
   &:first-child {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
   }
 
   &:last-child {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
     border-right-style: solid;
   }
 
   &:only-child {
-    border-radius: 3px;
+    border-radius: 2px;
     border-style: solid;
   }
 }
@@ -973,18 +973,18 @@ toolbar.inline-toolbar toolbutton:backdrop {
   @extend %linked_vertical_middle;
 
   &:first-child {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
   }
 
   &:last-child {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
     border-style: solid;
   }
 
   &:only-child {
-    border-radius: 3px;
+    border-radius: 2px;
     border-style: solid;
   }
 }
@@ -1226,9 +1226,9 @@ spinbutton {
         box-shadow: none;
       }
 
-      &:dir(ltr):last-child { border-radius: 0 3px 3px 0; }
+      &:dir(ltr):last-child { border-radius: 0 2px 2px 0; }
 
-      &:dir(rtl):first-child { border-radius: 3px 0 0 3px; }
+      &:dir(rtl):first-child { border-radius: 2px 0 0 2px; }
     }
   }
 
@@ -1267,12 +1267,12 @@ spinbutton {
     }
 
     %top_button {
-      border-radius: 3px 3px 0 0;
+      border-radius: 2px 2px 0 0;
       border-style: solid solid none solid;
     }
 
     %bottom_button {
-      border-radius: 0 0 3px 3px;
+      border-radius: 0 0 2px 2px;
       border-style: none solid solid solid;
     }
   }
