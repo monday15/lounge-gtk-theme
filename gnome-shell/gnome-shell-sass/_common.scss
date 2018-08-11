@@ -179,9 +179,9 @@ StScrollBar {
 .flashspot { background-color: white; }
 
 .modal-dialog {
-  border-radius: 9px;
+  border-radius: 3px;
   color: $osd_fg_color;
-  background-color: transparentize(darken($osd_bg_color,10%),0.05);
+  background-color: transparentize(darken($osd_bg_color, 5%), 0.05);
   border: 1px solid $_bubble_borders_color;
   .modal-dialog-content-box {
     padding: 24px;
