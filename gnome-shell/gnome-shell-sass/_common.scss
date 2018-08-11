@@ -679,6 +679,7 @@ StScrollBar {
 
   .workspace-switcher-container {
     @extend %osd-panel;
+    margin-left: 85em;
   }
 
   .workspace-switcher {
@@ -695,21 +696,21 @@ StScrollBar {
     color: $selected_fg_color;
     //background-image: url("assets/ws-switch-arrow-up.png");
     background-size: 32px;
-    border-radius: 8px;
+    border-radius: 3px;
   }
 
   .ws-switcher-box {
     height: 50px;
     border: 1px solid transparentize($osd_fg_color,0.9);
     background: transparent;
-    border-radius: 8px;
+    border-radius: 3px;
   }
 
 %osd-panel {
   color: $_bubble_fg_color;
   background-color: $_bubble_bg_color;
   border: 1px solid $_bubble_borders_color;
-  border-radius: 12px;
+  border-radius: 3px;
   padding: 12px;
 }
 
