@@ -22,6 +22,10 @@ text widgets and the like base background color */
 @define-color theme_base_color #{"" +$base_color};
 
 /*
+base background light color of selections */
+@define-color theme_selected_lt_color #{"" +$selected_lt_color};
+
+/*
 base background color of selections */
 @define-color theme_selected_bg_color #{"" +$selected_bg_color};
 
