@@ -1416,7 +1416,7 @@ searchbar > revealer > box,
 searchbar > revealer > box {
   // workaround: undo the GtkContainer:border-width and use CSS padding instead
   margin: -6px;
-  padding: 6px;
+  padding: 4px;
 }
 
 %darkbar {
