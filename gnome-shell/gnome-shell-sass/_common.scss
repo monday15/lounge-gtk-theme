@@ -1479,9 +1479,9 @@ StScrollBar {
     visible-width: 32px; //amount visible before hover
     spacing: 11px;
     padding: 8px;
-    border-radius: 9px 0 0 9px;
+    border-radius: 3px 0 0 3px;
     //border-width: 1px 0 1px 1px; //fixme: can't have non unoform borders :(
-    &:rtl { border-radius: 0 9px 9px 0;}
+    &:rtl { border-radius: 0 3px 3px 0;}
 
     .placeholder {
       background-image: url("assets/dash-placeholder.svg");
