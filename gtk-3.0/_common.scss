@@ -2602,13 +2602,12 @@ treeview ~ scrollbar.vertical {
  * Switch *
  **********/
 switch {
-  font-weight: bold;
-  font-size: smaller;
+  font-size: 0;
   outline-offset: -4px;
 
   // similar to the .scale
   border: 1px solid $borders_color;
-  border-radius: 3px;
+  border-radius: 2px;
   color: $fg_color;
   background-color: $dark_fill;
   text-shadow: 0 1px transparentize(black, 0.9);
@@ -2616,7 +2615,7 @@ switch {
   &:checked {
     color: $selected_fg_color;
     border-color: $selected_borders_color;
-    background-color: $selected_lt_color;
+    background-color: $selected_ld_color;
     text-shadow: 0 1px transparentize($selected_borders_color, 0.5),
                  0 0 2px transparentize(white, 0.4);
   }
@@ -2637,9 +2636,9 @@ switch {
 
     &:checked {
       @if $variant == 'light' { color: $backdrop_bg_color; }
-      border-color: if($variant == 'light', $selected_lt_color,
+      border-color: if($variant == 'light', $selected_ld_color,
                                             $selected_borders_color);
-      background-color: $selected_lt_color;
+      background-color: $selected_ld_color;
     }
 
     &:disabled {
@@ -2651,10 +2650,10 @@ switch {
 
   slider {
     margin: -1px;
-    min-width: 44px;
-    min-height: 26px;
+    min-width: 26px;
+    min-height: 18px;
     border: 1px solid;
-    border-radius: 3px;
+    border-radius: 2px;
     transition: $button_transition;
 
     @include button(normal-alt, $edge: $shadow_color);
@@ -2673,7 +2672,7 @@ switch {
       @include button(backdrop);
     }
 
-    &:checked slider { border-color: if($variant == 'light', $selected_lt_color, $selected_borders_color); }
+    &:checked slider { border-color: if($variant == 'light', $selected_ld_color, $selected_borders_color); }
 
     &:disabled slider { @include button(backdrop-insensitive); }
   }
