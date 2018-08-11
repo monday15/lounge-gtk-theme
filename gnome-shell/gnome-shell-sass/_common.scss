@@ -1345,6 +1345,12 @@ StScrollBar {
     -shell-grid-vertical-item-size: 136px;
 
     .overview-icon { icon-size: 96px; }
+
+    .app-well-app-running-dot { //running apps indicator
+      width: 125px; height: 125px;
+      background-color: transparentize($selected_bg_color, 0.7);
+      border-radius: 3px;
+    }
   }
   //.app-display { spacing: 20px; }
 
