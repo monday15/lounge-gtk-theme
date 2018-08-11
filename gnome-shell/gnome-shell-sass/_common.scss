@@ -1016,7 +1016,7 @@ StScrollBar {
 
       /* Message list */
       .message-list {
-        width: 31.5em;
+        width: 32em;
       }
 
         .message-list-clear-button.button {
@@ -1031,12 +1031,15 @@ StScrollBar {
 
         .message-list-section,
         .message-list-section-list {
-          spacing: 0.4em;
+          spacing: 0.5em;
         }
 
         .message {
+          margin: 1px;
+          background-color: lighten($bg_color, 2%);
+          box-shadow: 1px 1px darken($bg_color, 4%);
+          border-radius: 2px;
           &:hover,&:focus { background-color: lighten($bg_color,5%); }
-          border-radius: 3px;
         }
 
           .message-icon-bin {
