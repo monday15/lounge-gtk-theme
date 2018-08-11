@@ -2171,11 +2171,11 @@ notebook {
       > tabs {
         margin-bottom: -2px;
         > tab {
-          &:hover { box-shadow: inset 0 -3px $borders_color; }
+          &:hover { box-shadow: inset 0 -1px $borders_color; }
 
           &:backdrop { box-shadow: none; }
 
-          &:checked { box-shadow: inset 0 -3px $selected_bg_color; }
+          &:checked { box-shadow: inset 0 -1px $borders_color; }
         }
       }
     }
@@ -2185,11 +2185,11 @@ notebook {
       > tabs {
         margin-top: -2px;
         > tab {
-          &:hover { box-shadow: inset 0 3px $borders_color; }
+          &:hover { box-shadow: inset 0 1px $borders_color; }
 
           &:backdrop { box-shadow: none; }
 
-          &:checked { box-shadow: inset 0 3px $selected_bg_color; }
+          &:checked { box-shadow: inset 0 1px $borders_color; }
         }
       }
     }
@@ -2199,11 +2199,11 @@ notebook {
       > tabs {
         margin-right: -2px;
         > tab {
-          &:hover { box-shadow: inset -3px 0 $borders_color; }
+          &:hover { box-shadow: inset -1px 0 $borders_color; }
 
           &:backdrop { box-shadow: none; }
 
-          &:checked { box-shadow: inset -3px 0 $selected_bg_color; }
+          &:checked { box-shadow: inset -1px 0 $borders_color; }
         }
       }
     }
@@ -2213,11 +2213,11 @@ notebook {
       > tabs {
         margin-left: -2px;
         > tab {
-          &:hover { box-shadow: inset 3px 0 $borders_color; }
+          &:hover { box-shadow: inset 1px 0 $borders_color; }
 
           &:backdrop { box-shadow: none; }
 
-          &:checked { box-shadow: inset 3px 0 $selected_bg_color; }
+          &:checked { box-shadow: inset 1px 0 $borders_color; }
         }
       }
     }
@@ -2289,8 +2289,8 @@ notebook {
     }
 
     tab {
-      min-height: 30px;
-      min-width: 30px;
+      min-height: 24px;
+      min-width: 24px;
       padding: 3px 12px;
 
       outline-offset: -5px;
@@ -2306,7 +2306,7 @@ notebook {
 
         &.reorderable-page {
           border-color: transparentize($borders_color, 0.7);
-          background-color: transparentize($bg_color, 0.8);
+          background-color: transparentize($bg_color, 0.6);
         }
       }
 
@@ -2323,9 +2323,9 @@ notebook {
         color: $fg_color;
         &.reorderable-page {
           border-color: transparentize($borders_color, 0.5);
-          background-color: transparentize($bg_color, 0.5);
+          background-color: transparentize($bg_color, 0.2);
 
-          &:hover { background-color: transparentize($bg_color, 0.3); }
+          &:hover { background-color: transparentize($bg_color, 0.0); }
         }
       }
 
@@ -2345,8 +2345,8 @@ notebook {
         &, &:backdrop { color: gtkalpha(currentColor, 0.3); }
 
         padding: 0;
-        margin-top: 4px;
-        margin-bottom: 4px;
+        margin-top: 1px;
+        margin-bottom: 1px;
         // FIXME: generalize .small-button?
         min-width: 20px;
         min-height: 20px;
