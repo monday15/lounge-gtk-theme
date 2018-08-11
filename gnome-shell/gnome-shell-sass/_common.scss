@@ -4,7 +4,7 @@
 $cakeisalie: "This stylesheet is generated, DO NOT EDIT";
 /* #{$cakeisalie} */
 
-$panel-corner-radius: 6px;
+$panel-corner-radius: 0px;
 
 /* Copyright 2009, 2015 Red Hat, Inc.
  *
@@ -767,7 +767,7 @@ StScrollBar {
   }
 
   .panel-button {
-    -natural-hpadding: 12px;
+    -natural-hpadding: 6px;
     -minimum-hpadding: 6px;
     font-weight: bold;
     color: #eee;
