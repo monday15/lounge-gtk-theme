@@ -1356,8 +1356,8 @@ StScrollBar {
 
   .system-action-icon {
     background-color: black;
-    color: white;
-    border-radius: 99px;
+    color: $fg_color;
+    border-radius: 3px;
     icon-size: 48px;
   }
 
