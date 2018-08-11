@@ -1002,15 +1002,16 @@ toolbar.inline-toolbar toolbutton:backdrop {
 /* menu buttons */
 modelbutton.flat,
 .menuitem.button.flat {
-  min-height: 26px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 3px;
+  min-height: 22px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 0;
   outline-offset: -2px;
+  margin: 0 -10px;
 
   @extend %undecorated_button;
 
-  &:hover { background-color: $popover_hover_color; }
+  &:hover { background-color: $popover_hover_color; box-shadow: inset 0 1px transparentize(black, 0.9), inset 0 -1px transparentize(black, 0.9); }
 
   &:selected { @extend %selected_items; }
 
@@ -2109,13 +2110,13 @@ menuitem {
  ***************/
 
 popover.background {
-  padding: 2px;
-  border-radius: 5px;
+  padding: 0;
+  border-radius: 3px;
   background-color: $popover_bg_color;
 
   .csd &, & { border: 1px solid $borders_color; }
 
-  box-shadow: 0 1px 2px transparentize(black, 0.7);
+  box-shadow: 0 1px 2px transparentize(black, 0.8);
 
   &:backdrop {
     background-color: $backdrop_bg_color;
@@ -2142,7 +2143,7 @@ popover.background {
     &.osd { @extend %osd; }
   }
 
-  separator { margin: 3px; }
+  separator { margin: 1px; }
 
   list separator { margin: 0px; }
 }
