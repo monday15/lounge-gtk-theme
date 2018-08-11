@@ -185,7 +185,12 @@ StScrollBar {
   .modal-dialog-content-box {
     padding: 24px;
   }
-  .run-dialog-entry { width: 20em; margin-bottom: 6px; }
+  .run-dialog-entry {
+    font-family: monospace;
+    @include fontsize($font-size + 1);
+    width: 30em;
+    margin-bottom: 6px;
+  }
   .run-dialog-error-box {
     padding-top: 16px;
     spacing: 6px;
