@@ -553,9 +553,10 @@ StScrollBar {
     -arrow-background-color: $bg_color;
     -arrow-border-width: 1px;
     -arrow-border-color: $borders_color;
-    -arrow-base: 24px;
-    -arrow-rise: 11px;
+    -arrow-base: 0;
+    -arrow-rise: 0;
     -arrow-box-shadow: 0 1px 3px black; //dreaming. bug #689995
+    margin: 0 4px;
   }
 
   .popup-separator-menu-item {
