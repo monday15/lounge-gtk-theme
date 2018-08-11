@@ -198,8 +198,7 @@ StScrollBar {
   }
   .run-dialog-button-box { padding-top: 1em; }
   .run-dialog-label {
-    @include fontsize($font-size + 1.1);
-    font-weight: bold;
+    font-size: 0;
     color: darken($osd_fg_color,10%);
     padding-bottom: .4em;
   }
