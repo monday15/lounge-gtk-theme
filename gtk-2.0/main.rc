@@ -1512,6 +1512,15 @@ style "menubar_item" {
   bg[PRELIGHT] = @bg_color
   bg[SELECTED] = @bg_color
 
+  engine "pixmap" {
+    image {
+      function    = BOX
+      state       = PRELIGHT
+      file        = "assets/transparent-dot.png"
+      border      = {0, 0, 0, 1}
+    }
+  }
+
 }
 
 style "menu" {
@@ -1529,7 +1538,7 @@ style "menu" {
 style "menu_item" {
 
   xthickness = 3
-  ythickness = 4
+  ythickness = 3
 
   bg[PRELIGHT]   = @selected_bg_color
   # Chromium uses this setting
@@ -1539,6 +1548,15 @@ style "menu_item" {
   # Some widgets use text, we need to handle that
   text[NORMAL]   = @fg_color
   text[PRELIGHT] = @selected_fg_color
+
+  engine "pixmap" {
+    image {
+      function    = BOX
+      state       = PRELIGHT
+      file        = "assets/menu-item-active.png"
+      border      = {0, 0, 1, 1}
+    }
+  }
 
   # Unfortunately we can't tell regular and menu checks/radios apart
   # Without the heirarchy

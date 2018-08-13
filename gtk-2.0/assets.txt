@@ -59,6 +59,7 @@
 #handle-horz
 #handle-vert
 #menu-border
+menu-item-active
 #notebook-entry
 #notebook-entry-active
 #notebook-entry-insensitive
@@ -133,6 +134,7 @@
 #tab-down-active
 #tab-horz-gap
 #tab-vert-gap
+transparent-dot
 #treeview-pan-up
 #treeview-pan-up-hover
 #treeview-pan-up-active
