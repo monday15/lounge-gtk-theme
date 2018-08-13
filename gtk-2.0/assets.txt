@@ -44,11 +44,11 @@
 #combo-entry-rtl-button-hover
 #combo-entry-rtl-button-active
 #combo-entry-rtl-button-insensitive
-entry
-entry-active
-entry-insensitive
-entry-background
-entry-background-insensitive
+#entry
+#entry-active
+#entry-insensitive
+#entry-background
+#entry-background-insensitive
 #border
 #frame
 #frame-inline
