@@ -3951,16 +3951,17 @@ placessidebar {
       background-clip: content-box;
     }
 
-    &.sidebar-new-bookmark-row { color: $selected_lt_color; }
+    &.sidebar-new-bookmark-row { color: $link_color; }
 
     &:drop(active):not(:disabled) {
       color: $drop_target_color;
-      box-shadow: inset 0 1px $drop_target_color,
-                  inset 0 -1px $drop_target_color;
+      box-shadow: none;
+//      box-shadow: inset 0 1px $drop_target_color,
+//                  inset 0 -1px $drop_target_color;
 
       &:selected {
         color: $selected_fg_color;
-        background-color: $drop_target_color;
+        background-color: if($variant == 'light', desaturate(lighten($drop_target_color, 40%), 40%), $drop_target_color);
       }
     }
   }
