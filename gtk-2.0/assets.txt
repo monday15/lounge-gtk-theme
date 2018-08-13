@@ -26,10 +26,10 @@
 #menu-pan-up-insensitive
 #menu-pan-down
 #menu-pan-down-insensitive
-button
-button-hover
-button-active
-button-insensitive
+#button
+#button-hover
+#button-active
+#button-insensitive
 #combo-entry-ltr-entry
 #combo-entry-ltr-entry-active
 #combo-entry-ltr-entry-insensitive
@@ -59,7 +59,6 @@ button-insensitive
 #handle-horz
 #handle-vert
 #menu-border
-#menubar-item-active
 #notebook-entry
 #notebook-entry-active
 #notebook-entry-insensitive
