@@ -396,8 +396,10 @@
     background-image: $button_fill;
     background-clip: padding-box;
     box-shadow: inset 0 1px transparentize(white, 0.9);
-    text-shadow: 0 1px black;
-    -gtk-icon-shadow: 0 1px black;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+//    text-shadow: 0 1px black;
+//    -gtk-icon-shadow: 0 1px black;
     outline-color: transparentize($osd_fg_color, 0.7);
   }
 
@@ -405,17 +407,19 @@
   //
   // active osd button
   //
-    $_bg: if($c != $bg_color, transparentize($c, 0.3), lighten($osd_bg_color, 12%));
+    $_bg: if($c != $bg_color, transparentize($c, 0.3), lighten($osd_bg_color, 5%));
 
-    color: white;
+    color: $fg_color;
     border-color: $osd_borders_color;
     background-color: transparent;
     $button_fill: image($_bg) !global;
     background-image: $button_fill;
     background-clip: padding-box;
     box-shadow: inset 0 1px transparentize(white, 0.9);
-    text-shadow: 0 1px black;
-    -gtk-icon-shadow: 0 1px black;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+//    text-shadow: 0 1px black;
+//    -gtk-icon-shadow: 0 1px black;
     outline-color: transparentize($osd_fg_color, 0.7);
   }
 
@@ -423,9 +427,9 @@
   //
   // active osd button
   //
-    $_bg: if($c != $bg_color, $c, $osd_borders_color);
+    $_bg: if($c != $bg_color, $c, darken($osd_bg_color, 10%));
 
-    color: white;
+    color: $fg_color;
     border-color: $osd_borders_color;
     background-color: transparent;
     $button_fill: image($_bg) !global;
@@ -442,7 +446,7 @@
   // insensitive osd button
   //
     color: $osd_insensitive_fg_color;
-    border-color: $osd_borders_color;
+    border-color: $insensitive_osd_borders_color;
     background-color: transparent;
     $button_fill: image($osd_insensitive_bg_color) !global;
     background-image: $button_fill;
@@ -459,7 +463,7 @@
     $_bg: if($c != $bg_color, transparentize($c, 0.5), $osd_bg_color);
 
     color: $osd_fg_color;
-    border-color: $osd_borders_color;
+    border-color: $insensitive_osd_borders_color;
     background-color: transparent;
     $button_fill: image($_bg) !global;
     background-image: $button_fill;

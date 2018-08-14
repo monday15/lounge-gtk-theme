@@ -219,15 +219,19 @@ assistant {
 %osd,
 .osd {
   color: $osd_fg_color;
-  border: none;
+  border: 1px solid $osd_borders_color;
+  border-top: none;
   background-color: $osd_bg_color;
   background-clip: padding-box;
-  text-shadow: 0 1px black;
-  -gtk-icon-shadow: 0 1px black;
+//  text-shadow: 0 1px black;
+//  -gtk-icon-shadow: 0 1px black;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
 
   &:backdrop {
     text-shadow: none;
     -gtk-icon-shadow: none;
+    border-color: $insensitive_borders_color;
   }
 }
 
