@@ -1525,7 +1525,7 @@ style "menu_item" {
       function        = CHECK
       state           = PRELIGHT
       shadow          = OUT
-      overlay_file    = "assets/menu-checkbox-hover.png"
+      overlay_file    = "assets/menu-checkbox.png"
       overlay_stretch = FALSE
     }
 
@@ -1557,7 +1557,7 @@ style "menu_item" {
       function        = CHECK
       state           = PRELIGHT
       shadow          = IN
-      overlay_file    = "assets/menu-checkbox-checked-hover.png"
+      overlay_file    = "assets/menu-checkbox-checked.png"
       overlay_stretch = FALSE
     }
 
@@ -1589,7 +1589,7 @@ style "menu_item" {
       function        = CHECK
       state           = PRELIGHT
       shadow          = ETCHED_IN
-      overlay_file    = "assets/menu-checkbox-mixed-hover.png"
+      overlay_file    = "assets/menu-checkbox-mixed.png"
       overlay_stretch = FALSE
     }
 
@@ -1625,7 +1625,7 @@ style "menu_item" {
       function        = OPTION
       state           = PRELIGHT
       shadow          = OUT
-      overlay_file    = "assets/menu-radio-hover.png"
+      overlay_file    = "assets/menu-radio.png"
       overlay_stretch = FALSE
     }
 
@@ -1657,7 +1657,7 @@ style "menu_item" {
       function        = OPTION
       state           = PRELIGHT
       shadow          = IN
-      overlay_file    = "assets/menu-radio-checked-hover.png"
+      overlay_file    = "assets/menu-radio-checked.png"
       overlay_stretch = FALSE
     }
 
@@ -1689,7 +1689,7 @@ style "menu_item" {
       function        = OPTION
       state           = PRELIGHT
       shadow          = ETCHED_IN
-      overlay_file    = "assets/menu-radio-mixed-hover.png"
+      overlay_file    = "assets/menu-radio-mixed.png"
       overlay_stretch = FALSE
     }
 
