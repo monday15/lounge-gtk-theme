@@ -26,8 +26,8 @@
 #menu-pan-up-insensitive
 #menu-pan-down
 #menu-pan-down-insensitive
-#button
-#button-hover
+button
+button-hover
 #button-active
 #button-insensitive
 #combo-entry-ltr-entry
