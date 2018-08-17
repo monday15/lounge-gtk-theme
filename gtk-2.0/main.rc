@@ -90,7 +90,7 @@ style "default" {
   GtkMenuItem::toggle-spacing  = 10
 
   GtkCheckButton::indicator_spacing = 3
-  GtkOptionMenu::indicator_spacing  = {13, 13, 5, 8}
+  GtkOptionMenu::indicator_spacing  = {12, 12, 4, 4}
 
   GtkTreeView::expander-size        = 16
   GtkTreeView::vertical-separator   = 0
