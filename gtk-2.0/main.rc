@@ -1893,7 +1893,7 @@ style "combobox_entry" {
       state     = NORMAL
       detail    = "button"
       file      = "assets/combo-entry-ltr-button.png"
-      border    = {0, 4, 4, 4}
+      border    = {1, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
     }
@@ -1903,7 +1903,7 @@ style "combobox_entry" {
       state     = PRELIGHT
       detail    = "button"
       file      = "assets/combo-entry-ltr-button-hover.png"
-      border    = {0, 4, 4, 4}
+      border    = {1, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
     }
@@ -1913,7 +1913,7 @@ style "combobox_entry" {
       state     = ACTIVE
       detail    = "button"
       file      = "assets/combo-entry-ltr-button-active.png"
-      border    = {0, 4, 4, 4}
+      border    = {1, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
     }
@@ -1923,7 +1923,7 @@ style "combobox_entry" {
       state     = INSENSITIVE
       detail    = "button"
       file      = "assets/combo-entry-ltr-button-insensitive.png"
-      border    = {0, 4, 4, 4}
+      border    = {1, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
     }
@@ -1937,7 +1937,7 @@ style "combobox_entry" {
       state     = NORMAL
       detail    = "button"
       file      = "assets/combo-entry-rtl-button.png"
-      border    = {4, 0, 4, 4}
+      border    = {4, 1, 4, 4}
       stretch   = TRUE
       direction = RTL
     }
@@ -1947,7 +1947,7 @@ style "combobox_entry" {
       state     = PRELIGHT
       detail    = "button"
       file      = "assets/combo-entry-rtl-button-hover.png"
-      border    = {4, 0, 4, 4}
+      border    = {4, 1, 4, 4}
       stretch   = TRUE
       direction = RTL
     }
@@ -1957,7 +1957,7 @@ style "combobox_entry" {
       state     = ACTIVE
       detail    = "button"
       file      = "assets/combo-entry-rtl-button-active.png"
-      border    = {4, 0, 4, 4}
+      border    = {4, 1, 4, 4}
       stretch   = TRUE
       direction = RTL
     }
@@ -1967,7 +1967,7 @@ style "combobox_entry" {
       state     = INSENSITIVE
       detail    = "button"
       file      = "assets/combo-entry-rtl-button-insensitive.png"
-      border    = {4, 0, 4, 4}
+      border    = {4, 1, 4, 4}
       stretch   = TRUE
       direction = RTL
     }
