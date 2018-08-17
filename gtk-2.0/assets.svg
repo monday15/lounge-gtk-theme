@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.313709"
-     inkscape:cx="43.787265"
-     inkscape:cy="272.88365"
+     inkscape:cx="26.466796"
+     inkscape:cy="313.20444"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1011,5 +1011,69 @@
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="scsscscsscs" />
     </g>
+    <g
+       inkscape:label="#g898"
+       id="progressbar-trough-horz"
+       transform="rotate(90,173.00001,344.625)">
+      <rect
+         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
+         id="rect2674"
+         width="6"
+         height="7"
+         x="20"
+         y="500.625" />
+      <rect
+         y="502.125"
+         x="21.499998"
+         height="4"
+         width="3"
+         id="rect2676"
+         style="opacity:1;fill:#c6c6c6;fill-opacity:1;stroke:#a6a6a6;stroke-width:0.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         ry="1.5"
+         rx="1.5" />
+    </g>
+    <g
+       transform="rotate(180,22.000005,349.125)"
+       id="progressbar-trough-vert"
+       inkscape:label="#g898">
+      <rect
+         y="500.625"
+         x="20"
+         height="7"
+         width="6"
+         id="rect2686"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1" />
+      <rect
+         rx="1.5"
+         ry="1.5"
+         style="opacity:1;fill:#c6c6c6;fill-opacity:1;stroke:#a6a6a6;stroke-width:0.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2688"
+         width="3"
+         height="4"
+         x="21.499998"
+         y="502.125" />
+    </g>
+    <rect
+       transform="rotate(90)"
+       y="-30.50001"
+       x="192.12498"
+       height="4"
+       width="4"
+       id="progressbar-horz"
+       style="opacity:1;fill:#acc6d9;fill-opacity:1;stroke:#4a7da2;stroke-width:0.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       ry="1.5"
+       rx="1.5000001"
+       inkscape:label="#rect2676-6" />
+    <rect
+       rx="1.5000001"
+       ry="1.5"
+       style="opacity:1;fill:#acc6d9;fill-opacity:1;stroke:#4a7da2;stroke-width:0.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="progressbar-vert"
+       width="4"
+       height="4"
+       x="-38.500008"
+       y="-196.12498"
+       transform="scale(-1)"
+       inkscape:label="#rect2707" />
   </g>
 </svg>

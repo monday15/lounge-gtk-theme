@@ -67,8 +67,8 @@ style "default" {
   GtkScale::slider_width        = 26
   GtkScale::trough-side-details = 1
 
-  GtkProgressBar::min-horizontal-bar-height = 6
-  GtkProgressBar::min-vertical-bar-width    = 6
+  GtkProgressBar::min-horizontal-bar-height = 8
+  GtkProgressBar::min-vertical-bar-width    = 8
   # Making this bigger than the min[height,width]-2*[y,x]spacing makes the
   # whole progressbar thicker, so by setting it to the exact above value
   # we get the maximum spacing between the text and the edges without
@@ -1399,7 +1399,7 @@ style "default" {
       detail      = "bar"
       file        = "assets/progressbar-horz.png"
       stretch     = TRUE
-      border      = {2, 2, 1, 1}
+      border      = {2, 2, 2, 2}
       orientation = HORIZONTAL
     }
 
@@ -1408,7 +1408,7 @@ style "default" {
       detail      = "bar"
       file        = "assets/progressbar-vert.png"
       stretch     = TRUE
-      border      = {1, 1, 2, 2}
+      border      = {2, 2, 2, 2}
       orientation = VERTICAL
     }
 
@@ -2225,7 +2225,7 @@ style "progressbar" {
     image {
       function    = BOX
       detail      = "trough"
-      file        = "assets/progressbar-horz-trough.png"
+      file        = "assets/progressbar-trough-horz.png"
       border      = {3, 3, 2, 2}
       stretch     = TRUE
       orientation = HORIZONTAL
@@ -2234,7 +2234,7 @@ style "progressbar" {
     image {
       function    = BOX
       detail      = "trough"
-      file        = "assets/progressbar-vert-trough.png"
+      file        = "assets/progressbar-trough-vert.png"
       border      = {2, 2, 3, 3}
       stretch     = TRUE
       orientation = VERTICAL
