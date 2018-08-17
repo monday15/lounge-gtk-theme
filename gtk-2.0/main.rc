@@ -40,7 +40,7 @@ style "default" {
 
   GtkButton::default-border         = {0, 0, 0, 0}
   GtkButton::default-outside-border = {0, 0, 0, 0}
-  GtkButton::inner-border           = {4, 4, 4, 4}
+  GtkButton::inner-border           = {4, 4, 3, 3}
 
   GtkEntry::state-hint = 1
   GtkEntry::inner-border = {4, 4, 4, 4}
@@ -1720,7 +1720,7 @@ style "separator_menu_item" {
 style "button" {
 
   xthickness = 2
-  ythickness = 1
+  ythickness = 2
 
   # For the sake of sanity style buttons this way
   engine "pixmap" {
