@@ -102,7 +102,7 @@ style "default" {
 
   GtkExpander::expander-size = 16
 
-  GtkNotebook::tab-overlap = 4
+  GtkNotebook::tab-overlap = 0
 
   ##########
   # Colors #
@@ -769,9 +769,6 @@ style "default" {
 
     image {
       function = EXTENSION
-      file     = "assets/tab-left.png"
-      border   = {3, 0, 3, 3}
-      stretch  = TRUE
       gap_side = RIGHT
     }
 
@@ -788,9 +785,6 @@ style "default" {
 
     image {
       function = EXTENSION
-      file     = "assets/tab-right.png"
-      border   = {0, 3, 3, 3}
-      stretch  = TRUE
       gap_side = LEFT
     }
 
@@ -807,9 +801,6 @@ style "default" {
 
     image {
       function = EXTENSION
-      file     = "assets/tab-up.png"
-      border   = {3, 3, 3, 0}
-      stretch  = TRUE
       gap_side = BOTTOM
     }
 
@@ -826,9 +817,6 @@ style "default" {
 
     image {
       function = EXTENSION
-      file     = "assets/tab-down.png"
-      border   = {3, 3, 0, 3}
-      stretch  = TRUE
       gap_side = TOP
     }
 
