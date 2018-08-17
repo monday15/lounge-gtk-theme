@@ -137,12 +137,12 @@
 //
 // $c: base color;
 //
-  @if lightness($c)>95% { @return transparentize(white, 0.2); }
-  @else if lightness($c)>90% { @return transparentize(white, 0.4); }
-  @else if lightness($c)>80% { @return transparentize(white, 0.5); }
-  @else if lightness($c)>50% { @return transparentize(white, 0.7); }
-  @else if lightness($c)>40% { @return transparentize(white, 0.8); }
-  @else { @return transparentize(white, 0.95); }
+  @if lightness($c)>95% { @return transparentize(white, 0.5); }
+  @else if lightness($c)>90% { @return transparentize(white, 0.7); }
+  @else if lightness($c)>80% { @return transparentize(white, 0.8); }
+  @else if lightness($c)>50% { @return transparentize(white, 0.9); }
+  @else if lightness($c)>40% { @return transparentize(white, 0.95); }
+  @else { @return transparentize(white, 0.98); }
 }
 
 @mixin _button_text_shadow ($tc:$fg_color, $bg:$bg_color) {
@@ -198,7 +198,9 @@
                                           image(darken($c, 2%))) !global;
     background-image: $button_fill;
 //    @include _button_text_shadow($tc, $c);
-    @include _shadows(0 1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.7), $_button_edge);
+    @include _shadows(inset 0 0 0 1px $_hilight_color,
+                      inset 0 -2px $_hilight_color,
+                      inset 0 -1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.7));
   }
 
   @else if $t==hover {
@@ -211,14 +213,15 @@
     @if $variant == 'light' {
       $button_fill: image(lighten($c, 5%)) !global;
 //      @include _button_text_shadow($tc, lighten($c, 6%));
-      @include _shadows(0 1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.7), $_button_edge);
     }
     @else {
       $button_fill: image(darken($c, 4%)) !global;
 //      @include _button_text_shadow($tc,lighten($c, 6%));
-      @include _shadows(0 1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.7), $_button_edge);
     }
     background-image: $button_fill;
+    @include _shadows(inset 0 0 0 1px $_hilight_color,
+                      inset 0 -2px $_hilight_color,
+                      inset 0 -1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.7));
   }
 
   @if $t==normal-alt {
