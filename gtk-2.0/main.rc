@@ -63,8 +63,8 @@ style "default" {
   GtkScrolledWindow::scrollbar-spacing       = 0
   GtkScrolledWindow::scrollbars-within-bevel = 1
 
-  GtkScale::slider_length       = 26
-  GtkScale::slider_width        = 26
+  GtkScale::slider_length       = 20
+  GtkScale::slider_width        = 20
   GtkScale::trough-side-details = 1
 
   GtkProgressBar::min-horizontal-bar-height = 8
@@ -1004,7 +1004,7 @@ style "default" {
       function    = BOX
       detail      = "trough-upper"
       file        = "assets/scale-horz-trough.png"
-      border      = {10, 10, 0, 0}
+      border      = {7, 7, 0, 0}
       stretch     = TRUE
       orientation = HORIZONTAL
     }
@@ -1013,7 +1013,7 @@ style "default" {
       function    = BOX
       detail      = "trough-lower"
       file        = "assets/scale-horz-trough-active.png"
-      border      = {10, 10, 0, 0}
+      border      = {7, 7, 0, 0}
       stretch     = TRUE
       orientation = HORIZONTAL
     }
@@ -1022,7 +1022,7 @@ style "default" {
       function    = BOX
       detail      = "trough-upper"
       file        = "assets/scale-vert-trough.png"
-      border      = {0, 0, 10, 10}
+      border      = {0, 0, 7, 7}
       stretch     = TRUE
       orientation = VERTICAL
     }
@@ -1031,7 +1031,7 @@ style "default" {
       function    = BOX
       detail      = "trough-lower"
       file        = "assets/scale-vert-trough-active.png"
-      border      = {0, 0, 10, 10}
+      border      = {0, 0, 7, 7}
       stretch     = TRUE
       orientation = VERTICAL
     }
@@ -2173,7 +2173,7 @@ style "scale_horz" {
       function    = BOX
       detail      = "trough-upper"
       file        = "assets/scale-horz-trough.png"
-      border      = {10, 10, 0, 0}
+      border      = {7, 7, 0, 0}
       stretch     = TRUE
     }
 
@@ -2181,7 +2181,7 @@ style "scale_horz" {
       function    = BOX
       detail      = "trough-lower"
       file        = "assets/scale-horz-trough-active.png"
-      border      = {10, 10, 0, 0}
+      border      = {7, 7, 0, 0}
       stretch     = TRUE
     }
 
@@ -2197,7 +2197,7 @@ style "scale_vert" {
       function    = BOX
       detail      = "trough-upper"
       file        = "assets/scale-vert-trough.png"
-      border      = {0, 0, 10, 10}
+      border      = {0, 0, 7, 7}
       stretch     = TRUE
     }
 
@@ -2205,7 +2205,7 @@ style "scale_vert" {
       function    = BOX
       detail      = "trough-lower"
       file        = "assets/scale-vert-trough-active.png"
-      border      = {0, 0, 10, 10}
+      border      = {0, 0, 7, 7}
       stretch     = TRUE
     }
 
