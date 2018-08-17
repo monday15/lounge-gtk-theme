@@ -37,7 +37,7 @@ $destructive_color: if($variant == 'light', #d97b7b, desaturate(darken(#d97b7b, 
 
 $osd_fg_color:  if($variant == 'light', $fg_color, #eee);
 $osd_text_color: if($variant == 'light', $text_color, #eee);
-$osd_bg_color:  if($variant == 'light', transparentize(#dad7ca, 0.1), transparentize(#1c1f20, 0.3));
+$osd_bg_color:  if($variant == 'light', transparentize(#dad7ca, 0.05), transparentize(#1c1f20, 0.3));
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 50%);
 $osd_borders_color: $borders_color;
