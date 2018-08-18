@@ -2125,7 +2125,7 @@ popover.background {
   box-shadow: 0 1px 2px transparentize(black, 0.8);
 
   &:backdrop {
-    background-color: $backdrop_bg_color;
+    background-color: darken($popover_bg_color, 3%);
     box-shadow: none;
   }
 
@@ -2152,6 +2152,29 @@ popover.background {
   separator { margin: 1px; }
 
   list separator { margin: 0px; }
+
+  button {
+    // FIXME: extend selection mode buttons
+    @include button(normal, $popover_button_color, $selected_fg_color);
+
+    &:hover { @include button(hover, $popover_button_color, $selected_fg_color); }
+
+    &:active,
+    &:checked { @include button(active, $popover_button_color, $selected_fg_color); }
+
+    &:disabled { @include button(insensitive, $popover_button_color, $selected_fg_color); }
+
+    &:backdrop {
+      @include button(backdrop, $popover_button_color, $selected_fg_color);
+      border-color: _border_color($popover_button_color);
+
+      &:disabled {
+        @include button(backdrop-insensitive, $popover_button_color, $selected_fg_color);
+        border-color: _border_color($popover_button_color);
+      }
+    }
+  }
+
 }
 
 /*************

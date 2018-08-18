@@ -23,6 +23,7 @@ $headerbar_color: if($variant == 'light', lighten($bg_color, 4%), darken($bg_col
 $menu_color: if($variant == 'light', lighten($bg_color, 7%), mix($bg_color, $base_color, 20%));
 $popover_bg_color: $menu_color;
 $popover_hover_color: $selected_lt_color;
+$popover_button_color: darken($menu_color, 2%);
 
 $scrollbar_bg_color: if($variant == 'light', mix($bg_color, $fg_color, 80%), mix($base_color, $bg_color, 50%));
 $scrollbar_slider_color: mix($fg_color, $bg_color, 10%);
