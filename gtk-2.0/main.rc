@@ -1706,7 +1706,7 @@ style "menu_item" {
 style "separator_menu_item" {
 
   xthickness = 0
-  ythickness = 0
+  ythickness = 1
 
   engine "pixmap" {
     image {
