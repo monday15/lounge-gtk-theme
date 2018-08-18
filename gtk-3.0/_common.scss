@@ -3022,15 +3022,15 @@ scale {
   // click-and-hold the slider to activate
   &.fine-tune {
     &.horizontal {
-      padding-top: 6px;
-      padding-bottom: 6px;
-      min-height: 12px;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      min-height: 16px;
     }
 
     &.vertical {
-      padding-left: 6px;
-      padding-right: 6px;
-      min-width: 12px;
+      padding-left: 9px;
+      padding-right: 9px;
+      min-width: 16px;
     }
 
     // to make the trough grow in fine-tune mode
