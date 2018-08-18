@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6568544"
-     inkscape:cx="120.26403"
-     inkscape:cy="3.5166154"
+     inkscape:zoom="2.8284272"
+     inkscape:cx="92.261767"
+     inkscape:cy="-6.7500096"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -430,10 +430,10 @@
       <rect
          style="opacity:1;fill:#101010;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect4232"
-         width="6"
-         height="6"
-         x="15"
-         y="496.625"
+         width="4"
+         height="4"
+         x="16"
+         y="497.625"
          ry="7.5"
          rx="7.5" />
     </g>
@@ -522,10 +522,10 @@
       <rect
          rx="7.5"
          ry="7.5"
-         y="496.625"
-         x="15"
-         height="6"
-         width="6"
+         y="497.625"
+         x="16"
+         height="4"
+         width="4"
          id="rect4275"
          style="opacity:1;fill:#101010;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
@@ -578,10 +578,10 @@
       <rect
          style="opacity:1;fill:#101010;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect4303"
-         width="6"
-         height="6"
-         x="15"
-         y="496.625"
+         width="4"
+         height="4"
+         x="16"
+         y="497.625"
          ry="7.5"
          rx="7.5" />
     </g>
@@ -634,10 +634,10 @@
       <rect
          rx="7.5"
          ry="7.5"
-         y="496.625"
-         x="15"
-         height="6"
-         width="6"
+         y="497.625"
+         x="16"
+         height="4"
+         width="4"
          id="rect4319"
          style="opacity:1;fill:#7b7b7b;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>

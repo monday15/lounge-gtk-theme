@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="14.44"
-     inkscape:cx="24.148692"
-     inkscape:cy="27.585882"
+     inkscape:zoom="2.5526555"
+     inkscape:cx="45.388418"
+     inkscape:cy="297.24322"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1238,10 +1238,10 @@
       <rect
          style="opacity:1;fill:#101010;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect3389"
-         width="6"
-         height="6"
-         x="15"
-         y="496.625"
+         width="4"
+         height="4"
+         x="16"
+         y="497.625"
          ry="6.5"
          rx="6.5" />
     </g>
@@ -1402,10 +1402,10 @@
       <rect
          rx="6.5"
          ry="6.5"
-         y="496.625"
-         x="15"
-         height="6"
-         width="6"
+         y="497.625"
+         x="16"
+         height="4"
+         width="4"
          id="rect3417"
          style="opacity:1;fill:#7b7b7b;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
