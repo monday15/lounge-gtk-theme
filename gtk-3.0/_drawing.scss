@@ -277,7 +277,7 @@
     border-color: if($c != $bg_color, _border_color($c), $borders_color);
     $button_fill: image(darken($c, 6%)) !global;
     background-image: $button_fill;
-    @include _shadows(inset 0 1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.7), $_button_edge);
+    @include _shadows(inset 0 1px transparentize(if($c != $bg_color, _border_color($c), $borders_color), 0.8), $_button_edge);
 
     text-shadow: none;
     -gtk-icon-shadow: none;
