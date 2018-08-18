@@ -2826,9 +2826,9 @@ radio {
   border: 1px solid;
   -gtk-icon-source: none;
 
-  @include button(normal-alt, $edge: $shadow_color);
+  @include button(normal-alt, $edge: none);
 
-  &:hover { @include button(hover-alt, $edge: $shadow_color); }
+  &:hover { @include button(hover-alt, $edge: none); }
   &:active { @include button(active); }
   &:disabled { @include button(insensitive); }
   &:backdrop {
