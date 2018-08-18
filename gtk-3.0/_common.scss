@@ -1006,9 +1006,8 @@ toolbar.inline-toolbar toolbutton:backdrop {
 /* menu buttons */
 modelbutton.flat,
 .menuitem.button.flat {
-  min-height: 22px;
-  padding-left: 12px;
-  padding-right: 12px;
+  min-height: 16px;
+  padding: 3px 12px;
   border-radius: 0;
   outline-offset: -2px;
   margin: 0 -10px;
