@@ -627,17 +627,17 @@ button {
     &.image-button { min-width: 32px; }
 
     color: $osd_fg_color;
-    border-radius: 5px;
+    border-radius: 3px;
 
     @include button(osd);
 
-    border: none;
+    border: 1px solid $osd_borders_color;
     box-shadow: none;
 
     &:hover {
       @include button(osd-hover);
 
-      border: none;
+      border: 1px solid $osd_borders_color;
       box-shadow: none;
     }
 
@@ -645,7 +645,7 @@ button {
     &:checked {
       @include button(osd-active);
 
-      border: none;
+      border: 1px solid $osd_borders_color;
       box-shadow: none;
     }
 
@@ -653,14 +653,14 @@ button {
       &:backdrop, & {
         @include button(osd-insensitive);
 
-        border: none;
+        border: 1px solid $osd_borders_color;
       }
     }
 
     &:backdrop {
       @include button(osd-backdrop);
 
-      border: none;
+      border: 1px solid $osd_borders_color;
     }
   }
 
