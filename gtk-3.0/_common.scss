@@ -514,7 +514,7 @@ button {
 
     min-height: 20px;
     min-width: 16px;
-    padding: 4px 6px;
+    padding: 4px;
     border: 1px solid;
     border-radius: 2px;
     transition: $button_transition;
@@ -579,8 +579,8 @@ button {
 
     &.image-button {
       min-width: 20px;
-      padding-left: 4px;
-      padding-right: 4px;
+//      padding-left: 4px;
+//      padding-right: 4px;
     }
 
     &.text-button {
@@ -1642,6 +1642,9 @@ headerbar {
   button {
     margin-top: 4px;
     margin-bottom: 4px;
+  }
+  button {
+    min-width: 20px;
   }
   switch {
     margin-top: 9px;
@@ -4406,6 +4409,8 @@ button.titlebutton {
   @extend %button_basic.flat;
 
   @include _button_text_shadow;
+
+  min-width: 20px;
 
   .selection-mode & {
     @extend %button.flat.suggested-action;
