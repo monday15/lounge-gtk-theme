@@ -3,11 +3,11 @@
 
 
 $base_color: if($variant == 'light', #ffffff, #26292a);
-$text_color: if($variant == 'light', black, #d2d2d2);
+$text_color: if($variant == 'light', black, #c2c2c2);
 $bg_color: if($variant == 'light', #e6e6e6, #2d3233);
-$fg_color: if($variant == 'light', #101010, #d2d2d2);
+$fg_color: if($variant == 'light', #101010, #c2c2c2);
 
-$selected_fg_color: if($variant == 'light', #101010, #dcdcdc);
+$selected_fg_color: if($variant == 'light', #101010, #cdcdcd);
 $selected_lt_color: if($variant == 'light', #cfdee9, desaturate(darken(#cfdee9, 45%), 10%));
 $selected_ld_color: if($variant == 'light', darken($selected_lt_color, 10%), $selected_lt_color);
 $selected_bg_color: if($variant == 'light', darken($selected_lt_color, 20%), $selected_lt_color);
