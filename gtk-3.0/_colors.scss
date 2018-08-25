@@ -31,8 +31,8 @@ $scrollbar_slider_hover_color: mix($fg_color, $bg_color, 15%);
 $scrollbar_slider_active_color: $scrollbar_slider_hover_color;
 $scrollbar_slider_finetune_color: if($variant=='light', desaturate(darken($selected_bg_color, 10%), 10%), lighten($selected_bg_color, 5%));
 
-$warning_color: #f57900;
-$error_color: #cc0000;
+$warning_color: #da802a;
+$error_color: #c25656;
 $success_color: if($variant == 'light', #9fc57b, desaturate(darken(#9fc57b, 25%), 10%));
 $destructive_color: if($variant == 'light', #d97b7b, desaturate(darken(#d97b7b, 25%), 10%));
 

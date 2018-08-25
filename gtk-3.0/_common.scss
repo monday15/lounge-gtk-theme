@@ -311,12 +311,12 @@ entry {
     @each $e_type, $e_color in (error, $error_color),
                                (warning, $warning_color) {
       &.#{$e_type} {
-        color: $e_color;
+        color: if($variant == 'light', darken($e_color, 10%), $e_color);
         border-color: entry_focus_border($e_color);
 
         &:focus { @include entry(focus, $e_color); }
 
-        selection { background-color: $e_color; }
+        selection { background-color: if($variant == 'light', desaturate(lighten($e_color, 20%), 10%), $e_color); }
       }
     }
 
