@@ -2705,8 +2705,7 @@ switch {
 
     &:checked {
       @if $variant == 'light' { color: $backdrop_bg_color; }
-      border-color: if($variant == 'light', $selected_ld_color,
-                                            $selected_borders_color);
+      border-color: $backdrop_selected_borders_color;
       background-color: $selected_ld_color;
     }
 
@@ -2741,7 +2740,7 @@ switch {
       @include button(backdrop);
     }
 
-    &:checked slider { border-color: if($variant == 'light', $selected_ld_color, $selected_borders_color); }
+    &:checked slider { border-color: $backdrop_selected_borders_color; }
 
     &:disabled slider { @include button(backdrop-insensitive); }
   }
@@ -2751,7 +2750,10 @@ switch {
       box-shadow: none;
       border-color: $selected_borders_color;
 
-      &:backdrop { border-color: $selected_borders_color; }
+      &:backdrop {
+        border-color: $backdrop_selected_borders_color;
+        slider { &:checked, & { border-color: $backdrop_selected_borders_color; } }
+      }
 
       slider:dir(rtl) { border-left-color: $borders_color; }
       slider:dir(ltr) { border-right-color: $borders_color; }
