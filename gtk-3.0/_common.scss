@@ -2173,6 +2173,19 @@ popover.background {
         border-color: _border_color($popover_button_color);
       }
     }
+
+    &.flat {
+      @include button(undecorated);
+      &:hover { @include button(hover, $popover_button_color, $selected_fg_color); border-radius: 2px; }
+
+      &:disabled { @include button(undecorated); }
+
+      &:backdrop { @include button(undecorated); }
+
+      &:active,
+      &:checked { @include button(undecorated); }
+    }
+
   }
 
 }
