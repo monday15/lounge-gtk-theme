@@ -160,8 +160,8 @@
 
 /* Floating status bar */
 .floating-bar {
-  padding: 1px;
-  background-color: @theme_base_color;
+  padding: 0px;
+  background-color: shade(@theme_base_color, 0.97);
   border-width: 1px;
   border-style: solid solid none;
   border-color: @borders;
