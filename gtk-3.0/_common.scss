@@ -686,8 +686,10 @@ button {
       @include button(undecorated);
 
       box-shadow: none; //FIXME respect no edge on the button mixin
-      text-shadow: 0 1px black;
-      -gtk-icon-shadow: 0 1px black;
+      text-shadow: none;
+      -gtk-icon-shadow: none;
+//      text-shadow: 0 1px black;
+//      -gtk-icon-shadow: 0 1px black;
 
       &:hover { @include button(osd-hover); }
 
@@ -3718,11 +3720,11 @@ row {
 .app-notification.frame {
   @extend %osd;
 
-  padding: 10px;
-  border-radius: 0 0 5px 5px;
+  padding: 6px 8px;
+  border-radius: 0 0 3px 3px;
   background-color: $osd_bg_color;
   background-image: linear-gradient(to bottom, transparentize(black, 0.8),
-                                               transparent 2px);
+                                               transparent 1px);
   background-clip: padding-box;
 
   &:backdrop {
