@@ -2995,8 +2995,7 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   }
 
   &:backdrop {
-    border-color: if($variant=='light', $selected_ld_color,
-                                        $selected_borders_color);
+    border-color: $backdrop_selected_borders_color;
     &:disabled {
       background-color: transparent;
       border-color: transparent;
