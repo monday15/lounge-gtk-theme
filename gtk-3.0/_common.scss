@@ -4560,15 +4560,17 @@ stackswitcher button.text-button.circular { // FIXME aggregate with buttons
 
 popover.emoji-picker { padding-left: 0; padding-right: 0; }
 
+popover.emoji-picker entry { margin: 4px; }
+
 button.emoji-section {
   border-color: transparent;
   border-width: 3px;
   border-style: none none solid;
   border-radius: 0;
 
-  margin: 2px 4px 2px 4px;
+  margin: 2px;
   padding: 3px 0 0;
-  min-width: 32px;
+  min-width: 28px;
   min-height: 28px;
 
   /* reset props inherited from the button style */
@@ -4580,7 +4582,7 @@ button.emoji-section {
 
   &:backdrop:not(:checked) { border-color: transparent; }
   &:hover { border-color: $borders_color; }
-  &:checked { border-color: $selected_lt_color; }
+  &:checked { border-color: $selected_bg_color; }
 
   label {
     padding: 0;
