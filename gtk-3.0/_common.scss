@@ -2978,7 +2978,7 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
 
 %scale_highlight {
   border: 1px solid $selected_borders_color;
-  border-radius: 3px;
+  border-radius: 2px;
   background-color: $selected_ld_color;
 
   &:disabled {
