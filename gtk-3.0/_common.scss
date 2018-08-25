@@ -2553,6 +2553,7 @@ scrollbar {
         margin: 0;
         min-width: 3px;
         min-height: 3px;
+        border-radius: 1px;
         background-color: $fg_color;
         border: 1px solid if($variant == 'light', white, black);
         box-shadow: none;
