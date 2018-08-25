@@ -2149,7 +2149,7 @@ popover.background {
     &.osd { @extend %osd; }
   }
 
-  separator { margin: 1px; }
+  separator { margin: 1px -10px; }
 
   list separator { margin: 0px; }
 
