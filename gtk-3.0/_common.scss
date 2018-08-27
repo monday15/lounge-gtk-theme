@@ -3217,7 +3217,7 @@ scale {
             &#{$state} {
               // an asymmetric slider asset is used here, so the margins are uneven, the smaller
               // margin is set on the point side.
-              margin: -10px;
+              margin: -6px;
               $_scale_asset: 'assets/slider-#{$dir_infix}-#{$marks_infix}#{$state_infix}#{$suffix}';
               border-style: none;
               border-radius: 0;
@@ -3228,30 +3228,30 @@ scale {
               $_scale_slider_bg_pos: bottom;
 
               @if $dir_class == 'horizontal' {
-                min-height: 26px;
-                min-width: 22px;
+                min-height: 20px;
+                min-width: 13px;
 
                 @if $marks_infix == 'scale-has-marks-above' {
-                  margin-top: -14px;
+                  margin-top: -10px;
 
                   $_scale_slider_bg_pos: top;
                 }
 
-                @else { margin-bottom: -14px; }
+                @else { margin-bottom: -10px; }
               }
 
               @else {
-                min-height: 22px;
-                min-width: 26px;
+                min-height: 15px;
+                min-width: 20px;
 
                 @if $marks_infix == 'scale-has-marks-above' {
-                  margin-left: -14px;
+                  margin-left: -10px;
 
                   $_scale_slider_bg_pos: left bottom;
                 }
 
                 @else {
-                  margin-right: -14px;
+                  margin-right: -10px;
 
                   $_scale_slider_bg_pos: right bottom;
                 }
@@ -3294,7 +3294,7 @@ scale {
     }
 
     &.horizontal {
-      padding: 0 0 15px 0;
+      padding: 0 0 12px 0;
 
       trough {
         padding-bottom: 4px;
@@ -3306,7 +3306,7 @@ scale {
       slider {
         &:dir(ltr), &:dir(rtl) { // specificity bumb
           &:hover, &:backdrop, &:disabled, &:backdrop:disabled, & {
-            margin-bottom: -15px;
+            margin-bottom: -12px;
             margin-top: 6px;
           }
         }
@@ -3315,7 +3315,7 @@ scale {
 
     &.vertical {
       &:dir(ltr) {
-        padding: 0 0 0 15px;
+        padding: 0 0 0 12px;
 
         trough {
           padding-left: 4px;
@@ -3326,14 +3326,14 @@ scale {
 
         slider {
           &:hover, &:backdrop, &:disabled, &:backdrop:disabled, & {
-            margin-left: -15px;
+            margin-left: -12px;
             margin-right: 6px;
           }
         }
       }
 
       &:dir(rtl) {
-        padding: 0 15px 0 0;
+        padding: 0 12px 0 0;
 
         trough {
           padding-right: 4px;
@@ -3344,7 +3344,7 @@ scale {
 
         slider {
           &:hover, &:backdrop, &:disabled, &:backdrop:disabled, & {
-            margin-right: -15px;
+            margin-right: -12px;
             margin-left: 6px;
           }
         }
@@ -3362,7 +3362,7 @@ scale {
           }
 
           slider {
-            margin-bottom: -15px;
+            margin-bottom: -12px;
             margin-top: 6px;
           }
         }
@@ -3378,7 +3378,7 @@ scale {
           }
 
           slider {
-            margin-left: -15px;
+            margin-left: -12px;
             margin-right: 6px;
           }
         }
@@ -3392,7 +3392,7 @@ scale {
           }
 
           slider {
-            margin-right: -15px;
+            margin-right: -12px;
             margin-left: 6px;
           }
         }
