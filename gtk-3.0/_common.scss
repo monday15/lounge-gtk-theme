@@ -1517,24 +1517,24 @@ headerbar {
           @include button(backdrop, $selected_lt_color, $selected_fg_color);
 
           -gtk-icon-effect: none;
-          border-color: $selected_borders_color;
+          border-color: $backdrop_selected_borders_color;
 
           &:active,
           &:checked {
             @include button(backdrop-active, $selected_lt_color, $selected_fg_color);
 
-            border-color: $selected_borders_color;
+            border-color: $backdrop_selected_borders_color;
           }
 
           &:disabled {
             @include button(backdrop-insensitive, $selected_lt_color, $selected_fg_color);
 
-            border-color: $selected_borders_color;
+            border-color: $backdrop_selected_borders_color;
 
             &:active, &:checked {
               @include button(backdrop-insensitive-active, $selected_lt_color, $selected_fg_color);
 
-              border-color: $selected_borders_color;
+              border-color: $backdrop_selected_borders_color;
             }
           }
         }
@@ -1575,13 +1575,13 @@ headerbar {
         &:backdrop {
           @include button(backdrop);
 
-          border-color: $selected_borders_color;
+          border-color: $backdrop_selected_borders_color;
         }
 
         &:backdrop:disabled {
           @include button(backdrop-insensitive);
 
-          border-color: $selected_borders_color;
+          border-color: $backdrop_selected_borders_color;
         }
       }
     }
