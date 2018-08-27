@@ -18,7 +18,7 @@ $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentiz
 $link_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 20%));
 $link_visited_color: if($variant == 'light', darken($selected_bg_color, 30%), lighten($selected_bg_color, 10%));
 $top_hilight: $borders_edge;
-$dark_fill: mix($borders_color, $bg_color, 40%);
+$dark_fill: mix($borders_color, $bg_color, 30%);
 $headerbar_color: if($variant == 'light', lighten($bg_color, 4%), darken($bg_color, 3%));
 $menu_color: if($variant == 'light', lighten($bg_color, 7%), mix($bg_color, $base_color, 20%));
 $popover_bg_color: $menu_color;
@@ -65,7 +65,7 @@ $backdrop_fg_color: mix($fg_color, $backdrop_bg_color, 50%);
 $backdrop_insensitive_color: if($variant == 'light', darken($backdrop_bg_color, 15%), lighten($backdrop_bg_color, 15%));
 $backdrop_selected_fg_color: if($variant == 'light', $backdrop_text_color, $backdrop_text_color);
 $backdrop_borders_color: mix($borders_color, $bg_color, 80%);
-$backdrop_dark_fill: mix($backdrop_borders_color, $backdrop_bg_color, 35%);
+$backdrop_dark_fill: mix($backdrop_borders_color, $backdrop_bg_color, 25%);
 $backdrop_sidebar_bg_color: mix($backdrop_bg_color, $backdrop_base_color, 50%);
 $backdrop_selected_borders_color: mix($selected_borders_color, $backdrop_bg_color, 60%);
 
