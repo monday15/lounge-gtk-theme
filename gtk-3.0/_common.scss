@@ -4333,7 +4333,7 @@ colorswatch {
 }
 
 // colorscale popup
-colorchooser .popover.osd { border-radius: 3px; }
+colorchooser .popover.osd { border-radius: 3px; box-shadow: inset 0 1px $osd_borders_color; }
 
 /********
  * Misc *
