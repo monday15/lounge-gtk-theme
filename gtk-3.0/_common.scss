@@ -3490,7 +3490,7 @@ progressbar {
 levelbar {
   &.horizontal {
     block {
-      min-height: 1px;
+      min-height: 2px;
     }
 
     &.discrete block {
@@ -3501,7 +3501,7 @@ levelbar {
 
   &.vertical {
     block {
-      min-width: 1px;
+      min-width: 2px;
     }
 
     &.discrete block {
