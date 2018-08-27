@@ -590,6 +590,8 @@ button {
     &.text-button {
       padding-left: 12px;
       padding-right: 12px;
+      padding-top: 4px;
+      padding-bottom: 4px;
     }
 
     &.text-button.image-button {
@@ -608,6 +610,9 @@ button {
       box-shadow: inset 0 0 0 1px $drop_target_color;
     }
     &.combo {
+      min-height: 16px;
+    }
+    entry + &, entry + & + & {
       min-height: 16px;
     }
   }
