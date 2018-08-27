@@ -77,20 +77,20 @@
   @if $t==osd {
     color: $osd_text_color;
     border-color: $osd_borders_color;
-    background-color: transparentize(opacify($osd_borders_color, 1), 0.5);
+    background-color: if($variant == 'light', transparentize(white, 0.5), transparentize(opacify($osd_borders_color, 1), 0.5));
     background-clip: padding-box;
     box-shadow: none;
-    text-shadow: 0 1px black;
-    -gtk-icon-shadow: 0 1px black;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
   }
   @if $t==osd-focus {
     color: $osd_text_color;
     border-color: $selected_bg_color;
-    background-color: transparentize(opacify($osd_borders_color, 1), 0.5);
+    background-color: if($variant == 'light', transparentize(white, 0.5), transparentize(opacify($osd_borders_color, 1), 0.5));
     background-clip: padding-box;
     box-shadow: entry_focus_shadow($fc);
-    text-shadow: 0 1px black;
-    -gtk-icon-shadow: 0 1px black;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
   }
   @if $t==osd-insensitive {
     color: $osd_insensitive_fg_color;
@@ -104,7 +104,7 @@
   @if $t==osd-backdrop {
     color: $osd_text_color;
     border-color: $osd_borders_color;
-    background-color: transparentize(opacify($osd_borders_color, 1), 0.5);
+    background-color: if($variant == 'light', transparentize(white, 0.5), transparentize(opacify($osd_borders_color, 1), 0.5));
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: none;
