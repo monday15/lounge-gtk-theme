@@ -1652,12 +1652,12 @@ StScrollBar {
   }
 
   .keyboard-key {
-    background-color: #393f3f;
+    background-color: $bg_color;
     min-height: 2em;
     min-width: 2em;
     font-size: 16pt;
     border-radius: 3px;
-    border: 1px solid #464d4d;
+    border: 1px solid darken($bg_color, 10%);
     color: #e5e5e5;
     &:focus { @include button(focus); }
     &:hover,&:checked { @include button(hover); }
@@ -1668,13 +1668,13 @@ StScrollBar {
       border-color: $osd_borders_color;
     }
     &.default-key {
-      border-color: #2d3232;
-      background-color: #1d2020;
+      border-color: darken($bg_color, 10%);
+      background-color: darken($bg_color, 5%);
       background-size: 20px;
     }
     &.enter-key {
-      border-color: #005684;
-      background-color: #006098;
+      border-color: darken($selected_bg_color, 15%);
+      background-color: $selected_bg_color;
       background-image: url("assets/key-enter.svg");
     }
     &.shift-key-lowercase {
@@ -1696,8 +1696,8 @@ StScrollBar {
 
   .keyboard-subkeys { //long press on a key popup
     color: white;
-    -arrow-border-radius: 10px;
-    -arrow-background-color: transparentize($osd_bg_color, 0.3);
+    -arrow-border-radius: 5px;
+    -arrow-background-color: transparentize($osd_bg_color, 0.1);
     -arrow-border-width: 2px;
     -arrow-border-color: $_bubble_borders_color;
     -arrow-base: 20px;
