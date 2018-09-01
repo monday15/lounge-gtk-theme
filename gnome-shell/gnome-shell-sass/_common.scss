@@ -994,6 +994,7 @@ StScrollBar {
         color: lighten($fg_color,10%);
         font-weight: bold;
         background-image: url("assets/calendar-today.svg");
+        &:selected { background-image: url("assets/calendar-today-active.svg"); }
       }
       .calendar-other-month-day {
         color: transparentize($fg_color,0.85);
