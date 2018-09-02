@@ -1519,7 +1519,7 @@ StScrollBar {
 
   // Banners
   .notification-banner {
-    font-size: 11pt;
+    @include fontsize($font-size);
     width: 34em;
     margin: 5px;
     border-radius: 3px;
@@ -1542,8 +1542,9 @@ StScrollBar {
     .notification-button {
       padding: 4px 4px 5px;
       background-color: darken($_bubble_bg_color,5%);
-      &:first-child { border-radius: 0 0 0 6px; }
-      &:last-child { border-radius: 0 0 6px 0; }
+      box-shadow: none;
+      &:first-child { border-radius: 0 0 0 3px; }
+      &:last-child { border-radius: 0 0 3px 0; }
       &:hover, &focus { background-color: darken($_bubble_bg_color,2%); }
     }
   }
