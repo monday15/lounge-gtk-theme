@@ -1211,6 +1211,19 @@ spinbutton {
 
   // OSD horizontal
   .osd &:not(.vertical) {
+    entry {
+      min-width: 24px;
+      // reset all the other props since the spinbutton node is styled here
+      margin: 0;
+      background: none;
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+
+      &:backdrop:disabled { background-color: transparent; }
+    }
+
     button {
       @include button(undecorated);
 
