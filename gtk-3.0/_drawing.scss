@@ -215,7 +215,7 @@
 //      @include _button_text_shadow($tc, lighten($c, 6%));
     }
     @else {
-      $button_fill: image(darken($c, 4%)) !global;
+      $button_fill: image(lighten($c, 2%)) !global;
 //      @include _button_text_shadow($tc,lighten($c, 6%));
     }
     background-image: $button_fill;
@@ -239,10 +239,9 @@
                         $_button_edge);
     }
     @else {
-      background-image: image(darken($c, 2%));
+      background-image: image(lighten($c, 1%));
       @include _shadows(inset 0 1px $_hilight_color,
-                        inset 0 -1px transparentize(if($c != $bg_color, _border_color($c, true), $alt_borders_color), 0.7),
-                        $_button_edge);
+                        inset 0 -1px transparentize(if($c != $bg_color, _border_color($c, true), $alt_borders_color), 0.7));
     }
   }
 
@@ -260,10 +259,9 @@
                         $_button_edge);
     }
     @else {
-      $button_fill: image(darken($c, 5%)) !global;
+      $button_fill: image(lighten($c, 4%)) !global;
       @include _shadows(inset 0 1px $_hilight_color,
-                        inset 0 -1px transparentize(if($c != $bg_color, _border_color($c, true), $alt_borders_color), 0.7),
-                        $_button_edge);
+                        inset 0 -1px transparentize(if($c != $bg_color, _border_color($c, true), $alt_borders_color), 0.7));
     }
     background-image: $button_fill;
   }
