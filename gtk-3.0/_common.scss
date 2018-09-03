@@ -3131,7 +3131,7 @@ scale {
 
     &:hover { @include button(hover-alt, $edge: $shadow_color); }
 
-    &:active { border-color: $selected_borders_color; }
+    &:active { border-color: if($variant == 'light', $selected_borders_color, $selected_bg_color); }
 
     &:disabled { @include button(insensitive); }
 
