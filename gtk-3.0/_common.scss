@@ -4016,7 +4016,7 @@ placessidebar {
     &.sidebar-placeholder-row {
       padding: 0 8px;
       min-height: 2px;
-      background-image: image($drop_target_color);
+      background-image: if($variant == 'light', image(desaturate(lighten($drop_target_color, 40%), 40%)), image($drop_target_color));
       background-clip: content-box;
     }
 
