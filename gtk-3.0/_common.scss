@@ -2972,7 +2972,7 @@ treeview.view radio {
     }
   }
 
-  &:backdrop { &:selected, & { color: $backdrop_fg_color; }}
+  &:backdrop { &:selected, & { color: $backdrop_fg_color; @if $variant == 'light' { border-color: $backdrop_selected_borders_color; } }}
 }
 
 treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a workaround
