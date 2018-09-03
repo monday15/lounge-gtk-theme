@@ -742,16 +742,16 @@ button {
 
       &:backdrop,
       &.flat:backdrop {
-        @include button(backdrop, $b_color, $backdrop_fg_color);
+        @include button(backdrop, if($variant == 'light', $b_color, darken(desaturate($b_color, 10%), 10%)), $backdrop_fg_color);
 
         &:active,
-        &:checked { @include button(backdrop-active, $b_color, $backdrop_selected_fg_color); }
+        &:checked { @include button(backdrop-active, if($variant == 'light', $b_color, darken(desaturate($b_color, 10%), 10%)), $backdrop_selected_fg_color); }
 
         &:disabled {
           @include button(backdrop-insensitive);
 
           &:active,
-          &:checked { @include button(backdrop-insensitive-active, $b_color, $backdrop_insensitive_color); }
+          &:checked { @include button(backdrop-insensitive-active, if($variant == 'light', $b_color, darken(desaturate($b_color, 10%), 10%)), $backdrop_insensitive_color); }
         }
       }
 
