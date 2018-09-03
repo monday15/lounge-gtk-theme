@@ -3079,7 +3079,7 @@ scale {
     highlight,
     trough {
       border-radius: 2px;
-      -gtk-outline-radius: 4px;
+      -gtk-outline-radius: 3px;
     }
   }
 
@@ -3088,7 +3088,7 @@ scale {
     @extend %scale_trough;
 
     outline-offset: 2px;
-    -gtk-outline-radius: 5px;
+    -gtk-outline-radius: 3px;
   }
 
   // the colored part of the backing bit
