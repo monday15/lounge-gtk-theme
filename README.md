@@ -17,7 +17,7 @@ Fedora users can install theme via copr:
 `sudo dnf install lounge-gtk-theme`
 
 ## Extra
-Firefox is look decent with the theme, I use only two tweaks, you can find it in `firefox-tweak` folder. Just copy `userChrome.css` to your profile - the path looks like this `~/.mozilla/firefox/randomletters.default/chrome/userChrome.css`.
+Firefox is look decent with the theme, I use only two tweaks, you can find it in `firefox-tweak` folder (works only with light theme). Just copy `userChrome.css` to your profile - the path looks like this `~/.mozilla/firefox/randomletters.default/chrome/userChrome.css`.
 
 ## Removing
 Run from project directory:  
