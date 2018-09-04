@@ -1,0 +1,12 @@
+/fedora-spec
+/screenshots
+/gtk-3.0/render-assets.sh
+/gtk-3.0/assets.svg
+/gtk-3.0/assets.txt
+/gtk-2.0/render-assets.sh
+/gtk-2.0/assets.svg
+/gtk-2.0/assets.txt
+/gtk-2.0/render-assets-external.sh
+/gtk-2.0/assets-external.txt
+/gtk-2.0/assets-external.svg
+/firefox-tweak
