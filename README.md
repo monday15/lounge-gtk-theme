@@ -34,11 +34,11 @@ GPLv3+, see LICENSE file.
 Original themes copyrights are in COPYRIGHT file.
 
 ## Thanks
-All the guys in #gnome-hackers chanell on gnome irc,  
+All people in #gnome-hackers chanell on gnome irc,  
 horst3180,  
 Emanuelle Bassi,  
 Sam Hewitt,  
-All the guys in a copyright file,  
+All people in a copyright file,  
 Meson developers,  
 Yaru gtk theme developers,  
 Gnome developers and maintainers,  
