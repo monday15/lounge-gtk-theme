@@ -11,33 +11,39 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="18"
    height="18"
-   id="svg5266"
+   viewBox="0 0 18 18"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="page-indicator-inactive.svg">
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="page-indicator-hover.svg">
   <defs
-     id="defs5268" />
+     id="defs2" />
   <sodipodi:namedview
      id="base"
-     pagecolor="#ffffff"
+     pagecolor="#353a3b"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.313709"
-     inkscape:cx="-2.307566"
-     inkscape:cy="17.859535"
-     inkscape:current-layer="layer1"
-     showgrid="true"
-     inkscape:grid-bbox="true"
+     inkscape:zoom="20.055556"
+     inkscape:cx="2.604558"
+     inkscape:cy="9.2221208"
      inkscape:document-units="px"
-     inkscape:window-width="2560"
-     inkscape:window-height="1374"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1" />
+     inkscape:current-layer="pan-start-symbolic"
+     showgrid="false"
+     units="px"
+     showborder="true"
+     inkscape:window-width="1280"
+     inkscape:window-height="970"
+     inkscape:window-x="1280"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid5177" />
+  </sodipodi:namedview>
   <metadata
-     id="metadata5271">
+     id="metadata5">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -49,19 +55,19 @@
     </rdf:RDF>
   </metadata>
   <g
-     id="layer1"
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     transform="translate(0,2)">
-    <path
-       sodipodi:type="arc"
-       style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:2.93356276000000005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path5274"
-       sodipodi:cx="2088.9954"
-       sodipodi:cy="638.83099"
-       sodipodi:rx="10.985409"
-       sodipodi:ry="9.5964489"
-       d="m 2099.9808,638.83099 c 0,5.29998 -4.9184,9.59645 -10.9854,9.59645 -6.0671,0 -10.9854,-4.29647 -10.9854,-9.59645 0,-5.29997 4.9183,-9.59645 10.9854,-9.59645 6.067,0 10.9854,4.29648 10.9854,9.59645 z"
-       transform="matrix(0.63720887,0,0,0.72943648,-1322.1264,-458.98661)" />
+     id="layer1"
+     transform="translate(0,-499.62499)">
+    <g
+       id="pan-start-symbolic"
+       transform="rotate(-90,18,509.62497)"
+       inkscape:label="#g5187">
+      <path
+         style="opacity:0.7;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 4.1992188 1 C 2.4264188 1 1 2.4264187 1 4.1992188 L 1 13.800781 C 1 15.573581 2.4264187 17 4.1992188 17 L 13.800781 17 C 15.573581 17 17 15.573581 17 13.800781 L 17 4.1992188 C 17 2.4264187 15.573581 1 13.800781 1 L 4.1992188 1 z M 5.4003906 3 L 12.599609 3 C 13.929209 3 15 4.0707906 15 5.4003906 L 15 12.599609 C 15 13.929209 13.929209 15 12.599609 15 L 5.4003906 15 C 4.0707906 15 3 13.929209 3 12.599609 L 3 5.4003906 C 3 4.0707906 4.0707906 3 5.4003906 3 z "
+         transform="rotate(90,-231.8125,259.81247)"
+         id="rect4804" />
+    </g>
   </g>
 </svg>
