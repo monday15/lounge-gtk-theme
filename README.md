@@ -82,6 +82,7 @@ v3.28.1 (estimated date 17.09.18)
 - [ ] Nautilus: change status bar color for dark theme
 - [ ] Nautilus: Fix animation when extacting archieve in nautilus
 - [ ] general: Cleanup unused commented lines
+- [ ] general: Manage correct dependencies for spec
 
 
 v3.30.1 (parallel with 3.28.1, probably week later)
