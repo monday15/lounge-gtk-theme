@@ -13,8 +13,8 @@ BuildRequires:  meson >= 0.42.0
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  sassc    >= 3.3
 
-Requires:	gdk-pixbuf-2.0
-Suggests:	lounge-aux-icon-theme
+Requires:	gdk-pixbuf2
+Recommends:	lounge-aux-icon-theme
 
 %global debug_package %{nil}
 
