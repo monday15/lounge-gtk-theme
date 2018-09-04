@@ -17,20 +17,17 @@ Fedora users can install theme via copr:
 `sudo dnf install lounge-gtk-theme`
 
 ## Extra
-Firefox is look decent with the theme, I use only two tweaks, you can find it in firefox-tweak folder. Just copy userChrome.css to your profile - the path is `~/.mozilla/firefox/randomletters.default/chrome/userChrome.css`.
+Firefox is look decent with the theme, I use only two tweaks, you can find it in `firefox-tweak` folder. Just copy `userChrome.css` to your profile - the path looks like this `~/.mozilla/firefox/randomletters.default/chrome/userChrome.css`.
 
 ## Removing
 Run from project directory:  
 ```
 sudo ninja -C build uninstall
 ```  
-or simply remove installation folder  
-```
-rm /usr/share/themes/Lounge
-```  
+or simply remove installation folder `/usr/share/themes/Lounge`.
 
 ## Bugs
-Report issues here, on github. Please check TODO list below, and existing issues, maybe your issue is already there.
+Report issues here, on github. Please check TODO list and existing issues, maybe your issue is already there.
 
 ## Licence
 GPLv3+, see LICENSE file.  
@@ -42,7 +39,7 @@ horst3180,
 Emanuelle Bassi,  
 Sam Hewitt,  
 All the guys in a copyright file,  
-Meson developers,
+Meson developers,  
 Yaru gtk theme developers,  
 Gnome developers and maintainers,  
 Fedora developers and maintainers.
@@ -63,7 +60,7 @@ https://gitlab.gnome.org/GNOME/gedit
 + Gnome-shell theme (part of gnome-shell project)  
 https://gitlab.gnome.org/GNOME/gnome-shell
 
-+ Meson build system
++ Meson build system  
 https://mesonbuild.com/
 
 + Nautilus  
@@ -91,7 +88,7 @@ v3.30.1 (parallel with 3.28.1, probably week later)
 
 - [ ] Add support for new style of Nautilus 3.30 
 
-v3.28.2 & 3.30.2
+v3.28.2 & v3.30.2
 
 - [ ] Evolution: find a workaround to change selected message background color for light theme
 
