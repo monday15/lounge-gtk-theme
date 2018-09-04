@@ -50,6 +50,7 @@ horst3180,
 Emanuelle Bassi,  
 Sam Hewitt,  
 All the guys in a copyright file,  
+Meson developers,
 Yaru gtk theme developers,  
 Gnome developers and maintainers,  
 Fedora developers and maintainers.
@@ -70,6 +71,9 @@ https://gitlab.gnome.org/GNOME/gedit
 
 + Gnome-shell theme (part of gnome-shell project)  
 https://gitlab.gnome.org/GNOME/gnome-shell
+
++ Meson build system
+https://mesonbuild.com/
 
 + Nautilus  
 https://gitlab.gnome.org/GNOME/nautilus
