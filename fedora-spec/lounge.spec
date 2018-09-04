@@ -1,4 +1,4 @@
-Name:           lounge
+Name:           lounge-gtk-theme
 Version:        3.28.0
 Release:        1%{?dist}
 Summary:        Vintage looking gtk theme, inspired by gtk2 theme absolute
@@ -22,7 +22,7 @@ Suggests:	lounge-aux-icon-theme
 %{summary}
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n lounge-%{version}
 
 %build
 %meson 

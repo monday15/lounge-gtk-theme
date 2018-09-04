@@ -44,7 +44,6 @@ GPLv3+, see LICENSE file.
 Original themes copyrights are in COPYRIGHT file.
 
 ## Thanks
----
 All the guys in #gnome-hackers chanell on gnome irc,  
 horst3180,  
 Emanuelle Bassi,  
@@ -56,7 +55,6 @@ Gnome developers and maintainers,
 Fedora developers and maintainers.
 
 ## Links
----
 + Absolute gtk2 theme  
 https://www.gnome-look.org/p/1080258/
 
@@ -82,9 +80,8 @@ https://gitlab.gnome.org/GNOME/nautilus
 https://github.com/ubuntu/yaru
 
 ## TODO
----
 
-v. 3.28.1
+v. 3.28.1 (estimated date 17.09.18)
 
 - [ ] gtk3: Make scss file for applications insted of apps.css
 - [ ] gtk3: Better-looking expander buttons
@@ -107,10 +104,9 @@ v. 3.28.2 & 3.30.2
 
 
 ## Screenshots
----
-![sh1](/screenshot/sh1.png?v=4&s=200)
-![sh2](/screenshot/sh2.png?v=4&s=200)
-![sh2](/screenshot/sh3.png?v=4&s=200)
-![sh3](/screenshot/sh4.png?v=4&s=200)
-![sh4](/screenshot/sh5.png?v=4&s=200)
+![sh1](/screenshot/sh1.png?raw=true)
+![sh2](/screenshot/sh2.png?raw=true)
+![sh2](/screenshot/sh3.png?raw=true)
+![sh3](/screenshot/sh4.png?raw=true)
+![sh4](/screenshot/sh5.png?raw=true)
 
