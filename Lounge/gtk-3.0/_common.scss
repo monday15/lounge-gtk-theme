@@ -2581,7 +2581,6 @@ scrollbar {
   &.overlay-indicator {
     &:not(.dragging):not(.hovering) {
       border-color: transparent;
-      opacity: 0.4;
       background-color: transparent;
 
       trough { border-image: none; }
@@ -2591,8 +2590,8 @@ scrollbar {
         min-width: 3px;
         min-height: 3px;
         border-radius: 1px;
-        background-color: $fg_color;
-        border: 1px solid if($variant == 'light', white, black);
+        background-color: transparentize($fg_color, 0.6);
+        border: 1px solid if($variant == 'light', transparentize(white, 0.6), transparentize(black, 0.6));
         box-shadow: none;
         background-image: none;
       }
@@ -2600,10 +2599,10 @@ scrollbar {
       button {
         min-width: 5px;
         min-height: 5px;
-        background-color: $fg_color;
+        background-color: transparentize($fg_color, 0.6);
         background-clip: padding-box;
         border-radius: 100%;
-        border: 1px solid if($variant == 'light', white, black);
+        border: 1px solid if($variant == 'light', transparentize(white, 0.6), transparentize(black, 0.6));
         -gtk-icon-source: none;
       }
 
