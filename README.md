@@ -11,8 +11,7 @@ Clone repository (or download release), run following commands from project dire
 `meson build`  
 `sudo ninja -C build install`
 
-You can also download last release and simply copy Lounge directory from archieve to your themes folder.
-> "build" is a name of build folder, you can change it if you need.  
+> You can also download last release and simply copy Lounge directory from archieve to your themes folder.
 
 Fedora users can install theme via copr:  
 `sudo dnf copr enable monday15/lounge`  
@@ -26,70 +25,17 @@ Run from project directory:
 `sudo ninja -C build uninstall`  
 or simply remove installation folder `/usr/share/themes/Lounge`.
 
-## Bugs
-Report issues here, on github. Please check TODO list and existing issues, maybe your issue is already there.
-
 ## Licence
 GPLv3+, see LICENSE file.  
-Original themes copyrights are in COPYRIGHT file.
-
-## Thanks
-All people in #gnome-hackers chanell on gnome irc,  
-horst3180,  
-Emmanuele Bassi,  
-Sam Hewitt,  
-All people in a copyright file,  
-Meson developers,  
-Yaru gtk theme developers,  
-Gnome developers and maintainers,  
-Fedora developers and maintainers.
+Original themes/styles copyrights are in COPYRIGHT file.
 
 ## Links
-+ Absolute gtk2 theme  
-https://www.gnome-look.org/p/1080258/
-
-+ Adwaita gtk2 theme  
-https://gitlab.gnome.org/GNOME/gnome-themes-extra
-
-+ Adwaita gtk3 theme (part of gtk+ project)  
-https://gitlab.gnome.org/GNOME/gtk
-
-+ Gedit  
-https://gitlab.gnome.org/GNOME/gedit
-
-+ Gnome-shell theme (part of gnome-shell project)  
-https://gitlab.gnome.org/GNOME/gnome-shell
-
-+ Meson build system  
-https://mesonbuild.com/
-
-+ Nautilus  
-https://gitlab.gnome.org/GNOME/nautilus
-
-## TODO
-
-v3.28.1 (estimated date 17.09.18)
-
-- [ ] gtk3: Make scss file for applications insted of apps.css
-- [ ] gtk3: Better-looking expander buttons
-- [ ] gtk3: Fix scrollbar animation (transition from regular scrollbar to small indicator and vice versa)
-- [ ] gtk3: Reimplement simplified overshoots/undershoots (effect at the end of a scrolling)
-- [ ] gtk2: Tooltips should have border
-- [ ] shell: Tweak popup-notification button
-- [ ] Nautilus: change status bar color for dark theme
-- [ ] Nautilus: Fix animation when extacting archieve in nautilus
-- [ ] general: Cleanup unused commented lines
-- [ ] general: Manage correct dependencies for spec
-
-
-v3.30.1 (parallel with 3.28.1, probably week later)
-
-- [ ] Add support for new style of Nautilus 3.30 
-
-v3.28.2 & v3.30.2
-
-- [ ] Evolution: find a workaround to change selected message background color for light theme
-
++ [Absolute gtk2 theme](https://www.gnome-look.org/p/1080258/)
++ [Adwaita gtk2 theme](https://gitlab.gnome.org/GNOME/gnome-themes-extra)
++ [Adwaita gtk3 theme](https://gitlab.gnome.org/GNOME/gtk)
++ [Gnome-shell theme](https://gitlab.gnome.org/GNOME/gnome-shell)
++ List of applications (their original css styles used in the theme)  
+[Gedit](https://gitlab.gnome.org/GNOME/gedit), [Nautilus](https://gitlab.gnome.org/GNOME/nautilus).
 
 ## Screenshots
 ![sh1](/screenshots/sh1.png?raw=true)
