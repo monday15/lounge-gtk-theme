@@ -1030,13 +1030,13 @@ scrollbar.vertical slider { background-image: -gtk-scaled(url("assets/scrollbar-
 
 scrollbar.fine-tune slider:hover:active { background-image: none; background-color: #4d6e86; box-shadow: inset 0 0 0 1px #1e2b35; }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering) { border-color: transparent; opacity: 0.4; background-color: transparent; }
+scrollbar.overlay-indicator:not(.dragging):not(.hovering) { border-color: transparent; background-color: transparent; }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering) trough { border-image: none; }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider { margin: 0; min-width: 3px; min-height: 3px; border-radius: 1px; background-color: #c2c2c2; border: 1px solid black; box-shadow: none; background-image: none; }
+scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider { margin: 0; min-width: 3px; min-height: 3px; border-radius: 1px; background-color: rgba(194, 194, 194, 0.4); border: 1px solid rgba(0, 0, 0, 0.4); box-shadow: none; background-image: none; }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering) button { min-width: 5px; min-height: 5px; background-color: #c2c2c2; background-clip: padding-box; border-radius: 100%; border: 1px solid black; -gtk-icon-source: none; }
+scrollbar.overlay-indicator:not(.dragging):not(.hovering) button { min-width: 5px; min-height: 5px; background-color: rgba(194, 194, 194, 0.4); background-clip: padding-box; border-radius: 100%; border: 1px solid rgba(0, 0, 0, 0.4); -gtk-icon-source: none; }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal slider { margin: 0 2px; min-width: 41px; }
 
