@@ -1,6 +1,6 @@
 ## Info
 Lounge gtk theme is a fork of Adwaita theme, inspired by Absolute gtk2 theme.  
-Meson build system files based on Yaru's ones. All links to related projects can be found below.
+All links to related projects can be found below.
 
 ## IMPORTANT NOTE
 This theme is meant to be used with Lounge-aux icons. It is not a "complete" icon theme - it has 10 icons (only symbolic), but they are VITAL for providing correct user expirience. Installation is simple and easy, check out https://github.com/monday15/lounge-aux before procceding with installation.
@@ -10,6 +10,8 @@ This theme is meant to be used with Lounge-aux icons. It is not a "complete" ico
 Clone repository (or download release), run following commands from project directory:  
 `meson build`  
 `sudo ninja -C build install`
+
+You can also download last release and simply copy Lounge directory from archieve to your themes folder.
 > "build" is a name of build folder, you can change it if you need.  
 
 Fedora users can install theme via copr:  
@@ -21,9 +23,7 @@ Firefox is look decent with the theme, I use only two tweaks, you can find it in
 
 ## Removing
 Run from project directory:  
-```
-sudo ninja -C build uninstall
-```  
+`sudo ninja -C build uninstall`  
 or simply remove installation folder `/usr/share/themes/Lounge`.
 
 ## Bugs
@@ -36,7 +36,7 @@ Original themes copyrights are in COPYRIGHT file.
 ## Thanks
 All people in #gnome-hackers chanell on gnome irc,  
 horst3180,  
-Emanuelle Bassi,  
+Emmanuele Bassi,  
 Sam Hewitt,  
 All people in a copyright file,  
 Meson developers,  
@@ -65,9 +65,6 @@ https://mesonbuild.com/
 
 + Nautilus  
 https://gitlab.gnome.org/GNOME/nautilus
-
-+ Yaru (gtk theme)  
-https://github.com/ubuntu/yaru
 
 ## TODO
 
