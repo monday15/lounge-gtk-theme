@@ -2,13 +2,24 @@
 /.gitattributes export-ignore
 /fedora-spec export-ignore
 /screenshots export-ignore
-/gtk-3.0/render-assets.sh export-ignore
-/gtk-3.0/assets.svg export-ignore
-/gtk-3.0/assets.txt export-ignore
-/gtk-2.0/render-assets.sh export-ignore
-/gtk-2.0/assets.svg export-ignore
-/gtk-2.0/assets.txt export-ignore
-/gtk-2.0/render-assets-external.sh export-ignore
-/gtk-2.0/assets-external.txt export-ignore
-/gtk-2.0/assets-external.svg export-ignore
 /firefox-tweak export-ignore
+
+/Lounge/gnome-shell/gnome-shell-sass export-ignore
+/Lounge/gnome-shell/gnome-shell.scss export-ignore
+/Lounge/gnome-shell/HACKING export-ignore
+/Lounge/gnome-shell/README export-ignore
+/Lounge/gnome-shell/pad-osd.css export-ignore
+
+/Lounge/gtk-2.0/render-assets.sh export-ignore
+/Lounge/gtk-2.0/assets.svg export-ignore
+/Lounge/gtk-2.0/assets.txt export-ignore
+/Lounge/gtk-2.0/render-assets-external.sh export-ignore
+/Lounge/gtk-2.0/assets-external.txt export-ignore
+/Lounge/gtk-2.0/assets-external.svg export-ignore
+
+/Lounge/gtk-3.0/*.scss export-ignore
+/Lounge/gtk-3.0/README export-ignore
+/Lounge/gtk-3.0/parse-sass.sh export-ignore
+/Lounge/gtk-3.0/render-assets.sh export-ignore
+/Lounge/gtk-3.0/assets.svg export-ignore
+/Lounge/gtk-3.0/assets.txt export-ignore
