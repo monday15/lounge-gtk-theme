@@ -211,7 +211,6 @@ gtk3_data = [
   'Lounge/gtk-3.0/gtk-dark.css',
   'Lounge/gtk-3.0/gtk-contained.css',
   'Lounge/gtk-3.0/gtk-contained-dark.css',
-  'Lounge/gtk-3.0/apps.css',
 ]
 
 gtk3_assets = [
