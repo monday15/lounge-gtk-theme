@@ -1,0 +1,26 @@
+3.28.1
+======
+
+* gtk3/gtk2: Border color adjustment (improve contrast);
+* gtk3/gtk2: Scrollbar color adjustment; 
+* gtk3: Transform apps.css to scss;
+* gtk3: Messagedialog decoration fix;
+* gtk3: Scrollbar animation fix;
+* gtk3: Add undershot effect, revert removing of overshoot;
+* gtk3: Nautilus operation button style edit;
+* gtk2: Tooltip fix, now they have borders;
+* shell: Notification button tweak.
+
+
+3.28.0.1
+========
+
+* Build changes: meson no longer builds the theme, just installs -
+  workaround for users, who want just copy theme folder, without using meson;
+* shell: Change font to roboto. 
+
+
+3.28.0
+======
+
+Initial Release
