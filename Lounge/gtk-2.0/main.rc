@@ -20,8 +20,9 @@ style "default" {
   GtkToolbar::internal-padding = 4
   GtkToolButton::icon-spacing  = 4
 
-  GtkWidget::tooltip-radius    = 3
-  GtkWidget::tooltip-alpha     = 235
+# Alpha/radius breaks tooltip background image
+#  GtkWidget::tooltip-radius    = 3
+#  GtkWidget::tooltip-alpha     = 235
   GtkWidget::new-tooltip-style = 1 #for compatibility
 
   GtkWidget::link-color              = @link_color
@@ -2400,9 +2401,17 @@ style "tooltip" {
   xthickness = 13
   ythickness = 13
 
-  bg[NORMAL]   = @tooltip_bg_color
   fg[NORMAL]   = @tooltip_fg_color
-  bg[SELECTED] = @tooltip_bg_color
+
+  engine "pixmap" {
+
+    image {
+      function = FLAT_BOX
+      file     = "assets/tooltip-bg.png"
+      border   = {4, 4, 4, 4}
+      stretch  = TRUE
+    }
+  }
 
 }
 

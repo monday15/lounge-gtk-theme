@@ -189,6 +189,7 @@ gtk2_assets = [
   'Lounge/gtk-2.0/assets/spin-rtl-up.png',
   'Lounge/gtk-2.0/assets/spin-up-insensitive.png',
   'Lounge/gtk-2.0/assets/spin-up.png',
+  'Lounge/gtk-2.0/assets/tooltip-bg.png',
   'Lounge/gtk-2.0/assets/tab-down-active.png',
   'Lounge/gtk-2.0/assets/tab-horz-gap.png',
   'Lounge/gtk-2.0/assets/tab-left-active.png',

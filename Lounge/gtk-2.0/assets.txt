@@ -109,6 +109,7 @@ tab-up-active
 tab-down-active
 tab-horz-gap
 tab-vert-gap
+tooltip-bg
 transparent-dot
 treeview-pan-up
 treeview-pan-up-hover
