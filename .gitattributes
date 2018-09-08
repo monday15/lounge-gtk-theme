@@ -4,6 +4,7 @@
 /screenshots export-ignore
 /firefox-tweak export-ignore
 
+/Lounge/gnome-shell/.sass-cache export-ignore
 /Lounge/gnome-shell/gnome-shell-sass export-ignore
 /Lounge/gnome-shell/gnome-shell.scss export-ignore
 /Lounge/gnome-shell/HACKING export-ignore
