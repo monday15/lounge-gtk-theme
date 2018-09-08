@@ -1,5 +1,5 @@
 Name:           lounge-gtk-theme
-Version:        3.28.0
+Version:        3.28.1
 Release:        1%{?dist}
 Summary:        Vintage looking gtk theme, inspired by gtk2 theme absolute
 
@@ -11,7 +11,6 @@ BuildArch:	noarch
 
 BuildRequires:  meson >= 0.42.0
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
-BuildRequires:  sassc    >= 3.3
 
 Requires:	gdk-pixbuf2
 Recommends:	lounge-aux-icon-theme
@@ -38,6 +37,10 @@ Recommends:	lounge-aux-icon-theme
 
 
 %changelog
+* Sat Sep 08 2018 Alex Monday <monday15@gmx.com>
+- Update to 3.28.1
+- Drop sassc dependency
+
 * Tue Sep 04 2018 Alex Monday <monday15@gmx.com>
 - Initial package
 
