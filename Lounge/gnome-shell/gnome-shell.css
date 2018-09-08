@@ -1397,18 +1397,18 @@ StScrollBar {
     icon-size: 1.09em; }
   .notification-banner .notification-actions {
     background-color: #525a5b;
-    padding-top: 2px;
+    padding-top: 1px;
     spacing: 1px; }
   .notification-banner .notification-button {
     padding: 4px 4px 5px;
-    background-color: #212525;
+    background-color: #373d3e;
     box-shadow: none; }
     .notification-banner .notification-button:first-child {
       border-radius: 0 0 0 3px; }
     .notification-banner .notification-button:last-child {
       border-radius: 0 0 3px 0; }
     .notification-banner .notification-button:hover, .notification-banner .notification-buttonfocus {
-      background-color: #282d2e; }
+      background-color: #404749; }
 
 .summary-source-counter {
   font-size: 10pt;
