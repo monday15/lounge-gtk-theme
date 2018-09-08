@@ -2072,14 +2072,14 @@ statusbar { border-top: 1px solid #111414; }
 
 /* Toolbar */
 /* Here we use the .button background-image colors from Adwaita, but ligthen them, since is not possible to use lighten () in common css. */
-@keyframes needs_attention_keyframes { 0% { background-image: linear-gradient(to bottom, #fafafa, #ededed 40%, #e0e0e0);
+@keyframes needs_attention_keyframes { 0% { background-image: image(#0e1112);
     border-color: #111414; }
   /* can't do animation-direction, so holding the color on two keyframes */
-  30% { background-image: linear-gradient(to bottom, #1e2426, #1e2426, #1e2426);
-    border-color: #c2c2c2; }
-  90% { background-image: linear-gradient(to bottom, #1e2426, #1e2426, #1e2426);
-    border-color: #c2c2c2; }
-  100% { background-image: linear-gradient(to bottom, #fafafa, #ededed 40%, #e0e0e0);
+  30% { background-image: image(#1e2426);
+    border-color: #111414; }
+  90% { background-image: image(#1e2426);
+    border-color: #111414; }
+  100% { background-image: image(#15191b);
     border-color: #111414; } }
 
 .nautilus-operations-button-needs-attention { animation: needs_attention_keyframes 2s ease-in-out; }
