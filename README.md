@@ -30,13 +30,13 @@ GPLv3+, see LICENSE file.
 Original themes/styles copyrights are in COPYRIGHT file.
 
 ## Thanks
-All the guys in #gnome-hackers chanell on gnome irc,  
+All people in #gnome-hackers chanell on gnome irc,  
 horst3180,  
 Emmanuele Bassi,  
 Sam Hewitt,  
 ZMA from gnome-look.org,  
-All the guys in a copyright file,  
-Meson developers,
+All people in a copyright file,  
+Meson developers,  
 Yaru gtk theme developers,  
 Gnome developers and maintainers,  
 Fedora developers and maintainers.
