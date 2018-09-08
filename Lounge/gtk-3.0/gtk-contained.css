@@ -1032,7 +1032,7 @@ scrollbar slider:backdrop { background-color: #d1d1d1; }
 
 scrollbar slider:disabled { background-color: transparent; }
 
-scrollbar.horizontal slider { background-image: -gtk-scaled(url("assets/scrollbar-handle-horz.png"), url("assets/scrollbar-handle-horz@2.png")); box-shadow: inset 0 -2px rgba(160, 160, 160, 0.2), inset 0 2px rgba(255, 255, 255, 0.3), inset 0 0 0 1px #a0a0a0; border-width: 3px 4px; }
+scrollbar.horizontal slider { background-image: -gtk-scaled(url("assets/scrollbar-handle-horz.png"), url("assets/scrollbar-handle-horz@2.png")); box-shadow: inset 0 -2px rgba(166, 166, 166, 0.2), inset 0 2px rgba(255, 255, 255, 0.3), inset 0 0 0 1px #a6a6a6; border-width: 3px 4px; }
 
 scrollbar.vertical slider { background-image: -gtk-scaled(url("assets/scrollbar-handle-vert.png"), url("assets/scrollbar-handle-vert@2.png")); box-shadow: inset -2px 0 rgba(160, 160, 160, 0.2), inset 2px 0 rgba(255, 255, 255, 0.3), inset 0 0 0 1px #a0a0a0; border-width: 4px 3px; }
 
