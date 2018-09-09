@@ -1,14 +1,15 @@
 Name:           lounge-gtk-theme
-Version:        3.28.1
+Version:        3.28.2
 Release:        1%{?dist}
 Summary:        Vintage looking gtk theme, inspired by gtk2 theme absolute
 
 License:        GPLv3+
-URL:            https://github.com/monday15/lounge
-Source0:        https://github.com/monday15/lounge/archive/v%{version}.tar.gz
+URL:            https://github.com/monday15/lounge-gtk-theme
+Source0:        https://github.com/monday15/lounge-gtk-theme/archive/v%{version}.tar.gz
 
 BuildArch:	noarch
 
+BuildRequires:  sassc
 BuildRequires:  meson >= 0.42.0
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 
@@ -21,10 +22,10 @@ Recommends:	lounge-aux-icon-theme
 %{summary}
 
 %prep
-%autosetup -p1 -n lounge-%{version}
+%autosetup -p1
 
 %build
-%meson 
+%meson
 %meson_build
 
 %install
@@ -37,6 +38,10 @@ Recommends:	lounge-aux-icon-theme
 
 
 %changelog
+* Mon Sep 10 2018 Alex Monday <monday15@gmx.com>
+- Prepare to 3.28.2
+- Add sassc dependency
+
 * Sat Sep 08 2018 Alex Monday <monday15@gmx.com>
 - Update to 3.28.1
 - Drop sassc dependency
