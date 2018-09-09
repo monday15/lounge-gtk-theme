@@ -4,18 +4,90 @@ project('lounge-gtk-theme',
         license : ['GPL3+'],
         default_options: ['prefix=/usr'])
 
+# Dependencies
+
+sassc = find_program('sassc')
+
+
+# Installation directories
+
 theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge')
-gnomeshell_theme_dir = join_paths(theme_dir, 'gnome-shell')
-gnomeshell_asset_dir = join_paths(gnomeshell_theme_dir, 'assets')
+shell_dir = join_paths(theme_dir, 'gnome-shell')
+shell_asset_dir = join_paths(shell_dir, 'assets')
 gtk2_dir = join_paths(theme_dir, 'gtk-2.0')
 gtk2_asset_dir = join_paths(gtk2_dir, 'assets')
 gtk3_dir = join_paths(theme_dir, 'gtk-3.0')
 gtk3_asset_dir = join_paths(gtk3_dir, 'assets')
 
 
-index_file = [ 'src/index.theme' ]
+# Install index file
 
-gnomeshell_data = [ 'src/gnome-shell/gnome-shell.css' ]
+index_file = [ 'src/index.theme' ]
+install_data(index_file, install_dir: theme_dir)
+
+
+# Generate and install gnome-shell theme
+
+shell_sources = files([
+  'src/gnome-shell/gnome-shell.scss',
+  'src/gnome-shell/gnome-shell-sass/_colors.scss',
+  'src/gnome-shell/gnome-shell-sass/_common.scss',
+  'src/gnome-shell/gnome-shell-sass/_drawing.scss',
+])
+
+custom_target('shell-gen',
+              input: 'src/gnome-shell/gnome-shell.scss',
+              output: 'gnome-shell.css',
+              command: [ sassc, '-a', '@INPUT@', '@OUTPUT@'],
+              install: true,
+              install_dir: shell_dir,
+              depend_files: shell_sources,
+              build_by_default: true)
+
+
+# Install gtk2 theme
+
+gtk2_data = [
+  'src/gtk-2.0/gtkrc',
+  'src/gtk-2.0/main.rc',
+  'src/gtk-2.0/apps.rc',
+  'src/gtk-2.0/hacks.rc',
+]
+
+install_data(gtk2_data, install_dir: gtk2_dir)
+
+
+# Generate and install gtk3 theme
+
+gtk3_sources = files([
+  'src/gtk-3.0/_colors-public.scss',
+  'src/gtk-3.0/_colors.scss',
+  'src/gtk-3.0/_common.scss',
+  'src/gtk-3.0/_drawing.scss',
+  'src/gtk-3.0/_apps.scss',
+])
+
+custom_target('gtk3-light',
+              input: 'src/gtk-3.0/gtk.scss',
+              output: 'gtk.css',
+              command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
+              install: true,
+              install_dir: gtk3_dir,
+              depend_files: gtk3_sources,
+              build_by_default: true)
+
+
+custom_target('gtk3-dark',
+              input: 'src/gtk-3.0/gtk-dark.scss',
+              output: 'gtk-dark.css',
+              command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
+              install: true,
+              install_dir: gtk3_dir,
+              depend_files: gtk3_sources,
+              build_by_default: true)
+
+
+# Install assets
 
 gnomeshell_assets = [
   'src/gnome-shell/assets/calendar-arrow-left.svg',
@@ -50,13 +122,6 @@ gnomeshell_assets = [
   'src/gnome-shell/assets/running-indicator.svg',
   'src/gnome-shell/assets/toggle-off.svg',
   'src/gnome-shell/assets/toggle-on.svg',
-]
-
-gtk2_data = [
-  'src/gtk-2.0/gtkrc',
-  'src/gtk-2.0/main.rc',
-  'src/gtk-2.0/apps.rc',
-  'src/gtk-2.0/hacks.rc',
 ]
 
 gtk2_assets = [
@@ -205,13 +270,6 @@ gtk2_assets = [
   'src/gtk-2.0/assets/treeview-pan-up.png',
   'src/gtk-2.0/assets/treeview-separator-ltr.png',
   'src/gtk-2.0/assets/treeview-separator-rtl.png',
-]
-
-gtk3_data = [
-  'src/gtk-3.0/gtk.css',
-  'src/gtk-3.0/gtk-dark.css',
-  'src/gtk-3.0/gtk-contained.css',
-  'src/gtk-3.0/gtk-contained-dark.css',
 ]
 
 gtk3_assets = [
@@ -375,14 +433,6 @@ gtk3_assets = [
   'src/gtk-3.0/assets/text-select-start.png',
 ]
 
-install_data(index_file, install_dir: theme_dir)
-
-install_data(gnomeshell_data, install_dir: gnomeshell_theme_dir)
-install_data(gnomeshell_assets, install_dir: gnomeshell_asset_dir)
-
-install_data(gtk2_data, install_dir: gtk2_dir)
+install_data(gnomeshell_assets, install_dir: shell_asset_dir)
 install_data(gtk2_assets, install_dir: gtk2_asset_dir)
-
-install_data(gtk3_data, install_dir: gtk3_dir)
 install_data(gtk3_assets, install_dir: gtk3_asset_dir)
-
