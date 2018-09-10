@@ -7,11 +7,9 @@ This theme is meant to be used with Lounge-aux icons. It is not a "complete" ico
 > Fedora users will get Lounge-aux as a weak dependency with Adwaita as a main icon theme, for other icon themes, they should also check the link. 
 
 ## Installation
-Clone repository (or download release), run following commands from project directory:  
+You need 'meson' and 'sassc' packages to install the theme. Clone repository (or download release), run following commands from project directory:  
 `meson build`  
 `sudo ninja -C build install`
-
-> You can also download last release and simply copy Lounge directory from archieve to your themes folder.
 
 Fedora users can install theme via copr:  
 `sudo dnf copr enable monday15/lounge`  
