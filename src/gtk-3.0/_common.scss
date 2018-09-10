@@ -506,7 +506,7 @@ treeview entry {
  * Buttons *
  ***********/
 // stuff for .needs-attention
-$_dot_color: if($variant=='light', $selected_bg_color,
+$_dot_color: if($variant=='light', if($variant == 'light', darken($selected_lt_color, 20%), $selected_lt_color),
                                    lighten($selected_lt_color,15%));
 @keyframes needs_attention {
   from {
@@ -3134,7 +3134,7 @@ scale {
 
     &:hover { @include button(hover-alt, $edge: $shadow_color); }
 
-    &:active { border-color: if($variant == 'light', $selected_borders_color, $selected_bg_color); }
+    &:active { border-color: if($variant == 'light', $selected_borders_color, if($variant == 'light', darken($selected_lt_color, 20%), $selected_lt_color)); }
 
     &:disabled { @include button(insensitive); }
 
@@ -4605,7 +4605,7 @@ button.emoji-section {
 
   &:backdrop:not(:checked) { border-color: transparent; }
   &:hover { border-color: $borders_color; }
-  &:checked { border-color: $selected_bg_color; }
+  &:checked { border-color: if($variant == 'light', darken($selected_lt_color, 20%), $selected_lt_color); }
 
   label {
     padding: 0;
