@@ -8,11 +8,11 @@ $bg_color: if($variant == 'light', #e6e6e6, #292f2f);
 $fg_color: if($variant == 'light', #101010, #c2c2c2);
 
 // These color are used to provide selected state for text, menus, and some other elements in a light thmeme
-$selected_bl_color: if($variant == 'light', #cfdee9, desaturate(darken(#cfdee9, 50%), 10%));
+$selected_bl_color: if($variant == 'light', #c8dcea, desaturate(darken(#c8dcea, 45%), 10%));
 $selected_fl_color: if($variant == 'light', #101010, #d2d2d2);
 
-$selected_fg_color: if($variant == 'light', #101010, #d2d2d2);
-$selected_bg_color: if($variant == 'light', darken($selected_bl_color, 20%), $selected_bl_color);
+$selected_fg_color: if($variant == 'light', #ffffff, #d2d2d2);
+$selected_bg_color: if($variant == 'light', darken($selected_bl_color, 25%), $selected_bl_color);
 $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 20%), darken($selected_bg_color, 20%));
 $borders_color: if($variant == 'light', darken($bg_color, 27.5%), darken($bg_color, 10%));
 $alt_borders_color: if($variant == 'light', darken($bg_color, 35%), darken($bg_color, 15%));
