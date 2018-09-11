@@ -7,9 +7,12 @@ $text_color: if($variant == 'light', black, #c2c2c2);
 $bg_color: if($variant == 'light', #e6e6e6, #292f2f);
 $fg_color: if($variant == 'light', #101010, #c2c2c2);
 
+// These color are used to provide selected state for text, menus, and some other elements in a light thmeme
+$selected_bl_color: if($variant == 'light', #cfdee9, desaturate(darken(#cfdee9, 50%), 10%));
+$selected_fl_color: if($variant == 'light', #101010, #d2d2d2);
+
 $selected_fg_color: if($variant == 'light', #101010, #d2d2d2);
-$selected_lt_color: if($variant == 'light', #cfdee9, desaturate(darken(#cfdee9, 50%), 10%));
-$selected_bg_color: if($variant == 'light', darken($selected_lt_color, 20%), $selected_lt_color);
+$selected_bg_color: if($variant == 'light', darken($selected_bl_color, 20%), $selected_bl_color);
 $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 20%), darken($selected_bg_color, 20%));
 $borders_color: if($variant == 'light', darken($bg_color, 27.5%), darken($bg_color, 10%));
 $alt_borders_color: if($variant == 'light', darken($bg_color, 35%), darken($bg_color, 15%));
@@ -21,7 +24,7 @@ $dark_fill: mix($borders_color, $bg_color, 30%);
 $headerbar_color: if($variant == 'light', lighten($bg_color, 4%), darken($bg_color, 3%));
 $menu_color: if($variant == 'light', lighten($bg_color, 7%), mix($bg_color, $base_color, 50%));
 $popover_bg_color: $menu_color;
-$popover_hover_color: $selected_lt_color;
+$popover_hover_color: $selected_bl_color;
 $popover_button_color: if($variant == 'light', darken($menu_color, 2%), $popover_bg_color);
 
 $scrollbar_bg_color: if($variant == 'light', mix($bg_color, $fg_color, 80%), mix($base_color, $bg_color, 50%));

@@ -177,7 +177,7 @@ $disk_space_free: #eeeeec;
 /* View */
 .nautilus-list-view .view {
     border-bottom: 1px solid $bg_color;
-  &:selected { border-bottom: 1px solid $selected_lt_color; }
+  &:selected { border-bottom: 1px solid $selected_bl_color; }
 }
 
 /* Hide superfluous treeview drop target indication */
