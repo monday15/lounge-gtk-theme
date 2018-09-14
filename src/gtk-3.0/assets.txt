@@ -1,11 +1,3 @@
-scrollbar-trough-horz
-scrollbar-trough-horz-dark
-scrollbar-trough-vert
-scrollbar-trough-vert-dark
-scrollbar-handle-horz
-scrollbar-handle-horz-dark
-scrollbar-handle-vert
-scrollbar-handle-vert-dark
 text-select-end
 text-select-end-hover
 text-select-end-active
