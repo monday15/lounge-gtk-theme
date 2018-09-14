@@ -16,7 +16,8 @@ $selected_fg_color: if($variant == 'light', #ffffff, $selected_fl_color);
 
 $borders_color: if($variant == 'light', darken($bg_color, 27.5%), darken($bg_color, 10%));
 $alt_borders_color: if($variant == 'light', darken($bg_color, 35%), darken($bg_color, 15%));
-$selected_borders_color: if($variant== 'light', desaturate(darken($selected_bl_color, 25%), 5%), darken($selected_bg_color, 20%));
+$selected_borders_color: if($variant== 'light', darken($selected_bg_color, 10%), darken($selected_bg_color, 20%));
+$selected_entry_borders_color: if($variant == 'light', desaturate(darken($selected_bl_color, 25%), 5%), $selected_bl_color);
 $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
 
 $top_hilight: $borders_edge;
