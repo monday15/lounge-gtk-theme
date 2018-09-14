@@ -2499,7 +2499,7 @@ notebook {
  * Scrollbars *
  **************/
 scrollbar {
-  $_slider_min_length: 41px;
+  $_slider_min_length: 40px;
 
   // disable steppers
   @at-root * {
@@ -2507,38 +2507,21 @@ scrollbar {
     -GtkScrollbar-has-forward-stepper: false;
   }
 
-  background-color: transparent;
+  background-color: $scrollbar_bg_color;
   transition: 300ms $ease-out-quad;
 
-  // scrollbar border
-//  &.top { border-bottom: 1px solid $borders_color; }
-//  &.bottom { border-top: 1px solid $borders_color; }
-//  &.left { border-right: 1px solid $borders_color; }
-//  &.right { border-left: 1px solid $borders_color; }
-
   &:backdrop {
-//    background-color: $backdrop_scrollbar_bg_color;
-//    border-color: $backdrop_borders_color;
+    background-color: $backdrop_scrollbar_bg_color;
     transition: $backdrop_transition;
   }
 
-  &.horizontal trough {
-    @if $variant == 'light' { border-image: -gtk-scaled(url("assets/scrollbar-trough-horz.png"), url("assets/scrollbar-trough-horz@2.png")) 8 8 7 7 / 8px 8px 7px 7px stretch; }
-    @else { border-image: -gtk-scaled(url("assets/scrollbar-trough-horz-dark.png"), url("assets/scrollbar-trough-horz-dark@2.png")) 8 8 7 7 / 8px 8px 7px 7px stretch; }
-  }
-
-  &.vertical trough {
-    @if $variant == 'light' { border-image: -gtk-scaled(url("assets/scrollbar-trough-vert.png"), url("assets/scrollbar-trough-vert@2.png")) 8 8 7 7 / 8px 8px 7px 7px stretch; }
-    @else { border-image: -gtk-scaled(url("assets/scrollbar-trough-vert-dark.png"), url("assets/scrollbar-trough-vert-dark@2.png")) 8 8 7 7 / 8px 8px 7px 7px stretch; }
-  }    
-
   // slider
   slider {
-    min-width: 11px;
-    min-height: 11px;
+    min-width: 9px;
+    min-height: 9px;
     margin: -1px;
     border: 3px solid transparent;
-    border-radius: 6px;
+    border-radius: 5px;
     background-clip: padding-box;
     background-color: $scrollbar_slider_color;
     background-position: center;
@@ -2551,34 +2534,6 @@ scrollbar {
     &:backdrop { background-color: $backdrop_scrollbar_slider_color; }
 
     &:disabled { background-color: transparent; }
-  }
-
-  &.horizontal slider {
-    @if $variant == 'light' {
-      background-image: -gtk-scaled(url("assets/scrollbar-handle-horz.png"), url("assets/scrollbar-handle-horz@2.png"));
-      box-shadow: inset 0 -2px transparentize($scrollbar_borders_color, 0.8),
-                  inset 0 2px transparentize(white, 0.7),
-                  inset 0 0 0 1px $scrollbar_borders_color;
-    }
-    @else {
-      background-image: -gtk-scaled(url("assets/scrollbar-handle-horz-dark.png"), url("assets/scrollbar-handle-horz-dark@2.png"));
-      box-shadow: inset 0 -2px transparentize($scrollbar_borders_color, 0.7),
-                  inset 0 2px transparentize(white, 0.95),
-                  inset 0 0 0 1px $scrollbar_borders_color;
-    }
-    border-width: 3px 4px;
-  }
-
-  &.vertical slider {
-    @if $variant == 'light' {
-      background-image: -gtk-scaled(url("assets/scrollbar-handle-vert.png"), url("assets/scrollbar-handle-vert@2.png"));
-      box-shadow: inset -2px 0 transparentize($borders_color, 0.8), inset 2px 0 transparentize(white, 0.7), inset 0 0 0 1px $borders_color;
-    }
-    @else {
-      background-image: -gtk-scaled(url("assets/scrollbar-handle-vert-dark.png"), url("assets/scrollbar-handle-vert-dark@2.png"));
-      box-shadow: inset -2px 0 transparentize($borders_color, 0.7), inset 2px 0 transparentize(white, 0.95), inset 0 0 0 1px $borders_color;
-    }
-    border-width: 4px 3px;
   }
 
   &.fine-tune {
@@ -3670,15 +3625,9 @@ scrolledwindow {
   }
 
   junction { // the small square between two scrollbars
-    border-color: transparent;
-    // the border image is used to add the missing dot between the borders, details, details, details...
-    border-image: linear-gradient(to bottom, $borders_color 1px, transparent 1px) 0 0 0 1 / 0 1px stretch;
     background-color: $scrollbar_bg_color;
 
-    &:dir(rtl) { border-image-slice: 0 1 0 0; }
-
     &:backdrop {
-      border-image-source: linear-gradient(to bottom, $backdrop_borders_color 1px, transparent 1px);
       background-color: $backdrop_scrollbar_bg_color;
       transition: $backdrop_transition;
     }
