@@ -85,7 +85,7 @@ $button_transition: all 200ms $ease-out-quad;
   }
 
   &:selected {
-    color: $selected_fg_color;
+    color: $selected_fl_color;
     background-color: $selected_bl_color;
   }
 }
@@ -175,7 +175,7 @@ label {
 
   selection {
     background-color: $selected_bl_color;
-    color: $selected_fg_color;
+    color: $selected_fl_color;
   }
 
   &:disabled {
@@ -469,7 +469,7 @@ treeview entry {
 
   border-style: none;
 
-  $_entry_tag_color: if($variant=='light', $selected_fg_color, $base_color);
+  $_entry_tag_color: if($variant=='light', $selected_fl_color, $base_color);
   color: $_entry_tag_color;
 
   $_entry_tag_bg: if($variant=='light', $selected_bl_color, mix($fg_color, $base_color, 50%));
@@ -630,7 +630,7 @@ button {
       @if $variant == 'light' { border-color: $selected_borders_color; }
 
       &.flat:not(:active):not(:checked):not(:hover):not(disabled) {
-        color: $selected_fg_color;
+        color: $selected_fl_color;
         border-color: transparent;
 
         &:backdrop { color: $backdrop_fg_color; }
@@ -738,14 +738,14 @@ button {
       &:hover { @include button(hover, $b_color, $fg_color); }
 
       &:active,
-      &:checked { @include button(active, $b_color, $selected_fg_color); }
+      &:checked { @include button(active, $b_color, $selected_fl_color); }
 
       &:backdrop,
       &.flat:backdrop {
         @include button(backdrop, if($variant == 'light', $b_color, darken(desaturate($b_color, 10%), 10%)), $backdrop_fg_color);
 
         &:active,
-        &:checked { @include button(backdrop-active, if($variant == 'light', $b_color, darken(desaturate($b_color, 10%), 10%)), $backdrop_selected_fg_color); }
+        &:checked { @include button(backdrop-active, if($variant == 'light', $b_color, darken(desaturate($b_color, 10%), 10%)), $backdrop_selected_fl_color); }
 
         &:disabled {
           @include button(backdrop-insensitive);
@@ -1098,26 +1098,26 @@ button.color {
   &:visited {
     color: $link_visited_color;
 
-    *:selected & { color: mix($selected_fg_color, $selected_bl_color, 60%); }
+    *:selected & { color: mix($selected_fl_color, $selected_bl_color, 60%); }
   }
 
   &:hover {
     color: lighten($link_color,10%);
 
-    *:selected & { color: mix($selected_fg_color, $selected_bl_color, 90%); }
+    *:selected & { color: mix($selected_fl_color, $selected_bl_color, 90%); }
   }
 
   &:active {
     color: $link_color;
 
-    *:selected & { color: mix($selected_fg_color, $selected_bl_color, 80%); }
+    *:selected & { color: mix($selected_fl_color, $selected_bl_color, 80%); }
   }
 
   &:backdrop { &:backdrop:hover, &:backdrop:hover:selected, & { color: $selected_bl_color; }}
 
   @at-root %link_selected,
   &:selected,
-  *:selected & { color: mix($selected_fg_color, $selected_bl_color, 80%); }
+  *:selected & { color: mix($selected_fl_color, $selected_bl_color, 80%); }
 }
 
 button:link,
@@ -1522,7 +1522,7 @@ headerbar {
   &.selection-mode {
     $_hc: mix($top_hilight,$selected_bl_color, 30%); // hilight color
 
-    color: $selected_fg_color;
+    color: $selected_fl_color;
     border-color: transparentize(black, 0.7);
     text-shadow: none;
 //    text-shadow: 0 -1px transparentize(black, 0.5);
@@ -1538,36 +1538,36 @@ headerbar {
     .subtitle:link { @extend *:link:selected;  }
 
     button {
-      @include button(normal, $selected_bl_color, $selected_fg_color);
+      @include button(normal, $selected_bl_color, $selected_fl_color);
 
       &.flat { @include button(undecorated); }
 
-      &:hover { @include button(hover, $selected_bl_color, $selected_fg_color); }
+      &:hover { @include button(hover, $selected_bl_color, $selected_fl_color); }
 
       &:active,
-      &:checked { @include button(active, $selected_bl_color, $selected_fg_color); }
+      &:checked { @include button(active, $selected_bl_color, $selected_fl_color); }
 
       &:backdrop {
         &.flat, & {
-          @include button(backdrop, $selected_bl_color, $selected_fg_color);
+          @include button(backdrop, $selected_bl_color, $selected_fl_color);
 
           -gtk-icon-effect: none;
           border-color: $backdrop_selected_borders_color;
 
           &:active,
           &:checked {
-            @include button(backdrop-active, $selected_bl_color, $selected_fg_color);
+            @include button(backdrop-active, $selected_bl_color, $selected_fl_color);
 
             border-color: $backdrop_selected_borders_color;
           }
 
           &:disabled {
-            @include button(backdrop-insensitive, $selected_bl_color, $selected_fg_color);
+            @include button(backdrop-insensitive, $selected_bl_color, $selected_fl_color);
 
             border-color: $backdrop_selected_borders_color;
 
             &:active, &:checked {
-              @include button(backdrop-insensitive-active, $selected_bl_color, $selected_fg_color);
+              @include button(backdrop-insensitive-active, $selected_bl_color, $selected_fl_color);
 
               border-color: $backdrop_selected_borders_color;
             }
@@ -1578,10 +1578,10 @@ headerbar {
       &.flat { &:backdrop, &:disabled, &:backdrop:disabled { @include button(undecorated); }}
 
       &:disabled {
-        @include button(insensitive, $selected_bl_color, $selected_fg_color);
+        @include button(insensitive, $selected_bl_color, $selected_fl_color);
 
         &:active,
-        &:checked { @include button(insensitive-active, $selected_bl_color, $selected_fg_color); }
+        &:checked { @include button(insensitive-active, $selected_bl_color, $selected_fl_color); }
       }
 
       &.suggested-action {
@@ -1634,7 +1634,7 @@ headerbar {
 
         .arrow {
           -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
-          color: transparentize($selected_fg_color,0.5);
+          color: transparentize($selected_fl_color,0.5);
           -gtk-icon-shadow: none;
         }
       }
@@ -1825,7 +1825,7 @@ treeview.view {
     }
 
     &:backdrop, & {
-      border-left-color: mix($selected_fg_color, $selected_bl_color, 50%);
+      border-left-color: mix($selected_fl_color, $selected_bl_color, 50%);
       border-top-color: transparentize($fg_color, 0.9); // doesn't work unfortunatelly
     }
   }
@@ -1834,8 +1834,8 @@ treeview.view {
     color: $insensitive_fg_color;
 
     &:selected {
-      color: mix($selected_fg_color, $selected_bl_color, 40%);
-      &:backdrop { color: mix($backdrop_selected_fg_color, $selected_bl_color, 30%); }
+      color: mix($selected_fl_color, $selected_bl_color, 40%);
+      &:backdrop { color: mix($backdrop_selected_fl_color, $selected_bl_color, 30%); }
     }
 
     &:backdrop { color: $backdrop_insensitive_color; }
@@ -1872,11 +1872,11 @@ treeview.view {
     &:hover { color: $text_color; }
 
     &:selected {
-      color: mix($selected_fg_color, $selected_bl_color, 70%);
+      color: mix($selected_fl_color, $selected_bl_color, 70%);
 
-      &:hover { color: $selected_fg_color; }
+      &:hover { color: $selected_fl_color; }
 
-      &:backdrop { color: mix($backdrop_selected_fg_color, $selected_bl_color, 70%); }
+      &:backdrop { color: mix($backdrop_selected_fl_color, $selected_bl_color, 70%); }
     }
 
     &:checked { -gtk-icon-source: -gtk-icontheme('pan-down-symbolic'); }
@@ -1937,7 +1937,7 @@ treeview.view {
     &:selected {
       &:focus, & {
         background-color: if($variant == 'light',
-                             transparentize($selected_fg_color, 0.9),
+                             transparentize($selected_fl_color, 0.9),
                              darken($selected_bl_color, 10%));
         border-radius: 2px;
 
@@ -2072,7 +2072,7 @@ menu,
     text-shadow: none;
 
     &:hover {
-      color: $selected_fg_color;
+      color: $selected_fl_color;
       background-color: $selected_bl_color;
       box-shadow: inset 0 1px transparentize(black, 0.9), inset 0 -1px transparentize(black, 0.9);
     }
@@ -2201,21 +2201,21 @@ popover.background {
 
   button:not(.flat) {
     // FIXME: extend selection mode buttons
-    @include button(normal, $popover_button_color, $selected_fg_color);
+    @include button(normal, $popover_button_color, $selected_fl_color);
 
-    &:hover { @include button(hover, $popover_button_color, $selected_fg_color); }
+    &:hover { @include button(hover, $popover_button_color, $selected_fl_color); }
 
     &:active,
-    &:checked { @include button(active, $popover_button_color, $selected_fg_color); }
+    &:checked { @include button(active, $popover_button_color, $selected_fl_color); }
 
-    &:disabled { @include button(insensitive, $popover_button_color, $selected_fg_color); }
+    &:disabled { @include button(insensitive, $popover_button_color, $selected_fl_color); }
 
     &:backdrop {
-      @include button(backdrop, $popover_button_color, $selected_fg_color);
+      @include button(backdrop, $popover_button_color, $selected_fl_color);
       border-color: _border_color($popover_button_color);
 
       &:disabled {
-        @include button(backdrop-insensitive, $popover_button_color, $selected_fg_color);
+        @include button(backdrop-insensitive, $popover_button_color, $selected_fl_color);
         border-color: _border_color($popover_button_color);
       }
     }
@@ -2731,7 +2731,7 @@ switch {
   text-shadow: 0 1px transparentize(black, 0.9);
 
   &:checked {
-    color: $selected_fg_color;
+    color: $selected_fl_color;
     border-color: $selected_borders_color;
     background-color: if($variant == 'light', darken($selected_bl_color, 10%), $selected_bl_color);
     text-shadow: 0 1px transparentize($selected_borders_color, 0.5),
@@ -3967,14 +3967,14 @@ placessidebar {
     // will make the animation of the new bookmark row jump
     > revealer { padding: 0 14px; }
 
-    &:selected { color: $selected_fg_color; }
+    &:selected { color: $selected_fl_color; }
 
     &:disabled { color: $insensitive_fg_color; }
 
     &:backdrop {
       color: $backdrop_fg_color;
 
-      &:selected { color: $backdrop_selected_fg_color; }
+      &:selected { color: $backdrop_selected_fl_color; }
 
       &:disabled { color: $backdrop_insensitive_color; }
     }
@@ -4025,7 +4025,7 @@ placessidebar {
 //                  inset 0 -1px $drop_target_color;
 
       &:selected {
-        color: $selected_fg_color;
+        color: $selected_fl_color;
         background-color: if($variant == 'light', desaturate(lighten($drop_target_color, 40%), 40%), $drop_target_color);
       }
     }
@@ -4135,7 +4135,7 @@ infobar {
   &.warning,
   &.error {
     &:backdrop, & {
-      label, & { color: $selected_fg_color; }
+      label, & { color: $selected_fl_color; }
       background-color: $selected_bl_color;
       border-color: darken($selected_bl_color, 10%);
     }
@@ -4146,22 +4146,22 @@ infobar {
 
     button {
       // FIXME: extend selection mode buttons
-      @include button(normal, $selected_bl_color, $selected_fg_color, none);
+      @include button(normal, $selected_bl_color, $selected_fl_color, none);
 
-      &:hover { @include button(hover, $selected_bl_color, $selected_fg_color, none); }
+      &:hover { @include button(hover, $selected_bl_color, $selected_fl_color, none); }
 
       &:active,
-      &:checked { @include button(active, $selected_bl_color, $selected_fg_color, none); }
+      &:checked { @include button(active, $selected_bl_color, $selected_fl_color, none); }
 
-      &:disabled { @include button(insensitive,$selected_bl_color,$selected_fg_color,none); }
+      &:disabled { @include button(insensitive,$selected_bl_color,$selected_fl_color,none); }
 
       &:backdrop {
-        @include button(backdrop, $selected_bl_color, $selected_fg_color, none);
+        @include button(backdrop, $selected_bl_color, $selected_fl_color, none);
         border-color: _border_color($selected_bl_color);
 
         &:disabled {
           @include button(backdrop-insensitive, $selected_bl_color,
-                          $selected_fg_color, none);
+                          $selected_fl_color, none);
           border-color: _border_color($selected_bl_color);
         }
       }
@@ -4340,7 +4340,7 @@ colorswatch {
     }
   }
 
-  row:selected & { box-shadow: 0 0 0 2px $selected_fg_color; }
+  row:selected & { box-shadow: 0 0 0 2px $selected_fl_color; }
 
   &#editor-color-sample {
     border-radius: 3px;
@@ -4493,14 +4493,14 @@ headerbar.selection-mode button.titlebutton,
   background-color: $selected_bl_color;
 
   @at-root %nobg_selected_items, & {
-    color: $selected_fg_color;
+    color: $selected_fl_color;
 
-    &:disabled { color: mix($selected_fg_color, $selected_bl_color, 50%); }
+    &:disabled { color: mix($selected_fl_color, $selected_bl_color, 50%); }
 
     &:backdrop {
-      color: $backdrop_selected_fg_color;
+      color: $backdrop_selected_fl_color;
 
-      &:disabled { color: mix($backdrop_selected_fg_color, $selected_bl_color, 30%); }
+      &:disabled { color: mix($backdrop_selected_fl_color, $selected_bl_color, 30%); }
     }
   }
 }
