@@ -1,36 +1,40 @@
 // When color definition differs for dark and light variant
 // it gets @if ed depending on $variant
 
-
 $base_color: if($variant == 'light', #ffffff, #1e2426);
 $text_color: if($variant == 'light', black, #c2c2c2);
 $bg_color: if($variant == 'light', #e6e6e6, #292f2f);
 $fg_color: if($variant == 'light', #101010, #c2c2c2);
 
-// These color are used to provide selected state for text, menus, and some other elements in a light thmeme
-$selected_bl_color: if($variant == 'light', #c8dcea, desaturate(darken(#c8dcea, 45%), 10%));
+// These colors are used to provide dark fg on light bg in a light theme
+$selected_bl_color: if($variant == 'light', #d1e3f1, desaturate(darken(#d1e3f1, 50%), 15%));
 $selected_fl_color: if($variant == 'light', #101010, #d2d2d2);
 
-$selected_fg_color: if($variant == 'light', #ffffff, #d2d2d2);
-$selected_bg_color: if($variant == 'light', darken($selected_bl_color, 25%), $selected_bl_color);
-$selected_borders_color: if($variant== 'light', darken($selected_bg_color, 20%), darken($selected_bg_color, 20%));
+// These colors are sent to colors-public, for applications
+$selected_bg_color: if($variant == 'light', desaturate(darken($selected_bl_color, 35%), 10%), $selected_bl_color);
+$selected_fg_color: if($variant == 'light', #ffffff, $selected_fl_color);
+
 $borders_color: if($variant == 'light', darken($bg_color, 27.5%), darken($bg_color, 10%));
 $alt_borders_color: if($variant == 'light', darken($bg_color, 35%), darken($bg_color, 15%));
+$selected_borders_color: if($variant== 'light', desaturate(darken($selected_bl_color, 25%), 5%), darken($selected_bg_color, 20%));
 $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
-$link_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 20%));
-$link_visited_color: if($variant == 'light', darken($selected_bg_color, 30%), lighten($selected_bg_color, 10%));
+
 $top_hilight: $borders_edge;
 $dark_fill: mix($borders_color, $bg_color, 30%);
+
+$link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 20%));
+$link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 10%));
+
 $headerbar_color: if($variant == 'light', lighten($bg_color, 4%), darken($bg_color, 3%));
 $menu_color: if($variant == 'light', lighten($bg_color, 7%), mix($bg_color, $base_color, 50%));
 $popover_bg_color: $menu_color;
 $popover_hover_color: $selected_bl_color;
 $popover_button_color: if($variant == 'light', darken($menu_color, 2%), $popover_bg_color);
 
-$scrollbar_bg_color: if($variant == 'light', mix($bg_color, $fg_color, 80%), mix($base_color, $bg_color, 50%));
-$scrollbar_borders_color: if($variant == 'light', darken($bg_color, 25%), $borders_color);
-$scrollbar_slider_color: mix($fg_color, $bg_color, 10%);
-$scrollbar_slider_hover_color: mix($fg_color, $bg_color, 15%);
+$scrollbar_bg_color: if($variant == 'light', mix($bg_color, $fg_color, 95%), mix($base_color, $bg_color, 50%));
+$scrollbar_borders_color: if($variant == 'light', darken($bg_color, 40%), $borders_color);
+$scrollbar_slider_color: mix($fg_color, $bg_color, 35%);
+$scrollbar_slider_hover_color: mix($fg_color, $bg_color, 45%);
 $scrollbar_slider_active_color: $scrollbar_slider_hover_color;
 $scrollbar_slider_finetune_color: if($variant=='light', desaturate(darken($selected_bg_color, 10%), 10%), lighten($selected_bg_color, 5%));
 
@@ -42,37 +46,38 @@ $destructive_color: if($variant == 'light', #d97b7b, desaturate(darken(#d97b7b, 
 $osd_fg_color:  if($variant == 'light', $fg_color, #eee);
 $osd_text_color: if($variant == 'light', $text_color, #eee);
 $osd_bg_color:  if($variant == 'light', transparentize(#dfddd9, 0.07), transparentize(#1c1f20, 0.2));
+$osd_borders_color: $borders_color;
+
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 50%);
-$osd_borders_color: $borders_color;
 
 $sidebar_bg_color: mix($bg_color, $base_color, 50%);
 $base_hover_color: transparentize($fg_color, 0.95);
-
 $tooltip_borders_color: transparentize(black, 0.7);
 $shadow_color: transparentize(black, 0.9);
-
 $drop_target_color: if($variant == 'light', #457a12, desaturate(darken(#457a12, 0%), 25%));
 
-//insensitive state derived colors
 $insensitive_fg_color: mix($fg_color, $bg_color, 40%);
 $insensitive_bg_color: mix($bg_color, $base_color, 60%);
 $insensitive_borders_color: $borders_color;
 $insensitive_osd_borders_color: $borders_color;
 
-//colors for the backdrop state, derived from the main colors.
 $backdrop_base_color: if($variant == 'light', darken($base_color, 1%), lighten($base_color, 1%));
 $backdrop_text_color: mix($text_color, $backdrop_base_color, 80%);
 $backdrop_bg_color: $bg_color;
 $backdrop_fg_color: mix($fg_color, $backdrop_bg_color, 50%);
-$backdrop_insensitive_color: if($variant == 'light', darken($backdrop_bg_color, 15%), lighten($backdrop_bg_color, 15%));
-$backdrop_selected_fg_color: if($variant == 'light', $backdrop_text_color, $backdrop_text_color);
+
+$backdrop_selected_bl_color: mix($selected_bl_color, $base_color, 80%);
+$backdrop_selected_fl_color: if($variant == 'light', $backdrop_text_color, $backdrop_text_color);
+$backdrop_selected_bg_color: mix($selected_bg_color, $base_color, 80%);
+$backdrop_selected_fg_color: if($variant == 'light', mix($backdrop_base_color, $backdrop_bg_color, 50%), $backdrop_text_color);
+
 $backdrop_borders_color: mix($borders_color, $bg_color, 80%);
-$backdrop_dark_fill: mix($backdrop_borders_color, $backdrop_bg_color, 25%);
-$backdrop_sidebar_bg_color: mix($backdrop_bg_color, $backdrop_base_color, 50%);
 $backdrop_selected_borders_color: mix($selected_borders_color, $backdrop_bg_color, 60%);
 
+$backdrop_insensitive_color: if($variant == 'light', darken($backdrop_bg_color, 15%), lighten($backdrop_bg_color, 15%));
+$backdrop_dark_fill: mix($backdrop_borders_color, $backdrop_bg_color, 25%);
+$backdrop_sidebar_bg_color: mix($backdrop_bg_color, $backdrop_base_color, 50%);
 $backdrop_scrollbar_bg_color: darken($backdrop_bg_color, 3%);
 $backdrop_scrollbar_slider_color: mix($backdrop_fg_color, $backdrop_bg_color, 20%);
-
 $backdrop_menu_color: if($variant == 'light', $backdrop_base_color, mix($backdrop_bg_color, $backdrop_base_color, 20%));
