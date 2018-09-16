@@ -52,7 +52,7 @@ style "default" {
 
   GtkScrollbar::trough-border = 0
   GtkRange::trough-border     = 0
-  GtkRange::slider-width      = 15
+  GtkRange::slider-width      = 13
   GtkRange::stepper-size      = 0
   GtkRange::activate-slider   = 1
 
@@ -883,19 +883,9 @@ style "default" {
     image {
       function    = BOX
       detail      = "trough"
-      file        = "assets/scrollbar-trough-horz.png"
+      file        = "assets/scrollbar-trough.png"
       border      = {4, 4, 4, 4}
-      orientation = HORIZONTAL
     }
-
-    image {
-      function    = BOX
-      detail      = "trough"
-      file        = "assets/scrollbar-trough-vert.png"
-      border      = {4, 4, 4, 4}
-      orientation = VERTICAL
-    }
-
 
     # Disable insensitive sliders
 
@@ -911,74 +901,27 @@ style "default" {
       function        = SLIDER
       state           = NORMAL
       detail          = "slider"
-      file            = "assets/scrollbar-slider-horz.png"
+      file            = "assets/scrollbar-slider.png"
       border          = {4, 4, 4, 4}
       stretch         = TRUE
-      overlay_file    = "assets/scrollbar-handle-horz.png"
-      overlay_stretch = FALSE
-      orientation     = HORIZONTAL
     }
 
     image {
       function        = SLIDER
       state           = PRELIGHT
       detail          = "slider"
-      file            = "assets/scrollbar-slider-horz-active.png"
+      file            = "assets/scrollbar-slider-active.png"
       border          = {4, 4, 4, 4}
       stretch         = TRUE
-      overlay_file    = "assets/scrollbar-handle-horz.png"
-      overlay_stretch = FALSE
-      orientation     = HORIZONTAL
     }
 
     image {
       function        = SLIDER
       state           = ACTIVE
       detail          = "slider"
-      file            = "assets/scrollbar-slider-horz-active.png"
+      file            = "assets/scrollbar-slider-active.png"
       border          = {4, 4, 4, 4}
       stretch         = TRUE
-      overlay_file    = "assets/scrollbar-handle-horz.png"
-      overlay_stretch = FALSE
-      orientation     = HORIZONTAL
-    }
-
-    # Vertical sliders
-
-    image {
-      function        = SLIDER
-      state           = NORMAL
-      detail          = "slider"
-      file            = "assets/scrollbar-slider-vert.png"
-      border          = {4, 4, 4, 4}
-      stretch         = TRUE
-      overlay_file    = "assets/scrollbar-handle-vert.png"
-      overlay_stretch = FALSE
-      orientation     = VERTICAL
-    }
-
-    image {
-      function        = SLIDER
-      state           = PRELIGHT
-      detail          = "slider"
-      file            = "assets/scrollbar-slider-vert-active.png"
-      border          = {4, 4, 4, 4}
-      stretch         = TRUE
-      overlay_file    = "assets/scrollbar-handle-vert.png"
-      overlay_stretch = FALSE
-      orientation     = VERTICAL
-    }
-
-    image {
-      function        = SLIDER
-      state           = ACTIVE
-      detail          = "slider"
-      file            = "assets/scrollbar-slider-vert-active.png"
-      border          = {4, 4, 4, 4}
-      stretch         = TRUE
-      overlay_file    = "assets/scrollbar-handle-vert.png"
-      overlay_stretch = FALSE
-      orientation     = VERTICAL
     }
 
 
