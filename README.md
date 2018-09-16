@@ -1,15 +1,16 @@
 ## Info
-Lounge gtk theme is a fork of Adwaita theme, inspired by Absolute gtk2 theme.  
-All links to related projects can be found below.
+Lounge gtk theme is a fork of Adwaita theme. Links to related projects can be found below.
 
 ## IMPORTANT NOTE
 This theme is meant to be used with Lounge-aux icons. It is not a "complete" icon theme - it has 10 icons (only symbolic), but they are VITAL for providing correct user expirience. Installation is simple and easy, check out https://github.com/monday15/lounge-aux before procceding with installation.
 > Fedora users will get Lounge-aux as a weak dependency with Adwaita as a main icon theme, for other icon themes, they should also check the link. 
 
 ## Installation
-You need 'meson' and 'sassc' packages to install the theme. Clone repository (or download release), run following commands from project directory:  
+You need 'meson' and 'sassc' packages to build and install the theme. Clone repository (or download release), run following commands from project directory:  
 `meson build`  
 `sudo ninja -C build install`
+
+You can also download already builded theme, and simply copy **Lounge** folder from archive to **/usr/share/themes**.
 
 Fedora users can install theme via copr:  
 `sudo dnf copr enable monday15/lounge`  
