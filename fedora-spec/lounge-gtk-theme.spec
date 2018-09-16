@@ -1,7 +1,7 @@
 Name:           lounge-gtk-theme
 Version:        3.28.2
 Release:        1%{?dist}
-Summary:        Vintage looking gtk theme, inspired by gtk2 theme absolute
+Summary:        Simple and clean gtk theme
 
 License:        GPLv3+
 URL:            https://github.com/monday15/lounge
