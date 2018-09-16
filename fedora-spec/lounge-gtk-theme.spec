@@ -4,8 +4,8 @@ Release:        1%{?dist}
 Summary:        Vintage looking gtk theme, inspired by gtk2 theme absolute
 
 License:        GPLv3+
-URL:            https://github.com/monday15/lounge-gtk-theme
-Source0:        https://github.com/monday15/lounge-gtk-theme/archive/v%{version}.tar.gz
+URL:            https://github.com/monday15/lounge
+Source0:        https://github.com/monday15/lounge/archive/v%{version}.tar.gz
 
 BuildArch:	noarch
 
@@ -22,7 +22,7 @@ Recommends:	lounge-aux-icon-theme
 %{summary}
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n lounge-%{version}
 
 %build
 %meson
