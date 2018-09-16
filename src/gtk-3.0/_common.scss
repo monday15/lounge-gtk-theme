@@ -4448,6 +4448,7 @@ headerbar.selection-mode button.titlebutton,
 
     &:backdrop {
       color: $backdrop_selected_fl_color;
+      background-color: $backdrop_selected_bl_color;
 
       &:disabled { color: mix($backdrop_selected_fl_color, $selected_bl_color, 30%); }
     }
