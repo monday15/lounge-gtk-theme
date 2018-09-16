@@ -1,10 +1,18 @@
 3.28.2
 ======
 
-* Installation now requires meson and sasc
-* Revert meson to build theme
-* Build cleanup
-
+* gtk2/gtk3: Adjust selection color;
+* gtk2/gtk3: New scrollbars (vintage scrollbars cant be displayed correctly in libreoffice);
+* gtk3/gtk2/shell: Adjust assets to match new colors;
+* gtk3: Adjust undershoot size;
+* gtk3: Revert workaround for popover menus;
+* gtk3: Add missing backdrop states;
+* gtk3: New pathbar style for nautilus
+* shell: Change font to Liberation Sans, Arimo;
+* shell: Adjust selection color;
+* general: Installation now requires meson and sasc;
+* general: Revert meson to build theme;
+* general: Build cleanup.
 
 3.28.1
 ======
