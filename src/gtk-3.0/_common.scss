@@ -724,10 +724,10 @@ button {
   }
 
   // Suggested and Destructive Action buttons
-  @each $b_type, $b_color in (suggested-action, if($variant == 'light', darken($selected_bl_color, 5%), $selected_bl_color)),
+  @each $b_type, $b_color in (suggested-action, if($variant == 'light', lighten($selected_bg_color, 0%), $selected_bg_color)),
                              (destructive-action, $destructive_color) {
     &.#{$b_type} {
-      @include button(normal, $b_color, $fg_color);
+      @include button(normal, $b_color, $selected_fg_color);
 
       &.flat {
         @include button(undecorated);
@@ -735,17 +735,17 @@ button {
         color: $b_color; //FIXME: does it work on the dark variant?
       }
 
-      &:hover { @include button(hover, $b_color, $fg_color); }
+      &:hover { @include button(hover, $b_color, $selected_fg_color); }
 
       &:active,
-      &:checked { @include button(active, $b_color, $selected_fl_color); }
+      &:checked { @include button(active, $b_color, $selected_fg_color); }
 
       &:backdrop,
       &.flat:backdrop {
-        @include button(backdrop, if($variant == 'light', $b_color, darken(desaturate($b_color, 10%), 10%)), $backdrop_fg_color);
+        @include button(backdrop, if($variant == 'light', mix($b_color, $base_color, 80%), darken(desaturate($b_color, 10%), 10%)), $backdrop_selected_fg_color);
 
         &:active,
-        &:checked { @include button(backdrop-active, if($variant == 'light', $b_color, darken(desaturate($b_color, 10%), 10%)), $backdrop_selected_fl_color); }
+        &:checked { @include button(backdrop-active, if($variant == 'light',  mix($b_color, $base_color, 80%), darken(desaturate($b_color, 10%), 10%)), $backdrop_selected_fg_color); }
 
         &:disabled {
           @include button(backdrop-insensitive);
