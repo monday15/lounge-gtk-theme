@@ -1729,7 +1729,7 @@ headerbar .path-bar button {
     &:active, &:checked { color: $fg_color; &:hover { color: $fg_color; } }
     &:backdrop { background-color: $backdrop_bg_color; &:active, &:checked { background-color: $backdrop_bg_color; } }
   }
-  &.text-button { label { padding-left: 6px; padding-right: 10px; } }
+  &.text-button { label { padding-left: 4px; padding-right: 8px; } }
 }
 
 %linked_headerbar_middle {
