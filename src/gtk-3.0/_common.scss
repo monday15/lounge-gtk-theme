@@ -1717,63 +1717,6 @@ headerbar {
   }
 }
 
-// Nautilus new path-bar style
-
-headerbar .path-bar button {
-  &, &.text-button {
-    @extend %linked_headerbar;
-    background-color: darken($headerbar_color, 2%);
-//    box-shadow: inset 0 1px transparentize($borders_color, 0.7);
-    box-shadow: none;
-    &:hover { color: if($variant=='light', mix($selected_bg_color, $fg_color, 80%), mix($selected_bg_color, $fg_color, 60%)); }
-    &:active, &:checked { color: $fg_color; &:hover { color: $fg_color; } }
-    &:backdrop { background-color: $backdrop_bg_color; &:active, &:checked { background-color: $backdrop_bg_color; } }
-  }
-  &.text-button { label { padding-left: 4px; padding-right: 8px; } }
-}
-
-%linked_headerbar_middle {
-  border-radius: 0;
-  border-right-style: none;
-  border-left-style: none;
-  background-image: -gtk-scaled(url("assets/pathbar-separator.png"), url("assets/pathbar-separator@2.png"));
-  background-position: right center;
-  background-repeat: no-repeat;
-}
-
-%linked_headerbar {
-  @extend %linked_headerbar_middle;
-
-  &:first-child {
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-    border-left-style: solid;
-    background-image: none;
-    box-shadow: none;
-//    box-shadow: inset 0 1px transparentize($borders_color, 0.7), inset 1px 0 transparentize($borders_color, 0.7);
-  }
-
-  &:nth-last-child(-n+2) {
-    background-image: none;
-  }
-
-
-  &:last-child {
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    border-right-style: solid;
-    background-image: none;
-  }
-
-  &:only-child {
-    border-radius: 2px;
-    border-style: solid;
-    background-image: none;
-  }
-}
-
-// Nautilus new path-bar style end
-
 headerbar { // headerbar border rounding
 
   window separator:first-child + &,
