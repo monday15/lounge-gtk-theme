@@ -1677,7 +1677,7 @@ StScrollBar {
     }
     &.enter-key {
       border-color: darken($selected_bg_color, 15%);
-      background-color: $selected_bg_color;
+      background-color: darken($selected_bg_color, 5%);
       background-image: url("assets/key-enter.svg");
     }
     &.shift-key-lowercase {
