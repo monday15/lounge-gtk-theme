@@ -3055,7 +3055,7 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
 
   // OSD
   .osd & {
-    border-color: if($variant == 'light', transparentize(black, 0.8), $osd_borders_color);
+    border-color: if($variant == 'light', transparentize(black, 0.7), $osd_borders_color);
 
     &:disabled { border-color: transparent; }
   }
@@ -3182,7 +3182,8 @@ scale {
       }
 
       &:active {
-        @include button(osd-active);
+        @include button(osd-hover);
+        @if $variant == 'light' { border-color: transparentize($selected_borders_color, 0.2); }
         background-color: opacify($osd_bg_color, 1); // solid background needed here
       }
 
