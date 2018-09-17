@@ -290,8 +290,6 @@ gtk3_assets = [
   'src/gtk-3.0/assets/check-symbolic.symbolic.png',
   'src/gtk-3.0/assets/dash-symbolic.svg',
   'src/gtk-3.0/assets/dash-symbolic.symbolic.png',
-  'src/gtk-3.0/assets/pathbar-separator.png',
-  'src/gtk-3.0/assets/pathbar-separator@2.png',
   'src/gtk-3.0/assets/slider-horz-scale-has-marks-above@2.png',
   'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-active@2.png',
   'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-active-dark@2.png',
