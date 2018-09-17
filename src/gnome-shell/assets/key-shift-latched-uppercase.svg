@@ -29,8 +29,8 @@
      id="namedview19"
      showgrid="false"
      inkscape:zoom="14.75"
-     inkscape:cx="-1.1186443"
-     inkscape:cy="18.847458"
+     inkscape:cx="3.8983047"
+     inkscape:cy="16.135594"
      inkscape:window-x="1280"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
@@ -96,14 +96,14 @@
      style="display:inline;fill:#006098;fill-opacity:1"
      id="layer12">
     <path
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#3e749e;fill-opacity:1;stroke:none;stroke-width:2;marker:none;enable-background:new"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#5987ab;fill-opacity:1;stroke:none;stroke-width:2;marker:none;enable-background:new"
        d="m 147,818 v -4 h -3.1248 l 5.125,-5.7813 5.125,5.7813 h -3.1875 v 4 z"
        id="path16532"
        inkscape:connector-curvature="0" />
     <path
        id="path16534"
        d="m 147,822 v -2 h 3.9377 v 2 z"
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#3e749e;fill-opacity:1;stroke:none;stroke-width:2;marker:none;enable-background:new"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#5987ab;fill-opacity:1;stroke:none;stroke-width:2;marker:none;enable-background:new"
        inkscape:connector-curvature="0" />
   </g>
 </svg>
