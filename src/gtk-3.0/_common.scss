@@ -1549,6 +1549,7 @@ headerbar {
     @extend .dim-label;
   }
 
+  .selection-mode &,
   &.selection-mode {
     $_hc: mix($top_hilight,$selected_bl_color, 30%); // hilight color
 
@@ -4545,6 +4546,8 @@ button.titlebutton {
   &:backdrop { -gtk-icon-shadow: none; }
 }
 
+.selection-mode headerbar button.titlebutton,
+.selection-mode .titlebar button.titlebutton,
 headerbar.selection-mode button.titlebutton,
 .titlebar.selection-mode button.titlebutton {
   @include _button_text_shadow(white, $selected_bl_color);
