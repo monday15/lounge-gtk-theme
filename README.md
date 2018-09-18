@@ -6,11 +6,12 @@ This theme is meant to be used with Lounge-aux icons. It is not a "complete" ico
 > Fedora users will get Lounge-aux as a weak dependency with Adwaita as a main icon theme, for other icon themes, they should also check the link. 
 
 ## Installation
+Version 3.28.x is for gtk 3.22 / gnome 3.28; version 3.30.x is for gtk 3.24 / gnome 3.30.  
 You need 'meson' and 'sassc' packages to build and install the theme. Download release, run following commands from project directory:  
 `meson build`  
 `sudo ninja -C build install`
 
-You can also download already builded theme, and simply copy **Lounge** folder from archive to **/usr/share/themes**.
+You can also download already builded theme (download build-* from releases page), and simply copy **Lounge** folder from archive to **/usr/share/themes**.
 
 Fedora users can install theme via copr:  
 `sudo dnf copr enable monday15/lounge`  
@@ -52,6 +53,4 @@ Fedora developers and maintainers.
 ![sh1](/screenshots/sh1.png?raw=true)
 ![sh2](/screenshots/sh2.png?raw=true)
 ![sh2](/screenshots/sh3.png?raw=true)
-![sh3](/screenshots/sh4.png?raw=true)
-![sh4](/screenshots/sh5.png?raw=true)
 
