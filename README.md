@@ -6,7 +6,7 @@ This theme is meant to be used with Lounge-aux icons. It is not a "complete" ico
 > Fedora users will get Lounge-aux as a weak dependency with Adwaita as a main icon theme, for other icon themes, they should also check the link. 
 
 ## Installation
-You need 'meson' and 'sassc' packages to build and install the theme. Clone repository (or download release), run following commands from project directory:  
+You need 'meson' and 'sassc' packages to build and install the theme. Download release, run following commands from project directory:  
 `meson build`  
 `sudo ninja -C build install`
 
