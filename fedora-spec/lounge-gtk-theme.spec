@@ -1,5 +1,5 @@
 Name:           lounge-gtk-theme
-Version:        3.28.2
+Version:        3.28.3
 Release:        1%{?dist}
 Summary:        Simple and clean gtk theme
 
@@ -38,6 +38,9 @@ Recommends:	lounge-aux-icon-theme
 
 
 %changelog
+* Mon Sep 10 2018 Alex Monday <monday15@gmx.com>
+- Update to 3.28.3
+
 * Mon Sep 10 2018 Alex Monday <monday15@gmx.com>
 - Prepare to 3.28.2
 - Add sassc dependency
