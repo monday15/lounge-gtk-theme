@@ -1,3 +1,10 @@
+3.28.3 / 3.30.3
+===============
+
+* shell: Adjust colors
+* Various small fixes
+* Add support for gnome 3.30 (gtk+ 3.24)
+
 3.28.2
 ======
 
