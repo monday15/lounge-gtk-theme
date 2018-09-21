@@ -1,0 +1,199 @@
+%linked_middle {
+  border-radius: 0;
+  border-right-style: none;
+}
+
+%linked_left {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-style: none;
+}
+
+%linked_right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-right-style: solid;
+}
+
+// .linked assumes Box, which reverses nodes in RTL, so 1st child is always left
+%linked {
+  @extend %linked_middle;
+
+  &:first-child { @extend %linked_left; }
+  &:last-child { @extend %linked_right; }
+
+  &:only-child {
+    border-radius: 3px;
+    border-style: solid;
+  }
+}
+
+// Other widgets let CSS give the order, so 1st/last child are at text start/end
+%linked_flippable {
+  @extend %linked_middle;
+
+  &:dir(ltr) {
+    &:first-child { @extend %linked_left; }
+    &:last-child { @extend %linked_right; }
+  }
+
+  &:dir(rtl) {
+    &:first-child { @extend %linked_right; }
+    &:last-child { @extend %linked_left; }
+
+  }
+
+  &:only-child {
+    border-radius: 2px;
+    border-style: solid;
+  }
+}
+
+%linked_vertical_middle {
+  border-style: solid solid none solid;
+  border-radius: 0;
+}
+
+%linked_vertical{
+  @extend %linked_vertical_middle;
+
+  &:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-style: solid;
+  }
+
+  &:only-child {
+    border-radius: 2px;
+    border-style: solid;
+  }
+}
+
+////
+
+headerbar {
+  // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
+  entry,
+  spinbutton,
+  separator:not(.sidebar),
+  button {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  button {
+    min-width: 20px;
+  }
+  switch {
+    margin-top: 9px;
+    margin-bottom: 9px;
+  }
+}
+
+.background .titlebar {
+  &:backdrop, & {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+}
+
+////
+
+// GtkPathBar does not work with just .linked, so we must override that. But we
+// can’t simply remove .linked from the widget as that might break other themes.
+// Note also we select on filechooser to avoid interfering with NautilusPathBar.
+filechooser .path-bar.linked > button {
+  @extend %linked_flippable;
+}
+
+////
+
+.sidebar {
+  border-style: none;
+  background-color: mix($bg_color, $base_color, 50%);
+
+  &:not(separator) {
+    @at-root %sidebar_left,
+    &:dir(ltr),
+    &.left,
+    &.left:dir(rtl) {
+      border-right: 1px solid $borders_color;
+      border-left-style: none;
+    }
+
+    @at-root %sidebar_right
+    &:dir(rtl),
+    &.right {
+      border-left: 1px solid $borders_color;
+      border-right-style: none;
+    }
+  }
+
+  &:backdrop {
+    background-color: $backdrop_sidebar_bg_color;
+    border-color: $backdrop_borders_color;
+    transition: $backdrop_transition;
+  }
+
+  list { background-color: transparent; }
+
+  paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; }}
+}
+
+separator.sidebar {
+  background-color: $borders_color;
+
+  &:backdrop {
+    background-color: $backdrop_borders_color;
+  }
+
+  &.selection-mode,
+  .selection-mode & {
+    background-color: darken($selected_bg_color, 20%);
+  }
+}
+
+////
+
+.selection-mode headerbar button.titlebutton,
+.selection-mode .titlebar button.titlebutton,
+headerbar.selection-mode button.titlebutton,
+.titlebar.selection-mode button.titlebutton {
+  @include _button_text_shadow(white, $selected_bl_color);
+
+  &:backdrop { -gtk-icon-shadow: none; }
+}
+
+////
+
+
+popover.emoji-picker .emoji {
+  font-size: x-large;
+  padding: 6px;
+  border-radius: 6px;
+
+  :hover {
+    background: $selected_bl_color;
+  }
+}
+popover.emoji-completion arrow {
+  border: none;
+  background: none;
+}
+
+popover.emoji-completion contents row box {
+  padding: 2px 10px;
+}
+
+popover.emoji-completion .emoji:hover {
+  background: $popover_hover_color;
+}
+
