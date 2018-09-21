@@ -1,5 +1,5 @@
 project('lounge-gtk-theme',
-        version: '3.28.2',
+        version: '1.0',
         meson_version: '>= 0.40',
         license : ['GPL3+'],
         default_options: ['prefix=/usr'])
@@ -7,6 +7,7 @@ project('lounge-gtk-theme',
 # Dependencies
 
 sassc = find_program('sassc')
+depend_gtk3 = dependency('gtk+-3.0', version : '>=3.20')
 
 
 # Installation directories
@@ -63,29 +64,59 @@ gtk3_sources = files([
   'src/gtk-3.0/_colors-public.scss',
   'src/gtk-3.0/_colors.scss',
   'src/gtk-3.0/_common.scss',
+  'src/gtk-3.0/_common-3-22.scss',
+  'src/gtk-3.0/_common-3-24.scss',
   'src/gtk-3.0/_drawing.scss',
   'src/gtk-3.0/_apps.scss',
+  'src/gtk-3.0/_apps-3-28.scss',
+  'src/gtk-3.0/_apps-3-30.scss',
 ])
 
-custom_target('gtk3-light',
-              input: 'src/gtk-3.0/gtk.scss',
-              output: 'gtk.css',
-              command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
-              install: true,
-              install_dir: gtk3_dir,
-              depend_files: gtk3_sources,
-              build_by_default: true)
+if depend_gtk3.version().version_compare('<3.24')
+
+  custom_target('gtk3-light',
+                input: 'src/gtk-3.0/gtk-3-28.scss',
+                output: 'gtk.css',
+                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
+                install: true,
+                install_dir: gtk3_dir,
+                depend_files: gtk3_sources,
+                build_by_default: true)
 
 
-custom_target('gtk3-dark',
-              input: 'src/gtk-3.0/gtk-dark.scss',
-              output: 'gtk-dark.css',
-              command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
-              install: true,
-              install_dir: gtk3_dir,
-              depend_files: gtk3_sources,
-              build_by_default: true)
+  custom_target('gtk3-dark',
+                input: 'src/gtk-3.0/gtk-dark-3-28.scss',
+                output: 'gtk-dark.css',
+                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
+                install: true,
+                install_dir: gtk3_dir,
+                depend_files: gtk3_sources,
+                build_by_default: true)
 
+endif
+
+if depend_gtk3.version().version_compare('>=3.24')
+
+  custom_target('gtk3-light',
+                input: 'src/gtk-3.0/gtk-3-30.scss',
+                output: 'gtk.css',
+                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
+                install: true,
+                install_dir: gtk3_dir,
+                depend_files: gtk3_sources,
+                build_by_default: true)
+
+
+  custom_target('gtk3-dark',
+                input: 'src/gtk-3.0/gtk-dark-3-30.scss',
+                output: 'gtk-dark.css',
+                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
+                install: true,
+                install_dir: gtk3_dir,
+                depend_files: gtk3_sources,
+                build_by_default: true)
+
+endif
 
 # Install assets
 
