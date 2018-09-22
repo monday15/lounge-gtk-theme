@@ -1048,7 +1048,7 @@ button.color {
   &:visited {
     color: $link_visited_color;
 
-    *:selected & { color: mix($selected_fl_color, $selected_bl_color, 60%); }
+    *:selected & { color: mix($selected_fl_color, $selected_bl_color, 70%); }
   }
 
   &:hover {
@@ -1063,7 +1063,7 @@ button.color {
     *:selected & { color: mix($selected_fl_color, $selected_bl_color, 80%); }
   }
 
-  &:backdrop { &:backdrop:hover, &:backdrop:hover:selected, & { color: $selected_bl_color; }}
+  &:backdrop { &:backdrop:hover, &:backdrop:hover:selected, & { color: $backdrop_selected_bg_color; }}
 
   @at-root %link_selected,
   &:selected,
