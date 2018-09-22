@@ -7,6 +7,7 @@ project('lounge-gtk-theme',
 # Dependencies
 
 sassc = find_program('sassc')
+cp = find_program('cp')
 depend_gtk3 = dependency('gtk+-3.0', version : '>=3.20')
 
 
@@ -20,11 +21,29 @@ gtk2_asset_dir = join_paths(gtk2_dir, 'assets')
 gtk3_dir = join_paths(theme_dir, 'gtk-3.0')
 gtk3_asset_dir = join_paths(gtk3_dir, 'assets')
 
+  # Dark theme
 
-# Install index file
+dark_theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-night')
+dark_gtk2_dir = join_paths(dark_theme_dir, 'gtk-2.0')
+dark_gtk2_asset_dir = join_paths(dark_gtk2_dir, 'assets')
+dark_gtk3_dir = join_paths(dark_theme_dir, 'gtk-3.0')
+dark_gtk3_asset_dir = join_paths(dark_gtk3_dir, 'assets')
+
+
+# Install index files
+
+  # This is workaround, in a perfect world i prefer configuring two different index.theme files
+  # from single index.theme.in with @ThemeName@ replaced by Lounge (first file) and Lounge-night (second)
+  # but i cant figure out how to do so (probably, somehow put configured files in different temp dirs).
 
 index_file = [ 'src/index.theme' ]
 install_data(index_file, install_dir: theme_dir)
+
+conf_data = configuration_data()
+configure_file(input : 'src/index.theme-dark',
+               output : 'index.theme',
+               configuration : conf_data,
+               install_dir: dark_theme_dir)
 
 
 # Generate and install gnome-shell theme
@@ -55,7 +74,15 @@ gtk2_data = [
   'src/gtk-2.0/hacks.rc',
 ]
 
+dark_gtk2_data = [
+  'src/gtk-2.0-dark/gtkrc',
+  'src/gtk-2.0-dark/main.rc',
+  'src/gtk-2.0-dark/apps.rc',
+  'src/gtk-2.0-dark/hacks.rc',
+]
+
 install_data(gtk2_data, install_dir: gtk2_dir)
+install_data(dark_gtk2_data, install_dir: dark_gtk2_dir)
 
 
 # Generate and install gtk3 theme
@@ -83,7 +110,6 @@ if depend_gtk3.version().version_compare('<3.24')
                 depend_files: gtk3_sources,
                 build_by_default: true)
 
-
   custom_target('gtk3-dark',
                 input: 'src/gtk-3.0/gtk-dark-3-28.scss',
                 output: 'gtk-dark.css',
@@ -92,6 +118,30 @@ if depend_gtk3.version().version_compare('<3.24')
                 install_dir: gtk3_dir,
                 depend_files: gtk3_sources,
                 build_by_default: true)
+
+  # This is workaround, in a perfect world i prefer to install gtk-dark.css (generated earlier)
+  # to two different places under different names. Second variant, i think, also acceptable, is
+  # to generate another custom_target, but a name of output is similar to custom_target('gtk3-light',
+  # and meson not happy about it.
+  # Right now i create fake gtk.css for dark theme (so meson/ninja index this file, and will remove it
+  # on uninstall), after then i replace it with existing gtk-dark.css from light theme with external script.
+
+    #  custom_target('gtk3-night',
+    #                input: 'src/gtk-3.0/gtk-dark-3-28.scss',
+    #                output: 'gtk.css',
+    #                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
+    #                install: true,
+    #                install_dir: dark_gtk3_dir,
+    #                depend_files: gtk3_sources,
+    #                build_by_default: true)
+
+  conf_data = configuration_data()
+  configure_file(input : 'src/index.theme',
+                 output : 'gtk.css',
+                 configuration : conf_data,
+                 install_dir: dark_gtk3_dir)
+
+  meson.add_install_script('copy-gtk-dark-to-night-theme.py')
 
 endif
 
@@ -106,7 +156,6 @@ if depend_gtk3.version().version_compare('>=3.24')
                 depend_files: gtk3_sources,
                 build_by_default: true)
 
-
   custom_target('gtk3-dark',
                 input: 'src/gtk-3.0/gtk-dark-3-30.scss',
                 output: 'gtk-dark.css',
@@ -115,6 +164,14 @@ if depend_gtk3.version().version_compare('>=3.24')
                 install_dir: gtk3_dir,
                 depend_files: gtk3_sources,
                 build_by_default: true)
+
+  conf_data = configuration_data()
+  configure_file(input : 'src/index.theme',
+                 output : 'gtk.css',
+                 configuration : conf_data,
+                 install_dir: dark_gtk3_dir)
+
+  meson.add_install_script('copy-gtk-dark-to-night-theme.py')
 
 endif
 
@@ -298,6 +355,149 @@ gtk2_assets = [
   'src/gtk-2.0/assets/treeview-separator-rtl.png',
 ]
 
+dark_gtk2_assets = [
+  'src/gtk-2.0-dark/assets/border.png',
+  'src/gtk-2.0-dark/assets/button-active.png',
+  'src/gtk-2.0-dark/assets/button-hover.png',
+  'src/gtk-2.0-dark/assets/button-insensitive.png',
+  'src/gtk-2.0-dark/assets/button.png',
+  'src/gtk-2.0-dark/assets/checkbox-checked-active.png',
+  'src/gtk-2.0-dark/assets/checkbox-checked-hover.png',
+  'src/gtk-2.0-dark/assets/checkbox-checked-insensitive.png',
+  'src/gtk-2.0-dark/assets/checkbox-checked.png',
+  'src/gtk-2.0-dark/assets/checkbox-mixed-active.png',
+  'src/gtk-2.0-dark/assets/checkbox-mixed-hover.png',
+  'src/gtk-2.0-dark/assets/checkbox-mixed-insensitive.png',
+  'src/gtk-2.0-dark/assets/checkbox-mixed.png',
+  'src/gtk-2.0-dark/assets/checkbox-unchecked-active.png',
+  'src/gtk-2.0-dark/assets/checkbox-unchecked-hover.png',
+  'src/gtk-2.0-dark/assets/checkbox-unchecked-insensitive.png',
+  'src/gtk-2.0-dark/assets/checkbox-unchecked.png',
+  'src/gtk-2.0-dark/assets/combo-entry-ltr-button-active.png',
+  'src/gtk-2.0-dark/assets/combo-entry-ltr-button-hover.png',
+  'src/gtk-2.0-dark/assets/combo-entry-ltr-button-insensitive.png',
+  'src/gtk-2.0-dark/assets/combo-entry-ltr-button.png',
+  'src/gtk-2.0-dark/assets/combo-entry-ltr-entry-active.png',
+  'src/gtk-2.0-dark/assets/combo-entry-ltr-entry-insensitive.png',
+  'src/gtk-2.0-dark/assets/combo-entry-ltr-entry.png',
+  'src/gtk-2.0-dark/assets/combo-entry-rtl-button-active.png',
+  'src/gtk-2.0-dark/assets/combo-entry-rtl-button-hover.png',
+  'src/gtk-2.0-dark/assets/combo-entry-rtl-button-insensitive.png',
+  'src/gtk-2.0-dark/assets/combo-entry-rtl-button.png',
+  'src/gtk-2.0-dark/assets/combo-entry-rtl-entry-active.png',
+  'src/gtk-2.0-dark/assets/combo-entry-rtl-entry-insensitive.png',
+  'src/gtk-2.0-dark/assets/combo-entry-rtl-entry.png',
+  'src/gtk-2.0-dark/assets/entry-active.png',
+  'src/gtk-2.0-dark/assets/entry-background-insensitive.png',
+  'src/gtk-2.0-dark/assets/entry-background.png',
+  'src/gtk-2.0-dark/assets/entry-insensitive.png',
+  'src/gtk-2.0-dark/assets/entry.png',
+  'src/gtk-2.0-dark/assets/focus.png',
+  'src/gtk-2.0-dark/assets/frame-inline.png',
+  'src/gtk-2.0-dark/assets/frame-notebook.png',
+  'src/gtk-2.0-dark/assets/frame.png',
+  'src/gtk-2.0-dark/assets/handle-horz.png',
+  'src/gtk-2.0-dark/assets/handle.png',
+  'src/gtk-2.0-dark/assets/handle-vert.png',
+  'src/gtk-2.0-dark/assets/line.png',
+  'src/gtk-2.0-dark/assets/menu-border.png',
+  'src/gtk-2.0-dark/assets/menu-checkbox-checked-insensitive.png',
+  'src/gtk-2.0-dark/assets/menu-checkbox-checked.png',
+  'src/gtk-2.0-dark/assets/menu-checkbox-insensitive.png',
+  'src/gtk-2.0-dark/assets/menu-checkbox-mixed-insensitive.png',
+  'src/gtk-2.0-dark/assets/menu-checkbox-mixed.png',
+  'src/gtk-2.0-dark/assets/menu-checkbox.png',
+  'src/gtk-2.0-dark/assets/menu-item-active.png',
+  'src/gtk-2.0-dark/assets/menu-radio-checked-insensitive.png',
+  'src/gtk-2.0-dark/assets/menu-radio-checked.png',
+  'src/gtk-2.0-dark/assets/menu-radio-insensitive.png',
+  'src/gtk-2.0-dark/assets/menu-radio-mixed-insensitive.png',
+  'src/gtk-2.0-dark/assets/menu-radio-mixed.png',
+  'src/gtk-2.0-dark/assets/menu-radio.png',
+  'src/gtk-2.0-dark/assets/notebook-combo-entry-ltr-entry-active.png',
+  'src/gtk-2.0-dark/assets/notebook-combo-entry-ltr-entry-insensitive.png',
+  'src/gtk-2.0-dark/assets/notebook-combo-entry-ltr-entry.png',
+  'src/gtk-2.0-dark/assets/notebook-combo-entry-rtl-entry-active.png',
+  'src/gtk-2.0-dark/assets/notebook-combo-entry-rtl-entry-insensitive.png',
+  'src/gtk-2.0-dark/assets/notebook-combo-entry-rtl-entry.png',
+  'src/gtk-2.0-dark/assets/notebook-entry-active.png',
+  'src/gtk-2.0-dark/assets/notebook-entry-insensitive.png',
+  'src/gtk-2.0-dark/assets/notebook-entry.png',
+  'src/gtk-2.0-dark/assets/pan-down-insensitive.png',
+  'src/gtk-2.0-dark/assets/pan-down.png',
+  'src/gtk-2.0-dark/assets/pan-left-insensitive.png',
+  'src/gtk-2.0-dark/assets/pan-left.png',
+  'src/gtk-2.0-dark/assets/pan-left-semi.png',
+  'src/gtk-2.0-dark/assets/pan-right-insensitive.png',
+  'src/gtk-2.0-dark/assets/pan-right.png',
+  'src/gtk-2.0-dark/assets/pan-right-semi.png',
+  'src/gtk-2.0-dark/assets/pan-up-insensitive.png',
+  'src/gtk-2.0-dark/assets/pan-up.png',
+  'src/gtk-2.0-dark/assets/progressbar-horz.png',
+  'src/gtk-2.0-dark/assets/progressbar-trough-horz.png',
+  'src/gtk-2.0-dark/assets/progressbar-trough-vert.png',
+  'src/gtk-2.0-dark/assets/progressbar-vert.png',
+  'src/gtk-2.0-dark/assets/radio-checked-active.png',
+  'src/gtk-2.0-dark/assets/radio-checked-hover.png',
+  'src/gtk-2.0-dark/assets/radio-checked-insensitive.png',
+  'src/gtk-2.0-dark/assets/radio-checked.png',
+  'src/gtk-2.0-dark/assets/radio-mixed-active.png',
+  'src/gtk-2.0-dark/assets/radio-mixed-hover.png',
+  'src/gtk-2.0-dark/assets/radio-mixed-insensitive.png',
+  'src/gtk-2.0-dark/assets/radio-mixed.png',
+  'src/gtk-2.0-dark/assets/radio-unchecked-active.png',
+  'src/gtk-2.0-dark/assets/radio-unchecked-hover.png',
+  'src/gtk-2.0-dark/assets/radio-unchecked-insensitive.png',
+  'src/gtk-2.0-dark/assets/radio-unchecked.png',
+  'src/gtk-2.0-dark/assets/scale-horz-trough-active.png',
+  'src/gtk-2.0-dark/assets/scale-horz-trough.png',
+  'src/gtk-2.0-dark/assets/scale-slider-active.png',
+  'src/gtk-2.0-dark/assets/scale-slider-hover.png',
+  'src/gtk-2.0-dark/assets/scale-slider-insensitive.png',
+  'src/gtk-2.0-dark/assets/scale-slider.png',
+  'src/gtk-2.0-dark/assets/scale-vert-trough-active.png',
+  'src/gtk-2.0-dark/assets/scale-vert-trough.png',
+  'src/gtk-2.0-dark/assets/scrollbar-slider-active.png',
+  'src/gtk-2.0-dark/assets/scrollbar-slider.png',
+  'src/gtk-2.0-dark/assets/scrollbar-trough.png',
+  'src/gtk-2.0-dark/assets/spin-down-insensitive.png',
+  'src/gtk-2.0-dark/assets/spin-down.png',
+  'src/gtk-2.0-dark/assets/spin-ltr-down-active.png',
+  'src/gtk-2.0-dark/assets/spin-ltr-down-hover.png',
+  'src/gtk-2.0-dark/assets/spin-ltr-down-insensitive.png',
+  'src/gtk-2.0-dark/assets/spin-ltr-down.png',
+  'src/gtk-2.0-dark/assets/spin-ltr-up-active.png',
+  'src/gtk-2.0-dark/assets/spin-ltr-up-hover.png',
+  'src/gtk-2.0-dark/assets/spin-ltr-up-insensitive.png',
+  'src/gtk-2.0-dark/assets/spin-ltr-up.png',
+  'src/gtk-2.0-dark/assets/spin-rtl-down-active.png',
+  'src/gtk-2.0-dark/assets/spin-rtl-down-hover.png',
+  'src/gtk-2.0-dark/assets/spin-rtl-down-insensitive.png',
+  'src/gtk-2.0-dark/assets/spin-rtl-down.png',
+  'src/gtk-2.0-dark/assets/spin-rtl-up-active.png',
+  'src/gtk-2.0-dark/assets/spin-rtl-up-hover.png',
+  'src/gtk-2.0-dark/assets/spin-rtl-up-insensitive.png',
+  'src/gtk-2.0-dark/assets/spin-rtl-up.png',
+  'src/gtk-2.0-dark/assets/spin-up-insensitive.png',
+  'src/gtk-2.0-dark/assets/spin-up.png',
+  'src/gtk-2.0-dark/assets/tooltip-bg.png',
+  'src/gtk-2.0-dark/assets/tab-down-active.png',
+  'src/gtk-2.0-dark/assets/tab-horz-gap.png',
+  'src/gtk-2.0-dark/assets/tab-left-active.png',
+  'src/gtk-2.0-dark/assets/tab-right-active.png',
+  'src/gtk-2.0-dark/assets/tab-up-active.png',
+  'src/gtk-2.0-dark/assets/tab-vert-gap.png',
+  'src/gtk-2.0-dark/assets/transparent-dot.png',
+  'src/gtk-2.0-dark/assets/treeview-pan-down-active.png',
+  'src/gtk-2.0-dark/assets/treeview-pan-down-hover.png',
+  'src/gtk-2.0-dark/assets/treeview-pan-down.png',
+  'src/gtk-2.0-dark/assets/treeview-pan-up-active.png',
+  'src/gtk-2.0-dark/assets/treeview-pan-up-hover.png',
+  'src/gtk-2.0-dark/assets/treeview-pan-up.png',
+  'src/gtk-2.0-dark/assets/treeview-separator-ltr.png',
+  'src/gtk-2.0-dark/assets/treeview-separator-rtl.png',
+]
+
 gtk3_assets = [
   'src/gtk-3.0/assets/bullet-symbolic.svg',
   'src/gtk-3.0/assets/bullet-symbolic.symbolic.png',
@@ -443,6 +643,95 @@ gtk3_assets = [
   'src/gtk-3.0/assets/text-select-start.png',
 ]
 
+dark_gtk3_assets = [
+  'src/gtk-3.0/assets/bullet-symbolic.svg',
+  'src/gtk-3.0/assets/bullet-symbolic.symbolic.png',
+  'src/gtk-3.0/assets/checkbox-active-selectionmode@2.png',
+  'src/gtk-3.0/assets/checkbox-active-selectionmode.png',
+  'src/gtk-3.0/assets/checkbox-backdrop-selectionmode@2.png',
+  'src/gtk-3.0/assets/checkbox-backdrop-selectionmode.png',
+  'src/gtk-3.0/assets/checkbox-checked-active-selectionmode@2.png',
+  'src/gtk-3.0/assets/checkbox-checked-active-selectionmode.png',
+  'src/gtk-3.0/assets/checkbox-checked-backdrop-selectionmode@2.png',
+  'src/gtk-3.0/assets/checkbox-checked-backdrop-selectionmode.png',
+  'src/gtk-3.0/assets/checkbox-checked-hover-selectionmode@2.png',
+  'src/gtk-3.0/assets/checkbox-checked-hover-selectionmode.png',
+  'src/gtk-3.0/assets/checkbox-checked-selectionmode@2.png',
+  'src/gtk-3.0/assets/checkbox-checked-selectionmode.png',
+  'src/gtk-3.0/assets/checkbox-hover-selectionmode@2.png',
+  'src/gtk-3.0/assets/checkbox-hover-selectionmode.png',
+  'src/gtk-3.0/assets/checkbox-selectionmode@2.png',
+  'src/gtk-3.0/assets/checkbox-selectionmode.png',
+  'src/gtk-3.0/assets/check-symbolic.svg',
+  'src/gtk-3.0/assets/check-symbolic.symbolic.png',
+  'src/gtk-3.0/assets/dash-symbolic.svg',
+  'src/gtk-3.0/assets/dash-symbolic.symbolic.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-active-dark@2.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-active-dark.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-backdrop-dark@2.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-backdrop-dark.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-backdrop-insensitive-dark@2.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-backdrop-insensitive-dark.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-dark@2.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-dark.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-hover-dark@2.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-hover-dark.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-insensitive-dark@2.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-insensitive-dark.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-above-insensitive.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-below-active-dark@2.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-below-active-dark.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-below-backdrop-dark@2.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-below-backdrop-dark.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-below-backdrop-insensitive-dark@2.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-below-backdrop-insensitive-dark.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-below-dark@2.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-below-dark.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-below-hover-dark@2.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-below-hover-dark.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-below-insensitive-dark@2.png',
+  'src/gtk-3.0/assets/slider-horz-scale-has-marks-below-insensitive-dark.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-above-active-dark@2.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-above-active-dark.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-above-backdrop-dark@2.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-above-backdrop-dark.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-above-backdrop-insensitive-dark@2.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-above-backdrop-insensitive-dark.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-above-dark@2.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-above-dark.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-above-hover-dark@2.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-above-hover-dark.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-above-insensitive-dark@2.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-above-insensitive-dark.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-below-active-dark@2.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-below-active-dark.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-below-backdrop-dark@2.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-below-backdrop-dark.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-below-backdrop-insensitive-dark@2.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-below-backdrop-insensitive-dark.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-below-dark@2.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-below-dark.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-below-hover-dark@2.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-below-hover-dark.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-below-insensitive-dark@2.png',
+  'src/gtk-3.0/assets/slider-vert-scale-has-marks-below-insensitive-dark.png',
+  'src/gtk-3.0/assets/text-select-end-active-dark@2.png',
+  'src/gtk-3.0/assets/text-select-end-active-dark.png',
+  'src/gtk-3.0/assets/text-select-end-dark@2.png',
+  'src/gtk-3.0/assets/text-select-end-dark.png',
+  'src/gtk-3.0/assets/text-select-end-hover-dark@2.png',
+  'src/gtk-3.0/assets/text-select-end-hover-dark.png',
+  'src/gtk-3.0/assets/text-select-start-active-dark@2.png',
+  'src/gtk-3.0/assets/text-select-start-active-dark.png',
+  'src/gtk-3.0/assets/text-select-start-dark@2.png',
+  'src/gtk-3.0/assets/text-select-start-dark.png',
+  'src/gtk-3.0/assets/text-select-start-hover-dark@2.png',
+  'src/gtk-3.0/assets/text-select-start-hover-dark.png',
+]
+
+
 install_data(gnomeshell_assets, install_dir: shell_asset_dir)
 install_data(gtk2_assets, install_dir: gtk2_asset_dir)
 install_data(gtk3_assets, install_dir: gtk3_asset_dir)
+install_data(dark_gtk2_assets, install_dir: dark_gtk2_asset_dir)
+install_data(dark_gtk3_assets, install_dir: dark_gtk3_asset_dir)
