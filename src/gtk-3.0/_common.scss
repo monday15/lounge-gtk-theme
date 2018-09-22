@@ -3986,8 +3986,8 @@ infobar {
   &.error {
     &:backdrop, & {
       label, & { color: $selected_fl_color; }
-      background-color: $selected_bl_color;
-      border-color: darken($selected_bl_color, 10%);
+      background-color: $infobar_color;
+      border-color: darken($infobar_color, 10%);
     }
 
 //    text-shadow: 0 1px darken($selected_bl_color, 10%);
@@ -3996,28 +3996,31 @@ infobar {
 
     button {
       // FIXME: extend selection mode buttons
-      @include button(normal, $selected_bl_color, $selected_fl_color, none);
+      @include button(normal, $infobar_color, $selected_fl_color, none);
+      border-color: _border_color(desaturate($infobar_color, 10%));
 
-      &:hover { @include button(hover, $selected_bl_color, $selected_fl_color, none); }
+      &:hover { @include button(hover, $infobar_color, $selected_fl_color, none);
+                border-color: _border_color(desaturate($infobar_color, 10%)); }
 
       &:active,
-      &:checked { @include button(active, $selected_bl_color, $selected_fl_color, none); }
+      &:checked { @include button(active, $infobar_color, $selected_fl_color, none);
+                  border-color: _border_color(desaturate($infobar_color, 10%)); }
 
-      &:disabled { @include button(insensitive,$selected_bl_color,$selected_fl_color,none); }
+      &:disabled { @include button(insensitive,$infobar_color,$selected_fl_color,none); }
 
       &:backdrop {
-        @include button(backdrop, $selected_bl_color, $selected_fl_color, none);
-        border-color: _border_color($selected_bl_color);
+        @include button(backdrop, $infobar_color, $selected_fl_color, none);
+        border-color: _border_color(desaturate($infobar_color, 10%));
 
         &:disabled {
-          @include button(backdrop-insensitive, $selected_bl_color,
+          @include button(backdrop-insensitive, $infobar_color,
                           $selected_fl_color, none);
-          border-color: _border_color($selected_bl_color);
+          border-color: _border_color(desaturate($infobar_color, 10%));
         }
       }
     }
 
-    selection { background-color: darken($selected_bl_color, 10%); }
+    selection { background-color: lighten($infobar_color, 5%); }
 
     *:link { @extend %link_selected; }
   }
