@@ -2686,17 +2686,17 @@ switch {
   row:selected & {
     @if $variant == 'light' {
       box-shadow: none;
-      border-color: $selected_borders_color;
+      border-color: darken($selected_borders_color, 10%);
 
       &:backdrop {
-        border-color: $backdrop_selected_borders_color;
-        slider { &:checked, & { border-color: $backdrop_selected_borders_color; } }
+        border-color: darken($backdrop_selected_borders_color, 10%);
+        slider { &:checked, & { border-color: darken($backdrop_selected_borders_color, 10%); } }
       }
 
       slider:dir(rtl) { border-left-color: $borders_color; }
       slider:dir(ltr) { border-right-color: $borders_color; }
 
-      slider { &:checked, & { border-color: $selected_borders_color; } }
+      slider { &:checked, & { border-color: darken($selected_borders_color, 10%); } }
     }
   }
 }
