@@ -58,6 +58,6 @@ Fedora developers and maintainers.
 ![sh1](/screenshots/sh1.png?raw=true)
 ![sh2](/screenshots/sh2.png?raw=true)
 ![sh2](/screenshots/sh3.png?raw=true)
-![sh4](/screenshots/sh3.png?raw=true)
-![sh5](/screenshots/sh3.png?raw=true)
+![sh4](/screenshots/sh4.png?raw=true)
+![sh5](/screenshots/sh5.png?raw=true)
 
