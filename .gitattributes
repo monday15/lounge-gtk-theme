@@ -3,6 +3,7 @@
 /fedora-spec export-ignore
 /screenshots export-ignore
 /firefox-tweak export-ignore
+/firefox-tweak-dark export-ignore
 
 /src/gtk-2.0/render-assets.sh export-ignore
 /src/gtk-2.0/assets.svg export-ignore
