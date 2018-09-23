@@ -388,6 +388,8 @@ StScrollBar {
   .prompt-dialog-password-box {
     spacing: 1em;
     padding-bottom: 1em;
+    // Workaround, with Roboto entry has different size at empty/not-empty states 
+    StEntry { font-family: Sans-serif; }
   }
 
   .prompt-dialog-error-label {
