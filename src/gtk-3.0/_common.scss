@@ -2314,7 +2314,7 @@ notebook {
 
         &.reorderable-page {
           border-color: transparentize($borders_color, 0.7);
-          background-color: transparentize($bg_color, 0.6);
+          background-color: if($variant == 'light', transparentize($bg_color, 0.6), transparentize(white, 0.98));
         }
       }
 
@@ -2331,7 +2331,7 @@ notebook {
         color: $fg_color;
         &.reorderable-page {
           border-color: transparentize($borders_color, 0.5);
-          background-color: transparentize($bg_color, 0.2);
+          background-color: if($variant == 'light', transparentize($bg_color, 0.2), transparentize(white, 0.97));
 
           &:hover { background-color: transparentize($bg_color, 0.0); }
         }
