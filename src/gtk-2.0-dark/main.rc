@@ -2367,6 +2367,11 @@ style "disable_separator" {
 
 }
 
+style "text" {
+  engine "murrine" { textstyle = 0 }
+}
+
+
 # Default style, containing theme properties and trying to match every widget as
 # much as possible, which is not only faster than trying to match every widget
 # by its own but also less bug-prune and more consistent. However there is some
@@ -2393,8 +2398,13 @@ class "GtkMenuBar"                                                 style "menuba
 class "GtkMenu"                                                    style "menu"
 class "GtkTextView"                                                style "textview"
 
+# Fixes insensitive text shadows
+widget_class "*<GtkLabel>"    style "text"
+widget_class "*<GtkCellView>" style "text"
+
 # Menu and menubar items
 widget_class "*<GtkMenuItem>*"                                     style "menu_item"
+widget_class "*<GtkMenuItem>*<GtkLabel>"                           style "text" 			
 widget_class "*<GtkMenuBar>.<GtkMenuItem>*"                        style "menubar_item"
 widget_class "*<GtkSeparatorMenuItem>*"                            style "separator_menu_item"
 
