@@ -1,0 +1,8 @@
+.tab-line { display: none !important; }
+#urlbar[focused=true] { border-color: #416682 !important; box-shadow: inset 0 0 0 1px #416682 !important; }
+.tab-background[selected="true"] {
+    background-attachment: none!important;
+    background-color: #292f2f!important;
+    background-image: none!important;
+}
+
