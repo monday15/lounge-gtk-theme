@@ -1,3 +1,15 @@
+1.0
+===
+
+* Build improvement, now theme builds depending on gtk3 version;
+* Scss files restructure, for more flexibility;
+* gtk2: Dark theme added, requires gtk-murrine-engine
+* gtk3: Nautilus pathbar improvements
+* gtk3: Dark theme tweaks
+* gtk3: Various fixes and improvements
+* general: Firefox custom css for dark theme
+
+
 3.28.3 / 3.30.3
 ===============
 
