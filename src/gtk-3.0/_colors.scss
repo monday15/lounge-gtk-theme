@@ -45,9 +45,9 @@ $error_color: if($variant == 'light', #c25656, darken(#c25656, 20%));
 $success_color: if($variant == 'light', #8bb95f, desaturate(darken(#9fc57b, 25%), 10%));
 $destructive_color: if($variant == 'light', #d04848, desaturate(darken(#d97b7b, 25%), 10%));
 
-$osd_fg_color:  if($variant == 'light', $fg_color, #eee);
-$osd_text_color: if($variant == 'light', $text_color, #eee);
-$osd_bg_color:  if($variant == 'light', transparentize(#dfddd9, 0.07), transparentize(#1c1f20, 0.2));
+$osd_fg_color:  if($variant == 'light', $fg_color, #d2d2d2);
+$osd_text_color: if($variant == 'light', $text_color, #d2d2d2);
+$osd_bg_color:  if($variant == 'light', transparentize(#dfddd9, 0.07), transparentize(#1c1f20, 0.3));
 $osd_borders_color: $borders_color;
 
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
