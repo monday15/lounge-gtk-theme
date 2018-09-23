@@ -3025,7 +3025,7 @@ scale {
   slider {
     @include button(normal-alt, $edge: $shadow_color);
 
-    border: 1px solid darken($alt_borders_color, 3%);
+    border: 1px solid $alt_borders_color;
     border-radius: 3px;
     transition: $button_transition;
     transition-property: background, border, box-shadow;
