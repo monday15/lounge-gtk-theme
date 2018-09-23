@@ -506,8 +506,8 @@ treeview entry {
  * Buttons *
  ***********/
 // stuff for .needs-attention
-$_dot_color: if($variant=='light', if($variant == 'light', darken($selected_bl_color, 20%), $selected_bl_color),
-                                   lighten($selected_bl_color,15%));
+$_dot_color: if($variant=='light', $selected_bg_color,
+                                   lighten($selected_bg_color, 15%));
 @keyframes needs_attention {
   from {
     background-image: -gtk-gradient(radial,
@@ -3032,7 +3032,7 @@ scale {
 
     &:hover { @include button(hover-alt, $edge: $shadow_color); }
 
-    &:active { border-color: if($variant == 'light', $selected_borders_color, if($variant == 'light', darken($selected_bl_color, 20%), $selected_bl_color)); }
+    &:active { border-color: if($variant == 'light', $selected_borders_color, mix($selected_bg_color, $selected_borders_color, 70%)); }
 
     &:disabled { @include button(insensitive); }
 
@@ -3461,7 +3461,7 @@ levelbar {
 
     &.high,
     &:not(.empty) {
-      border-color: if($variant == 'light', darken($selected_bl_color, 20%), $selected_bl_color);
+      border-color: $selected_borders_color;
       background-color: $selected_bl_color;
 
       &:backdrop { border-color: $selected_bl_color; }
@@ -4479,7 +4479,7 @@ button.emoji-section {
 
   &:backdrop:not(:checked) { border-color: transparent; }
   &:hover { border-color: $borders_color; }
-  &:checked { border-color: if($variant == 'light', darken($selected_bl_color, 20%), $selected_bl_color); }
+  &:checked { border-color: $selected_bg_color; }
 
   label {
     padding: 0;
