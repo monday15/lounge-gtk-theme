@@ -6,9 +6,8 @@ project('lounge-gtk-theme',
 
 # Dependencies
 
-sassc = find_program('sassc')
-cp = find_program('cp')
 depend_gtk3 = dependency('gtk+-3.0', version : '>=3.20')
+sassc = find_program('sassc')
 
 
 # Installation directories
@@ -32,17 +31,17 @@ dark_gtk3_asset_dir = join_paths(dark_gtk3_dir, 'assets')
 
 # Install index files
 
-  # This is workaround, in a perfect world i prefer configuring two different index.theme files
-  # from single index.theme.in with @ThemeName@ replaced by Lounge (first file) and Lounge-night (second)
-  # but i cant figure out how to do so (probably, somehow put configured files in different temp dirs).
+  # Trick used for preventing meson warnings, it is not changing anything,
+  # only copies index file for night theme under a different name. 
 
 index_file = [ 'src/index.theme' ]
 install_data(index_file, install_dir: theme_dir)
 
-conf_data = configuration_data()
+trick = configuration_data()
+trick.set('something', 'something')
 configure_file(input : 'src/index.theme-dark',
                output : 'index.theme',
-               configuration : conf_data,
+               configuration : trick,
                install_dir: dark_theme_dir)
 
 
@@ -100,64 +99,26 @@ gtk3_sources = files([
 ])
 
 if depend_gtk3.version().version_compare('<3.24')
-
-  custom_target('gtk3-light',
-                input: 'src/gtk-3.0/gtk-3-28.scss',
-                output: 'gtk.css',
-                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
-                install: true,
-                install_dir: gtk3_dir,
-                depend_files: gtk3_sources,
-                build_by_default: true)
-
-  custom_target('gtk3-dark',
-                input: 'src/gtk-3.0/gtk-dark-3-28.scss',
-                output: 'gtk-dark.css',
-                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
-                install: true,
-                install_dir: gtk3_dir,
-                depend_files: gtk3_sources,
-                build_by_default: true)
-
-  # This is workaround, in a perfect world i prefer to install gtk-dark.css (generated earlier)
-  # to two different places under different names. Second variant, i think, also acceptable, is
-  # to generate another custom_target, but a name of output is similar to custom_target('gtk3-light',
-  # and meson not happy about it.
-  # Right now i create fake gtk.css for dark theme (so meson/ninja index this file, and will remove it
-  # on uninstall), after then i replace it with existing gtk-dark.css from light theme with external script.
-
-    #  custom_target('gtk3-night',
-    #                input: 'src/gtk-3.0/gtk-dark-3-28.scss',
-    #                output: 'gtk.css',
-    #                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
-    #                install: true,
-    #                install_dir: dark_gtk3_dir,
-    #                depend_files: gtk3_sources,
-    #                build_by_default: true)
-
-  conf_data = configuration_data()
-  configure_file(input : 'src/index.theme',
-                 output : 'gtk.css',
-                 configuration : conf_data,
-                 install_dir: dark_gtk3_dir)
-
-  meson.add_install_script('copy-gtk-dark-to-night-theme.py')
-
+  gtk3_scss_light = [ 'src/gtk-3.0/gtk-3-28.scss' ]
+  gtk3_scss_dark  = [ 'src/gtk-3.0/gtk-dark-3-28.scss' ]
 endif
 
 if depend_gtk3.version().version_compare('>=3.24')
+  gtk3_scss_light = [ 'src/gtk-3.0/gtk-3-30.scss' ]
+  gtk3_scss_dark  = [ 'src/gtk-3.0/gtk-dark-3-30.scss' ]
+endif
 
   custom_target('gtk3-light',
-                input: 'src/gtk-3.0/gtk-3-30.scss',
+                input: gtk3_scss_light,
                 output: 'gtk.css',
                 command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
                 install: true,
-                install_dir: gtk3_dir,
+                install_dir: gtk3_dir, 
                 depend_files: gtk3_sources,
                 build_by_default: true)
 
   custom_target('gtk3-dark',
-                input: 'src/gtk-3.0/gtk-dark-3-30.scss',
+                input: gtk3_scss_dark,
                 output: 'gtk-dark.css',
                 command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
                 install: true,
@@ -165,15 +126,14 @@ if depend_gtk3.version().version_compare('>=3.24')
                 depend_files: gtk3_sources,
                 build_by_default: true)
 
-  conf_data = configuration_data()
-  configure_file(input : 'src/index.theme',
-                 output : 'gtk.css',
-                 configuration : conf_data,
+  # Copy gtk.css for meson to index it, ninja uninstall needs this to remove the file;
+  # install script overrides it with gtk-dark.css contents.
+
+  configure_file(output : 'gtk.css',
+                 configuration : configuration_data(),
                  install_dir: dark_gtk3_dir)
 
-  meson.add_install_script('copy-gtk-dark-to-night-theme.py')
-
-endif
+  meson.add_install_script('sh', '-c', 'cp $MESON_INSTALL_DESTDIR_PREFIX/'+gtk3_dir+'/gtk-dark.css $MESON_INSTALL_DESTDIR_PREFIX/'+dark_gtk3_dir+'/gtk.css')
 
 # Install assets
 
