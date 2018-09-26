@@ -48,14 +48,23 @@ configure_file(input : 'src/index.theme-dark',
 # Generate and install gnome-shell theme
 
 shell_sources = files([
-  'src/gnome-shell/gnome-shell.scss',
+  'src/gnome-shell/gnome-shell-3-28.scss',
+  'src/gnome-shell/gnome-shell-3-30.scss',
   'src/gnome-shell/gnome-shell-sass/_colors.scss',
-  'src/gnome-shell/gnome-shell-sass/_common.scss',
   'src/gnome-shell/gnome-shell-sass/_drawing.scss',
+  'src/gnome-shell/gnome-shell-sass/_common.scss',
+  'src/gnome-shell/gnome-shell-sass/_common-3-28.scss',
+  'src/gnome-shell/gnome-shell-sass/_common-3-30.scss',
 ])
 
+if depend_gtk3.version().version_compare('>=3.24')
+  shell_scss = [ 'src/gnome-shell/gnome-shell-3-30.scss' ]
+else
+  shell_scss = [ 'src/gnome-shell/gnome-shell-3-28.scss' ]
+endif
+
 custom_target('shell-gen',
-              input: 'src/gnome-shell/gnome-shell.scss',
+              input: shell_scss,
               output: 'gnome-shell.css',
               command: [ sassc, '-a', '@INPUT@', '@OUTPUT@'],
               install: true,
