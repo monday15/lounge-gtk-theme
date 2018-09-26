@@ -8,7 +8,7 @@
 * shell: Import upstream commits with improvements
 * gtk3: Combobox button fix (arrow looks better)
 * gtk3: Nautilus search entry fix (3.30)
-* gtk3: Nautilus sidebar new style (3.30)
+* gtk3: New style for nautilus sidebar
 
 
 1.0
