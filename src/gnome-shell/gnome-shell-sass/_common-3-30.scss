@@ -27,6 +27,9 @@
   -barlevel-border-color: $borders_color; //trough border color
   -barlevel-active-background-color: $selected_bg_color; //active trough fill
   -barlevel-active-border-color: $selected_bg_color; //active trough border
+  -barlevel-overdrive-color: $destructive_color;
+  -barlevel-overdrive-border-color: $destructive_color;
+  -barlevel-overdrive-separator-width: 0.2em;
   -barlevel-border-width: 1px;
   -slider-handle-radius: 6px;
 }
@@ -47,6 +50,8 @@
     -barlevel-height: 0.6em;
     -barlevel-background-color: transparentize(darken($osd_bg_color,15%),0.5);
     -barlevel-active-background-color: $osd_fg_color;
+    -barlevel-overdrive-color: $destructive_color;
+    -barlevel-overdrive-separator-width: 0.2em;
   }
 }
 
