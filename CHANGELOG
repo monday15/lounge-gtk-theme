@@ -1,8 +1,21 @@
+1.1
+===
+
+* general: Build improvement, now gnome-shell theme builds
+  depending on gtk3 version, assuming gtk 3.24 = gnome 3.30
+* shell: scss files restructure;
+* shell: Volumebar fix (3.30)
+* shell: Import upstream commits with improvements
+* gtk3: Combobox button fix (arrow looks better)
+* gtk3: Nautilus search entry fix (3.30)
+* gtk3: Nautilus sidebar new style (3.30)
+
+
 1.0
 ===
 
-* Build improvement, now theme builds depending on gtk3 version;
-* Scss files restructure, for more flexibility;
+* general: Build improvement, now theme builds depending on gtk3 version;
+* general: Scss files restructure, for more flexibility;
 * gtk2: Dark theme added, requires gtk-murrine-engine
 * gtk3: Nautilus pathbar improvements
 * gtk3: Dark theme tweaks
