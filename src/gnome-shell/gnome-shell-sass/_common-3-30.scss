@@ -18,4 +18,18 @@
   }
 
 
+/* Slider */
+
+.slider {
+  height: 1em;
+  -barlevel-height: 0.3em;
+  -barlevel-background-color: $borders_color; //background of the trough
+  -barlevel-border-color: $borders_color; //trough border color
+  -barlevel-active-background-color: $selected_bg_color; //active trough fill
+  -barlevel-active-border-color: $selected_bg_color; //active trough border
+  -barlevel-border-width: 1px;
+  -slider-handle-radius: 6px;
+}
+
+
   .remote-access-indicator { color: $warning_color; }

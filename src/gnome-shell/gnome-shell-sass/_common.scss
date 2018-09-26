@@ -127,19 +127,6 @@ StScrollBar {
   }
 }
 
-/* Slider */
-
-.slider {
-  height: 1em;
-  -slider-height: 0.3em;
-  -slider-background-color: $borders_color; //background of the trough
-  -slider-border-color: $borders_color; //trough border color
-  -slider-active-background-color: $selected_bg_color; //active trough fill
-  -slider-active-border-color: $selected_bg_color; //active trough border
-  -slider-border-width: 1px;
-  -slider-handle-radius: 6px;
-}
-
 /* Check Boxes */
 
 .check-box {
