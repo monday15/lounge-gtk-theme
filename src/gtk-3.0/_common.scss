@@ -3068,7 +3068,7 @@ scale {
 
       @include button(backdrop);
 
-      &:disabled { @include button(backdrop-insensitive); }
+      &:disabled { @include button(backdrop-insensitive); @if $variant=='dark' { border-color: lighten($borders_color, 8%); } }
     }
 
     // ...on selected list rows
