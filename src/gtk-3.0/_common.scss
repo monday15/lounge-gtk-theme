@@ -2909,11 +2909,11 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
  * GtkScale *
  ************/
 %scale_trough {
-  border: 1px solid $borders_color;
+  border: 1px solid if($variant=='light', $borders_color, $dark_fill);
   border-radius: 2px;
   background-color: $dark_fill;
 
-  &:disabled { background-color: $insensitive_bg_color; }
+  &:disabled { background-color: $insensitive_bg_color; @if $variant=='dark' { border-color: $insensitive_bg_color; } }
 
   &:backdrop {
     background-color: $backdrop_dark_fill;
@@ -2936,7 +2936,7 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
 }
 
 %scale_highlight {
-  border: 1px solid $selected_borders_color;
+  border: 1px solid if($variant=='light', $selected_borders_color, $selected_bl_color);
   border-radius: 2px;
   background-color: if($variant == 'light', darken($selected_bl_color, 10%), $selected_bl_color);
 
@@ -3058,9 +3058,9 @@ scale {
 
     &:hover { @include button(hover-alt, $edge: $shadow_color); }
 
-    &:active { border-color: if($variant == 'light', $selected_borders_color, mix($selected_bg_color, $selected_borders_color, 70%)); }
+    &:active { border-color: if($variant == 'light', $selected_borders_color, $alt_borders_color); }
 
-    &:disabled { @include button(insensitive); }
+    &:disabled { @include button(insensitive); @if $variant=='dark' { border-color: lighten($borders_color, 5%); } }
 
     &:backdrop {
       transition: $backdrop_transition;
