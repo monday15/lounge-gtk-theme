@@ -3488,10 +3488,13 @@ levelbar {
 
     &.high,
     &:not(.empty) {
-      border-color: $selected_borders_color;
-      background-color: $selected_bl_color;
+      border-color: if($variant == 'light', $selected_borders_color, $selected_bl_color);
+      background-color: if($variant == 'light', darken($selected_bl_color, 10%), $selected_bl_color);
 
-      &:backdrop { border-color: $selected_bl_color; }
+      &:backdrop {
+        border-color: if($variant == 'light', $backdrop_selected_borders_color, $backdrop_selected_bl_color);
+        background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 10%), $backdrop_selected_bl_color);
+      }
     }
 
     &.full {
