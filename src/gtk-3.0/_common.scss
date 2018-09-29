@@ -2917,7 +2917,7 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
 
   &:backdrop {
     background-color: $backdrop_dark_fill;
-    border-color: $backdrop_borders_color;
+    border-color: if($variant=='light', $backdrop_borders_color, $backdrop_dark_fill);
     transition: $backdrop_transition;
 
     &:disabled { background-color: $insensitive_bg_color; }
@@ -2946,7 +2946,8 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   }
 
   &:backdrop {
-    border-color: $backdrop_selected_borders_color;
+    border-color: if($variant=='light', $backdrop_selected_borders_color, $backdrop_selected_bl_color);
+    background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 10%), $backdrop_selected_bl_color);
     &:disabled {
       background-color: transparent;
       border-color: transparent;
