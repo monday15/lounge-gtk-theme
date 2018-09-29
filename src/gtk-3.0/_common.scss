@@ -476,12 +476,12 @@ treeview entry {
   background-color: $_entry_tag_bg;
 
   &:hover {
-    background-color: lighten($_entry_tag_bg, 10%);
+    background-color: if($variant=='light', darken($_entry_tag_bg, 10%), lighten($_entry_tag_bg, 10%));
   }
 
   :backdrop & {
-    color: $backdrop_base_color;
-    background-color: if($variant=='light', $selected_bl_color,
+    color: if($variant=='light', $backdrop_fg_color, $backdrop_base_color);
+    background-color: if($variant=='light', $backdrop_selected_bl_color,
                                             mix($backdrop_fg_color, $backdrop_base_color, 50%));
   }
 
