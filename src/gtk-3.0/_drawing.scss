@@ -241,7 +241,7 @@
     @else {
       background-image: image(lighten($c, 1%));
       @include _shadows(inset 0 1px $_hilight_color,
-                        inset 0 -1px transparentize(if($c != $bg_color, _border_color($c, true), $alt_borders_color), 0.7));
+                        inset 0 -1px transparentize(if($c != $bg_color, _border_color($c, true), $alt_borders_color), 0.8));
     }
   }
 
@@ -261,7 +261,7 @@
     @else {
       $button_fill: image(lighten($c, 4%)) !global;
       @include _shadows(inset 0 1px $_hilight_color,
-                        inset 0 -1px transparentize(if($c != $bg_color, _border_color($c, true), $alt_borders_color), 0.7));
+                        inset 0 -1px transparentize(if($c != $bg_color, _border_color($c, true), $alt_borders_color), 0.8));
     }
     background-image: $button_fill;
   }
