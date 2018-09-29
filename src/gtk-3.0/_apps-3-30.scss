@@ -93,7 +93,8 @@
 
 /* Sidebar */
 
-.nautilus-window .sidebar-row:selected {
+.nautilus-window .sidebar-row:selected,
+.nautilus-window .sidebar-row:selected.has-open-popup {
     background: darken($bg_color, 5%);
 }
 
