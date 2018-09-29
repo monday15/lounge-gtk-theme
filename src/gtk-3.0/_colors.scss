@@ -1,9 +1,9 @@
 // When color definition differs for dark and light variant
 // it gets @if ed depending on $variant
 
-$base_color: if($variant == 'light', #ffffff, #1e2426);
+$base_color: if($variant == 'light', #ffffff, #252a2b);
 $text_color: if($variant == 'light', black, #c2c2c2);
-$bg_color: if($variant == 'light', #e6e6e6, #292f2f);
+$bg_color: if($variant == 'light', #e6e6e6, #2d3333);
 $fg_color: if($variant == 'light', #101010, #c2c2c2);
 
 // These colors are used to provide dark fg on light bg in a light theme
@@ -14,14 +14,14 @@ $selected_fl_color: if($variant == 'light', #101010, #d2d2d2);
 $selected_bg_color: if($variant == 'light', desaturate(darken($selected_bl_color, 35%), 10%), $selected_bl_color);
 $selected_fg_color: if($variant == 'light', #ffffff, $selected_fl_color);
 
-$borders_color: if($variant == 'light', darken($bg_color, 27.5%), darken($bg_color, 10%));
-$alt_borders_color: if($variant == 'light', darken($bg_color, 35%), darken($bg_color, 10%));
+$borders_color: if($variant == 'light', darken($bg_color, 27.5%), darken($bg_color, 12%));
+$alt_borders_color: if($variant == 'light', darken($bg_color, 35%), darken($bg_color, 12%));
 $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 10%), darken($selected_bg_color, 20%));
 $selected_entry_borders_color: if($variant == 'light', desaturate(darken($selected_bl_color, 25%), 5%), $selected_bl_color);
 $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
 
 $top_hilight: $borders_edge;
-$dark_fill: if($variant == 'light', mix($borders_color, $bg_color, 30%), mix($borders_color, $bg_color, 20%));
+$dark_fill: if($variant == 'light', mix($borders_color, $bg_color, 30%), mix($borders_color, $bg_color, 25%));
 $infobar_color: desaturate(darken($selected_bl_color, 7%), 10%);
 
 $link_color: if($variant == 'light', darken($selected_bg_color, 5%), lighten($selected_bg_color, 20%));
