@@ -388,7 +388,7 @@
   //
   // normal osd button
   //
-    $_bg: if($c != $bg_color, transparentize($c, 0.5), $osd_bg_color);
+    $_bg: if($c != $bg_color, transparentize($c, 0.5), if($variant == 'light', $osd_bg_color, lighten($osd_bg_color, 3%)));
 
     color: $osd_fg_color;
     border-color: $osd_borders_color;
@@ -408,7 +408,7 @@
   //
   // active osd button
   //
-    $_bg: if($c != $bg_color, transparentize($c, 0.3), lighten($osd_bg_color, 5%));
+    $_bg: if($c != $bg_color, transparentize($c, 0.3), if($variant == 'light', lighten($osd_bg_color, 5%), lighten($osd_bg_color, 7%)));
 
     color: $fg_color;
     border-color: $osd_borders_color;
@@ -428,7 +428,7 @@
   //
   // active osd button
   //
-    $_bg: if($c != $bg_color, $c, darken($osd_bg_color, 10%));
+    $_bg: if($c != $bg_color, $c, if($variant == 'light', darken($osd_bg_color, 10%), darken($osd_bg_color, 2%)));
 
     color: $fg_color;
     border-color: $osd_borders_color;
