@@ -1,14 +1,28 @@
+1.2
+===
+
+* shell: Adjust dash radius;
+* gtk3/gtk2: Dark theme rework, not so dark now, better contrast on buttons;
+* gtk3/gtk2: Scale fixes;
+* gtk3: Entry tag fix;
+* gtk3: Reduce window shadows;
+* gtk3: Nautilus sidebar fixes;
+* gtk3: Nautilus devel css style remove (too much code) (3.28);
+* gtk3: Levelbar fixes;
+
+
+
 1.1
 ===
 
 * general: Build improvement, now gnome-shell theme builds
   depending on gtk3 version, assuming gtk 3.24 = gnome 3.30
 * shell: scss files restructure;
-* shell: Volumebar fix (3.30)
-* shell: Import upstream commits with improvements
-* gtk3: Combobox button fix (arrow looks better)
-* gtk3: Nautilus search entry fix (3.30)
-* gtk3: New style for nautilus sidebar
+* shell: Volumebar fix (3.30);
+* shell: Import upstream commits with improvements;
+* gtk3: Combobox button fix (arrow looks better);
+* gtk3: Nautilus search entry fix (3.30);
+* gtk3: New style for nautilus sidebar.
 
 
 1.0
@@ -16,19 +30,19 @@
 
 * general: Build improvement, now theme builds depending on gtk3 version;
 * general: Scss files restructure, for more flexibility;
-* gtk2: Dark theme added, requires gtk-murrine-engine
-* gtk3: Nautilus pathbar improvements
-* gtk3: Dark theme tweaks
-* gtk3: Various fixes and improvements
-* general: Firefox custom css for dark theme
+* gtk2: Dark theme added, requires gtk-murrine-engine;
+* gtk3: Nautilus pathbar improvements;
+* gtk3: Dark theme tweaks;
+* gtk3: Various fixes and improvements;
+* general: Firefox custom css for dark theme.
 
 
 3.28.3 / 3.30.3
 ===============
 
-* shell: Adjust colors
-* Various small fixes
-* Add support for gnome 3.30 (gtk+ 3.24)
+* shell: Adjust colors;
+* Various small fixes;
+* Add support for gnome 3.30 (gtk+ 3.24).
 
 3.28.2
 ======
