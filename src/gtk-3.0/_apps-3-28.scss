@@ -163,11 +163,11 @@ flowboxchild:selected > widget > .icon-item-background {padding:4px; background-
 
 .nautilus-window .sidebar-row:selected,
 .nautilus-window .sidebar-row:selected.has-open-popup {
-    background: darken($bg_color, 5%);
+    background: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 4%));
 }
 
 .nautilus-window .sidebar-row:selected:hover {
-    background: darken($bg_color, 10%);
+    background: if($variant == 'light', darken($bg_color, 10%), lighten($bg_color, 7%));
 }
 
 .nautilus-window .sidebar-row:selected,
@@ -176,10 +176,12 @@ flowboxchild:selected > widget > .icon-item-background {padding:4px; background-
 }
 
 .nautilus-window .sidebar-row:selected:backdrop { &, label {
-    background: darken($backdrop_bg_color, 4%); }
+    background: if($variant == 'light', darken($backdrop_bg_color, 4%), lighten($backdrop_bg_color, 3%)); }
 }
 
 .nautilus-window .sidebar-row:selected:backdrop,
 .nautilus-window .sidebar-row:selected:backdrop label {
-    color: darken($backdrop_fg_color, 5%);
+    color: if($variant == 'light', darken($backdrop_fg_color, 5%), lighten($backdrop_fg_color, 5%));
 }
+
+
