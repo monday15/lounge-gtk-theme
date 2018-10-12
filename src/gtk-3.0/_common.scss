@@ -1121,6 +1121,7 @@ spinbutton {
 
     button {
       min-height: 16px;
+      min-width: 16px;
       margin: 0;
       padding: 0px 2px;
       color: mix($fg_color, $base_color, 90%);
