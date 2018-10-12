@@ -728,6 +728,7 @@ button {
                              (destructive-action, $destructive_color) {
     &.#{$b_type} {
       @include button(normal, $b_color, $selected_fg_color);
+      text-shadow: 1px 1px transparentize(black, 0.8);
 
       &.flat {
         @include button(undecorated);
@@ -735,10 +736,10 @@ button {
         color: $b_color; //FIXME: does it work on the dark variant?
       }
 
-      &:hover { @include button(hover, $b_color, $selected_fg_color); }
+      &:hover { @include button(hover, $b_color, $selected_fg_color); text-shadow: 1px 1px transparentize(black, 0.8); }
 
       &:active,
-      &:checked { @include button(active, $b_color, $selected_fg_color); }
+      &:checked { @include button(active, $b_color, $selected_fg_color); text-shadow: 1px 1px transparentize(black, 0.8); }
 
       &:backdrop,
       &.flat:backdrop {
