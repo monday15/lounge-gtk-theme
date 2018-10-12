@@ -64,6 +64,7 @@
   padding: 4px;
   border-width: 0px;
   margin: 0px;
+  &:backdrop:checked { background-image: none; }
 }
 
 .nautilus-window .path-bar button:not(:checked) image { opacity: 0.8; } /* dim the icon when not checked */
