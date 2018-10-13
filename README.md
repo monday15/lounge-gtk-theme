@@ -1,5 +1,7 @@
 ## IMPORTANT NOTE
-For best experience, use Lounge theme with [Lounge-aux](https://github.com/monday15/lounge-aux) icons, it is a set of symbolic icons (window controls and arrows), other icons will be taken from default icon theme or one that you using. Installation is simple, proceed to [Lounge-aux repository](https://github.com/monday15/lounge-aux). 
+For best experience, use Lounge theme with [Lounge-aux](https://github.com/monday15/lounge-aux) icons, it is a set of symbolic icons (window controls and arrows), other icons will be taken from default icon theme or one that you using. Installation is simple, proceed to [Lounge-aux repository](https://github.com/monday15/lounge-aux).
+
+![sh1](/screenshots/auxdiff.png?raw=true)
 
 > Fedora users will get Lounge-aux as a weak dependency with Adwaita as a main icon theme, for other icon themes, they should also check the link. 
 
