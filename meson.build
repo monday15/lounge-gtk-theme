@@ -6,8 +6,8 @@ project('lounge-gtk-theme',
 
 # Dependencies
 
-depend_gtk3 = dependency('gtk+-3.0', version : '>=3.20')
 sassc = find_program('sassc')
+gnomeshell = find_program('gnome-shell', required: false)
 
 
 # Installation directories
@@ -17,16 +17,20 @@ shell_dir = join_paths(theme_dir, 'gnome-shell')
 shell_asset_dir = join_paths(shell_dir, 'assets')
 gtk2_dir = join_paths(theme_dir, 'gtk-2.0')
 gtk2_asset_dir = join_paths(gtk2_dir, 'assets')
-gtk3_dir = join_paths(theme_dir, 'gtk-3.0')
-gtk3_asset_dir = join_paths(gtk3_dir, 'assets')
+
+gtk322_dir = join_paths(theme_dir, 'gtk-3.22')
+gtk324_dir = join_paths(theme_dir, 'gtk-3.24')
+gtk3_asset_dir = join_paths(theme_dir, 'gtk3-assets')
 
   # Dark theme
 
 dark_theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-night')
 dark_gtk2_dir = join_paths(dark_theme_dir, 'gtk-2.0')
 dark_gtk2_asset_dir = join_paths(dark_gtk2_dir, 'assets')
-dark_gtk3_dir = join_paths(dark_theme_dir, 'gtk-3.0')
-dark_gtk3_asset_dir = join_paths(dark_gtk3_dir, 'assets')
+
+dark_gtk322_dir = join_paths(dark_theme_dir, 'gtk-3.22')
+dark_gtk324_dir = join_paths(dark_theme_dir, 'gtk-3.24')
+dark_gtk3_asset_dir = join_paths(dark_theme_dir, 'gtk3-assets')
 
 
 # Install index files
@@ -57,20 +61,32 @@ shell_sources = files([
   'src/gnome-shell/gnome-shell-sass/_common-3-30.scss',
 ])
 
-if depend_gtk3.version().version_compare('>=3.24')
-  shell_scss = [ 'src/gnome-shell/gnome-shell-3-30.scss' ]
+# Check shell version
+if gnomeshell.found()
+  gnomeshell_res = run_command([gnomeshell, '--version'])
+  gnomeshell_ver = gnomeshell_res.stdout().split('\n')[0].split(' ')[-1].strip()
+
+  if gnomeshell_ver.version_compare('<3.30')
+    message('gnome shell version <3.30')
+    shell_scss = [ 'src/gnome-shell/gnome-shell-3-28.scss' ]
+  else
+    message('gnome shell version >=3.30')
+    shell_scss = [ 'src/gnome-shell/gnome-shell-3-30.scss' ]
+  endif
+
 else
-  shell_scss = [ 'src/gnome-shell/gnome-shell-3-28.scss' ]
+  # No gnome-shell > generate last version availible
+  shell_scss = [ 'src/gnome-shell/gnome-shell-3-30.scss' ]
 endif
 
-custom_target('shell-gen',
-              input: shell_scss,
-              output: 'gnome-shell.css',
-              command: [ sassc, '-a', '@INPUT@', '@OUTPUT@'],
-              install: true,
-              install_dir: shell_dir,
-              depend_files: shell_sources,
-              build_by_default: true)
+  custom_target('shell-gen',
+                input: shell_scss,
+                output: 'gnome-shell.css',
+                command: [ sassc, '-a', '@INPUT@', '@OUTPUT@'],
+                install: true,
+                install_dir: shell_dir,
+                depend_files: shell_sources,
+                build_by_default: true)
 
 
 # Install gtk2 theme
@@ -107,42 +123,61 @@ gtk3_sources = files([
   'src/gtk-3.0/_apps-3-30.scss',
 ])
 
-if depend_gtk3.version().version_compare('<3.24')
-  gtk3_scss_light = [ 'src/gtk-3.0/gtk-3-28.scss' ]
-  gtk3_scss_dark  = [ 'src/gtk-3.0/gtk-dark-3-28.scss' ]
-endif
+gtk322_scss_light = [ 'src/gtk-3.0/gtk-3-28.scss' ]
+gtk322_scss_dark  = [ 'src/gtk-3.0/gtk-dark-3-28.scss' ]
 
-if depend_gtk3.version().version_compare('>=3.24')
-  gtk3_scss_light = [ 'src/gtk-3.0/gtk-3-30.scss' ]
-  gtk3_scss_dark  = [ 'src/gtk-3.0/gtk-dark-3-30.scss' ]
-endif
+gtk324_scss_light = [ 'src/gtk-3.0/gtk-3-30.scss' ]
+gtk324_scss_dark  = [ 'src/gtk-3.0/gtk-dark-3-30.scss' ]
 
-  custom_target('gtk3-light',
-                input: gtk3_scss_light,
+  custom_target('gtk322-light',
+                input: gtk322_scss_light,
                 output: 'gtk.css',
                 command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
                 install: true,
-                install_dir: gtk3_dir, 
+                install_dir: gtk322_dir, 
                 depend_files: gtk3_sources,
                 build_by_default: true)
 
-  custom_target('gtk3-dark',
-                input: gtk3_scss_dark,
+  custom_target('gtk322-dark',
+                input: gtk322_scss_dark,
                 output: 'gtk-dark.css',
                 command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
                 install: true,
-                install_dir: gtk3_dir,
+                install_dir: gtk322_dir,
                 depend_files: gtk3_sources,
                 build_by_default: true)
 
-  # Copy gtk.css for meson to index it, ninja uninstall needs this to remove the file;
-  # install script overrides it with gtk-dark.css contents.
 
-  configure_file(output : 'gtk.css',
-                 configuration : configuration_data(),
-                 install_dir: dark_gtk3_dir)
+  custom_target('gtk324-light',
+                input: gtk324_scss_light,
+                output: 'gtk324.css',
+                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
+                install: true,
+                install_dir: gtk324_dir, 
+                depend_files: gtk3_sources,
+                build_by_default: true)
 
-  meson.add_install_script('sh', '-c', 'cp $MESON_INSTALL_DESTDIR_PREFIX/'+gtk3_dir+'/gtk-dark.css $MESON_INSTALL_DESTDIR_PREFIX/'+dark_gtk3_dir+'/gtk.css')
+  custom_target('gtk324-dark',
+                input: gtk324_scss_dark,
+                output: 'gtk-dark324.css',
+                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
+                install: true,
+                install_dir: gtk324_dir,
+                depend_files: gtk3_sources,
+                build_by_default: true)
+
+  # Rename Lounge dark variant css files
+  meson.add_install_script('sh', '-c', 'mv $MESON_INSTALL_DESTDIR_PREFIX/'+gtk324_dir+'/gtk-dark324.css $MESON_INSTALL_DESTDIR_PREFIX/'+gtk324_dir+'/gtk-dark.css')
+  meson.add_install_script('sh', '-c', 'mv $MESON_INSTALL_DESTDIR_PREFIX/'+gtk324_dir+'/gtk324.css $MESON_INSTALL_DESTDIR_PREFIX/'+gtk324_dir+'/gtk.css')
+
+  # Create subfolders for Lounge-night theme
+  meson.add_install_script('sh', '-c', 'mkdir -p $MESON_INSTALL_DESTDIR_PREFIX/'+dark_gtk322_dir)
+  meson.add_install_script('sh', '-c', 'mkdir -p $MESON_INSTALL_DESTDIR_PREFIX/'+dark_gtk324_dir)
+
+  # Copy Lounge dark variant css files to Lounge-night theme
+  meson.add_install_script('sh', '-c', 'cp $MESON_INSTALL_DESTDIR_PREFIX/'+gtk322_dir+'/gtk-dark.css $MESON_INSTALL_DESTDIR_PREFIX/'+dark_gtk322_dir+'/gtk.css')
+  meson.add_install_script('sh', '-c', 'cp $MESON_INSTALL_DESTDIR_PREFIX/'+gtk324_dir+'/gtk-dark.css $MESON_INSTALL_DESTDIR_PREFIX/'+dark_gtk324_dir+'/gtk.css')
+
 
 # Install assets
 
