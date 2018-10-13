@@ -15,7 +15,7 @@ Fedora users can install theme via copr:
 
 
 ## Building from source
-You’ll need `meson`, `sassc`, and `gtk3-devel` (`libgtk-3-dev` for debian/ubuntu) packages.
+You’ll need `meson` and `sassc` packages.
 
 Download source, run from source dir:  
 `meson build`  
@@ -27,8 +27,6 @@ Firefox looks ok with the theme, but there are some tweaks, you can find them in
 
 ## Removing
 Remove installation folders `/usr/share/themes/Lounge`, `/usr/share/themes/Lounge-night`.
-
-> If you built theme yourself, you can run `sudo ninja -C build uninstall` from source dir.
 
 
 ## Licence
@@ -43,7 +41,9 @@ Report bugs to [issues page](https://github.com/monday15/lounge-gtk-theme/issues
 All people in #gnome-hackers chanell at gnome irc,  
 horst3180,  
 Emmanuele Bassi,  
+nana-4,  
 Sam Hewitt,  
+Thibault Saunier,  
 ZMA from gnome-look.org,  
 All people in a copyright file,  
 Meson developers,  
@@ -53,7 +53,7 @@ Gnome developers and maintainers,
 Fedora developers and maintainers.
 
 ## Links
-[Absolute gtk2 theme](https://www.gnome-look.org/p/1080258/), [Adapta theme](https://github.com/adapta-project/adapta-gtk-theme), [Adwaita gtk2 theme](https://gitlab.gnome.org/GNOME/gnome-themes-extra), [Adwaita gtk3 theme](https://gitlab.gnome.org/GNOME/gtk), [gnome-shell theme](https://gitlab.gnome.org/GNOME/gnome-shell).  
+[Absolute gtk2 theme](https://www.gnome-look.org/p/1080258/), [Adapta theme](https://github.com/adapta-project/adapta-gtk-theme), [Adwaita gtk2 theme](https://gitlab.gnome.org/GNOME/gnome-themes-extra), [Adwaita gtk3 theme](https://gitlab.gnome.org/GNOME/gtk), [gnome-shell theme](https://gitlab.gnome.org/GNOME/gnome-shell), [Materia theme](https://github.com/nana-4/materia-theme).  
 List of applications (their original css styles used in the theme): [Gedit](https://gitlab.gnome.org/GNOME/gedit), [Nautilus](https://gitlab.gnome.org/GNOME/nautilus).
 
 ## Screenshots
