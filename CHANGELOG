@@ -1,3 +1,21 @@
+1.4
+===
+
+* Build improvement:
+  gtk3-devel no longer required,
+  build both gtk variants (3.22/3.24) to proper folders
+  (better flatpak support);
+* gnome-shell theme generation based on installed version;
+* gtk3: Fix button width (small buttons was thin sometimes);
+* gtk3: Adjust places sidebar row height;
+* gtk3: Nautilus pathbar button backdrop state fix (3.30);
+* gtk3: Add text shadow for colored buttons;
+* gtk3: Reduce popover margins;
+* gtk3: Adjust padding for osd buttons;
+* gtk3: Adjust scale trough/highlight border color on selected row;
+* gtk3: Adjust separator color in dark theme.
+
+
 1.3
 ===
 
