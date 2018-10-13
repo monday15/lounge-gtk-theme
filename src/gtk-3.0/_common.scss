@@ -2930,7 +2930,7 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   }
 
   // ...on selected list rows
-  row:selected & { &:disabled, & { border-color: $selected_borders_color; }}
+  row:selected & { border-color: darken($selected_borders_color, 10%); &:disabled { border-color: $selected_borders_color; }}
 
   // OSD
   .osd & {
@@ -2961,7 +2961,7 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   }
 
   // ...on selected list rows
-  row:selected & { &:disabled, & { border-color: $selected_borders_color; }}
+  row:selected & { border-color: darken($selected_borders_color, 10%); &:disabled { border-color: $selected_borders_color; }}
 
   // OSD
   .osd & {
