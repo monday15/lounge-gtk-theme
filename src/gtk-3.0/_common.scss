@@ -2752,7 +2752,7 @@ switch {
   .view.content-view.check#{$s}:not(list),
   .content-view .tile check#{$s}:not(list) {
     -gtk-icon-shadow: none;
-    -gtk-icon-source: -gtk-scaled(url("assets/checkbox#{$as}.png"), url("assets/checkbox#{$as}@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("../gtk3-assets/checkbox#{$as}.png"), url("../gtk3-assets/checkbox#{$as}@2.png"));
     background-color: transparent;
     min-width: 40px;
     min-height: 40px;
@@ -2846,22 +2846,22 @@ radio {
 check {
   border-radius: 2px;
 
-  &:checked { -gtk-icon-source: image(-gtk-recolor(url("assets/check-symbolic.svg")),
-                                      -gtk-recolor(url("assets/check-symbolic.symbolic.png"))); }
+  &:checked { -gtk-icon-source: image(-gtk-recolor(url("../gtk3-assets/check-symbolic.svg")),
+                                      -gtk-recolor(url("../gtk3-assets/check-symbolic.symbolic.png"))); }
 
-  &:indeterminate { -gtk-icon-source: image(-gtk-recolor(url("assets/dash-symbolic.svg")),
-                                            -gtk-recolor(url("assets/dash-symbolic.symbolic.png"))); }
+  &:indeterminate { -gtk-icon-source: image(-gtk-recolor(url("../gtk3-assets/dash-symbolic.svg")),
+                                            -gtk-recolor(url("../gtk3-assets/dash-symbolic.symbolic.png"))); }
 }
 
 %radio,
 radio {
   border-radius: 100%;
 
-  &:checked { -gtk-icon-source: image(-gtk-recolor(url("assets/bullet-symbolic.svg")),
-                                      -gtk-recolor(url("assets/bullet-symbolic.symbolic.png"))); }
+  &:checked { -gtk-icon-source: image(-gtk-recolor(url("../gtk3-assets/bullet-symbolic.svg")),
+                                      -gtk-recolor(url("../gtk3-assets/bullet-symbolic.symbolic.png"))); }
 
-  &:indeterminate { -gtk-icon-source: image(-gtk-recolor(url("assets/dash-symbolic.svg")),
-                                            -gtk-recolor(url("assets/dash-symbolic.symbolic.png"))); }
+  &:indeterminate { -gtk-icon-source: image(-gtk-recolor(url("../gtk3-assets/dash-symbolic.svg")),
+                                            -gtk-recolor(url("../gtk3-assets/dash-symbolic.symbolic.png"))); }
 }
 
 // ANIMATION:
@@ -3181,7 +3181,7 @@ scale {
               // an asymmetric slider asset is used here, so the margins are uneven, the smaller
               // margin is set on the point side.
               margin: -6px;
-              $_scale_asset: 'assets/slider-#{$dir_infix}-#{$marks_infix}#{$state_infix}#{$suffix}';
+              $_scale_asset: '../gtk3-assets/slider-#{$dir_infix}-#{$marks_infix}#{$state_infix}#{$suffix}';
               border-style: none;
               border-radius: 0;
 
@@ -4423,21 +4423,21 @@ cursor-handle {
                   (':hover','-hover'),
                   (':active','-active') { //no need for insensitive and backdrop
     &.top#{$s}:dir(ltr), &.bottom#{$s}:dir(rtl) {
-      $_url: 'assets/text-select-start#{$as}#{$asset_suffix}';
+      $_url: '../gtk3-assets/text-select-start#{$as}#{$asset_suffix}';
       -gtk-icon-source: -gtk-scaled(url('#{$_url}.png'),
                                     url('#{$_url}@2.png'));
       padding-left: 10px;
     }
 
     &.bottom#{$s}:dir(ltr), &.top#{$s}:dir(rtl) {
-      $_url: 'assets/text-select-end#{$as}#{$asset_suffix}';
+      $_url: '../gtk3-assets/text-select-end#{$as}#{$asset_suffix}';
       -gtk-icon-source: -gtk-scaled(url('#{$_url}.png'),
                                     url('#{$_url}@2.png'));
       padding-right: 10px;
     }
 
     &.insertion-cursor#{$s}:dir(ltr), &.insertion-cursor#{$s}:dir(rtl) {
-      $_url: 'assets/slider-horz-scale-has-marks-above#{$as}#{$asset_suffix}';
+      $_url: '../gtk3-assets/slider-horz-scale-has-marks-above#{$as}#{$asset_suffix}';
       -gtk-icon-source: -gtk-scaled(url('#{$_url}.png'),
                                     url('#{$_url}@2.png'));
     }
