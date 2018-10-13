@@ -13,7 +13,7 @@ BuildArch:	noarch
 BuildRequires:  sassc
 BuildRequires:  meson >= 0.42.0
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
-BuildRequires:  pkgconfig(gtk+-3.0) >= 3.20.0
+BuildRequires:  gnome-shell
 
 Requires:	gdk-pixbuf2
 Requires:	gtk-murrine-engine
