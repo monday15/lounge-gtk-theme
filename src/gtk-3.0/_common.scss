@@ -4358,8 +4358,6 @@ button.titlebutton {
 
   @include _button_text_shadow;
 
-  min-width: 20px;
-
   .selection-mode & {
     @extend %button.flat.suggested-action;
 
