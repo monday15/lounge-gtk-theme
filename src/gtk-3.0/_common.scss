@@ -531,8 +531,8 @@ button {
   @at-root %button_basic, & {
 
     min-height: 20px;
-    min-width: 20px;
-    padding: 4px;
+    min-width: 16px;
+    padding: 4px 6px;
     border: 1px solid;
     border-radius: 2px;
     transition: $button_transition;
@@ -597,8 +597,8 @@ button {
 
     &.image-button {
       min-width: 20px;
-//      padding-left: 4px;
-//      padding-right: 4px;
+      padding-left: 4px;
+      padding-right: 4px;
     }
 
     &.text-button {
