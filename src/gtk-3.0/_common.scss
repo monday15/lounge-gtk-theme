@@ -4386,16 +4386,24 @@ button.titlebutton {
 
 %selected_row {
   background-color: $selected_bg_color;
+  text-shadow: 1px 1px transparentize(black, 0.9);
+  -gtk-icon-shadow: 1px 1px transparentize(black, 0.9);
 
   @at-root %nobg_selected_items, & {
     color: $selected_fg_color;
 
-    &:disabled { color: mix($selected_fg_color, $selected_bg_color, 50%); }
+    &:disabled {
+      color: mix($selected_fg_color, $selected_bg_color, 50%);
+      text-shadow: none;
+      -gtk-icon-shadow: none;
+    }
 
     &:backdrop {
       transition: $backdrop_transition;
       color: $backdrop_selected_fg_color;
       background-color: $backdrop_selected_bg_color;
+      text-shadow: none;
+      -gtk-icon-shadow: none;
 
       &:disabled { color: mix($backdrop_selected_fg_color, $selected_bg_color, 30%); }
     }
