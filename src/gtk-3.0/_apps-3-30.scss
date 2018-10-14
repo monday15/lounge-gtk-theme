@@ -97,6 +97,8 @@
 .nautilus-window .sidebar-row:selected,
 .nautilus-window .sidebar-row:selected.has-open-popup {
     background: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 4%));
+    text-shadow: none;
+    -gtk-icon-shadow: none;
 }
 
 .nautilus-window .sidebar-row:selected:hover {
