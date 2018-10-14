@@ -1310,8 +1310,7 @@ combobox {
   // lounge workaround, with regular 'min-height' arrow button on combobox button is deformed
   button {
     min-height: 22px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding: 3px 4px;
   }
   arrow {
     -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
