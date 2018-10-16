@@ -35,58 +35,76 @@ dark_gtk3_asset_dir = join_paths(dark_theme_dir, 'gtk3-assets')
 
 # Install index files
 
-  # Trick used for preventing meson warnings, it is not changing anything,
+  # Copy used for preventing meson warnings, it is not changing anything,
   # only copies index file for night theme under a different name. 
 
 index_file = [ 'src/index.theme' ]
 install_data(index_file, install_dir: theme_dir)
 
-trick = configuration_data()
-trick.set('something', 'something')
+copy = configuration_data()
+copy.set('something', 'something')
 configure_file(input : 'src/index.theme-dark',
                output : 'index.theme',
-               configuration : trick,
+               configuration : copy,
                install_dir: dark_theme_dir)
 
 
 # Generate and install gnome-shell theme
 
-shell_sources = files([
-  'src/gnome-shell/gnome-shell-3-28.scss',
-  'src/gnome-shell/gnome-shell-3-30.scss',
-  'src/gnome-shell/gnome-shell-sass/_colors.scss',
-  'src/gnome-shell/gnome-shell-sass/_drawing.scss',
-  'src/gnome-shell/gnome-shell-sass/_common.scss',
-  'src/gnome-shell/gnome-shell-sass/_common-3-28.scss',
-  'src/gnome-shell/gnome-shell-sass/_common-3-30.scss',
-])
+shell_sources = [
+  '_colors-shell.scss',
+  '_drawing-shell.scss',
+  '_common-shell.scss',
+  '_common-shell-3-28.scss',
+  '_common-shell-3-30.scss',
+]
 
-# Check shell version
+shell_conf = configuration_data()
+
+  # Check gnome-shell version
+
 if gnomeshell.found()
   gnomeshell_res = run_command([gnomeshell, '--version'])
   gnomeshell_ver = gnomeshell_res.stdout().split('\n')[0].split(' ')[-1].strip()
 
   if gnomeshell_ver.version_compare('<3.30')
-    message('gnome shell version <3.30')
-    shell_scss = [ 'src/gnome-shell/gnome-shell-3-28.scss' ]
+    message('Gnome-shell version <3.30')
+    shell_conf.set('common_var', '_common-shell-3-28.scss')
   else
-    message('gnome shell version >=3.30')
-    shell_scss = [ 'src/gnome-shell/gnome-shell-3-30.scss' ]
+    message('Gnome-shell version >=3.30')
+    shell_conf.set('common_var', '_common-shell-3-30.scss')
+
   endif
 
 else
-  # No gnome-shell > generate last version availible
-  shell_scss = [ 'src/gnome-shell/gnome-shell-3-30.scss' ]
+  message('Gnome-shell not found, using last version availible')
+  shell_conf.set('common_var', '_common-shell-3-30.scss')
+
 endif
 
-  custom_target('shell-gen',
-                input: shell_scss,
-                output: 'gnome-shell.css',
-                command: [ sassc, '-a', '@INPUT@', '@OUTPUT@'],
-                install: true,
-                install_dir: shell_dir,
-                depend_files: shell_sources,
-                build_by_default: true)
+  # Configure scss file for building right version of shell theme
+
+shell_scss = configure_file(input : 'src/gnome-shell/gnome-shell.scss',
+                            output : 'gnome-shell.scss',
+                            configuration : shell_conf)
+
+  # Copy sources to builddir
+
+foreach file : shell_sources
+configure_file(input : join_paths('src/gnome-shell/' + file),
+               output : file,
+               configuration : copy)
+endforeach
+
+  # Generate shell theme
+
+custom_target('shell-gen',
+              input: shell_scss,
+              output: 'gnome-shell.css',
+              command: [ sassc, '-a', '@INPUT@', '@OUTPUT@'],
+              install: true,
+              install_dir: shell_dir,
+              build_by_default: true)
 
 
 # Install gtk2 theme
