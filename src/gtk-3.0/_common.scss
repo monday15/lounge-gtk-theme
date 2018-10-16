@@ -2142,7 +2142,7 @@ popover.background {
 
   list separator { margin: 0px; }
 
-  button:not(.flat) {
+  button:not(.flat):not(.suggested-action):not(.destructive-action) {
     // FIXME: extend selection mode buttons
     @include button(normal, $popover_button_color, $selected_fl_color);
 
