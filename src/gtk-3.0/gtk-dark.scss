@@ -5,5 +5,6 @@ $variant: 'dark';
 @import 'common';
 @import 'colors-public';
 @import 'apps';
-@import 'common-3-22';
-@import 'apps-3-28';
+@import '@common_var@';
+@import '@apps_var@';
+@import '@apps_nautilus_var@';
