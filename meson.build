@@ -129,23 +129,60 @@ install_data(dark_gtk2_data, install_dir: dark_gtk2_dir)
 
 # Generate and install gtk3 theme
 
-gtk3_sources = files([
-  'src/gtk-3.0/_colors-public.scss',
-  'src/gtk-3.0/_colors.scss',
-  'src/gtk-3.0/_common.scss',
-  'src/gtk-3.0/_common-3-22.scss',
-  'src/gtk-3.0/_common-3-24.scss',
-  'src/gtk-3.0/_drawing.scss',
-  'src/gtk-3.0/_apps.scss',
-  'src/gtk-3.0/_apps-3-28.scss',
-  'src/gtk-3.0/_apps-3-30.scss',
-])
+gtk3_sources = [
+  '_colors-public.scss',
+  '_colors.scss',
+  '_common.scss',
+  '_common-3-22.scss',
+  '_common-3-24.scss',
+  '_apps.scss',
+  '_apps-3-28.scss',
+  '_apps-3-30.scss',
+  '_drawing.scss',
+  '_apps-nautilus-3-28.scss',
+  '_apps-nautilus-3-30.scss',
+]
 
-gtk322_scss_light = [ 'src/gtk-3.0/gtk-3-28.scss' ]
-gtk322_scss_dark  = [ 'src/gtk-3.0/gtk-dark-3-28.scss' ]
+gtk3_version = [
+  '3-22',
+  '3-24',
+]
 
-gtk324_scss_light = [ 'src/gtk-3.0/gtk-3-30.scss' ]
-gtk324_scss_dark  = [ 'src/gtk-3.0/gtk-dark-3-30.scss' ]
+foreach ver : gtk3_version
+
+  if ver == '3-22'
+    gnome_version = '3-28'
+  endif
+  if ver == '3-24'
+    gnome_version = '3-30'
+  endif
+
+gtk3_conf = configuration_data()
+gtk3_conf.set('common_var', 'common-' + ver)
+gtk3_conf.set('apps_var', 'apps-' + gnome_version)
+gtk3_conf.set('apps_nautilus_var', 'apps-nautilus-' + gnome_version)
+
+gtk3_scss = configure_file(input : 'src/gtk-3.0/gtk.scss',
+                           output : 'gtk-' + ver + '.scss',
+                           configuration : gtk3_conf)
+
+gtk3_scss_dark = configure_file(input : 'src/gtk-3.0/gtk-dark.scss',
+                                output : 'gtk-dark-' + ver + '.scss',
+                                configuration : gtk3_conf)
+
+endforeach
+
+foreach file : gtk3_sources
+configure_file(input : join_paths('src/gtk-3.0/' + file),
+               output : file,
+               configuration : copy)
+endforeach
+
+gtk322_scss_light = join_paths(meson.build_root(), 'gtk-3-22.scss')
+gtk322_scss_dark  = join_paths(meson.build_root(), 'gtk-dark-3-22.scss')
+
+gtk324_scss_light = join_paths(meson.build_root(), 'gtk-3-24.scss')
+gtk324_scss_dark  = join_paths(meson.build_root(), 'gtk-dark-3-24.scss')
 
   custom_target('gtk322-light',
                 input: gtk322_scss_light,
@@ -153,7 +190,6 @@ gtk324_scss_dark  = [ 'src/gtk-3.0/gtk-dark-3-30.scss' ]
                 command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
                 install: true,
                 install_dir: gtk322_dir, 
-                depend_files: gtk3_sources,
                 build_by_default: true)
 
   custom_target('gtk322-dark',
@@ -162,7 +198,6 @@ gtk324_scss_dark  = [ 'src/gtk-3.0/gtk-dark-3-30.scss' ]
                 command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
                 install: true,
                 install_dir: gtk322_dir,
-                depend_files: gtk3_sources,
                 build_by_default: true)
 
 
@@ -171,8 +206,7 @@ gtk324_scss_dark  = [ 'src/gtk-3.0/gtk-dark-3-30.scss' ]
                 output: 'gtk324.css',
                 command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
                 install: true,
-                install_dir: gtk324_dir, 
-                depend_files: gtk3_sources,
+                install_dir: gtk324_dir,
                 build_by_default: true)
 
   custom_target('gtk324-dark',
@@ -181,7 +215,6 @@ gtk324_scss_dark  = [ 'src/gtk-3.0/gtk-dark-3-30.scss' ]
                 command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
                 install: true,
                 install_dir: gtk324_dir,
-                depend_files: gtk3_sources,
                 build_by_default: true)
 
   # Rename Lounge dark variant css files
