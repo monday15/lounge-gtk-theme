@@ -153,7 +153,29 @@ foreach ver : gtk3_version
 gtk3_conf = configuration_data()
 gtk3_conf.set('common_var', 'common-' + ver)
 gtk3_conf.set('apps_var', 'apps-' + gnome_version)
+#gtk3_conf.set('apps_nautilus_var', 'apps-nautilus-' + gnome_version)
+
+# Ubuntu 18.10 hack
+
+check_gtk3 = find_program('gtk-launch', required: false)
+check_nautilus = find_program('nautilus', required: false)
+if (check_gtk3.found() and check_nautilus.found())
+  check_gtk3_res = run_command([check_gtk3, '--version'])
+  check_gtk3_ver = check_gtk3_res.stdout().split('\n')[0].split(' ')[-1].strip()
+  check_nautilus_res = run_command([check_nautilus, '--version'])
+  check_nautilus_ver = check_nautilus_res.stdout().split('\n')[0].split(' ')[-1].strip()
+
+  if (check_gtk3_ver.version_compare('>=3.24') and check_nautilus_ver.version_compare('<3.30'))
+    message('Using Nautilus 3.28 css for gtk 3.24')
+    gtk3_conf.set('apps_nautilus_var', 'apps-nautilus-' + '3-28')
+  else
+    gtk3_conf.set('apps_nautilus_var', 'apps-nautilus-' + gnome_version)
+  endif
+else
 gtk3_conf.set('apps_nautilus_var', 'apps-nautilus-' + gnome_version)
+endif
+
+# End of hack
 
 gtk3_scss = configure_file(input : 'src/gtk3/gtk.scss',
                            output : 'gtk-' + ver + '.scss',
