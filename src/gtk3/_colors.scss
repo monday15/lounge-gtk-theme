@@ -22,7 +22,7 @@ $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentiz
 
 $top_hilight: $borders_edge;
 $dark_fill: if($variant == 'light', mix($borders_color, $bg_color, 30%), mix($borders_color, $bg_color, 25%));
-$infobar_color: desaturate(darken($selected_bl_color, 7%), 10%);
+$infobar_color: if($variant == 'light', #d3c8bd, desaturate(darken(#d3c8bd, 45%), 10%));
 
 $link_color: if($variant == 'light', darken($selected_bg_color, 5%), lighten($selected_bg_color, 20%));
 $link_visited_color: if($variant == 'light', darken($selected_bg_color, 15%), lighten($selected_bg_color, 10%));

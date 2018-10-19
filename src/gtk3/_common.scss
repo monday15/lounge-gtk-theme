@@ -4028,7 +4028,7 @@ infobar {
 
 //    text-shadow: 0 1px darken($selected_bl_color, 10%);
 
-    &:backdrop { text-shadow: none; }
+    &:backdrop { text-shadow: none; selection { background-color: darken($infobar_color, 10%); } }
 
     button {
       // FIXME: extend selection mode buttons
@@ -4056,7 +4056,7 @@ infobar {
       }
     }
 
-    selection { background-color: lighten($infobar_color, 5%); }
+    selection { background-color: darken($infobar_color, 10%); }
 
     *:link { @extend %link_selected; }
   }
