@@ -76,3 +76,23 @@ statusbar {
     margin: 2px;
     padding: 2px;
 }
+
+
+
+
+  // Lollypop
+
+treeview .sidebar.view {
+  &:selected {
+    &:focus, & {
+      border-radius: 0;
+
+      @extend %selected_row;
+    }
+
+    &:backdrop, & {
+      border-left-color: mix($selected_fg_color, $selected_bg_color, 50%);
+      border-top-color: transparentize($fg_color, 0.9); // doesn't work unfortunatelly
+    }
+  }
+}
