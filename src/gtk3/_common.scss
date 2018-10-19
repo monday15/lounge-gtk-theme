@@ -1708,6 +1708,8 @@ headerbar { // headerbar border rounding
   @extend %titlebar;
 }
 
+headerbar entry { min-height: 28px; }
+
 
 /************
  * Pathbars *

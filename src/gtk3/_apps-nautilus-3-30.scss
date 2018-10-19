@@ -83,10 +83,6 @@
   background-color: $bg_color;
 }
 
-.nautilus-window headerbar entry {
-  min-height: 28px;
-}
-
 /* Make the tags fit into the box */
 .nautilus-window entry.search > * {
   margin: 5px;
