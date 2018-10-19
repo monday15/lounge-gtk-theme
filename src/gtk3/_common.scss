@@ -645,7 +645,7 @@ button {
     min-height: 32px;
     padding: 4px 8px;
 
-    &.image-button { min-width: 32px; }
+    &.image-button { min-width: 32px; padding: 4px; }
 
     color: $osd_fg_color;
     border-radius: 3px;
