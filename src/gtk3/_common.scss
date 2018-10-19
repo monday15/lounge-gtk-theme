@@ -2118,7 +2118,8 @@ popover.background {
     box-shadow: none;
   }
 
-  > stack { margin: -4px; }
+  > stack, 
+  > box { margin: -4px; }
 
   > list,
   > .view,
