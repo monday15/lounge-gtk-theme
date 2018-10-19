@@ -25,6 +25,7 @@
 
   row {
     button.flat {
+      @include button(undecorated);
       padding: 0;
       margin-top: 2px;
       margin-bottom: 2px;
@@ -40,11 +41,11 @@
       }
     }
     &:selected {
-      button.flat:not(:active):not(:checked):not(:hover):not(disabled) { 
+      button.flat:not(:active):not(:checked):not(:hover):not(disabled) {
         color: transparentize($selected_fg_color, 0.5);
         &.image { color: transparentize($selected_fg_color, 0.5); }
       }
-      
+      button.flat:hover { @include button(undecorated); color: $selected_fg_color; }
     }
   }
 }
