@@ -1,2 +1,2 @@
 .tab-line { display: none !important; }
-#urlbar[focused=true] { border-color: #89aec9 !important; box-shadow: inset 0 0 0 1px #89aec9 !important; }
+#urlbar[focused=true] { border-color: #74a7cf !important; box-shadow: inset 0 0 0 1px rgba(116, 167, 207, 0.1) !important; }
