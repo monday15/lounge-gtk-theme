@@ -14,23 +14,16 @@ gnomeshell = find_program('gnome-shell', required: false)
 
 theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge')
 shell_dir = join_paths(theme_dir, 'gnome-shell')
-shell_asset_dir = join_paths(shell_dir, 'assets')
 gtk2_dir = join_paths(theme_dir, 'gtk-2.0')
-gtk2_asset_dir = join_paths(gtk2_dir, 'assets')
-
 gtk322_dir = join_paths(theme_dir, 'gtk-3.22')
 gtk324_dir = join_paths(theme_dir, 'gtk-3.24')
-gtk3_asset_dir = join_paths(theme_dir, 'gtk3-assets')
 
   # Dark theme
 
 dark_theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-night')
 dark_gtk2_dir = join_paths(dark_theme_dir, 'gtk-2.0')
-dark_gtk2_asset_dir = join_paths(dark_gtk2_dir, 'assets')
-
 dark_gtk322_dir = join_paths(dark_theme_dir, 'gtk-3.22')
 dark_gtk324_dir = join_paths(dark_theme_dir, 'gtk-3.24')
-dark_gtk3_asset_dir = join_paths(dark_theme_dir, 'gtk3-assets')
 
 
 # Install index files
