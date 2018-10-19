@@ -5,14 +5,20 @@
 /firefox-tweak export-ignore
 /firefox-tweak-dark export-ignore
 
-/src/gtk-2.0/render-assets.sh export-ignore
-/src/gtk-2.0/assets.svg export-ignore
-/src/gtk-2.0/assets.txt export-ignore
-/src/gtk-2.0/render-assets-external.sh export-ignore
-/src/gtk-2.0/assets-external.txt export-ignore
-/src/gtk-2.0/assets-external.svg export-ignore
+/src/gtk2/render-assets.sh export-ignore
+/src/gtk2/assets.svg export-ignore
+/src/gtk2/assets.txt export-ignore
+/src/gtk2/render-assets-external.sh export-ignore
+/src/gtk2/assets-external.txt export-ignore
+/src/gtk2/assets-external.svg export-ignore
 
-/src/gtk-3.0/parse-sass.sh export-ignore
-/src/gtk-3.0/render-assets.sh export-ignore
-/src/gtk-3.0/assets.svg export-ignore
-/src/gtk-3.0/assets.txt export-ignore
+/src/gtk2-dark/render-assets.sh export-ignore
+/src/gtk2-dark/assets.svg export-ignore
+/src/gtk2-dark/assets.txt export-ignore
+/src/gtk2-dark/render-assets-external.sh export-ignore
+/src/gtk2-dark/assets-external.txt export-ignore
+/src/gtk2-dark/assets-external.svg export-ignore
+
+/src/gtk3/render-assets.sh export-ignore
+/src/gtk3/assets.svg export-ignore
+/src/gtk3/assets.txt export-ignore
