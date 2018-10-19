@@ -110,17 +110,17 @@ custom_target('shell-gen',
 # Install gtk2 theme
 
 gtk2_data = [
-  'src/gtk-2.0/gtkrc',
-  'src/gtk-2.0/main.rc',
-  'src/gtk-2.0/apps.rc',
-  'src/gtk-2.0/hacks.rc',
+  'src/gtk2/gtkrc',
+  'src/gtk2/main.rc',
+  'src/gtk2/apps.rc',
+  'src/gtk2/hacks.rc',
 ]
 
 dark_gtk2_data = [
-  'src/gtk-2.0-dark/gtkrc',
-  'src/gtk-2.0-dark/main.rc',
-  'src/gtk-2.0-dark/apps.rc',
-  'src/gtk-2.0-dark/hacks.rc',
+  'src/gtk2-dark/gtkrc',
+  'src/gtk2-dark/main.rc',
+  'src/gtk2-dark/apps.rc',
+  'src/gtk2-dark/hacks.rc',
 ]
 
 install_data(gtk2_data, install_dir: gtk2_dir)
@@ -162,18 +162,18 @@ gtk3_conf.set('common_var', 'common-' + ver)
 gtk3_conf.set('apps_var', 'apps-' + gnome_version)
 gtk3_conf.set('apps_nautilus_var', 'apps-nautilus-' + gnome_version)
 
-gtk3_scss = configure_file(input : 'src/gtk-3.0/gtk.scss',
+gtk3_scss = configure_file(input : 'src/gtk3/gtk.scss',
                            output : 'gtk-' + ver + '.scss',
                            configuration : gtk3_conf)
 
-gtk3_scss_dark = configure_file(input : 'src/gtk-3.0/gtk-dark.scss',
+gtk3_scss_dark = configure_file(input : 'src/gtk3/gtk-dark.scss',
                                 output : 'gtk-dark-' + ver + '.scss',
                                 configuration : gtk3_conf)
 
 endforeach
 
 foreach file : gtk3_sources
-configure_file(input : join_paths('src/gtk-3.0/' + file),
+configure_file(input : join_paths('src/gtk3/' + file),
                output : file,
                configuration : copy)
 endforeach
@@ -233,7 +233,7 @@ gtk324_scss_dark  = join_paths(meson.build_root(), 'gtk-dark-3-24.scss')
 # Install assets
 
 install_subdir('src/gnome-shell/assets', install_dir: shell_dir)
-install_subdir('src/gtk-2.0/assets', install_dir: gtk2_dir)
-install_subdir('src/gtk-3.0/gtk3-assets', install_dir: theme_dir)
-install_subdir('src/gtk-2.0-dark/assets', install_dir: dark_gtk2_dir)
-install_subdir('src/gtk-3.0/gtk3-assets', install_dir: dark_theme_dir)
+install_subdir('src/gtk2/assets', install_dir: gtk2_dir)
+install_subdir('src/gtk3/gtk3-assets', install_dir: theme_dir)
+install_subdir('src/gtk2-dark/assets', install_dir: dark_gtk2_dir)
+install_subdir('src/gtk3/gtk3-assets', install_dir: dark_theme_dir)
