@@ -29,6 +29,7 @@ Remove installation folders `/usr/share/themes/Lounge`, `/usr/share/themes/Loung
 
 ## Licence
 GPLv3+, see LICENSE file.  
+Screenshot is under public domain.  
 Lounge-gtk-theme based on original gtk theme Adwaita.  
 Original themes/styles copyrights are in COPYRIGHT file.
 
@@ -36,11 +37,11 @@ Original themes/styles copyrights are in COPYRIGHT file.
 Report bugs to [issues page](https://github.com/monday15/lounge-gtk-theme/issues).
 
 ## Thanks
-horst3180, Emmanuele Bassi, nana-4, Sam Hewitt, Thibault Saunier, ZMA, all people in copyright file, Meson developers, Yaru gtk theme developers, Adapta theme developers, Gnome developers and maintainers, Fedora developers and maintainers.
+horst3180, Emmanuele Bassi, nana-4, Sam Hewitt, Thibault Saunier, ZMA, all people in copyright file, Meson developers, Yaru theme developers, Adapta theme developers, Gnome developers and maintainers, Fedora developers and maintainers.
 
 ## Links
 [Absolute gtk2 theme](https://www.gnome-look.org/p/1080258/), [Adapta theme](https://github.com/adapta-project/adapta-gtk-theme), [Adwaita gtk2 theme](https://gitlab.gnome.org/GNOME/gnome-themes-extra), [Adwaita gtk3 theme](https://gitlab.gnome.org/GNOME/gtk), [gnome-shell theme](https://gitlab.gnome.org/GNOME/gnome-shell), [Materia theme](https://github.com/nana-4/materia-theme).  
 List of applications (their original css styles used in the theme): [Gedit](https://gitlab.gnome.org/GNOME/gedit), [Nautilus](https://gitlab.gnome.org/GNOME/nautilus).
 
-## Screenshots
+## Screenshot
 ![sh1](/screenshots/sh1.png?raw=true)
