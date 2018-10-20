@@ -44,5 +44,3 @@ List of applications (their original css styles used in the theme): [Gedit](http
 
 ## Screenshots
 ![sh1](/screenshots/sh1.png?raw=true)
-![sh2](/screenshots/sh2.png?raw=true)
-
