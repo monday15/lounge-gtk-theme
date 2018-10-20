@@ -2,8 +2,6 @@
 /.gitattributes export-ignore
 /fedora-spec export-ignore
 /screenshots export-ignore
-/firefox-tweak export-ignore
-/firefox-tweak-dark export-ignore
 
 /src/gtk2/render-assets.sh export-ignore
 /src/gtk2/assets.svg export-ignore
