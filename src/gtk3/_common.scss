@@ -4497,8 +4497,8 @@ stackswitcher button.text-button.circular { // FIXME aggregate with buttons
 /*********
  * Emoji *
  ********/
-
-popover.emoji-picker { padding-left: 0; padding-right: 0; }
+//this padding needed to compensate negative popover box margins
+popover.emoji-picker { padding: 4px; }
 
 popover.emoji-picker entry { margin: 4px; }
 
