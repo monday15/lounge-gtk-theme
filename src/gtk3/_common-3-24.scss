@@ -27,7 +27,7 @@
   &:last-child { @extend %linked_right; }
 
   &:only-child {
-    border-radius: 3px;
+    border-radius: 2px;
     border-style: solid;
   }
 }
