@@ -2518,7 +2518,7 @@ scrollbar {
 
       &.horizontal {
         slider {
-          margin: 0 2px;
+          margin: 0 1px;
           min-width: $_slider_min_length;
         }
 
@@ -2530,7 +2530,7 @@ scrollbar {
 
       &.vertical {
         slider {
-          margin: 2px 0;
+          margin: 1px 0;
           min-height: $_slider_min_length;
         }
 
