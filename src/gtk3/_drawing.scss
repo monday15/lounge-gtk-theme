@@ -165,8 +165,8 @@
     -gtk-icon-shadow: 0 1px $_shadow;
   }
   @else {
-    text-shadow: 0 -1px $_shadow;
-    -gtk-icon-shadow: 0 -1px $_shadow;
+    text-shadow: 0px 1px $_shadow;
+    -gtk-icon-shadow: 0px 1px $_shadow;
   }
 }
 
@@ -203,7 +203,7 @@
     $button_fill: if($variant == 'light', image(lighten($c, 2%)),
                                           image(darken($c, 2%))) !global;
     background-image: $button_fill;
-//    @include _button_text_shadow($tc, $c);
+    @include _button_text_shadow($tc, $c);
     @include _shadows(inset 0 1px $_hilight_color);
   }
 
@@ -217,12 +217,11 @@
     border-bottom-color: darken($_button_border_color, 15%);
     @if $variant == 'light' {
       $button_fill: image(lighten($c, 5%)) !global;
-//      @include _button_text_shadow($tc, lighten($c, 6%));
     }
     @else {
       $button_fill: image(lighten($c, 2%)) !global;
-//      @include _button_text_shadow($tc,lighten($c, 6%));
     }
+    @include _button_text_shadow($tc,lighten($c, 6%));
     background-image: $button_fill;
     @include _shadows(inset 0 1px $_hilight_color);
   }
@@ -234,7 +233,7 @@
     color: $tc;
     outline-color: transparentize($tc, 0.7);
     border-color: if($c != $bg_color, _border_color($c, true), $alt_borders_color);
-//    @include _button_text_shadow($tc, $c);
+    @include _button_text_shadow($tc, $c);
     @if $variant == 'light' {
       background-image: image(lighten($c, 3%));
       @include _shadows(inset 0 1px _button_hilight_color(lighten($c, 6%)));
