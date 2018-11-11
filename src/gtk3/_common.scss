@@ -3437,7 +3437,7 @@ progressbar {
 levelbar {
   &.horizontal {
     block {
-      min-height: 2px;
+      min-height: 4px;
     }
 
     &.discrete block {
@@ -3448,7 +3448,7 @@ levelbar {
 
   &.vertical {
     block {
-      min-width: 2px;
+      min-width: 4px;
     }
 
     &.discrete block {
@@ -3469,39 +3469,34 @@ levelbar {
   }
 
   block {
-    border: 1px solid;
+    border: none;
     border-radius: 1px;
 
     &.low {
-      border-color: if($variant == 'light', darken($warning_color, 20%), $warning_color);
       background-color: $warning_color;
 
-      &:backdrop { border-color: $warning_color; };
+      &:backdrop { background-color: mix($warning_color, $backdrop_bg_color, 70%); };
     }
 
     &.high,
     &:not(.empty) {
-      border-color: if($variant == 'light', $selected_borders_color, $selected_bl_color);
       background-color: if($variant == 'light', darken($selected_bl_color, 10%), $selected_bl_color);
 
       &:backdrop {
-        border-color: if($variant == 'light', $backdrop_selected_borders_color, $backdrop_selected_bl_color);
         background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 10%), $backdrop_selected_bl_color);
       }
     }
 
     &.full {
-      border-color: if($variant == 'light', darken($success_color, 20%), $success_color);
       background-color: $success_color;
 
-      &:backdrop { border-color: $success_color; };
+      &:backdrop { background-color: mix($success_color, $backdrop_bg_color, 70%); };
     }
 
     &.empty {
-      background-color: transparent;
-      border-color: if($variant == 'light', transparentize($fg_color,0.8), transparentize($fg_color,0.9));
+      background-color: transparentize($fg_color, 0.9);
 
-      &:backdrop { border-color: transparentize($backdrop_fg_color,0.85); }
+      &:backdrop { background-color: transparentize($backdrop_fg_color, 0.9); }
     }
   }
 }
