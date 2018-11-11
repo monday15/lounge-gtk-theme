@@ -2911,26 +2911,24 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
  * GtkScale *
  ************/
 %scale_trough {
-  border: 1px solid if($variant=='light', $borders_color, $dark_fill);
+  border: none;
   border-radius: 2px;
   background-color: $dark_fill;
 
-  &:disabled { background-color: $insensitive_bg_color; @if $variant=='dark' { border-color: $insensitive_bg_color; } }
+  &:disabled { background-color: if($variant=='light', mix($insensitive_bg_color, $dark_fill, 40%), mix($insensitive_bg_color, $dark_fill, 70%)); }
 
   &:backdrop {
     background-color: $backdrop_dark_fill;
-    border-color: if($variant=='light', $backdrop_borders_color, $backdrop_dark_fill);
     transition: $backdrop_transition;
 
-    &:disabled { background-color: $insensitive_bg_color; }
+    &:disabled { background-color: if($variant=='light', mix($insensitive_bg_color, $dark_fill, 50%), mix($insensitive_bg_color, $dark_fill, 80%)); }
   }
 
   // ...on selected list rows
-  row:selected & { border-color: darken($selected_borders_color, 10%); &:disabled { border-color: $selected_borders_color; }}
+  row:selected & { box-shadow: 0 0 0 1px $bg_color; }
 
   // OSD
   .osd & {
-    border-color: if($variant=='light', $osd_borders_color, transparent);
     background-color: transparentize($osd_borders_color, 0.2);
 
     &:disabled { background-color: $osd_insensitive_bg_color; }
@@ -2938,33 +2936,26 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
 }
 
 %scale_highlight {
-  border: 1px solid if($variant=='light', $selected_borders_color, $selected_bl_color);
+  border: none;
   border-radius: 2px;
-  background-color: if($variant == 'light', darken($selected_bl_color, 10%), $selected_bl_color);
+  background-color: if($variant == 'light', darken($selected_bl_color, 15%), $selected_bl_color);
 
   &:disabled {
     background-color: transparent;
-    border-color: transparent;
   }
 
   &:backdrop {
-    border-color: if($variant=='light', $backdrop_selected_borders_color, $backdrop_selected_bl_color);
     background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 10%), $backdrop_selected_bl_color);
     &:disabled {
       background-color: transparent;
-      border-color: transparent;
     }
   }
 
   // ...on selected list rows
-  row:selected & { border-color: darken($selected_borders_color, 10%); &:disabled { border-color: $selected_borders_color; }}
+  row:selected & { box-shadow: 0 0 0 1px $bg_color; }
 
   // OSD
-  .osd & {
-    border-color: if($variant == 'light', transparentize(black, 0.7), transparent);
-
-    &:disabled { border-color: transparent; }
-  }
+  .osd & {  }
 }
 
 scale {
@@ -2978,14 +2969,14 @@ scale {
 
   // those are inside the trough node, I need them to show their own border over the trough one, so negative margin
   fill,
-  highlight { margin: -1px; }
+  highlight { margin: 0px; }
 
   // the slider is inside the trough, so to have make it bigger there's a negative margin
 
   slider {
     min-height: 14px;
     min-width: 14px;
-    margin: -6px;
+    margin: -5px;
   }
 
   // click-and-hold the slider to activate
@@ -3369,12 +3360,12 @@ progressbar {
   // sizing
   &.horizontal {
     trough,
-    progress { min-height: 4px; }
+    progress { min-height: 6px; }
   }
 
   &.vertical {
     trough,
-    progress { min-width: 4px; }
+    progress { min-width: 6px; }
   }
 
   &.horizontal progress { margin: 0 -1px; } // the progress node is positioned after the trough border
