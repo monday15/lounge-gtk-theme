@@ -2628,7 +2628,7 @@ switch {
 
   &:checked {
     color: $selected_fl_color;
-    border-color: if($variant == 'light',  $selected_borders_color, $selected_bl_color);
+    border-color: if($variant == 'light',  desaturate(darken($selected_bl_color, 25%), 20%), $selected_bl_color);
     background-color: if($variant == 'light', darken($selected_bl_color, 10%), $selected_bl_color);
     text-shadow: 0 1px transparentize($selected_borders_color, 0.5),
                  0 0 2px transparentize(white, 0.4);
@@ -2674,7 +2674,7 @@ switch {
 
   &:hover slider { @include button(hover-alt, $edge: $shadow_color); }
 
-  &:checked slider { border: 1px solid if($variant == 'light',  $selected_borders_color, $selected_bl_color); }
+  &:checked slider { border: 1px solid if($variant == 'light', desaturate(darken($selected_bl_color, 25%), 20%), $selected_bl_color); }
 
   &:disabled slider { @include button(insensitive); }
 
@@ -2685,7 +2685,7 @@ switch {
       @include button(backdrop);
     }
 
-    &:checked slider { border-color: if($variant == 'light',  $backdrop_selected_borders_color, $backdrop_selected_bl_color); }
+    &:checked slider { border-color: if($variant == 'light', desaturate(darken($backdrop_selected_bl_color, 25%), 20%), $backdrop_selected_bl_color); }
 
     &:disabled slider { @include button(backdrop-insensitive); }
   }
@@ -2693,7 +2693,7 @@ switch {
   row:selected & {
     @if $variant == 'light' {
       box-shadow: none;
-      border-color: darken($selected_borders_color, 10%);
+      border-color: desaturate(darken($selected_bl_color, 50%), 30%);
 
       &:backdrop {
         border-color: darken($backdrop_selected_borders_color, 10%);
