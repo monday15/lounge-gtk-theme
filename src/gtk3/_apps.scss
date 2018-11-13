@@ -2,7 +2,7 @@
 
 .open-document-selector-treeview {
   &:hover { 
-    background-color: transparentize($bg_color, 0.9);
+    background-color: transparentize($bg_color, 0.8);
     &:selected { background-color: $selected_bg_color; }
   }
 }
