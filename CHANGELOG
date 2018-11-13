@@ -1,3 +1,15 @@
+1.6
+===
+
+* gtk3/gtk2: Reworked colors;
+* gtk3/gtk2: Simplified buttons;
+* gtk3/gtk2: Simplified scale/progressbars;
+* gtk3/gtk2: Various fixes;
+* shell: Workspace switcher reworked;
+* shell: Selected background color updated;
+* shell: Assets updated to match new color;
+
+
 1.5
 ===
 

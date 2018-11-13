@@ -1,5 +1,5 @@
 Name:           lounge-gtk-theme
-Version:        1.5
+Version:        1.6
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Simple and clean gtk theme
@@ -42,6 +42,9 @@ Recommends:	lounge-aux-icon-theme
 
 
 %changelog
+* Tue Nov 13 2018 Alex Monday <monday15@gmx.com>
+- Update to 1.6
+
 * Sat Oct 20 2018 Alex Monday <monday15@gmx.com>
 - Update to 1.5
 
