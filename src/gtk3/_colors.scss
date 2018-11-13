@@ -7,7 +7,7 @@ $bg_color: if($variant == 'light', #f0f0f0, #363a3c);
 $fg_color: if($variant == 'light', #101010, #c4c4c4);
 
 // These colors are used to provide dark fg on light bg in a light theme
-$selected_bl_color: if($variant == 'light', #d3e6f9, desaturate(darken(#d3e6f9, 45%), 30%));
+$selected_bl_color: if($variant == 'light', #d3e6f9, desaturate(darken(#d3e6f9, 50%), 25%));
 $selected_fl_color: if($variant == 'light', #101010, #d4d4d4);
 
 // These colors are sent to colors-public, for applications
@@ -41,13 +41,13 @@ $scrollbar_slider_active_color: $scrollbar_slider_hover_color;
 $scrollbar_slider_finetune_color: if($variant=='light', desaturate(darken($selected_bg_color, 10%), 10%), lighten($selected_bg_color, 5%));
 
 $warning_color: #da802a;
-$error_color: if($variant == 'light', #c82828, #c82828);
+$error_color: if($variant == 'light', #c82828, desaturate(darken(#c82828, 10%), 10%));
 $success_color: if($variant == 'light', #8bcb4d, desaturate(darken(#8bcb4d, 10%), 10%));
-$destructive_color: if($variant == 'light', #d93f3f, desaturate(darken(#d93f3f, 10%), 10%));
+$destructive_color: if($variant == 'light', #d93f3f, desaturate(darken(#d93f3f, 15%), 10%));
 
 $osd_fg_color: if($variant == 'light', $fg_color, #d2d2d2);
 $osd_text_color: if($variant == 'light', $text_color, #d2d2d2);
-$osd_bg_color: if($variant == 'light', transparentize(#dfddd9, 0.07), transparentize(#1c1f20, 0.3));
+$osd_bg_color: if($variant == 'light', transparentize(#dfddd9, 0.07), transparentize(#26292a, 0.3));
 $osd_borders_color: $borders_color;
 
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
