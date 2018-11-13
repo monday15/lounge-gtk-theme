@@ -3040,14 +3040,14 @@ scale {
   slider {
     @include button(normal-alt, $edge: $shadow_color);
 
-    border: 1px solid $alt_borders_color;
+    border: 1px solid if($variant == 'light', $alt_borders_color, lighten($alt_borders_color, 2%));
     border-radius: 3px;
     transition: $button_transition;
     transition-property: background, border, box-shadow;
 
     &:hover { @include button(hover-alt, $edge: $shadow_color); }
 
-    &:active { border-color: if($variant == 'light', $selected_borders_color, $alt_borders_color); }
+    &:active { border-color: if($variant == 'light', $selected_borders_color, lighten($alt_borders_color, 2%)); }
 
     &:disabled { @include button(insensitive); @if $variant=='dark' { border-color: lighten($borders_color, 5%); } }
 
@@ -3055,8 +3055,9 @@ scale {
       transition: $backdrop_transition;
 
       @include button(backdrop);
+      @if $variant=='dark' { border-color: lighten($alt_borders_color, 2%); }
 
-      &:disabled { @include button(backdrop-insensitive); @if $variant=='dark' { border-color: lighten($borders_color, 8%); } }
+      &:disabled { @include button(backdrop-insensitive); @if $variant=='dark' { border-color: lighten($alt_borders_color, 5%); } }
     }
 
     // ...on selected list rows
