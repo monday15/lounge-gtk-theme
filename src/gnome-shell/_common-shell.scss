@@ -643,8 +643,11 @@ StScrollBar {
 .workspace-switcher-group { padding: 12px; }
 
   .workspace-switcher-container {
-    @extend %osd-panel;
-    margin-left: 85em;
+    color: $_bubble_fg_color;
+    background-color: transparentize($_bubble_bg_color, 0.4);
+    border: 1px solid transparentize($_bubble_borders_color, 0.4);
+    border-radius: 3px;
+    padding: 12px;
   }
 
   .workspace-switcher {
@@ -657,9 +660,8 @@ StScrollBar {
 
   .ws-switcher-active-up, .ws-switcher-active-down {
     height: 50px;
-    background-color: $selected_bg_color;
+    background-color: transparentize($selected_bg_color, 0.4);
     color: $selected_fg_color;
-    //background-image: url("assets/ws-switch-arrow-up.png");
     background-size: 32px;
     border-radius: 3px;
   }
