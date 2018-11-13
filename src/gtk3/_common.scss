@@ -2928,6 +2928,13 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
 
     &:disabled { background-color: $osd_insensitive_bg_color; }
   }
+
+  popover.background & {
+    @if $variant == 'dark' {
+      background-color: darken($dark_fill, 5%);
+      &:backdrop { background-color: darken($backdrop_dark_fill, 2%); }
+    }
+  }
 }
 
 %scale_highlight {
