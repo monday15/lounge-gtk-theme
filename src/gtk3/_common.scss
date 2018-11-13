@@ -2107,7 +2107,7 @@ popover.background {
   box-shadow: 0 1px 2px transparentize(black, 0.8);
 
   &:backdrop {
-    background-color: darken($popover_bg_color, 3%);
+    background-color: $backdrop_menu_color;
     box-shadow: none;
   }
 
