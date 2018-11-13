@@ -239,7 +239,7 @@
       @include _shadows(inset 0 1px _button_hilight_color(lighten($c, 6%)));
     }
     @else {
-      background-image: image(lighten($c, 1%));
+      background-image: image(lighten($c, 2%));
       @include _shadows(inset 0 1px $_hilight_color);
     }
   }
@@ -256,7 +256,7 @@
       @include _shadows(inset 0 1px _button_hilight_color(lighten($c, 6%)));
     }
     @else {
-      $button_fill: image(lighten($c, 4%)) !global;
+      $button_fill: image(lighten($c, 7%)) !global;
       @include _shadows(inset 0 1px $_hilight_color);
     }
     background-image: $button_fill;
