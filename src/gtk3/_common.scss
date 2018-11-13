@@ -2933,14 +2933,14 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
 %scale_highlight {
   border: none;
   border-radius: 2px;
-  background-color: if($variant == 'light', darken($selected_bl_color, 15%), $selected_bl_color);
+  background-color: if($variant == 'light', darken($selected_bl_color, 15%), lighten($selected_bl_color, 5%));
 
   &:disabled {
     background-color: transparent;
   }
 
   &:backdrop {
-    background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 10%), $backdrop_selected_bl_color);
+    background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 10%), lighten($backdrop_selected_bl_color, 5%));
     &:disabled {
       background-color: transparent;
     }
