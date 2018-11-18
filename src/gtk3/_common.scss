@@ -1825,7 +1825,7 @@ treeview.view {
     border: none;
     border-radius: 2px;
     background-color: if($variant == 'light', darken($selected_bl_color, 5%), $selected_bl_color);
-    box-shadow: none;
+    box-shadow: inset 0 -1px transparentize(black, 0.9);
 
     &:selected {
       &:focus, & {
