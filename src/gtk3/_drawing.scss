@@ -216,7 +216,7 @@
     border-color: $_button_border_color;
     border-bottom-color: darken($_button_border_color, 15%);
     @if $variant == 'light' {
-      $button_fill: image(lighten($c, 4.5%)) !global;
+      $button_fill: image(lighten($c, 5%)) !global;
     }
     @else {
       $button_fill: image(lighten($c, 2%)) !global;
