@@ -81,7 +81,7 @@
   @if $t==osd {
     color: $osd_text_color;
     border-color: $osd_borders_color;
-    background-color: if($variant == 'light', transparentize(white, 0.5), transparentize(opacify($osd_borders_color, 1), 0.5));
+    background-color: if($variant == 'light', transparentize(white, 0.2), transparentize(opacify($osd_borders_color, 1), 0.5));
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: none;
@@ -90,7 +90,7 @@
   @if $t==osd-focus {
     color: $osd_text_color;
     border-color: $selected_bg_color;
-    background-color: if($variant == 'light', transparentize(white, 0.5), transparentize(opacify($osd_borders_color, 1), 0.5));
+    background-color: if($variant == 'light', transparentize(white, 0.2), transparentize(opacify($osd_borders_color, 1), 0.5));
     background-clip: padding-box;
     box-shadow: entry_focus_shadow($fc);
     text-shadow: none;
@@ -108,7 +108,7 @@
   @if $t==osd-backdrop {
     color: $osd_text_color;
     border-color: $osd_borders_color;
-    background-color: if($variant == 'light', transparentize(white, 0.5), transparentize(opacify($osd_borders_color, 1), 0.5));
+    background-color: if($variant == 'light', transparentize(white, 0.3), transparentize(opacify($osd_borders_color, 1), 0.5));
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: none;
