@@ -643,11 +643,7 @@ StScrollBar {
 .workspace-switcher-group { padding: 12px; }
 
   .workspace-switcher-container {
-    color: $_bubble_fg_color;
-    background-color: transparentize($_bubble_bg_color, 0.4);
-    border: 1px solid transparentize($_bubble_borders_color, 0.4);
-    border-radius: 3px;
-    padding: 12px;
+    @extend %osd-panel;
   }
 
   .workspace-switcher {
@@ -660,7 +656,7 @@ StScrollBar {
 
   .ws-switcher-active-up, .ws-switcher-active-down {
     height: 50px;
-    background-color: transparentize($selected_bg_color, 0.4);
+    background-color: $selected_bg_color;
     color: $selected_fg_color;
     background-size: 32px;
     border-radius: 3px;
