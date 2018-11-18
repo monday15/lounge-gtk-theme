@@ -656,7 +656,7 @@ StScrollBar {
 
   .ws-switcher-active-up, .ws-switcher-active-down {
     height: 50px;
-    background-color: $selected_bg_color;
+    background-color: desaturate(darken($selected_bg_color, 5%), 10%);
     color: $selected_fg_color;
     background-size: 32px;
     border-radius: 3px;
