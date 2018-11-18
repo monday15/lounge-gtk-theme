@@ -26,14 +26,14 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1280"
      inkscape:window-height="970"
-     id="namedview19"
+     id="namedview18"
      showgrid="false"
-     inkscape:zoom="14.75"
-     inkscape:cx="8.4598155"
-     inkscape:cy="16.239722"
+     inkscape:zoom="5.2149125"
+     inkscape:cx="-11.365846"
+     inkscape:cy="-0.45375723"
      inkscape:window-x="1280"
      inkscape:window-y="25"
-     inkscape:window-maximized="0"
+     inkscape:window-maximized="1"
      inkscape:current-layer="layer12" />
   <metadata
      id="metadata90">
@@ -92,18 +92,18 @@
      style="display:inline"
      id="g4953" />
   <g
-     transform="matrix(2,0,0,2,-282.0004,-1614.2187)"
-     style="display:inline;fill:#006098;fill-opacity:1"
+     transform="matrix(2,0,0,2,-282.0008,-1614.2187)"
+     style="display:inline;fill:#3e749e;fill-opacity:1"
      id="layer12">
     <path
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#578cc1;fill-opacity:1;stroke:none;stroke-width:2;marker:none;enable-background:new"
-       d="m 147,818 v -4 h -3.1248 l 5.125,-5.7813 5.125,5.7813 h -3.1875 v 4 z"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#4b88c3;fill-opacity:1;stroke:none;stroke-width:2;marker:none;enable-background:new"
+       d="m 147.0002,817.99985 v -4 h -3.1248 l 5.125,-5.7813 5.125,5.7813 h -3.1875 v 4 z"
        id="path16532"
        inkscape:connector-curvature="0" />
     <path
        id="path16534"
-       d="m 147,822 v -2 h 3.9377 v 2 z"
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#578cc1;fill-opacity:1;stroke:none;stroke-width:2;marker:none;enable-background:new"
+       d="m 147.0002,821.99985 v -2 h 3.9377 v 2 z"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#4b88c3;fill-opacity:1;stroke:none;stroke-width:2;marker:none;enable-background:new"
        inkscape:connector-curvature="0" />
   </g>
 </svg>
