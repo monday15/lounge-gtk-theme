@@ -161,8 +161,8 @@
   $_shadow: _text_shadow_color($tc, $bg);
 
   @if lightness($tc)<50% {
-    text-shadow: 0 1px $_shadow;
-    -gtk-icon-shadow: 0 1px $_shadow;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
   }
   @else {
     text-shadow: 0px 1px $_shadow;
