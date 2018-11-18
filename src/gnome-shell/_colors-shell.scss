@@ -7,7 +7,7 @@ $bg_color: #353a3b;
 $fg_color: #ddd;
 
 $selected_fg_color: #eee;
-$selected_bg_color: desaturate(darken(#d3e6f9, 45%), 30%);
+$selected_bg_color: desaturate(darken(#d2e6fa, 42%), 30%);
 $selected_borders_color: darken($selected_bg_color, 20%);
 $borders_color: lighten($bg_color, 12%);
 $borders_edge: transparentize($fg_color, 0.9);
