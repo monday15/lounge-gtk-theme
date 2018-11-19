@@ -2922,6 +2922,11 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
       &:backdrop { background-color: darken($backdrop_dark_fill, 2%); }
     }
   }
+
+  // lounge: headerbar scale (affects lollypop)
+  headerbar & {
+    @if $variant == 'dark' { background-color: darken($dark_fill, 3%); }
+  }
 }
 
 %scale_highlight {
