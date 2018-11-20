@@ -1971,9 +1971,10 @@ menu,
 .menu,
 .context-menu {
   margin: 4px; // see https://bugzilla.gnome.org/show_bug.cgi?id=591258
-  padding: 2px 0px;
+  padding: 2px;
   background-color: $menu_color;
   border: 1px solid $borders_color; // adds borders in a non composited env
+  border-radius: 3px;
 
   .csd & { border: none; }  // axes borders in a composited env
 
@@ -1984,11 +1985,12 @@ menu,
     min-width: 40px;
     padding: 3px 6px;
     text-shadow: none;
+    border-radius: 2px;
 
     &:hover {
       color: $selected_fl_color;
-      background-color: $selected_bl_color;
-      box-shadow: inset 0 1px transparentize(black, 0.9), inset 0 -1px transparentize(black, 0.9);
+      background-color: $popover_hover_color;
+      box-shadow: inset 0 0 0 1px transparentize(black, 0.9);
     }
 
     &:disabled {
@@ -2034,14 +2036,23 @@ menu,
     border-radius: 0;
 
     &.top {
-      margin-top: -6px;
+      margin-top: 0;
       border-bottom: 1px solid mix($fg_color, $base_color, 10%);
+      padding-top: 2px;
+      padding-bottom: 2px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
 
     &.bottom {
-      margin-bottom: -6px;
+      margin-bottom: -4px;
+      margin-top: 4px;
+      padding-top: 2px;
+      padding-bottom: 2px;
       border-top: 1px solid mix($fg_color, $base_color, 10%);
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     }
 
@@ -2068,6 +2079,14 @@ menuitem {
 
     &:dir(ltr) { margin-right: 7px; }
     &:dir(rtl) { margin-left: 7px; }
+  }
+}
+
+window.popup {
+  &, &.solid-csd { border-radius: 3px; box-shadow: 0 1px 2px transparentize(black, 0.8); }
+
+  &.csd { // round corners for CSD menus
+    border-radius: 3px; box-shadow: 0 1px 2px transparentize(black, 0.8); // same with the combobox
   }
 }
 
@@ -4299,7 +4318,7 @@ decoration {
   .ssd & { box-shadow: 0 0 0 1px $_wm_border; } //just doing borders, wm draws actual shadows
 
   .csd.popup & {
-    border-radius: 0;
+    border-radius: 3px;
     box-shadow: 0 1px 2px transparentize(black, 0.8),
                 0 0 0 1px transparentize($_wm_border, 0.1);
   }
