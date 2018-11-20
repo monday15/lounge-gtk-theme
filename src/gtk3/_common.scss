@@ -1836,10 +1836,10 @@ treeview.view {
     &:selected {
       &:focus, & {
         border-radius: 2px;
-        background-color: if($variant == 'light', darken($selected_bl_color, 12%), lighten($selected_bl_color, 7%));
+        background-color: if($variant == 'light', darken($selected_bl_color, 10%), lighten($selected_bl_color, 7%));
 
         &:backdrop {
-          background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 12%), lighten($backdrop_selected_bl_color, 7%));
+          background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 10%), lighten($backdrop_selected_bl_color, 7%));
         }
       }
     }
