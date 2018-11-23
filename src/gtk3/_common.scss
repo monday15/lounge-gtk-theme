@@ -3895,7 +3895,7 @@ placessidebar {
     &.sidebar-placeholder-row {
       padding: 0 8px;
       min-height: 2px;
-      background-image: if($variant == 'light', image(desaturate(lighten($drop_target_color, 40%), 40%)), image($drop_target_color));
+      background-image: if($variant == 'light', image(desaturate(lighten($drop_target_color, 20%), 20%)), image($drop_target_color));
       background-clip: content-box;
     }
 
@@ -3909,7 +3909,7 @@ placessidebar {
 
       &:selected {
         color: $selected_fl_color;
-        background-color: if($variant == 'light', desaturate(lighten($drop_target_color, 40%), 40%), $drop_target_color);
+        background-color: if($variant == 'light', desaturate(lighten($drop_target_color, 30%), 30%), $drop_target_color);
       }
     }
   }
