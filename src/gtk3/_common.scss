@@ -2987,9 +2987,9 @@ scale {
   // the slider is inside the trough, so to have make it bigger there's a negative margin
 
   slider {
-    min-height: 14px;
-    min-width: 14px;
-    margin: -5px;
+    min-height: 16px;
+    min-width: 16px;
+    margin: -6px;
   }
 
   // click-and-hold the slider to activate
@@ -3059,7 +3059,7 @@ scale {
     @include button(normal-alt, $edge: $shadow_color);
 
     border: 1px solid if($variant == 'light', $alt_borders_color, lighten($alt_borders_color, 2%));
-    border-radius: 3px;
+    border-radius: 100%;
     transition: $button_transition;
     transition-property: background, border, box-shadow;
 
