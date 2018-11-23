@@ -2968,7 +2968,7 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   row:selected & { box-shadow: 0 0 0 1px $bg_color; }
 
   // OSD
-  .osd & {  }
+  .osd & { &:backdrop { background-color: if($variant == 'light', desaturate(darken($backdrop_selected_bl_color, 10%), 10%), lighten($backdrop_selected_bl_color, 5%)); } }
 }
 
 scale {
