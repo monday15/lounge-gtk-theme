@@ -23,6 +23,8 @@ Use regular installation instructions, old files will be overwritten with a new 
 ## Extra
 Firefox looks ok with the theme, but there are some tweaks, you can find them in `firefox-tweak` folder (or `firefox-tweak-dark` for dark theme). Copy `userChrome.css` to your profile's `chrome` dir - the path looks like this `~/.mozilla/firefox/randomletters.default/chrome/userChrome.css`.
 
+![firefoxdiff](/screenshots/firefoxdiff.png?raw=true)
+
 ## Removing
 Remove installation folders `/usr/share/themes/Lounge`, `/usr/share/themes/Lounge-night`.
 
