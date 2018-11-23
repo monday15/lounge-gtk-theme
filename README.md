@@ -38,7 +38,7 @@ Original themes/styles copyrights are in COPYRIGHT file.
 Report bugs to [issues page](https://github.com/monday15/lounge-gtk-theme/issues).
 
 ## Thanks
-horst3180, Emmanuele Bassi, nana-4, Sam Hewitt, Thibault Saunier, ZMA, all people in copyright file, Meson developers, Yaru theme developers, Adapta theme developers, Gnome developers and maintainers, Fedora developers and maintainers.
+Allan Day, Emmanuele Bassi, horst3180, nana-4, Sam Hewitt, Thibault Saunier, tista500, vinceliuice, ZMA, all people in copyright file, Meson developers, Yaru theme developers, Gnome developers and maintainers, Fedora developers and maintainers.
 
 ## Links
 [Absolute gtk2 theme](https://www.gnome-look.org/p/1080258/), [Adapta theme](https://github.com/adapta-project/adapta-gtk-theme), [Adwaita gtk2 theme](https://gitlab.gnome.org/GNOME/gnome-themes-extra), [Adwaita gtk3 theme](https://gitlab.gnome.org/GNOME/gtk), [gnome-shell theme](https://gitlab.gnome.org/GNOME/gnome-shell), [Materia theme](https://github.com/nana-4/materia-theme), [Yaru theme](https://github.com/ubuntu/yaru).  
