@@ -4369,7 +4369,7 @@ button.titlebutton {
 %selected_items {
   background-color: $selected_bl_color;
 
-  @at-root %nobg_selected_items, & {
+  @at-root %nobg_selected_items_light, & {
     color: $selected_fl_color;
 
     &:disabled { color: mix($selected_fl_color, $selected_bl_color, 50%); }
