@@ -107,3 +107,11 @@ headerbar button.image-button.popup.toggle { min-height: 24px; padding-top: 2px;
   // Gnome-calendar
 
 headerbar button.sources-button { min-height: 36px; }
+
+
+  // Firefox
+
+window.background:not(.csd) {
+  .menu { border: none; }
+}
+
