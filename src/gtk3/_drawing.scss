@@ -269,7 +269,8 @@
     color: $tc;
     outline-color: transparentize($tc, 0.7);
     border-color: $_button_border_color;
-    $button_fill: image(darken($c, 6%)) !global;
+    $button_fill: if($variant == 'light', image(darken($c, 6%)),
+                                          image(darken($c, 5%))) !global;
     background-image: $button_fill;
     // workaround, to avoid button_edge drawing or something like that
     @include _shadows(inset 0 1px transparentize($_button_border_color, 1.0));
