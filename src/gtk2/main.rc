@@ -44,7 +44,7 @@ style "default" {
   GtkButton::inner-border           = {4, 4, 3, 3}
 
   GtkEntry::state-hint = 1
-  GtkEntry::inner-border = {4, 4, 4, 4}
+  GtkEntry::inner-border = {3, 3, 3, 3}
 
   GtkPaned::handle-size = 9
   GtkHPaned::handle-size = 9
@@ -1078,7 +1078,7 @@ style "default" {
       state    = ACTIVE
       detail   = "entry"
       file     = "assets/entry-active.png"
-      border   = {4, 4, 4, 4}
+      border   = {3, 3, 3, 3}
       stretch  = TRUE
     }
 
@@ -1087,7 +1087,7 @@ style "default" {
       state    = INSENSITIVE
       detail   = "entry"
       file     = "assets/entry-insensitive.png"
-      border   = {4, 4, 4, 4}
+      border   = {3, 3, 3, 3}
       stretch  = TRUE
     }
 
@@ -1095,7 +1095,7 @@ style "default" {
       function = SHADOW
       detail   = "entry"
       file     = "assets/entry.png"
-      border   = {4, 4, 4, 4}
+      border   = {3, 3, 3, 3}
       stretch  = TRUE
     }
 
@@ -1770,7 +1770,7 @@ style "combobox_entry" {
       state     = NORMAL
       detail    = "entry"
       file      = "assets/combo-entry-ltr-entry.png"
-      border    = {4, 4, 4, 4}
+      border    = {3, 3, 3, 3}
       stretch   = TRUE
       direction = LTR
     }
@@ -1780,7 +1780,7 @@ style "combobox_entry" {
       state     = ACTIVE
       detail    = "entry"
       file      = "assets/combo-entry-ltr-entry-active.png"
-      border    = {4, 4, 4, 4}
+      border    = {3, 3, 3, 3}
       stretch   = TRUE
       direction = LTR
     }
@@ -1790,7 +1790,7 @@ style "combobox_entry" {
       state     = INSENSITIVE
       detail    = "entry"
       file      = "assets/combo-entry-ltr-entry-insensitive.png"
-      border    = {4, 4, 4, 4}
+      border    = {3, 3, 3, 3}
       stretch   = TRUE
       direction = LTR
     }
@@ -1804,7 +1804,7 @@ style "combobox_entry" {
       state     = NORMAL
       detail    = "entry"
       file      = "assets/combo-entry-rtl-entry.png"
-      border    = {4, 4, 4, 4}
+      border    = {3, 3, 3, 3}
       stretch   = TRUE
       direction = RTL
     }
@@ -1814,7 +1814,7 @@ style "combobox_entry" {
       state     = ACTIVE
       detail    = "entry"
       file      = "assets/combo-entry-rtl-entry-active.png"
-      border    = {4, 4, 4, 4}
+      border    = {3, 3, 3, 3}
       stretch   = TRUE
       direction = RTL
     }
@@ -1824,7 +1824,7 @@ style "combobox_entry" {
       state     = INSENSITIVE
       detail    = "entry"
       file      = "assets/combo-entry-rtl-entry-insensitive.png"
-      border    = {4, 4, 4, 4}
+      border    = {3, 3, 3, 3}
       stretch   = TRUE
       direction = RTL
     }
@@ -1957,7 +1957,7 @@ style "notebook_entry" {
       state    = ACTIVE
       detail   = "entry"
       file     = "assets/notebook-entry-active.png"
-      border   = {4, 4, 4, 4}
+      border   = {3, 3, 3, 3}
       stretch  = TRUE
     }
 
@@ -1966,7 +1966,7 @@ style "notebook_entry" {
       state    = INSENSITIVE
       detail   = "entry"
       file     = "assets/notebook-entry-insensitive.png"
-      border   = {4, 4, 4, 4}
+      border   = {3, 3, 3, 3}
       stretch  = TRUE
     }
 
@@ -1974,7 +1974,7 @@ style "notebook_entry" {
       function = SHADOW
       detail   = "entry"
       file     = "assets/notebook-entry.png"
-      border   = {4, 4, 4, 4}
+      border   = {3, 3, 3, 3}
       stretch  = TRUE
     }
   }
@@ -1995,7 +1995,7 @@ style "normal_entry" {
       state    = ACTIVE
       detail   = "entry"
       file     = "assets/entry-active.png"
-      border   = {4, 4, 4, 4}
+      border   = {3, 3, 3, 3}
       stretch  = TRUE
     }
 
@@ -2004,7 +2004,7 @@ style "normal_entry" {
       state    = INSENSITIVE
       detail   = "entry"
       file     = "assets/entry-insensitive.png"
-      border   = {4, 4, 4, 4}
+      border   = {3, 3, 3, 3}
       stretch  = TRUE
     }
 
@@ -2012,7 +2012,7 @@ style "normal_entry" {
       function = SHADOW
       detail   = "entry"
       file     = "assets/entry.png"
-      border   = {4, 4, 4, 4}
+      border   = {3, 3, 3, 3}
       stretch  = TRUE
     }
   }
@@ -2031,7 +2031,7 @@ style "notebook_combo" {
       state     = NORMAL
       detail    = "entry"
       file      = "assets/notebook-combo-entry-ltr-entry.png"
-      border    = {4, 4, 4, 4}
+      border    = {3, 3, 3, 3}
       stretch   = TRUE
       direction = LTR
     }
@@ -2041,7 +2041,7 @@ style "notebook_combo" {
       state     = ACTIVE
       detail    = "entry"
       file      = "assets/notebook-combo-entry-ltr-entry-active.png"
-      border    = {4, 4, 4, 4}
+      border    = {3, 3, 3, 3}
       stretch   = TRUE
       direction = LTR
     }
@@ -2051,7 +2051,7 @@ style "notebook_combo" {
       state     = INSENSITIVE
       detail    = "entry"
       file      = "assets/notebook-combo-entry-ltr-entry-insensitive.png"
-      border    = {4, 4, 4, 4}
+      border    = {3, 3, 3, 3}
       stretch   = TRUE
       direction = LTR
     }
@@ -2065,7 +2065,7 @@ style "notebook_combo" {
       state     = NORMAL
       detail    = "entry"
       file      = "assets/notebook-combo-entry-rtl-entry.png"
-      border    = {4, 4, 4, 4}
+      border    = {3, 3, 3, 3}
       stretch   = TRUE
       direction = RTL
     }
@@ -2075,7 +2075,7 @@ style "notebook_combo" {
       state     = ACTIVE
       detail    = "entry"
       file      = "assets/notebook-combo-entry-rtl-entry-active.png"
-      border    = {4, 4, 4, 4}
+      border    = {3, 3, 3, 3}
       stretch   = TRUE
       direction = RTL
     }
@@ -2085,7 +2085,7 @@ style "notebook_combo" {
       state     = INSENSITIVE
       detail    = "entry"
       file      = "assets/notebook-combo-entry-rtl-entry-insensitive.png"
-      border    = {4, 4, 4, 4}
+      border    = {3, 3, 3, 3}
       stretch   = TRUE
       direction = RTL
     }
