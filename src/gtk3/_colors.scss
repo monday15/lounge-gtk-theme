@@ -2,13 +2,13 @@
 // it gets @if ed depending on $variant
 
 $base_color: if($variant == 'light', #ffffff, #282b2c);
-$text_color: if($variant == 'light', black, #c4c4c4);
+$text_color: if($variant == 'light', black, #c2c2c2);
 $bg_color: if($variant == 'light', #eeeeee, #363a3c);
-$fg_color: if($variant == 'light', #101010, #c4c4c4);
+$fg_color: if($variant == 'light', #101010, #c2c2c2);
 
 // These colors are used to provide dark fg on light bg in a light theme
-$selected_bl_color: if($variant == 'light', #cee5fc, desaturate(darken(#d3e6f9, 50%), 25%));
-$selected_fl_color: if($variant == 'light', #101010, #d4d4d4);
+$selected_bl_color: if($variant == 'light', #cee5fc, desaturate(darken(#cee5fc, 46%), 35%));
+$selected_fl_color: if($variant == 'light', #101010, #d2d2d2);
 
 // These colors are sent to colors-public, for applications
 $selected_bg_color: if($variant == 'light', desaturate(darken($selected_bl_color, 30%), 20%), $selected_bl_color);
