@@ -3193,30 +3193,30 @@ scale {
               $_scale_slider_bg_pos: bottom;
 
               @if $dir_class == 'horizontal' {
-                min-height: 20px;
-                min-width: 13px;
+                min-height: 24px;
+                min-width: 20px;
 
                 @if $marks_infix == 'scale-has-marks-above' {
-                  margin-top: -10px;
+                  margin-top: -12px;
 
                   $_scale_slider_bg_pos: top;
                 }
 
-                @else { margin-bottom: -10px; }
+                @else { margin-bottom: -12px; }
               }
 
               @else {
-                min-height: 15px;
-                min-width: 20px;
+                min-height: 20px;
+                min-width: 24px;
 
                 @if $marks_infix == 'scale-has-marks-above' {
-                  margin-left: -10px;
+                  margin-left: -12px;
 
                   $_scale_slider_bg_pos: left bottom;
                 }
 
                 @else {
-                  margin-right: -10px;
+                  margin-right: -12px;
 
                   $_scale_slider_bg_pos: right bottom;
                 }
@@ -3230,18 +3230,18 @@ scale {
 
           &.fine-tune slider {
             // bigger negative margins to make the trough grow here as well
-            margin: -7px;
+            margin: -4px;
 
             @if $dir_class == 'horizontal' {
-              @if $marks_infix == 'scale-has-marks-above' { margin-top: -11px; }
+              @if $marks_infix == 'scale-has-marks-above' { margin-top: -10px; }
 
-              @else { margin-bottom: -11px; }
+              @else { margin-bottom: -10px; }
             }
 
             @else {
-              @if $marks_infix == 'scale-has-marks-above' { margin-left: -11px; }
+              @if $marks_infix == 'scale-has-marks-above' { margin-left: -10px; }
 
-              @else { margin-right: -11px; }
+              @else { margin-right: -10px; }
             }
           }
         }
@@ -3319,7 +3319,7 @@ scale {
     &.fine-tune {
       &.horizontal {
         &:dir(ltr), &:dir(rtl) { // specificity bump
-          padding: 0 0 12px 0;
+          padding: 0 0 10px 0;
 
           trough {
             padding-bottom: 7px;
@@ -3335,7 +3335,7 @@ scale {
 
       &.vertical {
         &:dir(ltr) {
-          padding: 0 0 0 12px;
+          padding: 0 0 0 10px;
 
           trough {
             padding-left: 7px;
@@ -3349,7 +3349,7 @@ scale {
         }
 
         &:dir(rtl) {
-          padding: 0 12px 0 0;
+          padding: 0 10px 0 0;
 
           trough {
             padding-right: 7px;
