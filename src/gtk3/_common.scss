@@ -2625,15 +2625,17 @@ switch {
 
   // similar to the .scale
   border: 1px solid $borders_color;
-  border-radius: 2px;
+  border-radius: 9999px;
   color: $fg_color;
   background-color: $dark_fill;
   text-shadow: 0 1px transparentize(black, 0.9);
 
   &:checked {
     color: $selected_fl_color;
-    border-color: if($variant == 'light',  desaturate(darken($selected_bl_color, 25%), 20%), $selected_bl_color);
-    background-color: if($variant == 'light', darken($selected_bl_color, 10%), $selected_bl_color);
+    border-color: if($variant == 'light', desaturate(darken($selected_bl_color, 25%), 20%),
+                                          darken($selected_bl_color, 0%));
+    background-color: if($variant == 'light', darken($selected_bl_color, 10%),
+                                              lighten($selected_bl_color, 3%));
     text-shadow: 0 1px transparentize($selected_borders_color, 0.5),
                  0 0 2px transparentize(white, 0.4);
   }
@@ -2654,8 +2656,10 @@ switch {
 
     &:checked {
       @if $variant == 'light' { color: $backdrop_bg_color; }
-      border-color: if($variant == 'light',  $backdrop_selected_borders_color, $backdrop_selected_bl_color);
-      background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 10%), $backdrop_selected_bl_color);
+      border-color: if($variant == 'light',  $backdrop_selected_borders_color,
+                                             $backdrop_selected_bl_color);
+      background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 10%),
+                                                lighten($backdrop_selected_bl_color, 3%));
     }
 
     &:disabled {
@@ -2667,10 +2671,10 @@ switch {
 
   slider {
     margin: -1px;
-    min-width: 26px;
-    min-height: 18px;
+    min-width: 20px;
+    min-height: 20px;
     border: 1px solid;
-    border-radius: 2px;
+    border-radius: 9999px;
     transition: $button_transition;
 
     @include button(normal-alt, $edge: $shadow_color);
@@ -2678,7 +2682,10 @@ switch {
 
   &:hover slider { @include button(hover-alt, $edge: $shadow_color); }
 
-  &:checked slider { border: 1px solid if($variant == 'light', desaturate(darken($selected_bl_color, 25%), 20%), $selected_bl_color); }
+  &:checked slider {
+    border: 1px solid if($variant == 'light', desaturate(darken($selected_bl_color, 25%), 20%),
+                                              darken($selected_bl_color, 0%));
+  }
 
   &:disabled slider { @include button(insensitive); }
 
@@ -2689,7 +2696,10 @@ switch {
       @include button(backdrop);
     }
 
-    &:checked slider { border-color: if($variant == 'light', desaturate(darken($backdrop_selected_bl_color, 25%), 20%), $backdrop_selected_bl_color); }
+    &:checked slider {
+      border-color: if($variant == 'light', desaturate(darken($backdrop_selected_bl_color, 25%), 20%),
+                                            $backdrop_selected_bl_color);
+    }
 
     &:disabled slider { @include button(backdrop-insensitive); }
   }
@@ -2710,24 +2720,26 @@ switch {
       slider { &:checked, & { border-color: darken($selected_borders_color, 10%); } }
     }
     @else {
-      border-color: $borders_color;
-      &:checked { border-color: $selected_borders_color; }
+      &:checked {
+        border-color: darken($selected_bl_color, 10%); 
+        slider { border-color: darken($selected_bl_color, 10%); }
+      }
 
       &:backdrop {
-        &:checked { border-color: $backdrop_selected_borders_color; }
+        &:checked { slider { border-color: darken($backdrop_selected_bl_color, 10%); } }
         slider {
           border-color: $backdrop_borders_color;
-          &:checked { border-color: $backdrop_selected_borders_color; }
+          &:checked { border-color: darken($backdrop_selected_bl_color, 10%); }
         }
       }
 
 //      slider:dir(rtl) { border-left-color: $borders_color; }
 //      slider:dir(ltr) { border-right-color: $borders_color; }
 
-      slider { 
-        border-color: $borders_color;
-        &:checked { border-color: $selected_borders_color; }
-      }
+//      slider { 
+//        border-color: white;
+//        &:checked { border-color: darken($selected_bl_color, 10%); }
+//      }
     }
   }
 }
