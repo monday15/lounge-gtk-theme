@@ -2628,7 +2628,6 @@ switch {
   border-radius: 9999px;
   color: $fg_color;
   background-color: $dark_fill;
-  text-shadow: 0 1px transparentize(black, 0.9);
 
   &:checked {
     color: $selected_fl_color;
@@ -2636,22 +2635,18 @@ switch {
                                           darken($selected_bl_color, 0%));
     background-color: if($variant == 'light', darken($selected_bl_color, 10%),
                                               lighten($selected_bl_color, 3%));
-    text-shadow: 0 1px transparentize($selected_borders_color, 0.5),
-                 0 0 2px transparentize(white, 0.4);
   }
 
   &:disabled {
     color: $insensitive_fg_color;
     border-color: $borders_color;
     background-color: $insensitive_bg_color;
-    text-shadow: none;
   }
 
   &:backdrop {
     color: $backdrop_fg_color;
     border-color: $backdrop_borders_color;
     background-color: $backdrop_dark_fill;
-    text-shadow: none;
     transition: $backdrop_transition;
 
     &:checked {
