@@ -2671,6 +2671,8 @@ switch {
     border: 1px solid;
     border-radius: 9999px;
     transition: $button_transition;
+    -gtk-outline-radius: 9999px;
+
 
     @include button(normal-alt, $edge: $shadow_color);
   }
