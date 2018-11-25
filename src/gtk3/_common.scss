@@ -4366,7 +4366,7 @@ button.titlebutton {
   .selection-mode & {
     @extend %button.flat.suggested-action;
 
-//    @extend %nobg_selected_items;
+    @if $variant == 'dark' { @extend %nobg_selected_items; }
   }
 
   &:backdrop { -gtk-icon-shadow: none; }
