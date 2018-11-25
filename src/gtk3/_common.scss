@@ -2143,13 +2143,23 @@ popover.background {
   button:not(.flat):not(.suggested-action):not(.destructive-action) {
     // FIXME: extend selection mode buttons
     @include button(normal, $popover_button_color, $selected_fl_color);
+    @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
 
-    &:hover { @include button(hover, $popover_button_color, $selected_fl_color); }
+    &:hover {
+      @include button(hover, $popover_button_color, $selected_fl_color);
+      @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
+    }
 
     &:active,
-    &:checked { @include button(active, $popover_button_color, $selected_fl_color); }
+    &:checked {
+      @include button(active, $popover_button_color, $selected_fl_color);
+      @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
+    }
 
-    &:disabled { @include button(insensitive, $popover_button_color, $selected_fl_color); }
+    &:disabled {
+      @include button(insensitive, $popover_button_color, $selected_fl_color);
+      @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
+    }
 
     &:backdrop {
       @include button(backdrop, $popover_button_color, $selected_fl_color);
