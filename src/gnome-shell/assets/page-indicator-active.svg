@@ -26,8 +26,8 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="20.055556"
-     inkscape:cx="2.604558"
-     inkscape:cy="9.2221208"
+     inkscape:cx="12.576857"
+     inkscape:cy="9.0226748"
      inkscape:document-units="px"
      inkscape:current-layer="pan-start-symbolic"
      showgrid="false"
@@ -50,7 +50,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -64,7 +64,7 @@
        transform="rotate(-90,18,509.62497)"
        inkscape:label="#g5187">
       <path
-         style="opacity:0.7;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="opacity:0.9;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 24.999981,497.02499 v 7.2 c 0,1.3296 -1.0704,2.4 -2.4,2.4 h -7.2 c -1.3296,0 -2.4,-1.0704 -2.4,-2.4 v -7.2 c 0,-1.3296 1.0704,-2.4 2.4,-2.4 h 7.2 c 1.3296,0 2.4,1.0704 2.4,2.4 z"
          id="path4948"
          inkscape:connector-curvature="0" />
