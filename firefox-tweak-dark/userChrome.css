@@ -1,20 +1,19 @@
 .tab-line { display: none !important; }
 #urlbar[focused=true] {
-  border-radius: 3px !important;
-  border-color: #1d3140 !important;
-  box-shadow: inset 0 0 0 1px #416682 !important;
+  border-color: #18334d !important;
+  box-shadow: inset 0 0 0 1px #2f669c !important;
 }
-.tabbrowser-tab::before, 
-.tabbrowser-tab::after{ display: none !important; }
-.tab-background {
-    background-attachment: none !important;
-    background-color: #252b2b !important;
-    background-image: none !important;
-}
+/*.tabbrowser-tab::before, */
+/*.tabbrowser-tab::after{ display: none !important; }*/
+/*.tab-background {*/
+/*    background-attachment: none !important;*/
+/*    background-color: #2e3132 !important;*/
+/*    background-image: none !important;*/
+/*}*/
 .tab-background[selected="true"] {
     background-attachment: none !important;
-    background-color: #2f3535 !important;
+    background-color: #3a3d3e !important;
     background-image: none !important;
 }
-#nav-bar { background: #2f3535 !important; }
+#nav-bar { background: #3a3d3e !important; }
 
