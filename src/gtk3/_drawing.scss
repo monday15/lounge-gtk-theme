@@ -302,7 +302,7 @@
   //
   // insensitive pushed button
   //
-    $_bg: if($variant == 'light', darken(mix($c, $base_color, 85%), 8%), darken(mix($c, $base_color, 85%), 6%));
+    $_bg: if($variant == 'light', darken(mix($c, $base_color, 85%), 8%), darken(mix($c, $base_color, 85%), 5%));
     $_bc: if($c != $bg_color, _border_color($c), $insensitive_borders_color);
 
     label, & { color: if($c != $bg_color, mix($tc, $_bg, 60%), $insensitive_fg_color); }
