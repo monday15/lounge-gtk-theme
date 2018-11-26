@@ -2823,7 +2823,10 @@ radio {
   @include button(normal-alt, $edge: none);
   box-shadow: none;
 
-  &:hover { @include button(hover-alt, $edge: none); box-shadow: none; }
+  &:hover {
+    @include button(hover-alt, $edge: none); box-shadow: none;
+    @if $variant == 'dark' { background: image(lighten($bg_color, 5.5%)); }
+  }
   &:active { @include button(active); box-shadow: none; }
   &:disabled { @include button(insensitive); }
   &:backdrop {
