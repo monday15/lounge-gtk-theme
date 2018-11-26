@@ -200,7 +200,7 @@
     color: $tc;
     outline-color: transparentize($tc, 0.7);
     border-color: $_button_border_color;
-    border-bottom-color: darken($_button_border_color, 10%);
+    border-bottom-color: if($c != $bg_color, _border_color($c), darken($borders_color, 10%));
     $button_fill: if($variant == 'light', image(lighten($c, 2%)),
                                           image(darken($c, 2%))) !global;
     background-image: $button_fill;
@@ -215,7 +215,7 @@
     color: $tc;
     outline-color: transparentize($tc, 0.7);
     border-color: $_button_border_color;
-    border-bottom-color: darken($_button_border_color, 15%);
+    border-bottom-color: if($c != $bg_color, _border_color($c), darken($borders_color, 15%));
     @if $variant == 'light' {
       $button_fill: image(lighten($c, 5%)) !global;
     }
