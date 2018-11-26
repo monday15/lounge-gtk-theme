@@ -1363,11 +1363,10 @@ toolbar {
 
   // stand-alone OSD toolbars
   &.osd {
-    padding: 13px 14px 14px 13px;
-    border: 1px solid $osd_borders_color;
+    padding: 13px;
+    border: if($variant == 'light', 1px solid $osd_borders_color, none);
     border-radius: 3px;
     background-color: $osd_bg_color;
-    box-shadow: inset -1px -1px $osd_borders_color;
 
     &.left,
     &.right,
