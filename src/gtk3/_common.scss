@@ -2976,14 +2976,14 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
 %scale_highlight {
   border: none;
   border-radius: 2px;
-  background-color: if($variant == 'light', darken($selected_bl_color, 15%), lighten($selected_bl_color, 5%));
+  background-color: if($variant == 'light', darken($selected_bl_color, 15%), lighten($selected_bl_color, 2%));
 
   &:disabled {
     background-color: transparent;
   }
 
   &:backdrop {
-    background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 10%), lighten($backdrop_selected_bl_color, 5%));
+    background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 10%), lighten($backdrop_selected_bl_color, 2%));
     &:disabled {
       background-color: transparent;
     }
@@ -2993,7 +2993,7 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   row:selected & { box-shadow: 0 0 0 1px $bg_color; }
 
   // OSD
-  .osd & { &:backdrop { background-color: if($variant == 'light', desaturate(darken($backdrop_selected_bl_color, 10%), 10%), lighten($backdrop_selected_bl_color, 5%)); } }
+  .osd & { &:backdrop { background-color: if($variant == 'light', desaturate(darken($backdrop_selected_bl_color, 10%), 10%), desaturate($backdrop_selected_bl_color, 10%)); } }
 }
 
 scale {
