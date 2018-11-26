@@ -2652,7 +2652,8 @@ switch {
 
   &:disabled {
     color: $insensitive_fg_color;
-    border-color: $borders_color;
+    border-color: if($variant == 'light', $borders_color,
+                                          lighten($borders_color, 3%));
     background-color: $insensitive_bg_color;
   }
 
@@ -2672,7 +2673,8 @@ switch {
 
     &:disabled {
       color: $backdrop_insensitive_color;
-      border-color: $backdrop_borders_color;
+      border-color: if($variant == 'light', $backdrop_borders_color,
+                                            lighten($backdrop_borders_color, 3%));
       background-color: $insensitive_bg_color;
     }
   }
@@ -2697,7 +2699,10 @@ switch {
                                               darken($selected_bl_color, 0%));
   }
 
-  &:disabled slider { @include button(insensitive); }
+  &:disabled slider {
+    @include button(insensitive);
+    @if $variant == 'dark' { border-color: lighten($borders_color, 3%); }
+  }
 
   &:backdrop {
     slider {
@@ -2711,7 +2716,10 @@ switch {
                                             $backdrop_selected_bl_color);
     }
 
-    &:disabled slider { @include button(backdrop-insensitive); }
+    &:disabled slider {
+      @include button(backdrop-insensitive);
+      @if $variant == 'dark' { border-color: lighten($backdrop_borders_color, 3%); }
+    }
   }
 
   row:selected & {
