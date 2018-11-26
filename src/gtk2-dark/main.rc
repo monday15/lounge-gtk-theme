@@ -1433,7 +1433,8 @@ style "menu_item" {
       function    = BOX
       state       = PRELIGHT
       file        = "assets/menu-item-active.png"
-      border      = {0, 0, 1, 1}
+      border      = {3, 3, 3, 3}
+      stretch     = TRUE
     }
   }
 
