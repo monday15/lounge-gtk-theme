@@ -24,7 +24,7 @@ $dark_fill: if($variant == 'light', mix($borders_color, $bg_color, 30%), mix($bo
 $infobar_color: if($variant == 'light', #dbd2c9, desaturate(darken(#dbd2c9, 50%), 10%));
 
 $link_color: if($variant == 'light', desaturate(darken($selected_bg_color, 15%), 10%), lighten($selected_bg_color, 15%));
-$link_visited_color: if($variant == 'light', desaturate(darken($selected_bg_color, 25%), 10%), lighten($selected_bg_color, 5%));
+$link_visited_color: if($variant == 'light', desaturate(darken($selected_bg_color, 25%), 10%), lighten($selected_bg_color, 7%));
 
 $headerbar_color: if($variant == 'light', lighten($bg_color, 4%), darken($bg_color, 2%));
 $menu_color: if($variant == 'light', lighten($bg_color, 5%), mix($bg_color, $base_color, 40%));
