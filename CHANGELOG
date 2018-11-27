@@ -1,3 +1,30 @@
+1.7
+===
+
+* gtk3/gtk2: Colors adjustment;
+* gtk3/gtk3: Menu restyled to match popover menus;
+* gtk3: Teeview progressbar restyled;
+* gtk3: Scales restyled;
+* gtk3: Restyled keycaps (shortcut window);
+* gtk3: Restyled switch toggles;
+* gtk3: Drop targets adjustment;
+* gtk3: Searchbar button padding fix;
+* gtk3: Selection mode fix for light theme;
+* gtk3: Osd toolbar fixes for dark theme;
+* gtk3: Fix notebook button padding
+        (affects gnome-terminal tabs bar height);
+* gtk3: Gnome-calendar headerbar source-button fix;
+* gtk3: Fractal custom button padding fix;
+* gtk3: Lollypop progress trough fix for dark theme;
+* gtk3: Firefox menu border workaround;
+* gtk2: Reduce entry size;
+* shell: Removed workspace switcher transparency;
+* shell: Better visibility for page indicators;
+* shell: Restyled switch toggles;
+* general: Firefox tweaks updated;
+* Various fixes and improvements.
+
+
 1.6
 ===
 
