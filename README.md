@@ -7,7 +7,7 @@ For best experience, use Lounge theme with [Lounge-aux](https://github.com/monda
 
 ## Installation
 Lounge theme supports gnome 3.28+ (gtk3 3.22+).  
-Requirements: `meson`, `sassc` packages. Lounge-night theme also requires `gtk-murrine-engine` (`gtk2-engines-murrine` for debian/ubuntu).  
+Requirements: `meson` (0.40+), `sassc` packages. Lounge-night theme also requires `gtk-murrine-engine` (`gtk2-engines-murrine` for debian/ubuntu).  
 
 Download source tarball (or clone repository), run from source dir:  
 `meson build`  
