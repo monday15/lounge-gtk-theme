@@ -115,3 +115,12 @@ window.background:not(.csd) {
   .menu { border: none; }
 }
 
+  // Evince & Gnome-documents
+
+// Cant use light selection with dark text in light theme because evince overrides
+// background color of evview:selected; background color needed for gnome-documents,
+// otherwise it uses light selection color with light text
+evview.content-view.view:selected  {
+ background-color: $selected_bg_color;
+ color: $selected_fg_color;
+}
