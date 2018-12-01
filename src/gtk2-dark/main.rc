@@ -1404,7 +1404,7 @@ style "menubar_item" {
 
 style "menu" {
 
-  xthickness = 2
+  xthickness = 0
   ythickness = 0
 
   bg[NORMAL]      = @menu_color
@@ -1433,8 +1433,7 @@ style "menu_item" {
       function    = BOX
       state       = PRELIGHT
       file        = "assets/menu-item-active.png"
-      border      = {3, 3, 3, 3}
-      stretch     = TRUE
+      border      = {0, 0, 1, 1}
     }
   }
 
