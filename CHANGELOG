@@ -1,3 +1,16 @@
+1.8
+===
+
+* shell: User can now select font used by shell theme;
+* gtk3/gtk2: Context menu active menuitem adjustment
+             (faster focus, better usability);
+* gtk3: Add Chrome/Chromium style
+        (fixed barely visible colored buttons
+         and selected adressbar border);
+* gtk3: Fixed selected text color in Evince;
+* gtk3: Popover background padding fix (affects Lollypop);
+
+
 1.7
 ===
 
