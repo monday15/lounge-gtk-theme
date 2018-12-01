@@ -1,3 +1,6 @@
+## NEWS
+Since 1.8 you can select font used by gnome-shell theme, check note in Installation section
+
 ## IMPORTANT NOTE
 For best experience, use Lounge theme with [Lounge-aux](https://github.com/monday15/lounge-aux) icons - it is a set of symbolic icons (window controls and arrows), other icons will be taken from default icon theme or one that you are using. Installation is simple, proceed to [Lounge-aux repository](https://github.com/monday15/lounge-aux).
 
@@ -12,6 +15,8 @@ Requirements: `meson` (0.40+), `sassc` packages. Lounge-night theme also require
 Download source tarball (or clone repository), run from source dir:  
 `meson build`  
 `sudo ninja -C build install`
+
+> You can set font for gnome-shell theme with 'shell-font' option. For example, `meson build -Dshell-font='Liberation Sans'` will make shell theme with Liberation Sans font. Default is Roboto (will be used if option is unset).
 
 Fedora users can install theme via copr:  
 `sudo dnf copr enable monday15/lounge`  
