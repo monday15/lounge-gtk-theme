@@ -1,0 +1,1 @@
+option('shell-font', type : 'string', description : 'Name of main icon theme')
