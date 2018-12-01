@@ -115,6 +115,19 @@ window.background:not(.csd) {
   .menu { border: none; }
 }
 
+
+  // Chromium & Chrome
+
+// Chromium uses treeview background color for adressbar border
+// and colored buttons background
+window.background.chromium {
+  treeview.view.cell:selected:focus {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+  }
+}
+
+
   // Evince & Gnome-documents
 
 // Cant use light selection with dark text in light theme because evince overrides
