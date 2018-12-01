@@ -16,7 +16,9 @@ Download source tarball (or clone repository), run from source dir:
 `meson build`  
 `sudo ninja -C build install`
 
-> You can set font for gnome-shell theme with 'shell-font' option. For example, `meson build -Dshell-font='Liberation Sans'` will make shell theme with Liberation Sans font. Default is Roboto (will be used if option is unset).
+> You can set font for gnome-shell theme with 'shell-font' option. For example,  
+`meson build -Dshell-font='Liberation Sans'`  
+will make shell theme with Liberation Sans font. Default is Roboto (will be used if option is unset).
 
 Fedora users can install theme via copr:  
 `sudo dnf copr enable monday15/lounge`  
