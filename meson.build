@@ -47,7 +47,7 @@ configure_file(input : 'src/index.theme-dark',
 shell_sources = [
   '_colors-shell.scss',
   '_drawing-shell.scss',
-  '_common-shell.scss',
+#  '_common-shell.scss',
   '_common-shell-3-28.scss',
   '_common-shell-3-30.scss',
 ]
@@ -88,6 +88,21 @@ configure_file(input : join_paths('src/gnome-shell/' + file),
                output : file,
                configuration : copy)
 endforeach
+
+  # Select font
+
+shell_font = configuration_data()
+
+if get_option('shell-font') == ''
+  shell_font.set('font', 'Roboto')
+else 
+  shell_font.set('font', get_option('shell-font'))
+endif
+
+configure_file(input : join_paths('src/gnome-shell/_common-shell.scss'),
+               output : '_common-shell.scss',
+               configuration : shell_font)
+
 
   # Generate shell theme
 
