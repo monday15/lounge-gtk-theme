@@ -1633,6 +1633,10 @@ headerbar {
       }
     }
   }
+  separator.titlebutton {
+    background: transparent;
+    min-width: 0;
+  }
 }
 
 .background .titlebar {
