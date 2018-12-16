@@ -825,7 +825,7 @@ StScrollBar {
 
   // calendar popover
   #calendarArea {
-    padding: 0.75em 1.0em;
+    padding: 0.5em;
   }
 
   .calendar {
@@ -836,11 +836,15 @@ StScrollBar {
     .datemenu-today-button,
     .datemenu-displays-box,
     .message-list-sections {
-      margin: 0 1.5em;
+      margin: 0 1em;
+    }
+
+    .message-list-sections {
+      margin-left: 0.5em;
     }
 
     .datemenu-calendar-column { spacing: 0.5em; }
-    .datemenu-displays-section { padding-bottom: 3em; }
+    .datemenu-displays-section { padding-bottom: 1em; }
     .datemenu-displays-box { spacing: 1em; }
 
     .datemenu-calendar-column {
@@ -927,7 +931,7 @@ StScrollBar {
     .calendar-day-base {
       font-size: 80%;
       text-align: center;
-      width: 2.4em; height: 2.4em;
+      width: 2.2em; height: 2.2em;
       padding: 0.1em;
       margin: 2px;
       border-radius: 2px;
@@ -989,7 +993,7 @@ StScrollBar {
         .message-list-clear-button.button {
           background-color: lighten($bg_color, 2%);
           &:hover,&:focus { background-color: lighten($bg_color,5%); }
-          margin: 1.5em 1.5em 0;
+          margin: 1em 1em 0;
         }
 
         .message-list-sections {
@@ -1042,7 +1046,7 @@ StScrollBar {
 
           .message-content {
             color: darken($fg_color,20%);
-            padding: 10px;
+            padding: 8px;
           }
 
           .message-media-control {
