@@ -1297,7 +1297,7 @@ StScrollBar {
     .app-well-app-running-dot { //running apps indicator
       width: 75px;
       height: 3px;
-      background-color: transparentize($selected_bg_color, .2);
+      background-color: transparentize($fg_color, .4);
       border-radius: 3px;
     }
   }
@@ -1401,18 +1401,20 @@ StScrollBar {
   }
 
   .page-indicator {
-    padding: 15px 20px;
+    padding: 10px 20px;
 
     .page-indicator-icon {
-      width: 18px;
-      height: 18px;
-      background-image: url(assets/page-indicator-inactive.svg);
+      width: 2px;
+      height: 36px;
+      background-image: none;
+      background-color: transparentize(white, .8);
+      border-radius: 3px;
     }
 
-    &:hover .page-indicator-icon { background-image: url(assets/page-indicator-hover.svg); }
-    &:active .page-indicator-icon { background-image: url(assets/page-indicator-active.svg); }
-    &:checked .page-indicator-icon,
-    &:checked:active { background-image: url(assets/page-indicator-checked.svg); }
+    &:hover .page-indicator-icon { width: 4px; background-color: transparentize(white, .2); }
+    &:active .page-indicator-icon { width: 4px; background-color: transparentize(white, .2); }
+    &:checked .page-indicator-icon { width: 4px; background-color: transparentize(white, .4); }
+    &:checked:active { background-image: none; }
   }
 
   .no-frequent-applications-label { @extend %status_text; }
