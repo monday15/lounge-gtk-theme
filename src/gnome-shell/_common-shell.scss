@@ -1254,9 +1254,9 @@ StScrollBar {
   #dash {
     font-size: 9pt;
     color: $_bubble_fg_color;
-    background-color: $_bubble_bg_color;
+    background-color: transparentize($_bubble_bg_color, .1);
     padding: 4px 0;
-    border: 1px solid rgba(128, 128, 128, 0.4);
+    border: none;
     border-left: 0px;
     border-radius: 0px 5px 5px 0px;
 
