@@ -531,6 +531,7 @@ StScrollBar {
 
 
   .popup-menu-ornament {
+    height: 0; // trick for minimum separator-menu-item height
     text-align: right;
     width: 1.2em;
   }
