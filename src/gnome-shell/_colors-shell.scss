@@ -2,12 +2,12 @@
 // it gets @if ed depending on $variant
 
 
-$base_color: #2a2f30;
-$bg_color: #353a3b;
+$base_color: #292e2f;
+$bg_color: #333839;
 $fg_color: #ddd;
 
 $selected_fg_color: #eee;
-$selected_bg_color: desaturate(darken(#d2e6fa, 42%), 30%);
+$selected_bg_color: desaturate(darken(#cee5fc, 40%), 40%);
 $selected_borders_color: darken($selected_bg_color, 20%);
 $borders_color: lighten($bg_color, 12%);
 $borders_edge: transparentize($fg_color, 0.9);
@@ -21,7 +21,7 @@ $success_color: desaturate(darken(#9fc57b, 25%), 10%);
 $destructive_color: desaturate(darken(#d97b7b, 25%), 10%);
 
 $osd_fg_color: #ddd;
-$osd_bg_color: #2d3233;
+$osd_bg_color: #2c3132;
 $osd_borders_color: transparentize(black, 0.5);
 $osd_outer_borders_color: transparentize(white, 0.9);
 
