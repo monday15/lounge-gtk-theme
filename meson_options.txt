@@ -1,1 +1,2 @@
-option('shell-font', type : 'string', description : 'Name of main icon theme')
+option('shell-font', type : 'string', description : 'Shell font name')
+option('icon-theme', type : 'string', description : 'Main icon theme name')
