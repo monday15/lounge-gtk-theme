@@ -267,3 +267,5 @@ install_subdir('src/gtk2/assets', install_dir: gtk2_dir)
 install_subdir('src/gtk3/gtk3-assets', install_dir: theme_dir)
 install_subdir('src/gtk2-dark/assets', install_dir: dark_gtk2_dir)
 install_subdir('src/gtk3/gtk3-assets', install_dir: dark_theme_dir)
+
+subdir('src/aux-icons')
