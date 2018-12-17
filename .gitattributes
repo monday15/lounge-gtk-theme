@@ -20,3 +20,7 @@
 /src/gtk3/render-assets.sh export-ignore
 /src/gtk3/assets.svg export-ignore
 /src/gtk3/assets.txt export-ignore
+
+/src/aux-icons/aux-iconslist export-ignore
+/src/aux-icons/aux-icons-symbolic.svg export-ignore
+/src/aux-icons/render-icons.sh export-ignore
