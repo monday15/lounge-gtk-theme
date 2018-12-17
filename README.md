@@ -1,28 +1,24 @@
 ## NEWS
-Since 1.8 you can select font used by gnome-shell theme, check note in Installation section
-
-## IMPORTANT NOTE
-For best experience, use Lounge theme with [Lounge-aux](https://github.com/monday15/lounge-aux) icons - it is a set of symbolic icons (window controls and arrows), other icons will be taken from default icon theme or one that you are using. Installation is simple, proceed to [Lounge-aux repository](https://github.com/monday15/lounge-aux).
-
-![auxdiff](/screenshots/auxdiff.png?raw=true)
-
-> Fedora users will get Lounge-aux as a weak dependency with Adwaita as a main icon theme, for other icon themes, they should also check the link.
+Lounge-aux icons merged into this repo, read updated installation instructions.
 
 ## Installation
 Lounge theme supports gnome 3.28+ (gtk3 3.22+).  
 Requirements: `meson` (0.40+), `sassc` packages. Lounge-night theme also requires `gtk-murrine-engine` (`gtk2-engines-murrine` for debian/ubuntu).  
 
-Download source tarball (or clone repository), run from source dir:  
-`meson build`  
-`sudo ninja -C build install`
+1. Download source tarball (or clone repository);
+2. Build theme:  
+`meson build -Dshell-font='Liberation Sans' -Dicon-theme='Suru'`  
+   > Shell-font option sets a font that will be used by gnome-shell theme (default is Roboto, used if option is unset);  
+Icon-theme option sets main icon theme for Lounge-aux icons - auxiliary set of symbolic icons, look at screenshots to see the difference (default is Adwaita, will be used if option is unset).
 
-> You can set font for gnome-shell theme with 'shell-font' option. For example,  
-`meson build -Dshell-font='Liberation Sans'`  
-will make shell theme with Liberation Sans font. Default is Roboto (will be used if option is unset).
+3. Install theme:  
+`sudo ninja -C build install`
 
 Fedora users can install theme via copr:  
 `sudo dnf copr enable monday15/lounge`  
 `sudo dnf install lounge-gtk-theme`
+
+> Fedora users will get Lounge-aux as a weak dependency with Adwaita as a main icon theme, for other icon themes - build theme with custom icon-theme option.
 
 ## Updating
 Use regular installation instructions, old files will be overwritten with a new ones.
@@ -33,7 +29,7 @@ Firefox looks ok with the theme, but there are some tweaks, you can find them in
 ![firefoxdiff](/screenshots/firefoxdiff.png?raw=true)
 
 ## Removing
-Remove installation folders `/usr/share/themes/Lounge`, `/usr/share/themes/Lounge-night`.
+Remove installation folders `/usr/share/themes/Lounge`, `/usr/share/themes/Lounge-night`, `/usr/share/icons/Lounge-aux`.
 
 
 ## Licence
@@ -51,5 +47,7 @@ Allan Day, Emmanuele Bassi, horst3180, nana-4, Sam Hewitt, Thibault Saunier, tis
 [Absolute gtk2 theme](https://www.gnome-look.org/p/1080258/), [Adapta theme](https://github.com/adapta-project/adapta-gtk-theme), [Adwaita gtk2 theme](https://gitlab.gnome.org/GNOME/gnome-themes-extra), [Adwaita gtk3 theme](https://gitlab.gnome.org/GNOME/gtk), [gnome-shell theme](https://gitlab.gnome.org/GNOME/gnome-shell), [Materia theme](https://github.com/nana-4/materia-theme), [Yaru theme](https://github.com/ubuntu/yaru).  
 List of applications (their original css styles used in the theme): [Gedit](https://gitlab.gnome.org/GNOME/gedit), [Nautilus](https://gitlab.gnome.org/GNOME/nautilus).
 
-## Screenshot
+## Screenshots
+![auxdiff](/screenshots/auxdiff.png?raw=true)
+---
 ![sh1](/screenshots/sh1.png?raw=true)
