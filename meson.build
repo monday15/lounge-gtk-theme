@@ -16,7 +16,14 @@ gnomeshell = find_program('gnome-shell', required: false)
 
 if get_option('flatpak')
 
+if get_option('flatpak-ver') == 'day322'
 theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge')
+endif
+
+if get_option('flatpak-ver') == 'night322'
+theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-night')
+endif
+
 gtk3_dir = join_paths(theme_dir, 'gtk-3.0')
 
 
