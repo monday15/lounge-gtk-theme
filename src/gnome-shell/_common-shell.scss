@@ -1368,7 +1368,7 @@ StScrollBar {
 
   .app-well-app-running-dot { //running apps indicator
     width: 10px; height: 3px;
-    background-color: $selected_bg_color;
+    background-color: transparentize($fg_color, .4);
     margin-bottom: 2px;
   }
 
