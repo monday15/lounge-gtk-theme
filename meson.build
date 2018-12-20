@@ -10,6 +10,100 @@ sassc = find_program('sassc')
 gnomeshell = find_program('gnome-shell', required: false)
 
 
+
+
+##### Flatpak build
+
+if get_option('flatpak')
+
+theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge')
+gtk3_dir = join_paths(theme_dir, 'gtk-3.0')
+
+
+gtk3_sources = [
+  '_colors-public.scss',
+  '_colors.scss',
+  '_common.scss',
+  '_common-3-22.scss',
+  '_common-3-24.scss',
+  '_apps.scss',
+  '_apps-3-28.scss',
+  '_apps-3-30.scss',
+  '_drawing.scss',
+  '_apps-nautilus-3-28.scss',
+  '_apps-nautilus-3-30.scss',
+]
+
+gtk3_version = '3-22'
+gnome_version = '3-30'
+
+gtk3_conf = configuration_data()
+gtk3_conf.set('common_var', 'common-' + gtk3_version)
+gtk3_conf.set('apps_var', 'apps-' + gnome_version)
+gtk3_conf.set('apps_nautilus_var', 'apps-nautilus-' + gnome_version)
+
+copy = configuration_data()
+copy.set('something', 'something')
+
+
+gtk3_scss = configure_file(input : 'src/gtk3/gtk.scss',
+                           output : 'gtk-' + gtk3_version + '.scss',
+                           configuration : gtk3_conf)
+
+gtk3_scss_dark = configure_file(input : 'src/gtk3/gtk-dark.scss',
+                                output : 'gtk-dark-' + gtk3_version + '.scss',
+                                configuration : gtk3_conf)
+
+foreach file : gtk3_sources
+configure_file(input : join_paths('src/gtk3/' + file),
+               capture : true,
+               output : file,
+               command: ['sed', 's#../gtk3-assets#gtk3-assets#g', '@INPUT@'])
+endforeach
+
+
+gtk322_scss_light = join_paths(meson.build_root(), 'gtk-3-22.scss')
+gtk322_scss_dark  = join_paths(meson.build_root(), 'gtk-dark-3-22.scss')
+
+if get_option('flatpak-ver') == 'day322'
+  custom_target('gtk322-light',
+                input: gtk322_scss_light,
+                output: 'gtk.css',
+                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
+                install: true,
+                install_dir: gtk3_dir, 
+                build_by_default: true)
+
+
+  custom_target('gtk322-dark',
+                input: gtk322_scss_dark,
+                output: 'gtk-dark.css',
+                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
+                install: true,
+                install_dir: gtk3_dir,
+                build_by_default: true)
+endif
+
+if get_option('flatpak-ver') == 'night322'
+  custom_target('gtk322-dark',
+                input: gtk322_scss_dark,
+                output: 'gtk.css',
+                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
+                install: true,
+                install_dir: gtk3_dir,
+                build_by_default: true)
+endif
+
+install_subdir('src/gtk3/gtk3-assets', install_dir: gtk3_dir)
+
+
+else
+
+
+
+
+##### Regular build
+
 # Installation directories
 
 theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge')
@@ -268,4 +362,8 @@ install_subdir('src/gtk3/gtk3-assets', install_dir: theme_dir)
 install_subdir('src/gtk2-dark/assets', install_dir: dark_gtk2_dir)
 install_subdir('src/gtk3/gtk3-assets', install_dir: dark_theme_dir)
 
-subdir('src/aux-icons')
+if get_option('icons')
+  subdir('src/aux-icons')
+endif
+
+endif
