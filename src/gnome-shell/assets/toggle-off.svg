@@ -34,14 +34,14 @@
   </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#353a3b"
+     pagecolor="#333839"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="16"
-     inkscape:cx="20.624553"
-     inkscape:cy="7.6657335"
+     inkscape:zoom="8"
+     inkscape:cx="10.636114"
+     inkscape:cy="4.0310296"
      inkscape:document-units="px"
      inkscape:current-layer="pan-start-symbolic"
      showgrid="false"
@@ -98,7 +98,7 @@
          style="opacity:0.2;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter856)"
          transform="rotate(90)" />
       <rect
-         style="opacity:1;fill:#3d4243;fill-opacity:1;stroke:#212525;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="opacity:1;fill:#3f4546;fill-opacity:1;stroke:#212525;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect826"
          width="19"
          height="19"
