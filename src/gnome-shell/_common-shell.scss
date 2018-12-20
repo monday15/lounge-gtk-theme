@@ -1635,8 +1635,8 @@ StScrollBar {
       background-size: 20px;
     }
     &.enter-key {
-      border-color: darken($selected_bg_color, 15%);
-      background-color: darken($selected_bg_color, 5%);
+      border-color: darken($selected_bg_color, 20%);
+      background-color: $selected_bg_color;
       background-image: url("assets/key-enter.svg");
     }
     &.shift-key-lowercase {
