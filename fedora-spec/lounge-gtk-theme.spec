@@ -1,5 +1,9 @@
+# Set boostrap to 1 for initial bootstrapping when gtk3 is not yet built
+# Taken from adwaita-icon-theme spec, dont know how it works
+%global bootstrap 0
+
 Name:           lounge-gtk-theme
-Version:        1.8
+Version:        1.9
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Simple and clean gtk theme
@@ -15,6 +19,12 @@ BuildRequires:  meson >= 0.42.0
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  gnome-shell
 
+BuildRequires:  intltool
+BuildRequires:  librsvg2
+%if ! 0%{bootstrap}
+BuildRequires:  /usr/bin/gtk-encode-symbolic-svg
+%endif
+
 Requires:	gdk-pixbuf2
 Requires:	gtk-murrine-engine
 Recommends:	lounge-aux-icon-theme
@@ -23,6 +33,17 @@ Recommends:	lounge-aux-icon-theme
 
 %description
 %{summary}
+
+
+%package	-n lounge-aux-icon-theme
+
+Summary:	Set of auxiliary symbolic icons for Lounge gtk theme
+
+Requires:	adwaita-icon-theme
+
+%description    -n lounge-aux-icon-theme
+
+Set of auxiliary symbolic icons for Lounge gtk theme
 
 %prep
 %autosetup -p1
@@ -40,8 +61,18 @@ Recommends:	lounge-aux-icon-theme
 %{_datadir}/themes/Lounge/*
 %{_datadir}/themes/Lounge-night/*
 
+%files -n lounge-aux-icon-theme
+%license LICENSE COPYRIGHT
+%doc README.md
+%{_datadir}/icons/Lounge-aux/*
+%ghost %{_datadir}/icons/Lounge-aux/icon-theme.cache
+
 
 %changelog
+* Sat Dec 01 2018 Alex Monday <monday15@gmx.com>
+- Update to 1.9
+- Merge Lounge-aux-icon-theme
+
 * Sat Dec 01 2018 Alex Monday <monday15@gmx.com>
 - Update to 1.8
 

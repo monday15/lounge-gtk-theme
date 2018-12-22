@@ -1,3 +1,25 @@
+1.9
+===
+
+* general: Implemented flatpak support;
+* general: Merged lounge-aux icons;
+* gtk3: Remove separator in headerbars
+        (window controls and appmenu);
+* gtk3: Increased osd buttons opacity for light theme;
+* gtk3: Removed firefox menu border workaround
+        (improvement for firefox-wayland);
+* shell: Reduced menu paddings;
+* shell: Restyled running app indicators;
+* shell: Restyled app-view page indicators;
+* shell: Dash color tweak, remove dash border;
+* shell: Colors adjustment;
+* shell: Calendar/notifications list padding reduced;
+* shell: Fixed fallback album icon size;
+* shell: Checkboxes restyled;
+* shell: Updated assets;
+* shell: Various small fixes.
+
+
 1.8
 ===
 
