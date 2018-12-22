@@ -1,8 +1,8 @@
 ## Info
 Lounge is a simple and clean theme, based on original gtk theme Adwaita, made for gnome 3.28+ (gtk3 3.22+).  
-Lounge theme also provides Lounge-aux icon theme - a auxiliary set of symbolic icons for better user expirience.  
+Lounge theme also provides Lounge-aux icon theme - auxiliary set of symbolic icons for better user experience.  
  
-## Installation 
+## Installation
 Requirements:  
 `meson` (0.40+)  
 `sassc`  
