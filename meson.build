@@ -194,17 +194,20 @@ endforeach
 
   # Select font
 
-shell_font = configuration_data()
+if get_option('shell-font') != ''
 
-if get_option('shell-font') == ''
-  shell_font.set('font', 'Roboto')
+  configure_file(input :  join_paths('src/gnome-shell/_common-shell.scss'),
+                 output : '_common-shell.scss',
+                 capture : true,
+                 command: ['sed', 's#$font-family: Roboto#$font-family: ' + get_option('shell-font') + '#g', '@INPUT@'])
+
 else 
-  shell_font.set('font', get_option('shell-font'))
-endif
 
-configure_file(input : join_paths('src/gnome-shell/_common-shell.scss'),
+  configure_file(input : join_paths('src/gnome-shell/_common-shell.scss'),
                output : '_common-shell.scss',
-               configuration : shell_font)
+               configuration : copy)
+
+endif
 
 
   # Generate shell theme
