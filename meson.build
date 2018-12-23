@@ -26,7 +26,6 @@ endif
 
 gtk3_dir = join_paths(theme_dir, 'gtk-3.0')
 
-
 gtk3_sources = [
   '_colors-public.scss',
   '_colors.scss',
@@ -48,9 +47,6 @@ gtk3_conf = configuration_data()
 gtk3_conf.set('common_var', 'common-' + gtk3_version)
 gtk3_conf.set('apps_var', 'apps-' + gnome_version)
 gtk3_conf.set('apps_nautilus_var', 'apps-nautilus-' + gnome_version)
-
-copy = configuration_data()
-copy.set('something', 'something')
 
 
 gtk3_scss = configure_file(input : 'src/gtk3/gtk.scss',
