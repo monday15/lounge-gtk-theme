@@ -129,17 +129,19 @@ dark_gtk324_dir = join_paths(dark_theme_dir, 'gtk-3.24')
 
 # Install index files
 
-  # Copy used for preventing meson warnings, it is not changing anything,
-  # only copies index file for night theme under a different name. 
-
-index_file = [ 'src/index.theme' ]
-install_data(index_file, install_dir: theme_dir)
+  # Copy is used for copying input to builddir;
+  # copy.set doesn't change anything, just prevents meson warnings.
 
 copy = configuration_data()
 copy.set('something', 'something')
-configure_file(input : 'src/index.theme-dark',
+
+index_file = 'src/index.theme'
+install_data(index_file, install_dir: theme_dir)
+
+configure_file(input : index_file,
                output : 'index.theme',
-               configuration : copy,
+               capture : true,
+               command: ['sed', 's#Lounge#Lounge-night#g', '@INPUT@'],
                install_dir: dark_theme_dir)
 
 
