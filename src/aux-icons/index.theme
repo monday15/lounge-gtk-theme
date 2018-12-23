@@ -1,7 +1,7 @@
 [Icon Theme]
 Name=Lounge-aux
 Comment=Symbolic icons for improving user expirience using Lounge gtk theme
-Inherits=@main_icon_theme@,hicolor
+Inherits=Adwaita,hicolor
 
 # Directory list
 Directories=16x16/actions,24x24/actions,32x32/actions,48x48/actions,64x64/actions,96x96/actions,scalable/actions,
