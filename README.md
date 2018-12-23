@@ -4,7 +4,7 @@ Lounge theme also provides Lounge-aux icon theme - auxiliary set of symbolic ico
  
 ## Installation
 Requirements:  
-`meson` (0.40+)  
+`meson` (0.41+)  
 `sassc`  
 `gtk-murrine-engine` (`gtk2-engines-murrine` for debian/ubuntu).
 > `gtk-murrine-engine` only needed for Lounge-night gtk2 theme.
