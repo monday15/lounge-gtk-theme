@@ -1,6 +1,6 @@
 ## Info
-Lounge is a simple and clean theme, based on original gtk theme Adwaita, made for gnome 3.28+ (gtk3 3.22+).  
-Lounge theme also provides Lounge-aux icon theme - auxiliary set of symbolic icons for better user experience.  
+Simple and clean gtk theme, based on original Adwaita, made for gnome 3.28+ (gtk3 3.22+).  
+Theme also provides Lounge-aux icon theme - auxiliary set of symbolic icons for better user experience.
  
 ## Installation
 Requirements:  
@@ -13,14 +13,14 @@ Requirements:
 - Build theme:  
 `meson build` 
  
-  Additional options are availiable, to use them add `-D` before option name and set value after `-Doption='value'`, quotes needed only if value has multiple words separated by space. For example,  
+  Additional options are availiable, to use them add `-D` before option name and set value after: `-Doption='value'`, quotes needed only if value has multiple words separated by space. For example,  
 `meson build -Dshell-font='Liberation Sans' -Dicon-theme=Suru`  
 builds gnome-shell theme with Liberation Sans font and Lounge-aux icon theme that will inherit icons from Suru icon theme.
 
   Option | Description
   --- | ---
   icon-theme | Specify main icon theme for Lounge-aux (default: Adwaita)
-  icons |Enable/disable Lounge-aux, can be true or false (default: true)
+  icons | Install Lounge-aux, can be true or false (default: true)
   shell-font | Specify font for gnome-shell theme (default: Roboto)
 
 - Install theme:  
@@ -37,7 +37,7 @@ Fedora users can install theme via copr:
 Use regular installation instructions, old files will be overwritten with a new ones.
 
 ## Extra
-Firefox looks decent with Lounge theme, but there are some tweaks, you can find them in `firefox-tweak` folder (or `firefox-tweak-dark` for dark theme). Copy `userChrome.css` to your profile's `chrome` dir - the path looks like this `~/.mozilla/firefox/randomletters.default/chrome/userChrome.css`.
+Firefox looks decent with Lounge theme, but there are some tweaks - you can find them in `firefox-tweak` folder (or `firefox-tweak-dark` for dark theme). Copy `userChrome.css` to your profile's `chrome` dir - the path looks like this `~/.mozilla/firefox/randomletters.default/chrome/userChrome.css`.
 
 
 ## Removing
@@ -48,7 +48,7 @@ Remove installation folders:
 
 
 ## Licence
-GPLv3+, see LICENSE file.    
+GPLv3+, see LICENSE file.  
 Original themes/styles copyrights are in COPYRIGHT file.
 
 ## Bugs
@@ -62,7 +62,7 @@ Allan Day, Emmanuele Bassi, horst3180, nana-4, Sam Hewitt, Thibault Saunier, tis
 List of applications (their original css styles used in the theme): [Gedit](https://gitlab.gnome.org/GNOME/gedit), [Nautilus](https://gitlab.gnome.org/GNOME/nautilus).
 
 ## Screenshots
-![auxdiff](https://user-images.githubusercontent.com/42862490/50310672-82702700-04c4-11e9-9e3c-e806dcc942eb.png)  
+![auxdiff](https://user-images.githubusercontent.com/42862490/50310672-82702700-04c4-11e9-9e3c-e806dcc942eb.png)
 
 ![firefoxdiff](https://user-images.githubusercontent.com/42862490/50310681-88660800-04c4-11e9-8244-189c4020319f.png)
 
