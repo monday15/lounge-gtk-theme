@@ -36,16 +36,11 @@ Fedora users can install theme via copr:
 ## Updating
 Use regular installation instructions, old files will be overwritten with a new ones.
 
-## Extra
-Firefox looks decent with Lounge theme, but there are some tweaks - you can find them in `firefox-tweak` folder (or `firefox-tweak-dark` for dark theme). Copy `userChrome.css` to your profile's `chrome` dir - the path looks like this `~/.mozilla/firefox/randomletters.default/chrome/userChrome.css`.
-
-
 ## Removing
 Remove installation folders:  
 `/usr/share/themes/Lounge`  
 `/usr/share/themes/Lounge-night`  
 `/usr/share/icons/Lounge-aux`
-
 
 ## Licence
 GPLv3+, see LICENSE file.  
