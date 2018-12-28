@@ -739,7 +739,7 @@ button {
       &:hover { @include button(hover, $b_color, $selected_fg_color); }
 
       &:active,
-      &:checked { @include button(active, $b_color, $selected_fg_color); }
+      &:checked { @include button(active, if($variant == 'light', lighten($b_color, 4%), $b_color), $selected_fg_color); }
 
       &:backdrop,
       &.flat:backdrop {
