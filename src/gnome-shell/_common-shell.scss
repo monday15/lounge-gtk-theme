@@ -1438,7 +1438,6 @@ StScrollBar {
     spacing: 11px;
     padding: 8px;
     border-radius: 3px 0 0 3px;
-    //border-width: 1px 0 1px 1px; //fixme: can't have non unoform borders :(
     &:rtl { border-radius: 0 3px 3px 0;}
 
     .placeholder {
@@ -1462,8 +1461,8 @@ StScrollBar {
 
 %overview-panel {
   color: $_bubble_fg_color;
-  background-color: $_bubble_bg_color;
-  border: 1px solid $_bubble_borders_color;
+  background-color: transparentize($_bubble_bg_color, .1);;
+  border: none;
 }
 
 %status_text {
