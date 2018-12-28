@@ -67,7 +67,7 @@
     box-shadow: $_entry_edge;
   }
   @if $t==backdrop {
-    color: $backdrop_text_color;
+    color: $text_color;
     border-color: $backdrop_borders_color;
     background-color: $backdrop_base_color;
     box-shadow: $_blank_edge;

@@ -60,11 +60,6 @@
   border-top-right-radius: 0;
 }
 
-.floating-bar:backdrop {
-  background-color: $backdrop_base_color;
-  border-color: $backdrop_borders_color;
-}
-
 .floating-bar button {
   padding: 0px;
 }
@@ -101,10 +96,7 @@ $disk_space_free: #eeeeec;
 .nautilus-list-view .view {
   border-bottom: 1px solid;
   border-bottom-color:  if($variant == 'light', $bg_color, mix($bg_color, $base_color, 60%));
-  &:selected { 
-    border-bottom-color: $selected_bl_color;
-    &:backdrop { border-bottom-color: $backdrop_selected_bl_color; }
-  }
+  &:selected { border-bottom-color: $selected_bl_color; }
 }
 
 /* Hide superfluous treeview drop target indication */
@@ -176,14 +168,3 @@ flowboxchild:selected > widget > .icon-item-background {padding:4px; background-
 .nautilus-window .sidebar-row:selected label {
     color: $fg_color;
 }
-
-.nautilus-window .sidebar-row:selected:backdrop { &, label {
-    background: if($variant == 'light', darken($backdrop_bg_color, 4%), lighten($backdrop_bg_color, 3%)); }
-}
-
-.nautilus-window .sidebar-row:selected:backdrop,
-.nautilus-window .sidebar-row:selected:backdrop label {
-    color: if($variant == 'light', darken($backdrop_fg_color, 5%), lighten($backdrop_fg_color, 5%));
-}
-
-

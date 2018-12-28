@@ -134,12 +134,6 @@ filechooser .path-bar.linked > button {
     }
   }
 
-  &:backdrop {
-    background-color: $backdrop_sidebar_bg_color;
-    border-color: $backdrop_borders_color;
-    transition: $backdrop_transition;
-  }
-
   list { background-color: transparent; }
 
   paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; }}
@@ -147,10 +141,6 @@ filechooser .path-bar.linked > button {
 
 separator.sidebar {
   background-color: $borders_color;
-
-  &:backdrop {
-    background-color: $backdrop_borders_color;
-  }
 
   &.selection-mode,
   .selection-mode & {
