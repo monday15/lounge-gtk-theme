@@ -87,7 +87,7 @@ treeview .sidebar.view {
     &:focus, & {
       border-radius: 0;
 
-      @extend %selected_row;
+      @extend %selected_items_invert;
     }
 
     &:backdrop, & {

@@ -3687,7 +3687,7 @@ row {
     }
   }
 
-  &:selected { @extend %selected_row; }
+  &:selected { @extend %selected_items_invert; }
 }
 
 
@@ -4422,7 +4422,7 @@ button.titlebutton {
   }
 }
 
-%selected_row {
+%selected_items_invert {
   background-color: $selected_bg_color;
   text-shadow: 1px 1px transparentize(black, 0.9);
   -gtk-icon-shadow: 1px 1px transparentize(black, 0.9);
