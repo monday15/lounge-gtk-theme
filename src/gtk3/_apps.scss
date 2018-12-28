@@ -109,6 +109,18 @@ headerbar button.image-button.popup.toggle { min-height: 24px; padding-top: 2px;
 headerbar button.sources-button { min-height: 36px; }
 
 
+  // Firefox
+
+#MozillaGtkWidget.background {
+  text {
+    &:selected {
+      &:focus, & {
+        @extend %selected_items_invert;
+      }
+    }
+  }
+}
+
   // Chromium & Chrome
 
 // Chromium uses treeview background color for adressbar border
