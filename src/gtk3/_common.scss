@@ -1299,6 +1299,18 @@ headerbar {
     @extend .dim-label;
   }
 
+  button:not(.suggested-action):not(.destructive-action) {
+    &:backdrop {
+      color: $backdrop_fg_color;
+      -gtk-icon-shadow: none;
+
+      &:disabled {
+        color: mix($insensitive_fg_color, $base_color, 60%);
+        -gtk-icon-shadow: none;
+      }
+    }
+  }
+
   .selection-mode &,
   &.selection-mode {
     $_hc: mix($top_hilight,$selected_bl_color, 10%); // hilight color
