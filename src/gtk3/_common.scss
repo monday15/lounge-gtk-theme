@@ -3852,6 +3852,12 @@ decoration {
   .tiled-bottom &,
   .tiled-left & { border-radius: 0; }
 
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left & { box-shadow: 0 0 0 1px $_wm_border; }
+
   .popup & { box-shadow: none; }
 
   // server-side decorations as used by mutter
