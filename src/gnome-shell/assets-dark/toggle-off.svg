@@ -34,14 +34,14 @@
   </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#333839"
+     pagecolor="#26292a"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8"
-     inkscape:cx="10.636114"
-     inkscape:cy="4.0310296"
+     inkscape:zoom="11.313708"
+     inkscape:cx="17.195914"
+     inkscape:cy="12.679389"
      inkscape:document-units="px"
      inkscape:current-layer="pan-start-symbolic"
      showgrid="false"
@@ -78,7 +78,7 @@
        transform="rotate(-90,18,509.62497)"
        inkscape:label="#g5187">
       <rect
-         style="opacity:1;fill:#2f3435;fill-opacity:1;stroke:#212525;stroke-width:0.99999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="opacity:1;fill:#2a2e2e;fill-opacity:1;stroke:#1a1c1d;stroke-width:0.99999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect925"
          width="37"
          height="19"
@@ -98,7 +98,7 @@
          style="opacity:0.2;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter856)"
          transform="rotate(90)" />
       <rect
-         style="opacity:1;fill:#3f4546;fill-opacity:1;stroke:#212525;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="opacity:1;fill:#373b3d;fill-opacity:1;stroke:#1a1c1d;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect826"
          width="19"
          height="19"

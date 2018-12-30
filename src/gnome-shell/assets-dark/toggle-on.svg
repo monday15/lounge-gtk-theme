@@ -34,13 +34,13 @@
   </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#333839"
+     pagecolor="#26292a"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.313709"
-     inkscape:cx="16.307956"
+     inkscape:cx="9.1485002"
      inkscape:cy="5.2598871"
      inkscape:document-units="px"
      inkscape:current-layer="pan-start-symbolic"
@@ -86,9 +86,9 @@
          height="21"
          width="39"
          id="rect983"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#333839;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#26292a;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <rect
-         style="opacity:1;fill:#417fbd;fill-opacity:1;stroke:#417fbd;stroke-width:0.99999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="opacity:1;fill:#2d6cab;fill-opacity:1;stroke:#2d6cab;stroke-width:0.99999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect925"
          width="37"
          height="19"
@@ -108,7 +108,7 @@
          id="rect939"
          style="opacity:0.2;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter977)" />
       <rect
-         style="opacity:1;fill:#3f4546;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="opacity:1;fill:#373b3d;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect826"
          width="18"
          height="18"
