@@ -1,10 +1,22 @@
+## NEWS
+Flatpak support via Flathub added! Check "Flatpak" section.  
+Firefox custom css workaround no longer needed, you can remove it (if you've installed it earlier).  
+Test version of gnome-shell dark theme added, please, share you thoughts about it [here](https://github.com/monday15/lounge-gtk-theme/issues/6).
+
 ## Info
 Simple and clean gtk theme, based on original Adwaita, made for gnome 3.28+ (gtk3 3.22+).  
 Theme also provides Lounge-aux icon theme - auxiliary set of symbolic icons for better user experience.
  
 ## Installation
+Fedora users can install theme via copr:  
+`sudo dnf copr enable monday15/lounge`  
+`sudo dnf install lounge-gtk-theme`
+
+> Fedora users will get Lounge-aux as a weak dependency with Adwaita as a main icon theme, for other icon themes - build theme with custom icon-theme option.
+
+
 Requirements:  
-`meson` (0.41+)  
+`meson` (0.45+)  
 `sassc`  
 `gtk-murrine-engine` (`gtk2-engines-murrine` for debian/ubuntu).
 > `gtk-murrine-engine` only needed for Lounge-night gtk2 theme.
@@ -26,12 +38,11 @@ builds gnome-shell theme with Liberation Sans font and Lounge-aux icon theme tha
 - Install theme:  
 `sudo ninja -C build install`
 
-
-Fedora users can install theme via copr:  
-`sudo dnf copr enable monday15/lounge`  
-`sudo dnf install lounge-gtk-theme`
-
-> Fedora users will get Lounge-aux as a weak dependency with Adwaita as a main icon theme, for other icon themes - build theme with custom icon-theme option.
+## Flatpak
+Flatpak apps support available via Flathub:  
+`flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo`  
+`flatpak install flathub org.gtk.Gtk3theme.Lounge`  
+`flatpak install flathub org.gtk.Gtk3theme.Lounge-night`
 
 ## Updating
 Use regular installation instructions, old files will be overwritten with a new ones.
@@ -50,7 +61,7 @@ Original themes/styles copyrights are in COPYRIGHT file.
 Report bugs to [issues page](https://github.com/monday15/lounge-gtk-theme/issues).
 
 ## Thanks
-Allan Day, Emmanuele Bassi, horst3180, nana-4, Sam Hewitt, Thibault Saunier, tista500, vinceliuice, ZMA, all people in copyright file, Meson developers, Yaru theme developers, Gnome developers and maintainers, Fedora developers and maintainers.
+Allan Day, dcbaker, Emmanuele Bassi, horst3180, nana-4, Sam Hewitt, Thibault Saunier, tista500, vinceliuice, ZMA, all people in copyright file, Meson developers, Yaru theme developers, Gnome developers and maintainers, Fedora developers and maintainers.
 
 ## Links
 [Absolute gtk2 theme](https://www.gnome-look.org/p/1080258/), [Adapta theme](https://github.com/adapta-project/adapta-gtk-theme), [Adwaita gtk2 theme](https://gitlab.gnome.org/GNOME/gnome-themes-extra), [Adwaita gtk3 theme](https://gitlab.gnome.org/GNOME/gtk), [gnome-shell theme](https://gitlab.gnome.org/GNOME/gnome-shell), [Materia theme](https://github.com/nana-4/materia-theme), [Yaru theme](https://github.com/ubuntu/yaru).  
@@ -59,6 +70,4 @@ List of applications (their original css styles used in the theme): [Gedit](http
 ## Screenshots
 ![auxdiff](https://user-images.githubusercontent.com/42862490/50310672-82702700-04c4-11e9-9e3c-e806dcc942eb.png)
 
-![firefoxdiff](https://user-images.githubusercontent.com/42862490/50310681-88660800-04c4-11e9-8244-189c4020319f.png)
-
-![sh1](https://user-images.githubusercontent.com/42862490/50310682-8a2fcb80-04c4-11e9-863e-331b666ba68c.png)
+![sh1](https://user-images.githubusercontent.com/42862490/50548873-d40f7300-0c75-11e9-9761-b9436af1d046.png)
