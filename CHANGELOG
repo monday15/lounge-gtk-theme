@@ -1,3 +1,28 @@
+1.10
+====
+
+* general: Flatpak approved by flatub maintainers,
+           theme availiable via flathub;
+* general: Build updated for gnome-shell dark theme,
+           now requires meson 0.45+ version;
+* general: Some build improvments;
+* shell: Test variant of dark theme added (Lounge-night),
+         may be removed later;
+* shell: Workspace pager adjustments;
+* gtk3: Osd buttons transparency toned down for light theme;
+* gtk3: Osd borders color adjustment for light theme;
+* gtk3: Fixed color of progressbar inside entry
+        (Epiphany page loading bar);
+* gtk3: Fixed colorswatch border color on selected rows;
+* gtk3: Fixed size of text-select assets;
+* gtk3: Added Firefox workaround to use dark selection color,
+        additional firefox tweaks no longer required.
+* gtk3: Removed backdrop style for most of widgets,
+        for better usability, especially in tiled windows;
+* gtk3: Removed window shadows for tiled windows;
+* gtk3/shell: Various small fixes.
+
+
 1.9
 ===
 
