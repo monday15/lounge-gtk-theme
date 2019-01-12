@@ -1,3 +1,39 @@
+  // Chromium & Chrome
+
+// Chromium uses treeview background color for adressbar border
+// and colored buttons background
+window.background.chromium {
+  treeview.view.cell:selected:focus {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+  }
+}
+
+
+  // Evince & Gnome-documents
+
+// Cant use light selection with dark text in light theme because evince overrides
+// background color of evview:selected; background color needed for gnome-documents,
+// otherwise it uses light selection color with light text
+evview.content-view.view:selected  {
+ background-color: $selected_bg_color;
+ color: $selected_fg_color;
+}
+
+
+  // Firefox
+
+#MozillaGtkWidget.background {
+  text {
+    &:selected {
+      &:focus, & {
+        @extend %selected_items_invert;
+      }
+    }
+  }
+}
+
+
   // Gedit
 
 .open-document-selector-treeview {
@@ -74,6 +110,11 @@ statusbar {
 }
 
 
+  // Gnome-calendar
+
+headerbar button.sources-button { min-height: 36px; }
+
+
   // Lollypop
 
 treeview .sidebar.view {
@@ -87,45 +128,4 @@ treeview .sidebar.view {
       @extend %selected_items_invert;
     }
   }
-}
-
-
-  // Gnome-calendar
-
-headerbar button.sources-button { min-height: 36px; }
-
-
-  // Firefox
-
-#MozillaGtkWidget.background {
-  text {
-    &:selected {
-      &:focus, & {
-        @extend %selected_items_invert;
-      }
-    }
-  }
-}
-
-
-  // Chromium & Chrome
-
-// Chromium uses treeview background color for adressbar border
-// and colored buttons background
-window.background.chromium {
-  treeview.view.cell:selected:focus {
-    background-color: $selected_bg_color;
-    color: $selected_fg_color;
-  }
-}
-
-
-  // Evince & Gnome-documents
-
-// Cant use light selection with dark text in light theme because evince overrides
-// background color of evview:selected; background color needed for gnome-documents,
-// otherwise it uses light selection color with light text
-evview.content-view.view:selected  {
- background-color: $selected_bg_color;
- color: $selected_fg_color;
 }
