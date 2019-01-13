@@ -102,6 +102,7 @@
 }
 
 .nautilus-window .sidebar-row:selected,
+.nautilus-window .sidebar-row:selected image,
 .nautilus-window .sidebar-row:selected label {
     color: $fg_color;
 }
