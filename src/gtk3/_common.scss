@@ -2745,18 +2745,18 @@ scale {
     // OSD
     .osd & {
       @include button(osd);
-      border-color: darken($osd_borders_color, 3%);
-      background-color: opacify($osd_bg_color, 1); // solid background needed here
+      border-color: $osd_borders_color_dark;
+      background-color: if($variant == 'light', opacify($osd_bg_color, 1), opacify(lighten($osd_bg_color, 10%), 1)); // solid background needed here
 
       &:hover {
         @include button(osd-hover);
-        background-color: opacify($osd_bg_color, 1); // solid background needed here
+        background-color: if($variant == 'light', opacify($osd_bg_color, 1), opacify(lighten($osd_bg_color, 15%), 1)); // solid background needed here
       }
 
       &:active {
         @include button(osd-hover);
         @if $variant == 'light' { border-color: transparentize($selected_borders_color, 0.2); }
-        background-color: opacify($osd_bg_color, 1); // solid background needed here
+        background-color: if($variant == 'light', opacify($osd_bg_color, 1), opacify(lighten($osd_bg_color, 15%), 1)); // solid background needed here
       }
 
       &:disabled {
