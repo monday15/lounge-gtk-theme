@@ -9,7 +9,7 @@ $fg_color: #ddd;
 $selected_fg_color: #eee;
 $selected_bg_color: desaturate(darken(#cee5fc, 40%), 40%);
 $selected_borders_color: darken($selected_bg_color, 20%);
-$borders_color: lighten($bg_color, 12%);
+$borders_color: darken($bg_color, 8%);
 $borders_edge: transparentize($fg_color, 0.9);
 $link_color: lighten($selected_bg_color, 20%);
 $link_visited_color: lighten($selected_bg_color, 10%);
