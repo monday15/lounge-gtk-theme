@@ -118,7 +118,6 @@ gtk324_dir = join_paths(theme_dir, 'gtk-3.24')
   # Dark theme
 
 dark_theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-night')
-dark_shell_dir = join_paths(dark_theme_dir, 'gnome-shell')
 dark_gtk2_dir = join_paths(dark_theme_dir, 'gtk-2.0')
 dark_gtk322_dir = join_paths(dark_theme_dir, 'gtk-3.22')
 dark_gtk324_dir = join_paths(dark_theme_dir, 'gtk-3.24')
@@ -181,10 +180,6 @@ shell_scss = configure_file(input : 'src/gnome-shell/gnome-shell.scss',
                             output : 'gnome-shell.scss',
                             configuration : shell_conf)
 
-dark_shell_scss = configure_file(input : 'src/gnome-shell/gnome-shell-dark.scss',
-                            output : 'gnome-shell-dark.scss',
-                            configuration : shell_conf)
-
   # Copy sources to builddir
 
 foreach file : shell_sources
@@ -221,15 +216,6 @@ custom_target('shell-gen',
               install_dir: shell_dir,
               build_by_default: true)
 
-custom_target('dark-shell-gen',
-              input: dark_shell_scss,
-              output: 'gnome-shell-dark.css',
-              command: [ sassc, '-a', '@INPUT@', '@OUTPUT@'],
-              install: true,
-              install_dir: dark_shell_dir,
-              build_by_default: true)
-
-  meson.add_install_script('sh', '-c', 'mv $MESON_INSTALL_DESTDIR_PREFIX/'+dark_shell_dir+'/gnome-shell-dark.css $MESON_INSTALL_DESTDIR_PREFIX/'+dark_shell_dir+'/gnome-shell.css')
 
 # Install gtk2 theme
 
@@ -379,9 +365,6 @@ gtk324_scss_dark  = join_paths(meson.build_root(), 'gtk-dark-3-24.scss')
 # Install assets
 
 install_subdir('src/gnome-shell/assets', install_dir: shell_dir)
-install_subdir('src/gnome-shell/assets', install_dir: dark_shell_dir)
-install_subdir('src/gnome-shell/assets-light', install_dir: join_paths(shell_dir, 'assets'), strip_directory : true)
-install_subdir('src/gnome-shell/assets-dark', install_dir: join_paths(dark_shell_dir, 'assets'), strip_directory : true)
 install_subdir('src/gtk2/assets', install_dir: gtk2_dir)
 install_subdir('src/gtk3/gtk3-assets', install_dir: theme_dir)
 install_subdir('src/gtk2-dark/assets', install_dir: dark_gtk2_dir)
