@@ -3890,7 +3890,10 @@ button.titlebutton {
     @if $variant == 'dark' { @extend %nobg_selected_items; }
   }
 
-  &:backdrop { -gtk-icon-shadow: none; }
+  &:backdrop {
+    .selection-mode & { @extend %button.flat.suggested-action; }
+    -gtk-icon-shadow: none;
+  }
 }
 
 
