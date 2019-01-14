@@ -299,6 +299,18 @@ entry {
 
       &:disabled { @include entry(osd-insensitive); }
     }
+
+    popover.background &:not(.flat) {
+      @include entry(normal);
+      border-color: if($variant == 'light', _border_color($popover_button_color), darken($menu_color, 7%));
+
+      &:focus { @include entry(focus); }
+
+      &:disabled {
+        @include entry(insensitive);
+        border-color: if($variant == 'light', _border_color($popover_button_color), darken($menu_color, 7%));
+      }
+    }
   }
 
   progress {
@@ -634,10 +646,32 @@ button {
     }
   }
 
+ popover.background &:not(.flat) {
+
+    @include button(normal, $popover_button_color, $selected_fl_color);
+    @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
+
+    &:hover {
+      @include button(hover, $popover_button_color, $selected_fl_color);
+      @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
+    }
+
+    &:active,
+    &:checked {
+      @include button(active, $popover_button_color, $selected_fl_color);
+      @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
+    }
+
+    &:disabled {
+      @include button(insensitive, $popover_button_color, $selected_fl_color);
+      @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
+    }
+  }
+
   // Suggested and Destructive Action buttons
   @each $b_type, $b_color in (suggested-action, if($variant == 'light', lighten($selected_bg_color, 0%), $selected_bg_color)),
                              (destructive-action, $destructive_color) {
-    &.#{$b_type} {
+    &.#{$b_type}, popover.background &.#{$b_type} {
       @include button(normal, $b_color, $selected_fg_color);
 
       &.flat {
@@ -1913,27 +1947,6 @@ popover.background {
 
   list separator { margin: 0px; }
 
-  button:not(.flat):not(.suggested-action):not(.destructive-action) {
-    // FIXME: extend selection mode buttons
-    @include button(normal, $popover_button_color, $selected_fl_color);
-    @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
-
-    &:hover {
-      @include button(hover, $popover_button_color, $selected_fl_color);
-      @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
-    }
-
-    &:active,
-    &:checked {
-      @include button(active, $popover_button_color, $selected_fl_color);
-      @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
-    }
-
-    &:disabled {
-      @include button(insensitive, $popover_button_color, $selected_fl_color);
-      @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
-    }
-  }
 }
 
 /*************
