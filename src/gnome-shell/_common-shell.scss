@@ -1007,13 +1007,10 @@ StScrollBar {
 
         .message {
           margin: 1px;
-          background-color: if($variant == 'light', lighten($bg_color, 2%), lighten($bg_color, 1%));
+          background-color: lighten($bg_color, 2%);
           box-shadow: 1px 1px darken($bg_color, 4%);
           border-radius: 2px;
-
-          &:hover, &:focus {
-            background-color: if($variant == 'light', lighten($bg_color, 5%), lighten($bg_color, 3%));
-          }
+          &:hover,&:focus { background-color: lighten($bg_color,5%); }
         }
 
           .message-icon-bin {
