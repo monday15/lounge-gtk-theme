@@ -1727,7 +1727,7 @@ treeview.view {
     }
   }
 
-  acceleditor > label { background-color: $selected_bl_color; } // see tests/testaccel to test
+  acceleditor > label { background-color: $selected_bl_color; color: $selected_fl_color; } // see tests/testaccel to test
 }
 
 %column_header_button {
