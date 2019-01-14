@@ -2439,15 +2439,11 @@ switch {
 
 //selection-mode
 @each $s,$as in ('','-selectionmode'),
-                  (':hover', '-hover-selectionmode'),
-                  (':active', '-active-selectionmode'),
-                  (':checked', '-checked-selectionmode'),
-                  (':checked:hover', '-checked-hover-selectionmode'),
-                  (':checked:active', '-checked-active-selectionmode') {
+                (':checked', '-checked-selectionmode') {
   .view.content-view.check#{$s}:not(list),
   .content-view .tile check#{$s}:not(list) {
     -gtk-icon-shadow: none;
-    -gtk-icon-source: -gtk-scaled(url("../gtk3-assets/checkbox#{$as}.png"), url("../gtk3-assets/checkbox#{$as}@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("../gtk3-assets/checkbox#{$as}#{$asset_suffix}.png"), url("../gtk3-assets/checkbox#{$as}#{$asset_suffix}@2.png"));
     background-color: transparent;
     min-width: 40px;
     min-height: 40px;
