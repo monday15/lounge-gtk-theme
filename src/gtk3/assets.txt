@@ -43,8 +43,6 @@ slider-vert-scale-has-marks-above-hover-dark
 slider-vert-scale-has-marks-above-active-dark
 slider-vert-scale-has-marks-above-insensitive-dark
 checkbox-selectionmode
-checkbox-hover-selectionmode
-checkbox-active-selectionmode
 checkbox-checked-selectionmode
-checkbox-checked-hover-selectionmode
-checkbox-checked-active-selectionmode
+checkbox-selectionmode-dark
+checkbox-checked-selectionmode-dark
