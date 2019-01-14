@@ -550,7 +550,7 @@ StScrollBar {
     height: 1px; //not really the whole box
     margin: 2px 64px;
     background-color: transparent;
-    border-color: darken($borders_color, 3%);
+    border-color: lighten($bg_color, 7%);
     border-bottom-width: 1px;
     border-bottom-style: solid;
   }
@@ -618,7 +618,7 @@ StScrollBar {
 
   .switcher-list .separator {
     width: 1px;
-    background: $borders_color;
+    background: lighten($bg_color, 7%);
   }
 
   .switcher-arrow {
