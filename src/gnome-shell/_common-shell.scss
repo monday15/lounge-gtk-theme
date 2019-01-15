@@ -601,8 +601,9 @@ StScrollBar {
   }
 
   .switcher-list .item-box:outlined {
-    padding: 6px;
-    border: 2px solid darken($borders_color,10%);
+    padding: 7px;
+    background-color: darken($_bubble_bg_color, 4%);
+    border: 1px solid darken($borders_color,10%);
   }
 
   .switcher-list .item-box:selected {
