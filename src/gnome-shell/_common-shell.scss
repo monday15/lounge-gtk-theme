@@ -678,7 +678,8 @@ StScrollBar {
 %osd-panel {
   color: $_bubble_fg_color;
   background-color: $_bubble_bg_color;
-  border: 1px solid $_bubble_borders_color;
+  border: 1px solid darken($_bubble_bg_color, 8%);
+  box-shadow: 0 1px 0 1px transparentize(black, .9);
   border-radius: 3px;
   padding: 12px;
 }
