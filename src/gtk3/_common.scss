@@ -1322,6 +1322,7 @@ headerbar {
     padding-left: 12px;
     padding-right: 12px;
     font-weight: bold;
+    &:backdrop { color: $backdrop_fg_color; }
   }
 
   .subtitle {
