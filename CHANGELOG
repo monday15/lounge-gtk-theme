@@ -1,3 +1,30 @@
+1.11
+====
+
+* general: Reverted meson version requirement (0.41+);
+* shell: Dropped dark variant of theme;
+* shell: Dark border color;
+* shell: Added shadows for widgets (menus, appswitcher);
+* shell: Restyled system menu action buttons;
+* shell: Tweaked corner-ripple assets;
+* gtk3: Text-select assets improved (for touchscreens);
+* gtk3: Restyled selection-mode asssets;
+* gtk3: Dropped active/hover states for selection-mode assets;
+* gtk3: Darker osd button borders in light theme;
+* gtk3: Osd scale slider adjustment;
+* gtk3: Osd color/borders adjustment in dark theme;
+* gtk3: Selection-mode headerbar tweaks;
+* gtk3: Drop Fractal workaround;
+* gtk3: Add Gnome-todo style (small fix);
+* gtk3: Fixed unmount icon color in Nautilus 3.30+;
+* gtk3: Fixed acceleditor text color in light theme;
+* gtk3: Fixed linked elements drawing in popover menus;
+* gtk3: Fixed backdrop title color in selection-mode;
+* gtk2: Restyle tabs for qt5 gtk2 engine compability;
+* gtk3/shell: Various small fixes.
+
+
+
 1.10
 ====
 

@@ -3,7 +3,7 @@
 %global bootstrap 0
 
 Name:           lounge-gtk-theme
-Version:        1.10
+Version:        1.11
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Simple and clean gtk theme
@@ -15,7 +15,7 @@ Source0:        https://github.com/monday15/lounge-gtk-theme/archive/%{version}.
 BuildArch:	noarch
 
 BuildRequires:  sassc
-BuildRequires:  meson >= 0.45.0
+BuildRequires:  meson >= 0.41.0
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  gnome-shell
 
@@ -69,6 +69,10 @@ Set of auxiliary symbolic icons for Lounge gtk theme
 
 
 %changelog
+* Wed Jan 16 2019 Alex Monday <monday15@gmx.com>
+- Update to 1.11
+- Revert required version of meson
+
 * Sun Dec 30 2018 Alex Monday <monday15@gmx.com>
 - Update to 1.10
 - Update required version of meson
