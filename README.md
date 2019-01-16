@@ -1,8 +1,3 @@
-## NEWS
-Flatpak support via Flathub added! Check "Flatpak" section.  
-Firefox custom css workaround no longer needed, you can remove it (if you've installed it earlier).  
-Test version of gnome-shell dark theme added, please, share you thoughts about it [here](https://github.com/monday15/lounge-gtk-theme/issues/6).
-
 ## Info
 Simple and clean gtk theme, based on original Adwaita, made for gnome 3.28+ (gtk3 3.22+).  
 Theme also provides Lounge-aux icon theme - auxiliary set of symbolic icons for better user experience.
@@ -16,7 +11,7 @@ Fedora users can install theme via copr:
 
 
 Requirements:  
-`meson` (0.45+)  
+`meson` (0.41+)  
 `sassc`  
 `gtk-murrine-engine` (`gtk2-engines-murrine` for debian/ubuntu).
 > `gtk-murrine-engine` only needed for Lounge-night gtk2 theme.
@@ -70,4 +65,4 @@ List of applications (their original css styles used in the theme): [Gedit](http
 ## Screenshots
 ![auxdiff](https://user-images.githubusercontent.com/42862490/50310672-82702700-04c4-11e9-9e3c-e806dcc942eb.png)
 
-![sh1](https://user-images.githubusercontent.com/42862490/50548873-d40f7300-0c75-11e9-9761-b9436af1d046.png)
+![sh1](https://user-images.githubusercontent.com/42862490/51241701-205df100-19a0-11e9-9bd4-8b06807d5619.png)
