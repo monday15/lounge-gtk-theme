@@ -23,8 +23,8 @@
 /* Slider */
 
 .slider {
-  margin: 4px;
-  height: 1em;
+  height: 1.6em;
+  color: $fg_color;
   -barlevel-height: 0.3em;
   -barlevel-background-color: mix($borders_color, $bg_color, 50%); //background of the trough
   -barlevel-border-color: mix($borders_color, $bg_color, 50%); //trough border color
