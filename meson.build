@@ -149,6 +149,7 @@ shell_sources = [
 #  '_common-shell.scss',
   '_common-shell-3-28.scss',
   '_common-shell-3-30.scss',
+  '_extensions.scss',
 ]
 
 shell_conf = configuration_data()
