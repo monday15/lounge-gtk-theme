@@ -115,7 +115,7 @@ filechooser .path-bar.linked > button {
 
 .sidebar {
   border-style: none;
-  background-color: mix($bg_color, $base_color, 50%);
+  background-color: mix($bg_color, $base_color, 60%);
 
   &:not(separator) {
     @at-root %sidebar_left,
