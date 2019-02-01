@@ -78,8 +78,6 @@
 .nautilus-window .path-bar-box.width-maximized {
   border: 1px $borders_color solid;
   border-radius: 3px;
-}
-.nautilus-window .path-bar-box.width-maximized:not(:backdrop) {
   background-color: $bg_color;
 }
 
