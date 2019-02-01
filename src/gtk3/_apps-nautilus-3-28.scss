@@ -149,7 +149,7 @@ flowboxchild:selected > widget > .icon-item-background {padding:4px; background-
 
 .nautilus-window .path-bar button:not(:checked) image { opacity: 0.8; } /* dim the icon when not checked */
 
-.nautilus-window .path-bar button:not(:backdrop):hover { box-shadow: inset 0 -2px if($variant == 'light', $borders_color, mix($bg_color, $fg_color, 60%)); }
+.nautilus-window .path-bar button:hover { box-shadow: inset 0 -2px if($variant == 'light', $borders_color, mix($bg_color, $fg_color, 60%)); }
 
 /* Sidebar */
 
