@@ -1,254 +1,264 @@
+1.12
+====
+
+general: Added xfce support;
+gtk2/gtk3: Added styles for xfce panel, applications, plugins;
+gtk3: Sidebar color adjustments;
+gtk3: Nautilus backdrop state small fixes;
+gtk3: Fixed indication for selected tab in LibreOffice's notebookbar;
+shell: Fixed openweather extension drawing issues.
+
+
 1.11
 ====
 
-* general: Reverted meson version requirement (0.41+);
-* shell: Dropped dark variant of theme;
-* shell: Dark border color;
-* shell: Added shadows for widgets (menus, appswitcher);
-* shell: Restyled system menu action buttons;
-* shell: Tweaked corner-ripple assets;
-* gtk3: Text-select assets improved (for touchscreens);
-* gtk3: Restyled selection-mode asssets;
-* gtk3: Dropped active/hover states for selection-mode assets;
-* gtk3: Darker osd button borders in light theme;
-* gtk3: Osd scale slider adjustment;
-* gtk3: Osd color/borders adjustment in dark theme;
-* gtk3: Selection-mode headerbar tweaks;
-* gtk3: Drop Fractal workaround;
-* gtk3: Add Gnome-todo style (small fix);
-* gtk3: Fixed unmount icon color in Nautilus 3.30+;
-* gtk3: Fixed acceleditor text color in light theme;
-* gtk3: Fixed linked elements drawing in popover menus;
-* gtk3: Fixed backdrop title color in selection-mode;
-* gtk2: Restyle tabs for qt5 gtk2 engine compability;
-* gtk3/shell: Various small fixes.
-
+general: Reverted meson version requirement (0.41+);
+shell: Dropped dark variant of theme;
+shell: Dark border color;
+shell: Added shadows for widgets (menus, appswitcher);
+shell: Restyled system menu action buttons;
+shell: Tweaked corner-ripple assets;
+gtk3: Text-select assets improved (for touchscreens);
+gtk3: Restyled selection-mode asssets;
+gtk3: Dropped active/hover states for selection-mode assets;
+gtk3: Darker osd button borders in light theme;
+gtk3: Osd scale slider adjustment;
+gtk3: Osd color/borders adjustment in dark theme;
+gtk3: Selection-mode headerbar tweaks;
+gtk3: Drop Fractal workaround;
+gtk3: Add Gnome-todo style (small fix);
+gtk3: Fixed unmount icon color in Nautilus 3.30+;
+gtk3: Fixed acceleditor text color in light theme;
+gtk3: Fixed linked elements drawing in popover menus;
+gtk3: Fixed backdrop title color in selection-mode;
+gtk2: Restyle tabs for qt5 gtk2 engine compability;
+gtk3/shell: Various small fixes.
 
 
 1.10
 ====
 
-* general: Flatpak approved by flatub maintainers,
+general: Flatpak approved by flatub maintainers,
            theme availiable via flathub;
-* general: Build updated for gnome-shell dark theme,
+general: Build updated for gnome-shell dark theme,
            now requires meson 0.45+ version;
-* general: Some build improvments;
-* shell: Test variant of dark theme added (Lounge-night),
+general: Some build improvments;
+shell: Test variant of dark theme added (Lounge-night),
          may be removed later;
-* shell: Workspace pager adjustments;
-* gtk3: Osd buttons transparency toned down for light theme;
-* gtk3: Osd borders color adjustment for light theme;
-* gtk3: Fixed color of progressbar inside entry
+shell: Workspace pager adjustments;
+gtk3: Osd buttons transparency toned down for light theme;
+gtk3: Osd borders color adjustment for light theme;
+gtk3: Fixed color of progressbar inside entry
         (Epiphany page loading bar);
-* gtk3: Fixed colorswatch border color on selected rows;
-* gtk3: Fixed size of text-select assets;
-* gtk3: Added Firefox workaround to use dark selection color,
+gtk3: Fixed colorswatch border color on selected rows;
+gtk3: Fixed size of text-select assets;
+gtk3: Added Firefox workaround to use dark selection color,
         additional firefox tweaks no longer required.
-* gtk3: Removed backdrop style for most of widgets,
+gtk3: Removed backdrop style for most of widgets,
         for better usability, especially in tiled windows;
-* gtk3: Removed window shadows for tiled windows;
-* gtk3/shell: Various small fixes.
+gtk3: Removed window shadows for tiled windows;
+gtk3/shell: Various small fixes.
 
 
 1.9
 ===
 
-* general: Implemented flatpak support;
-* general: Merged lounge-aux icons;
-* gtk3: Remove separator in headerbars
+general: Implemented flatpak support;
+general: Merged lounge-aux icons;
+gtk3: Remove separator in headerbars
         (window controls and appmenu);
-* gtk3: Increased osd buttons opacity for light theme;
-* gtk3: Removed firefox menu border workaround
+gtk3: Increased osd buttons opacity for light theme;
+gtk3: Removed firefox menu border workaround
         (improvement for firefox-wayland);
-* shell: Reduced menu paddings;
-* shell: Restyled running app indicators;
-* shell: Restyled app-view page indicators;
-* shell: Dash color tweak, remove dash border;
-* shell: Colors adjustment;
-* shell: Calendar/notifications list padding reduced;
-* shell: Fixed fallback album icon size;
-* shell: Checkboxes restyled;
-* shell: Updated assets;
-* shell: Various small fixes.
+shell: Reduced menu paddings;
+shell: Restyled running app indicators;
+shell: Restyled app-view page indicators;
+shell: Dash color tweak, remove dash border;
+shell: Colors adjustment;
+shell: Calendar/notifications list padding reduced;
+shell: Fixed fallback album icon size;
+shell: Checkboxes restyled;
+shell: Updated assets;
+shell: Various small fixes.
 
 
 1.8
 ===
 
-* shell: User can now select font used by shell theme;
-* gtk3/gtk2: Context menu active menuitem adjustment
+shell: User can now select font used by shell theme;
+gtk3/gtk2: Context menu active menuitem adjustment
              (faster focus, better usability);
-* gtk3: Add Chrome/Chromium style
+gtk3: Add Chrome/Chromium style
         (fixed barely visible colored buttons
          and selected adressbar border);
-* gtk3: Fixed selected text color in Evince;
-* gtk3: Popover background padding fix (affects Lollypop);
+gtk3: Fixed selected text color in Evince;
+gtk3: Popover background padding fix (affects Lollypop);
 
 
 1.7
 ===
 
-* gtk3/gtk2: Colors adjustment;
-* gtk3/gtk3: Menu restyled to match popover menus;
-* gtk3: Teeview progressbar restyled;
-* gtk3: Scales restyled;
-* gtk3: Restyled keycaps (shortcut window);
-* gtk3: Restyled switch toggles;
-* gtk3: Drop targets adjustment;
-* gtk3: Searchbar button padding fix;
-* gtk3: Selection mode fix for light theme;
-* gtk3: Osd toolbar fixes for dark theme;
-* gtk3: Fix notebook button padding
+gtk3/gtk2: Colors adjustment;
+gtk3/gtk3: Menu restyled to match popover menus;
+gtk3: Teeview progressbar restyled;
+gtk3: Scales restyled;
+gtk3: Restyled keycaps (shortcut window);
+gtk3: Restyled switch toggles;
+gtk3: Drop targets adjustment;
+gtk3: Searchbar button padding fix;
+gtk3: Selection mode fix for light theme;
+gtk3: Osd toolbar fixes for dark theme;
+gtk3: Fix notebook button padding
         (affects gnome-terminal tabs bar height);
-* gtk3: Gnome-calendar headerbar source-button fix;
-* gtk3: Fractal custom button padding fix;
-* gtk3: Lollypop progress trough fix for dark theme;
-* gtk3: Firefox menu border workaround;
-* gtk2: Reduce entry size;
-* shell: Removed workspace switcher transparency;
-* shell: Better visibility for page indicators;
-* shell: Restyled switch toggles;
-* general: Firefox tweaks updated;
-* Various fixes and improvements.
+gtk3: Gnome-calendar headerbar source-button fix;
+gtk3: Fractal custom button padding fix;
+gtk3: Lollypop progress trough fix for dark theme;
+gtk3: Firefox menu border workaround;
+gtk2: Reduce entry size;
+shell: Removed workspace switcher transparency;
+shell: Better visibility for page indicators;
+shell: Restyled switch toggles;
+general: Firefox tweaks updated;
+Various fixes and improvements.
 
 
 1.6
 ===
 
-* gtk3/gtk2: Reworked colors;
-* gtk3/gtk2: Simplified buttons;
-* gtk3/gtk2: Simplified scale/progressbars;
-* gtk3/gtk2: Various fixes;
-* shell: Workspace switcher reworked;
-* shell: Selected background color updated;
-* shell: Assets updated to match new color;
+gtk3/gtk2: Reworked colors;
+gtk3/gtk2: Simplified buttons;
+gtk3/gtk2: Simplified scale/progressbars;
+gtk3/gtk2: Various fixes;
+shell: Workspace switcher reworked;
+shell: Selected background color updated;
+shell: Assets updated to match new color;
 
 
 1.5
 ===
 
-* Build improvement;
-* Directories restructured;
-* Add support for Ubuntu 18.10
+Build improvement;
+Directories restructured;
+Add support for Ubuntu 18.10
   (corect css style for old nautilus will be installed);
-* Firefox style update;
-* gtk3/gtk2: Focused entries adjustment;
-* gtk3: Lollypop style (sidebar treeview hack);
-* gtk3: Various buttons padding fixes;
-* gtk3: Added some text/icon shadows;
-* gtk3: Fixed color buttons in popovers;
-* gtk3: Fixed headerbar entry style;
-* gtk3: Infobars color adjustment;
-* gtk3: Popovers margins adjustment;
-* gtk3: Fixed buttons in gedit's document panel.
+Firefox style update;
+gtk3/gtk2: Focused entries adjustment;
+gtk3: Lollypop style (sidebar treeview hack);
+gtk3: Various buttons padding fixes;
+gtk3: Added some text/icon shadows;
+gtk3: Fixed color buttons in popovers;
+gtk3: Fixed headerbar entry style;
+gtk3: Infobars color adjustment;
+gtk3: Popovers margins adjustment;
+gtk3: Fixed buttons in gedit's document panel.
 
 
 1.4
 ===
 
-* Build improvement:
+Build improvement:
   gtk3-devel no longer required,
   build both gtk variants (3.22/3.24) to proper folders
   (better flatpak support);
-* gnome-shell theme generation based on installed version;
-* gtk3: Fix button width (small buttons was thin sometimes);
-* gtk3: Adjust places sidebar row height;
-* gtk3: Nautilus pathbar button backdrop state fix (3.30);
-* gtk3: Add text shadow for colored buttons;
-* gtk3: Reduce popover margins;
-* gtk3: Adjust padding for osd buttons;
-* gtk3: Adjust scale trough/highlight border color on selected row;
-* gtk3: Adjust separator color in dark theme.
+gnome-shell theme generation based on installed version;
+gtk3: Fix button width (small buttons was thin sometimes);
+gtk3: Adjust places sidebar row height;
+gtk3: Nautilus pathbar button backdrop state fix (3.30);
+gtk3: Add text shadow for colored buttons;
+gtk3: Reduce popover margins;
+gtk3: Adjust padding for osd buttons;
+gtk3: Adjust scale trough/highlight border color on selected row;
+gtk3: Adjust separator color in dark theme.
 
 
 1.3
 ===
 
-* Correct dark theme colors and relate assets
+Correct dark theme colors and relate assets
 
 
 1.2
 ===
 
-* shell: Adjust dash radius;
-* gtk3/gtk2: Dark theme rework, not so dark now, better contrast on buttons;
-* gtk3/gtk2: Scale fixes;
-* gtk3: Entry tag fix;
-* gtk3: Reduce window shadows;
-* gtk3: Nautilus sidebar fixes;
-* gtk3: Nautilus devel css style remove (too much code) (3.28);
-* gtk3: Levelbar fixes;
+shell: Adjust dash radius;
+gtk3/gtk2: Dark theme rework, not so dark now, better contrast on buttons;
+gtk3/gtk2: Scale fixes;
+gtk3: Entry tag fix;
+gtk3: Reduce window shadows;
+gtk3: Nautilus sidebar fixes;
+gtk3: Nautilus devel css style remove (too much code) (3.28);
+gtk3: Levelbar fixes;
 
 
 
 1.1
 ===
 
-* general: Build improvement, now gnome-shell theme builds
+general: Build improvement, now gnome-shell theme builds
   depending on gtk3 version, assuming gtk 3.24 = gnome 3.30
-* shell: scss files restructure;
-* shell: Volumebar fix (3.30);
-* shell: Import upstream commits with improvements;
-* gtk3: Combobox button fix (arrow looks better);
-* gtk3: Nautilus search entry fix (3.30);
-* gtk3: New style for nautilus sidebar.
+shell: scss files restructure;
+shell: Volumebar fix (3.30);
+shell: Import upstream commits with improvements;
+gtk3: Combobox button fix (arrow looks better);
+gtk3: Nautilus search entry fix (3.30);
+gtk3: New style for nautilus sidebar.
 
 
 1.0
 ===
 
-* general: Build improvement, now theme builds depending on gtk3 version;
-* general: Scss files restructure, for more flexibility;
-* gtk2: Dark theme added, requires gtk-murrine-engine;
-* gtk3: Nautilus pathbar improvements;
-* gtk3: Dark theme tweaks;
-* gtk3: Various fixes and improvements;
-* general: Firefox custom css for dark theme.
+general: Build improvement, now theme builds depending on gtk3 version;
+general: Scss files restructure, for more flexibility;
+gtk2: Dark theme added, requires gtk-murrine-engine;
+gtk3: Nautilus pathbar improvements;
+gtk3: Dark theme tweaks;
+gtk3: Various fixes and improvements;
+general: Firefox custom css for dark theme.
 
 
 3.28.3 / 3.30.3
 ===============
 
-* shell: Adjust colors;
-* Various small fixes;
-* Add support for gnome 3.30 (gtk+ 3.24).
+shell: Adjust colors;
+Various small fixes;
+Add support for gnome 3.30 (gtk+ 3.24).
 
 3.28.2
 ======
 
-* gtk2/gtk3: Adjust selection color;
-* gtk2/gtk3: New scrollbars (vintage scrollbars cant be displayed correctly in libreoffice);
-* gtk3/gtk2/shell: Adjust assets to match new colors;
-* gtk3: Adjust undershoot size;
-* gtk3: Revert workaround for popover menus;
-* gtk3: Add missing backdrop states;
-* gtk3: New pathbar style for nautilus
-* shell: Change font to Liberation Sans, Arimo;
-* shell: Adjust selection color;
-* general: Installation now requires meson and sasc;
-* general: Revert meson to build theme;
-* general: Build cleanup.
+gtk2/gtk3: Adjust selection color;
+gtk2/gtk3: New scrollbars (vintage scrollbars cant be displayed correctly in libreoffice);
+gtk3/gtk2/shell: Adjust assets to match new colors;
+gtk3: Adjust undershoot size;
+gtk3: Revert workaround for popover menus;
+gtk3: Add missing backdrop states;
+gtk3: New pathbar style for nautilus
+shell: Change font to Liberation Sans, Arimo;
+shell: Adjust selection color;
+general: Installation now requires meson and sasc;
+general: Revert meson to build theme;
+general: Build cleanup.
 
 3.28.1
 ======
 
-* gtk3/gtk2: Border color adjustment (improve contrast);
-* gtk3/gtk2: Scrollbar color adjustment; 
-* gtk3: Transform apps.css to scss;
-* gtk3: Messagedialog decoration fix;
-* gtk3: Scrollbar animation fix;
-* gtk3: Add undershot effect, revert removing of overshoot;
-* gtk3: Nautilus operation button style edit;
-* gtk2: Tooltip fix, now they have borders;
-* shell: Notification button tweak.
+gtk3/gtk2: Border color adjustment (improve contrast);
+gtk3/gtk2: Scrollbar color adjustment; 
+gtk3: Transform apps.css to scss;
+gtk3: Messagedialog decoration fix;
+gtk3: Scrollbar animation fix;
+gtk3: Add undershot effect, revert removing of overshoot;
+gtk3: Nautilus operation button style edit;
+gtk2: Tooltip fix, now they have borders;
+shell: Notification button tweak.
 
 
 3.28.0.1
 ========
 
-* Build changes: meson no longer builds the theme, just installs -
+Build changes: meson no longer builds the theme, just installs -
   workaround for users, who want just copy theme folder, without using meson;
-* shell: Change font to roboto. 
+shell: Change font to roboto. 
 
 
 3.28.0
