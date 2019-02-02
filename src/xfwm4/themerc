@@ -1,6 +1,6 @@
-button_offset=4
-maximized_offset=4
-button_spacing=4
+button_offset=3
+maximized_offset=3
+button_spacing=3
 
 shadow_delta_x=-3
 shadow_delta_y=-10
