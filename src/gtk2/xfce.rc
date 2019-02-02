@@ -107,6 +107,42 @@ style "indicator" = "theme-panel" {
   ythickness = 0
 }
 
+style "xfwm-tabwin" {
+  Xfwm4TabwinWidget::border-width  = 1
+  Xfwm4TabwinWidget::border-alpha  = 1.0
+  Xfwm4TabwinWidget::icon-size     = 64
+  Xfwm4TabwinWidget::alpha         = 1.0
+  Xfwm4TabwinWidget::border-radius = 2
+
+	bg[NORMAL]   = @xfce_panel_bg
+	bg[SELECTED] = @xfce_panel_bg
+
+	fg[NORMAL]   = @xfce_panel_fg
+
+  engine "murrine" {
+    contrast        = 0.9
+    glazestyle      = 0
+    glowstyle       = 0
+    highlight_shade = 1.0
+    gradient_shades = {1.0,1.0,1.0,1.0}
+    border_shades   = { 0.8, 0.8 }
+  }
+}
+
+style "xfwm-tabwin-button" {
+  fg[PRELIGHT] = @xfce_panel_selected_fg
+  fg[ACTIVE]   = @xfce_panel_selected_fg
+  fg[SELECTED] = @xfce_panel_selected_fg
+
+  bg[PRELIGHT] = shade (0.85,  @xfce_panel_selected_bg)
+  bg[ACTIVE]   = @xfce_panel_selected_bg
+  bg[SELECTED] = @xfce_panel_selected_bg
+
+  engine "murrine" {
+    roundness = 2
+  }
+}
+
 widget "*tasklist*"                                   style "panelbuttons"
 widget_class "*Xfce*Panel*.GtkToggleButton"           style "panelbuttons"
 widget_class "*Xfce*NetkTasklist*GtkToggleButton"     style "panelbuttons"
@@ -163,3 +199,7 @@ widget "*PanelApplet*"                                style "theme-panel-text"
 # Override general panel-style with specific plugin-styles
 widget "*indicator-applet*"                           style "indicator"
 widget "*indicator-button*"                           style "indicator"
+
+# Tabwin
+widget "xfwm4-tabwin*"                                style "xfwm-tabwin"
+widget "xfwm4-tabwin*GtkButton*"                      style "xfwm-tabwin-button"
