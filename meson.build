@@ -227,6 +227,7 @@ gtk2_data = [
   'src/gtk2/main.rc',
   'src/gtk2/apps.rc',
   'src/gtk2/hacks.rc',
+  'src/gtk2/xfce.rc',
 ]
 
 dark_gtk2_data = [
@@ -234,6 +235,7 @@ dark_gtk2_data = [
   'src/gtk2-dark/main.rc',
   'src/gtk2-dark/apps.rc',
   'src/gtk2-dark/hacks.rc',
+  'src/gtk2-dark/xfce.rc',
 ]
 
 install_data(gtk2_data, install_dir: gtk2_dir)
