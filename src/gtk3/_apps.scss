@@ -150,6 +150,34 @@ treeview .sidebar.view {
 }
 
 
+  // Thunar
+
+.thunar {
+  scrolledwindow.standard-view {
+    border-top-width: 0;
+  }
+
+  toolbar {
+    border-bottom: 1px solid $borders_color;
+  }
+
+  scrolledwindow.sidebar treeview.view {
+    background: mix($bg_color, $base_color, 60%);
+
+    &:hover { background: if($variant == 'light', darken($bg_color, 2%), lighten($bg_color, 2%)); }
+
+    &:selected, &:active {
+      background: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 4%));
+      &:hover { background: if($variant == 'light', darken($bg_color, 10%), lighten($bg_color, 7%)); }
+    }
+  }
+
+  statusbar {
+    border-top: none;
+  }
+}
+
+
   // Xfce Panel
 
 $xfce_panel_bg_color: #333839;
