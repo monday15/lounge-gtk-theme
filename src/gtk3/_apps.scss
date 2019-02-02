@@ -243,9 +243,15 @@ $xfce_panel_selected_fg_color: #e2e2e2;
 
 #pulseaudio-button menu {
   scale trough {
-    @if $variant == 'light' {
-      @extend %scale_trough;
-      background-color: darken($dark_fill, 5%);
+    @extend %scale_trough;
+    background-color: darken($dark_fill, 5%);
+  }
+  @if $variant == 'dark' {
+    scale highlight {
+      box-shadow: 0 0 0 1px $bg_color;
+    }
+    switch:checked {
+      box-shadow: 0 0 0 1px $bg_color;
     }
   }
 }
