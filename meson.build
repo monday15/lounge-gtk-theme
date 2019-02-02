@@ -1,6 +1,6 @@
 project('lounge-gtk-theme',
         version: '1.11',
-        meson_version: '>= 0.42',
+        meson_version: '>= 0.45',
         license : ['GPL3+'],
         default_options: ['prefix=/usr'])
 
@@ -114,6 +114,7 @@ shell_dir = join_paths(theme_dir, 'gnome-shell')
 gtk2_dir = join_paths(theme_dir, 'gtk-2.0')
 gtk322_dir = join_paths(theme_dir, 'gtk-3.22')
 gtk324_dir = join_paths(theme_dir, 'gtk-3.24')
+xfwm_dir = join_paths(theme_dir, 'xfwm4')
 
   # Dark theme
 
@@ -121,6 +122,7 @@ dark_theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-night')
 dark_gtk2_dir = join_paths(dark_theme_dir, 'gtk-2.0')
 dark_gtk322_dir = join_paths(dark_theme_dir, 'gtk-3.22')
 dark_gtk324_dir = join_paths(dark_theme_dir, 'gtk-3.24')
+dark_xfwm_dir = join_paths(dark_theme_dir, 'xfwm4')
 
 
 # Install index files
@@ -366,8 +368,14 @@ gtk324_scss_dark  = join_paths(meson.build_root(), 'gtk-dark-3-24.scss')
 # Install xfwm theme
 
 install_subdir('src/xfwm4',
-               install_dir: theme_dir,
-               exclude_files: ['xfwm4-assets.txt', 'xfwm4-assets.svg', 'xfwm4-render-assets.sh'])
+               install_dir: xfwm_dir,
+               exclude_files: ['xfwm4-assets.txt', 'xfwm4-assets.svg', 'xfwm4-render-assets.sh'],
+               strip_directory: true)
+
+install_subdir('src/xfwm4-dark',
+               install_dir: dark_xfwm_dir,
+               exclude_files: ['xfwm4-assets.txt', 'xfwm4-assets.svg', 'xfwm4-render-assets.sh'],
+               strip_directory: true)
 
 
 # Install assets
