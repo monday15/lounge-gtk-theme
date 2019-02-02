@@ -2,6 +2,9 @@ button_offset=3
 maximized_offset=3
 button_spacing=3
 
+active_text_color=#101010
+inactive_text_color=#969696
+
 shadow_delta_x=-3
 shadow_delta_y=-10
 shadow_delta_width=-3
