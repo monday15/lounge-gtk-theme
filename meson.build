@@ -1,6 +1,6 @@
 project('lounge-gtk-theme',
         version: '1.11',
-        meson_version: '>= 0.41',
+        meson_version: '>= 0.42',
         license : ['GPL3+'],
         default_options: ['prefix=/usr'])
 
@@ -361,6 +361,13 @@ gtk324_scss_dark  = join_paths(meson.build_root(), 'gtk-dark-3-24.scss')
   # Copy Lounge dark variant css files to Lounge-night theme
   meson.add_install_script('sh', '-c', 'cp $MESON_INSTALL_DESTDIR_PREFIX/'+gtk322_dir+'/gtk-dark.css $MESON_INSTALL_DESTDIR_PREFIX/'+dark_gtk322_dir+'/gtk.css')
   meson.add_install_script('sh', '-c', 'cp $MESON_INSTALL_DESTDIR_PREFIX/'+gtk324_dir+'/gtk-dark.css $MESON_INSTALL_DESTDIR_PREFIX/'+dark_gtk324_dir+'/gtk.css')
+
+
+# Install xfwm theme
+
+install_subdir('src/xfwm4',
+               install_dir: theme_dir,
+               exclude_files: ['xfwm4-assets.txt', 'xfwm4-assets.svg', 'xfwm4-render-assets.sh'])
 
 
 # Install assets
