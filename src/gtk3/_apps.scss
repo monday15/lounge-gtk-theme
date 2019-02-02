@@ -209,3 +209,15 @@ $xfce_panel_selected_fg_color: #e2e2e2;
     label, image { color: inherit; }
   }
 }
+
+
+  // Xfce pulseaudio plugin
+
+#pulseaudio-button menu {
+  scale trough {
+    @if $variant == 'light' {
+      @extend %scale_trough;
+      background-color: darken($dark_fill, 5%);
+    }
+  }
+}
