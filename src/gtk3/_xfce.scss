@@ -2,6 +2,7 @@
 
 $xfce_panel_bg_color: #333839;
 $xfce_panel_fg_color: #d2d2d2;
+$xfce_panel_selected_bg_color: desaturate(darken(#cee5fc, 50%), 35%);
 $xfce_panel_selected_fg_color: #e2e2e2;
 
 .xfce4-panel.panel,
@@ -80,6 +81,34 @@ $xfce_panel_selected_fg_color: #e2e2e2;
     }
     switch:checked {
       box-shadow: 0 0 0 1px $bg_color;
+    }
+  }
+}
+
+
+  // Xfce tabwin (alt-tab switcher)
+
+#xfwm-tabwin {
+  background-image: image($xfce_panel_bg_color);
+  color: $xfce_panel_fg_color;
+  text-shadow: none;
+  border-radius: 5px;
+
+  button {
+    background-image: none;
+    color: $xfce_panel_fg_color;
+    border: none;
+    border-radius: 3px;
+    box-shadow: none;
+
+    &:active, &:checked, &:active:hover, &:checked:hover {
+      color: $xfce_panel_selected_fg_color;
+      background: transparentize($xfce_panel_selected_bg_color, .2);
+    }
+    &:hover {
+      color: $xfce_panel_selected_fg_color;
+      background: $xfce_panel_selected_bg_color;
+      transition-duration: 50ms;
     }
   }
 }
