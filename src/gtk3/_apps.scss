@@ -161,14 +161,18 @@ treeview .sidebar.view {
     border-bottom: 1px solid $borders_color;
   }
 
-  scrolledwindow.sidebar treeview.view {
-    background: mix($bg_color, $base_color, 60%);
+  scrolledwindow.sidebar {
+    border-top: none;
 
-    &:hover { background: if($variant == 'light', darken($bg_color, 2%), lighten($bg_color, 2%)); }
+    treeview.view {
+      background: mix($bg_color, $base_color, 60%);
 
-    &:selected, &:active {
-      background: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 4%));
-      &:hover { background: if($variant == 'light', darken($bg_color, 10%), lighten($bg_color, 7%)); }
+      &:hover { background: if($variant == 'light', darken($bg_color, 2%), lighten($bg_color, 2%)); }
+
+      &:selected, &:active {
+        background: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 4%));
+        &:hover { background: if($variant == 'light', darken($bg_color, 10%), lighten($bg_color, 7%)); }
+      }
     }
   }
 
