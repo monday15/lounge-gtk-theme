@@ -2798,7 +2798,7 @@ scale {
       min-width: 1px;
     }
 
-    &.fine-tune indicator { min-height: ($_marks_length - 3px); }
+    &.fine-tune indicator { min-height: ($_marks_length - 1px); }
   }
 
   &.vertical {
@@ -2807,7 +2807,7 @@ scale {
       min-width: $_marks_length;
     }
 
-    &.fine-tune indicator { min-width: ($_marks_length - 3px); }
+    &.fine-tune indicator { min-width: ($_marks_length - 1px); }
   }
 
   // *WARNING* scale with marks madness following
