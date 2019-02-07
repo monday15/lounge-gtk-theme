@@ -4,17 +4,24 @@ $xfce_panel_bg_color: #333839;
 $xfce_panel_fg_color: #d2d2d2;
 $xfce_panel_selected_fg_color: #e2e2e2;
 
-.xfce4-panel.panel {
-  background-color: $xfce_panel_bg_color;
-  font-weight: normal;
-  text-shadow: none;
-  -gtk-icon-shadow: none;
+.xfce4-panel.panel,
+.xfce4-panel.background {
+    background-color: $xfce_panel_bg_color;
+    color: $xfce_panel_fg_color;
+    font-weight: normal;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
 
-  button.flat { @extend %xfce_panel_button; }
+    button, button.flat { @extend %xfce_panel_button; }
 }
 
-.xfce4-panel.panel menu {
-  font-weight: normal;
+.xfce4-panel.panel {
+  menu {
+    font-weight: normal;
+  }
+  menubar > menuitem {
+    &:hover, &:active { color: lighten(desaturate(darken(#cee5fc, 50%), 35%), 15%); }
+  }
 }
 
 #tasklist-button {
@@ -36,23 +43,24 @@ $xfce_panel_selected_fg_color: #e2e2e2;
 }
 
 %xfce_panel_button {
-  color: $xfce_panel_fg_color;
-  border-radius: 2px;
   border: none;
-  background-color: transparentize($xfce_panel_bg_color, 1);
+  border-radius: 2px;
   margin-left: 1px;
   margin-right: 1px;
+  color: $xfce_panel_fg_color;
+  background-image: none;
+  background-color: transparentize($xfce_panel_bg_color, 1);
+  box-shadow: none;
 
   &:hover {
     color: $xfce_panel_selected_fg_color;
     border: none;
-    box-shadow: none;
-    background-image: image(lighten($xfce_panel_bg_color, 9%));
+    background-color: lighten($xfce_panel_bg_color, 9%);
   }
   &:active, &:checked {
     color: $xfce_panel_selected_fg_color;
     border: none;
-    background-image: image(lighten($xfce_panel_bg_color, 12%));
+    background-color: lighten($xfce_panel_bg_color, 12%);
 
     label, image { color: inherit; }
   }
