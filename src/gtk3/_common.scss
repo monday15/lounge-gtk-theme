@@ -1401,6 +1401,8 @@ headerbar {
               @include button(backdrop-insensitive-active, if($variant == 'light', darken($selected_bl_color, 5%), $selected_bl_color), $selected_fl_color);
 
               border-color: $backdrop_selected_borders_color;
+
+              @if $variant == 'light' { color: $insensitive_fg_color; }
             }
           }
         }
