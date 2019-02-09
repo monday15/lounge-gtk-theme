@@ -117,6 +117,7 @@ $xfce_panel_selected_fg_color: #e2e2e2;
   // Xfce workspace switcher
 
 wnck-pager {
+  color: mix($xfce_panel_fg_color, $xfce_panel_bg_color, 30%);
   &:selected { background-color: transparentize(white, .95); }
   &:hover { background-color: transparentize(white, .85); }
 }
