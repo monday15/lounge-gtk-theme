@@ -82,6 +82,20 @@ $xfce_panel_selected_fg_color: #e2e2e2;
       box-shadow: 0 0 0 1px $bg_color;
     }
   }
+    .linked button {
+      @extend %linked;
+      @include button(normal, $menu_color, $fg_color);
+      background-color: transparent;
+      background-image: none;
+      box-shadow: none;
+
+      &:disabled {
+        @include button(insensitive, $menu_color, $fg_color);
+        background-color: transparent;
+        background-image: none;
+        box-shadow: none;
+      }
+    }
 }
 
 
