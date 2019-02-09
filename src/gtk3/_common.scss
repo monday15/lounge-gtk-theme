@@ -1852,20 +1852,16 @@ menu,
     border-radius: 0;
 
     &.top {
-      margin-top: 0;
+      margin-top: -2px;
       border-bottom: 1px solid mix($fg_color, $base_color, 10%);
-      padding-top: 2px;
-      padding-bottom: 2px;
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
 
     &.bottom {
-      margin-bottom: -4px;
+      margin-bottom: -6px;
       margin-top: 4px;
-      padding-top: 2px;
-      padding-bottom: 2px;
       border-top: 1px solid mix($fg_color, $base_color, 10%);
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px;
