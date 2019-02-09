@@ -1493,6 +1493,18 @@ StScrollBar {
     &:hover { background-color: $_bubble_bg_color; }
     &:focus { background-color: $_bubble_bg_color; }
 
+    // close button
+    * > StIcon { border-radius: 2px; }
+
+    *:hover > StIcon,
+    *:focus > StIcon {
+      color: lighten($_bubble_fg_color, 7%);
+    }
+
+    *:active > StIcon {
+      color: darken($_bubble_fg_color, 20%);
+    }
+
     .notification-icon { padding: 5px; }
     .notification-content { padding: 5px; spacing: 5px; }
     .secondary-icon { icon-size: 1.09em; }
