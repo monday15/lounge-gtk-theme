@@ -99,7 +99,12 @@ style "theme-main-menu-text" = "theme-panel-text" {
 }
 
 style "workspace-switcher" = "theme-panel" {
-  bg[SELECTED]   = @xfce_panel_selected_bg
+  bg[PRELIGHT]   = shade (1.3, @xfce_panel_bg)
+  bg[SELECTED]   = shade (1.2, @xfce_panel_bg)
+
+  fg[NORMAL]     = shade (1.7, @xfce_panel_bg)
+  fg[PRELIGHT]   = shade (1.7, @xfce_panel_bg)
+  fg[SELECTED]   = shade (1.7, @xfce_panel_bg)
 }
 
 style "indicator" = "theme-panel" {
