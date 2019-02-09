@@ -1380,6 +1380,11 @@ headerbar {
           -gtk-icon-effect: none;
           border-color: $backdrop_selected_borders_color;
 
+         &:hover { 
+           @include button(hover, if($variant == 'light', darken($selected_bl_color, 5%), $selected_bl_color), $selected_fl_color);
+           text-shadow: none;
+          }
+
           &:active,
           &:checked {
             @include button(backdrop-active, if($variant == 'light', darken($selected_bl_color, 5%), $selected_bl_color), $selected_fl_color);
