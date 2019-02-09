@@ -5,7 +5,6 @@ $xfce_panel_fg_color: #d2d2d2;
 $xfce_panel_selected_bg_color: desaturate(darken(#cee5fc, 50%), 35%);
 $xfce_panel_selected_fg_color: #e2e2e2;
 
-.xfce4-panel.panel,
 .xfce4-panel.background {
     background-color: $xfce_panel_bg_color;
     color: $xfce_panel_fg_color;
