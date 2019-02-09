@@ -6,13 +6,13 @@ $xfce_panel_selected_bg_color: desaturate(darken(#cee5fc, 50%), 35%);
 $xfce_panel_selected_fg_color: #e2e2e2;
 
 .xfce4-panel.background {
-    background-color: $xfce_panel_bg_color;
-    color: $xfce_panel_fg_color;
-    font-weight: normal;
-    text-shadow: none;
-    -gtk-icon-shadow: none;
+  background-color: $xfce_panel_bg_color;
+  color: $xfce_panel_fg_color;
+  font-weight: normal;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
 
-    button, button.flat { @extend %xfce_panel_button; }
+  button, button.flat { @extend %xfce_panel_button; }
 }
 
 .xfce4-panel.panel {
@@ -74,6 +74,7 @@ $xfce_panel_selected_fg_color: #e2e2e2;
     @extend %scale_trough;
     background-color: darken($dark_fill, 5%);
   }
+
   @if $variant == 'dark' {
     scale highlight {
       box-shadow: 0 0 0 1px $bg_color;
@@ -82,20 +83,21 @@ $xfce_panel_selected_fg_color: #e2e2e2;
       box-shadow: 0 0 0 1px $bg_color;
     }
   }
-    .linked button {
-      @extend %linked;
-      @include button(normal, $menu_color, $fg_color);
+
+  .linked button {
+    @extend %linked;
+    @include button(normal, $menu_color, $fg_color);
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+
+    &:disabled {
+      @include button(insensitive, $menu_color, $fg_color);
       background-color: transparent;
       background-image: none;
       box-shadow: none;
-
-      &:disabled {
-        @include button(insensitive, $menu_color, $fg_color);
-        background-color: transparent;
-        background-image: none;
-        box-shadow: none;
-      }
     }
+  }
 }
 
 
@@ -130,44 +132,40 @@ $xfce_panel_selected_fg_color: #e2e2e2;
   // Xfce notifications
 
 #XfceNotifyWindow {
-    background-color: $xfce_panel_bg_color;
-    color: $xfce_panel_selected_fg_color;
-    border-color: darken($xfce_panel_bg_color, 8%);
-    border-radius: 3px;
+  background-color: $xfce_panel_bg_color;
+  color: $xfce_panel_selected_fg_color;
+  border-color: darken($xfce_panel_bg_color, 8%);
+  border-radius: 3px;
 
-    button {
-      @include button(normal, $xfce_panel_bg_color, $xfce_panel_fg_color);
+  button {
+    @include button(normal, $xfce_panel_bg_color, $xfce_panel_fg_color);
 
-       &:hover {
-          @include button(hover, $xfce_panel_bg_color, $xfce_panel_fg_color);
-       }
+    &:hover { @include button(hover, $xfce_panel_bg_color, $xfce_panel_fg_color); }
 
-       &:active {
-          @include button(active, $xfce_panel_bg_color, $xfce_panel_fg_color);
-       }
+    &:active { @include button(active, $xfce_panel_bg_color, $xfce_panel_fg_color); }
 
-       &:disabled {
-          @include button(insensitive, $xfce_panel_bg_color, $xfce_panel_fg_color);
-       }
-    }
+    &:disabled { @include button(insensitive, $xfce_panel_bg_color, $xfce_panel_fg_color); }
+  }
 
 //    label#summary {
 //        font-weight: bold;
 //    }
 
-    progressbar {
-        min-height: 6px;
-        border-radius: 3px;
-        progress {
-            background-image: none;
-            background-color: $xfce_panel_selected_bg_color;
-            border: none;
-            box-shadow: none;
-        }
-        trough {
-            background-color: mix(darken($xfce_panel_bg_color, 8%), $xfce_panel_bg_color, 50%);
-        }
+  progressbar {
+    min-height: 6px;
+    border-radius: 3px;
+
+    progress {
+      background-image: none;
+      background-color: $xfce_panel_selected_bg_color;
+      border: none;
+      box-shadow: none;
     }
+
+    trough {
+      background-color: mix(darken($xfce_panel_bg_color, 8%), $xfce_panel_bg_color, 50%);
+    }
+  }
 }
 
   // Xfce workspace switcher
