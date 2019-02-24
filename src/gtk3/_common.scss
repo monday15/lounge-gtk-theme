@@ -2796,7 +2796,7 @@ scale {
       min-width: 1px;
     }
 
-    &.fine-tune indicator { min-height: ($_marks_length - 1px); }
+    &.fine-tune indicator { min-height: ($_marks_length - 3px); }
   }
 
   &.vertical {
@@ -2805,7 +2805,7 @@ scale {
       min-width: $_marks_length;
     }
 
-    &.fine-tune indicator { min-width: ($_marks_length - 1px); }
+    &.fine-tune indicator { min-width: ($_marks_length - 3px); }
   }
 
   // *WARNING* scale with marks madness following
@@ -2875,18 +2875,18 @@ scale {
 
           &.fine-tune slider {
             // bigger negative margins to make the trough grow here as well
-            margin: -4px;
+            margin: -3px;
 
             @if $dir_class == 'horizontal' {
-              @if $marks_infix == 'scale-has-marks-above' { margin-top: -10px; }
+              @if $marks_infix == 'scale-has-marks-above' { margin-top: -9px; }
 
-              @else { margin-bottom: -10px; }
+              @else { margin-bottom: -9px; }
             }
 
             @else {
-              @if $marks_infix == 'scale-has-marks-above' { margin-left: -10px; }
+              @if $marks_infix == 'scale-has-marks-above' { margin-left: -9px; }
 
-              @else { margin-right: -10px; }
+              @else { margin-right: -9px; }
             }
           }
         }
