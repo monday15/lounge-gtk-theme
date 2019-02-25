@@ -34,6 +34,17 @@ evview.content-view.view:selected  {
 }
 
 
+  // Geary
+
+row.geary-settings entry {
+  @if $variant == 'light' {
+    &:focus { box-shadow: inset 0 0 0 1px entry_focus_border(); }
+    &:focus.error { box-shadow: inset 0 0 0 1px entry_focus_border($error_color); }
+    &:focus.warning { box-shadow: inset 0 0 0 1px entry_focus_border($warning_color); }
+  }
+}
+
+
   // Gedit
 
 .open-document-selector-treeview {
