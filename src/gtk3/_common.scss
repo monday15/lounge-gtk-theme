@@ -1972,7 +1972,11 @@ notebook {
       > tabs {
         margin-bottom: -2px;
         > tab {
-          &:hover, &:checked { box-shadow: inset 0 -1px $borders_color; }
+          &:hover { box-shadow: inset 0 -1px $borders_color; }
+          &:checked {
+            box-shadow: inset 0 -3px mix($selected_bg_color, $bg_color, 70%), inset 0 -1px $borders_color;
+            &.reorderable-page { box-shadow: inset 0 -1px $borders_color; }
+          }
         }
       }
     }
@@ -1982,7 +1986,11 @@ notebook {
       > tabs {
         margin-top: -2px;
         > tab {
-          &:hover, &:checked { box-shadow: inset 0 1px $borders_color; }
+          &:hover { box-shadow: inset 0 1px $borders_color; }
+          &:checked {
+            box-shadow: inset 0 3px mix($selected_bg_color, $bg_color, 70%), inset 0 1px $borders_color;
+            &.reorderable-page { box-shadow: inset 0 1px $borders_color; }
+          }
         }
       }
     }
@@ -1992,7 +2000,11 @@ notebook {
       > tabs {
         margin-right: -2px;
         > tab {
-          &:hover, &:checked { box-shadow: inset -1px 0 $borders_color; }
+          &:hover { box-shadow: inset -1px 0 $borders_color; }
+          &:checked {
+            box-shadow: inset -3px 0 mix($selected_bg_color, $bg_color, 70%), inset -1px 0 $borders_color;
+            &.reorderable-page { box-shadow: inset -1px 0 $borders_color; }
+          }
         }
       }
     }
@@ -2002,7 +2014,11 @@ notebook {
       > tabs {
         margin-left: -2px;
         > tab {
-          &:hover, &:checked { box-shadow: inset 1px 0 $borders_color; }
+          &:hover { box-shadow: inset 1px 0 $borders_color; }
+          &:checked {
+            box-shadow: inset 3px 0 mix($selected_bg_color, $bg_color, 70%), inset 1px 0 $borders_color;
+            &.reorderable-page { box-shadow: inset 1px 0 $borders_color; }
+          }
         }
       }
     }
