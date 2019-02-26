@@ -1956,7 +1956,7 @@ notebook {
     padding: 1px;
     border-color: $borders_color;
     border-width: 1px;
-    background-color: $dark_fill;
+    background-color: darken($bg_color, 3%);
 
     button {
       padding: 1px 3px;
@@ -2090,8 +2090,8 @@ notebook {
         color: mix($insensitive_fg_color, $fg_color, 50%);
 
         &.reorderable-page {
-          border-color: transparentize($borders_color, 0.7);
-          background-color: if($variant == 'light', transparentize($bg_color, 0.5), transparentize(white, 0.98));
+          border-color: transparentize($borders_color, 0.6);
+          background-color: if($variant == 'light', transparentize(white, 0.7), transparentize(white, 0.98));
         }
       }
 
@@ -2103,10 +2103,10 @@ notebook {
       &:checked {
         color: $fg_color;
         &.reorderable-page {
-          border-color: transparentize($borders_color, 0.5);
-          background-color: if($variant == 'light', transparentize($bg_color, 0.2), transparentize(white, 0.97));
+          border-color: transparentize($borders_color, 0.4);
+          background-color: if($variant == 'light', transparentize(white, 0.5), transparentize(white, 0.97));
 
-          &:hover { background-color: transparentize($bg_color, 0.0); }
+          &:hover { background-color: if($variant == 'light', transparentize(white, 0.35), transparentize(white, 0.96)); }
         }
       }
 
