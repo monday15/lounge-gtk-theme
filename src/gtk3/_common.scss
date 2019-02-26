@@ -2632,6 +2632,8 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   headerbar & {
     @if $variant == 'dark' { background-color: darken($dark_fill, 3%); }
   }
+
+  infobar & { background-color: if($variant == 'light', darken($infobar_color, 8%), darken($infobar_color, 4%)); }
 }
 
 %scale_highlight {
@@ -2648,6 +2650,8 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
 
   // OSD
   .osd & {  }
+
+  infobar & { background-color: if($variant == 'light', desaturate(darken($infobar_color, 20%), 5%), desaturate(lighten($infobar_color, 12%), 5%)); }
 }
 
 scale {
