@@ -1,4 +1,5 @@
 1.14
+====
 
 gtk2/gtk3: Better indication for active notebook tabs and menubar items;
 gtk3: Fixed bugs with "jumping" scales in fine-tune mode;
