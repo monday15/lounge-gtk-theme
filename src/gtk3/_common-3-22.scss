@@ -106,9 +106,10 @@ headerbar.selection-mode button.titlebutton,
 .emoji {
   font-size: x-large;
   padding: 6px;
-  border-radius: 6px;
+  border-radius: 3px;
 
   :hover {
     background: $selected_bl_color;
+    border-radius: 3px;
   }
 }

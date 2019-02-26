@@ -165,10 +165,11 @@ headerbar.selection-mode button.titlebutton,
 popover.emoji-picker .emoji {
   font-size: x-large;
   padding: 6px;
-  border-radius: 6px;
+  border-radius: 3px;
 
   :hover {
     background: $selected_bl_color;
+    border-radius: 3px;
   }
 }
 popover.emoji-completion arrow {
