@@ -135,16 +135,6 @@ headerbar button.sources-button { min-height: 36px; }
 }
 
 
- // LibreOffice
-
-// Notebookbar toolbar style
-window.background:not(.solid-csd) {
-  > notebook:not(.frame) > header.top tabs > tab:selected {
-    box-shadow: inset 0 -3px $selected_bg_color, inset 0 -1px $borders_color;
-  }
-}
-
-
   // Lollypop
 
 treeview .sidebar.view {
