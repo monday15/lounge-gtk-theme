@@ -3,7 +3,7 @@
 %global bootstrap 0
 
 Name:           lounge-gtk-theme
-Version:        1.13
+Version:        1.14
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Simple and clean gtk theme
@@ -69,6 +69,9 @@ Set of auxiliary symbolic icons for Lounge gtk theme
 
 
 %changelog
+* Tue Feb 26 2019 Alex Monday <monday15@gmx.com>
+- Update to 1.14
+
 * Sat Feb 09 2019 Alex Monday <monday15@gmx.com>
 - Update to 1.13
 

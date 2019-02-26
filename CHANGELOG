@@ -1,3 +1,13 @@
+1.14
+
+gtk2/gtk3: Better indication for active notebook tabs and menubar items;
+gtk3: Fixed bugs with "jumping" scales in fine-tune mode;
+gtk3: Added Geary style (for version 0.13+);
+gtk3: Minor fixes;
+xfce: Minor fix;
+shell: Minor fixes.
+
+
 1.13
 ====
 
