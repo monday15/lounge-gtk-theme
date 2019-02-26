@@ -43,6 +43,7 @@ handle
 handle-horz
 handle-vert
 menu-item-active
+menubar-item-active
 notebook-entry
 notebook-entry-active
 notebook-entry-insensitive

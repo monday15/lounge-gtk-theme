@@ -14,7 +14,7 @@
    viewBox="0 0 400 300"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 (unknown)"
    sodipodi:docname="assets.svg">
   <defs
      id="defs2">
@@ -39,9 +39,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="57.76"
-     inkscape:cx="30.622043"
-     inkscape:cy="360.62326"
+     inkscape:zoom="28.88"
+     inkscape:cx="13.379892"
+     inkscape:cy="-1.4370509"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -64,7 +64,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1350,10 +1350,7 @@
        height="1"
        x="14"
        y="514.625"
-       inkscape:label="#rect4723"
-       inkscape:export-filename="/home/juraj/Projekty/gnome-themes-standard/themes/Adwaita/gtk-2.0/Menu-Menubar/menubar.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:label="#rect4723" />
     <g
        transform="translate(-460,505.62498)"
        id="treeview-separator-ltr"
@@ -2772,5 +2769,13 @@
          id="circle10725"
          style="opacity:1;fill:#323536;fill-opacity:1;stroke:#2a2c2d;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
+    <rect
+       inkscape:label="#rect4723"
+       y="513.625"
+       x="17"
+       height="2"
+       width="1"
+       id="menubar-item-active"
+       style="opacity:1;fill:#31587e;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>
