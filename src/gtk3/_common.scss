@@ -1787,6 +1787,7 @@ menubar,
 
     &:hover { //Seems like it :hover even with keyboard focus
       color: $link_color;
+      box-shadow: if($variant == 'light', inset 0 -2px mix($selected_bg_color, $bg_color, 70%), inset 0 -3px mix($selected_bg_color, $bg_color, 70%));
     }
 
     &:disabled {
