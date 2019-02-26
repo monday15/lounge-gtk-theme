@@ -442,11 +442,9 @@ treeview entry {
 
   &.button {
     &:hover {
-      border: 1px solid $_entry_tag_bg;
       color: $_entry_tag_color;
     }
     &:active {
-      background-color: $_entry_tag_bg;
       color: transparentize($_entry_tag_color, 0.3);
     }
   }
