@@ -966,9 +966,7 @@ StScrollBar {
       }
       .calendar-today {
         font-weight: bold;
-        //color: lighten($fg_color,10%);
-        //background-color: darken($bg_color,5%);
-        border: 1px solid transparentize($borders_color,0.5);
+        border: 1px solid transparentize($fg_color, .75);
       }
       .calendar-day-with-events {
         color: lighten($fg_color,10%);
