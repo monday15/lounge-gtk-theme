@@ -867,6 +867,85 @@ toolbar.inline-toolbar toolbutton {
   &:only-child > button.flat { @extend %linked:only-child; }
 }
 
+%linked_middle {
+  border-radius: 0;
+  border-right-style: none;
+}
+
+%linked_left {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-style: none;
+}
+
+%linked_right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-right-style: solid;
+}
+
+// .linked assumes Box, which reverses nodes in RTL, so 1st child is always left
+%linked {
+  @extend %linked_middle;
+
+  &:first-child { @extend %linked_left; }
+  &:last-child { @extend %linked_right; }
+
+  &:only-child {
+    border-radius: 2px;
+    border-style: solid;
+  }
+}
+
+// Other widgets let CSS give the order, so 1st/last child are at text start/end
+%linked_flippable {
+  @extend %linked_middle;
+
+  &:dir(ltr) {
+    &:first-child { @extend %linked_left; }
+    &:last-child { @extend %linked_right; }
+  }
+
+  &:dir(rtl) {
+    &:first-child { @extend %linked_right; }
+    &:last-child { @extend %linked_left; }
+  }
+
+  &:only-child {
+    border-radius: 2px;
+    border-style: solid;
+  }
+}
+
+%linked_vertical_middle {
+  border-style: solid solid none solid;
+  border-radius: 0;
+}
+
+%linked_vertical{
+  @extend %linked_vertical_middle;
+
+  &:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-style: solid;
+  }
+
+  &:only-child {
+    border-radius: 2px;
+    border-style: solid;
+  }
+}
+
 %undecorated_button {
   background-color: transparent;
   background-image: none;
