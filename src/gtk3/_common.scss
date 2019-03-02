@@ -1581,6 +1581,27 @@ headerbar {
   }
 }
 
+headerbar {
+  // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
+  entry,
+  spinbutton,
+  %separator_workaround,
+  button {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  switch {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  @if $gtk == 3.22 {
+    separator { @extend %separator_workaround; }
+  }
+  @if $gtk == 3.24 {
+    separator:not(.sidebar) { @extend %separator_workaround; }
+  }
+}
+
 .background .titlebar {
   &:backdrop, & {
     border-top-left-radius: 3px;
