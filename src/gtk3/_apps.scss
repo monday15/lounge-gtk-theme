@@ -47,24 +47,24 @@ row.geary-settings entry {
 
   // Gedit
 
-.open-document-selector-treeview {
-  &:hover { 
-    background-color: transparentize($bg_color, 0.8);
-    &:selected { background-color: $selected_bg_color; }
+.open-document-selector {
+  &-treeview {
+    &:hover {
+      background-color: transparentize($bg_color, 0.8);
+      &:selected { background-color: $selected_bg_color; }
+    }
+  }
+
+  &-name-label { color: $fg_color; }
+
+  &-path-label {
+    color: $backdrop_fg_color;
+    font-size: smaller;
   }
 }
 
-.open-document-selector-name-label {
-  color: $fg_color;
-}
-
-.open-document-selector-path-label {
-  color: $backdrop_fg_color;
-  font-size: smaller;
-}
-
 .gedit-document-panel {
-  background-color: $bg_color;
+  background-color: $sidebar_bg_color;
 
   row {
     button.flat {
@@ -77,28 +77,43 @@ row.geary-settings entry {
       color: transparentize($fg_color, 0.7);
       &:hover { color: $fg_color; }
     }
+
     &:hover {
-      button.flat { 
-        color: transparentize($fg_color, 0.5);
-        &:hover { color: $fg_color; } 
+       button.flat {
+         color: transparentize($fg_color, 0.5);
+         &:hover { color: $fg_color; }
       }
     }
+
     &:selected {
-      button.flat:not(:active):not(:checked):not(:hover):not(disabled) {
-        color: transparentize($selected_fg_color, 0.5);
-        &.image { color: transparentize($selected_fg_color, 0.5); }
+      background: if($variant == 'light', transparentize(black, .9), transparentize(white, .94));
+
+      label {
+        color: $selected_fl_color;
+        text-shadow: none;
       }
-      button.flat:hover { @include button(undecorated); color: $selected_fg_color; }
+
+      button.flat {
+        &:not(:active):not(:checked):not(:hover):not(disabled) {
+          color: transparentize($selected_fl_color, 0.5);
+
+          &.image { color: transparentize($selected_fl_color, 0.5); }
+        }
+
+        &:hover { @include button(undecorated); color: $selected_fl_color; }
+      }
+
+      &:hover { background: if($variant == 'light', transparentize(black, .87), transparentize(white, .92)); }
     }
+  }
+
+  &-group-row {
+    border-top: 1px solid transparentize($fg_color, 0.7);
+    &:first-child { border-top: 0px; }
   }
 }
 
-.gedit-document-panel-group-row {
-  border-top: 1px solid transparentize($fg_color, 0.7);
-  &:first-child { border-top: 0px; }
-}
-
-statusbar {
+.gedit-side-panel-paned statusbar {
     border-top: 1px solid $borders_color;
 }
 
