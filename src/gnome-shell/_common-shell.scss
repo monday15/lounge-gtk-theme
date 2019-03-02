@@ -610,6 +610,7 @@ StScrollBar {
   .switcher-list .item-box:selected {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
+    text-shadow: 1px 1px transparentize(black, .7);
   }
 
   .switcher-list .thumbnail-box {
