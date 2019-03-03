@@ -3490,6 +3490,51 @@ filechooserbutton:drop(active) {
  * Sidebar *
  ***********/
 
+.sidebar {
+  border-style: none;
+  background-color: mix($bg_color, $base_color, 60%);
+
+  @if $gtk == 3.22 {
+    @at-root %sidebar_left,
+    &:dir(ltr),
+    &.left,
+    &.left:dir(rtl) {
+      border-right: 1px solid $borders_color;
+      border-left-style: none;
+    }
+
+    @at-root %sidebar_right,
+    &:dir(rtl),
+    &.right {
+      border-left: 1px solid $borders_color;
+      border-right-style: none;
+    }
+  }
+
+  @if $gtk == 3.24 {
+    &:not(separator) {
+      @at-root %sidebar_left,
+      &:dir(ltr),
+      &.left,
+      &.left:dir(rtl) {
+        border-right: 1px solid $borders_color;
+        border-left-style: none;
+      }
+
+      @at-root %sidebar_right,
+      &:dir(rtl),
+      &.right {
+        border-left: 1px solid $borders_color;
+        border-right-style: none;
+      }
+    }
+  }
+
+  list { background-color: transparent; }
+
+  paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; } }
+}
+
 stacksidebar {
   &.sidebar {
     &:dir(ltr),
@@ -3512,6 +3557,17 @@ stacksidebar {
       @extend %needs_attention;
 
       background-size: 6px 6px, 0 0;
+    }
+  }
+}
+
+@if $gtk == 3.24 {
+  separator.sidebar {
+    background-color: $borders_color;
+
+    &.selection-mode,
+    .selection-mode & {
+      background-color: darken($selected_bg_color, 20%);
     }
   }
 }
