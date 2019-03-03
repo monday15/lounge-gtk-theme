@@ -4229,3 +4229,35 @@ button.emoji-section {
   &:hover label { opacity: 0.775; }
   &:checked label { opacity: 1; }
 }
+
+%emoji_united {
+  font-size: x-large;
+  padding: 6px;
+  border-radius: 3px;
+
+  :hover {
+    background: $selected_bl_color;
+    border-radius: 3px;
+  }
+}
+
+@if $gtk == 3.22 {
+  .emoji { @extend %emoji_united; }
+}
+
+@if $gtk == 3.24 {
+  popover.emoji-picker .emoji { @extend %emoji_united; }
+
+  popover.emoji-completion arrow {
+    border: none;
+    background: none;
+  }
+
+  popover.emoji-completion contents row box {
+    padding: 2px 10px;
+  }
+
+  popover.emoji-completion .emoji:hover {
+    background: $popover_hover_color;
+  }
+}
