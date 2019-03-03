@@ -4068,6 +4068,23 @@ button.titlebutton {
   }
 }
 
+%selection_mode_titlebutton {
+  @include _button_text_shadow(white, $selected_bl_color);
+
+  &:backdrop { -gtk-icon-shadow: none; }
+}
+
+@if $gtk == 3.22 {
+  headerbar.selection-mode button.titlebutton,
+  .titlebar.selection-mode button.titlebutton { @extend %selection_mode_titlebutton; }
+}
+
+@if $gtk == 3.24 {
+  .selection-mode headerbar button.titlebutton,
+  .selection-mode .titlebar button.titlebutton,
+  headerbar.selection-mode button.titlebutton,
+  .titlebar.selection-mode button.titlebutton { @extend %selection_mode_titlebutton; }
+}
 
 // catch all extend :)
 
