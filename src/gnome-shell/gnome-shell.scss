@@ -1,5 +1,6 @@
-@import "_colors-shell";
-@import "_drawing-shell";
-@import "_common-shell";
-@import "@common_var@";
-@import "_extensions";
+$shell: @gnome-version@;
+
+@import 'shell-colors';
+@import 'shell-drawing';
+@import 'shell-common';
+@import 'shell-extensions';
