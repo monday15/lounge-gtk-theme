@@ -6,9 +6,9 @@
 
 $variant: 'light';
 
-$gtk: @gtk-version@;
-$gnome: @gnome-version@;
-$nautilus: @nautilus-version@;
+$gtk: @gtk_version@;
+$gnome: @gnome_version@;
+$nautilus: @nautilus_version@;
 
 @import 'gtk3-colors';
 @import 'gtk3-colors-public';
