@@ -1,11 +1,12 @@
 $variant: 'dark';
 
-@import 'colors';
-@import 'drawing';
-@import 'common';
-@import 'colors-public';
-@import 'apps';
-@import 'xfce';
-@import '@common_var@';
-@import '@apps_var@';
-@import '@apps_nautilus_var@';
+$gtk: @gtk-version@;
+$gnome: @gnome-version@;
+$nautilus: @nautilus-version@;
+
+@import 'gtk3-colors';
+@import 'gtk3-colors-public';
+@import 'gtk3-drawing';
+@import 'gtk3-common';
+@import 'gtk3-apps';
+@import 'gtk3-xfce';
