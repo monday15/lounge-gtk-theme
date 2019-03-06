@@ -1640,6 +1640,8 @@ StScrollBar {
     .page-indicator-icon {
       width: 2px;
       height: 36px;
+      margin: 1px;
+      border: none;
       background-image: none;
       background-color: transparentize(white, .8);
       border-radius: 3px;
@@ -1648,7 +1650,14 @@ StScrollBar {
     &:hover .page-indicator-icon { width: 4px; background-color: transparentize(white, .2); }
     &:active .page-indicator-icon { width: 4px; background-color: transparentize(white, .2); }
     &:checked .page-indicator-icon { width: 4px; background-color: transparentize(white, .4); }
-    &:checked:active { background-image: none; }
+
+    @if $shell <= 3.30 {
+      &:checked:active { background-image: none; }
+    }
+
+    @if $shell >= 3.32 {
+      &:checked:active { background-color: transparent; }
+    }
   }
 
   .no-frequent-applications-label { @extend %status_text; }
