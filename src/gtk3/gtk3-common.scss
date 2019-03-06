@@ -2548,6 +2548,8 @@ switch {
     @include button(normal-alt, $edge: $shadow_color);
   }
 
+  image { color: transparent; } // hide i / o
+
   &:hover slider { @include button(hover-alt, $edge: $shadow_color); }
 
   &:checked slider {
