@@ -1244,6 +1244,11 @@ StScrollBar {
     }
   }
 
+  .app-menu,
+  .app-well-menu {
+    max-width: 27.25em;
+  }
+
   #appMenu {
     spinner-image: url("assets/process-working.svg");
     spacing: 4px;
