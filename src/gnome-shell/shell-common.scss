@@ -774,9 +774,15 @@ StScrollBar {
 /* TOP BAR */
 
 #panel {
-  background-color: rgba(0, 0, 0, 0.35);
-  /* transition from solid to transparent */
-  transition-duration: 500ms;
+  @if $shell <= 3.30 {
+    background-color: rgba(0, 0, 0, 0.35);
+    transition-duration: 500ms; // transition from solid to transparent 
+  }
+
+  @if $shell >= 3.32 {
+    background-color: black;
+  }
+
   font-weight: bold;
   height: 1.86em;
 
@@ -826,20 +832,25 @@ StScrollBar {
       //dimensions of the icon are hardcoded
     }
 
-    .system-status-icon,
-    .app-menu-icon > StIcon,
-    .popup-menu-arrow {
-      icon-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
+    @if $shell <= 3.30 {
+      .system-status-icon,
+      .app-menu-icon > StIcon,
+      .popup-menu-arrow {
+        icon-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
+      }
     }
 
     &:hover {
       color: lighten($fg_color, 10%);
-      text-shadow: 0px 1px 6px rgba(0, 0, 0, 1);
 
-      .system-status-icon,
-      .app-menu-icon > StIcon,
-      .popup-menu-arrow {
-        icon-shadow: 0px 1px 6px rgba(0, 0, 0, 1);
+      @if $shell <= 3.30 {
+        text-shadow: 0px 1px 6px rgba(0, 0, 0, 1);
+
+        .system-status-icon,
+        .app-menu-icon > StIcon,
+        .popup-menu-arrow {
+          icon-shadow: 0px 1px 6px rgba(0, 0, 0, 1);
+        }
       }
     }
 
@@ -850,7 +861,9 @@ StScrollBar {
       box-shadow: inset 0 -2px 0px transparentize($fg_color, .4);
       color: lighten($fg_color,10%);
 
-      & > .system-status-icon { icon-shadow: black 0 2px 2px; }
+      @if $shell <= 3.30 {
+        & > .system-status-icon { icon-shadow: black 0 2px 2px; }
+      }
     }
 
     .system-status-icon { icon-size: 1.09em; padding: 0 5px; }
@@ -878,28 +891,29 @@ StScrollBar {
     .remote-access-indicator { color: $warning_color; }
   }
 
-  &.solid {
-    background-color: black;
-    /* transition from transparent to solid */
-    transition-duration: 300ms;
+  @if $shell <= 3.30 {
+    &.solid {
+      background-color: black;    
+      transition-duration: 300ms; // transition from transparent to solid
 
-    .panel-corner {
-      -panel-corner-background-color: black;
-    }
-
-    .panel-button {
-      color: #ccc;
-      text-shadow: none;
-
-      &:hover, &:active, &:overview, &:focus, &:checked {
-        color: lighten($fg_color, 10%);
+      .panel-corner {
+        -panel-corner-background-color: black;
       }
-    }
 
-    .system-status-icon,
-    .app-menu-icon > StIcon,
-    .popup-menu-arrow {
-      icon-shadow: none;
+      .panel-button {
+        color: #ccc;
+        text-shadow: none;
+
+        &:hover, &:active, &:overview, &:focus, &:checked {
+          color: lighten($fg_color, 10%);
+        }
+      }
+
+      .system-status-icon,
+      .app-menu-icon > StIcon,
+      .popup-menu-arrow {
+        icon-shadow: none;
+      }
     }
   }
 }
