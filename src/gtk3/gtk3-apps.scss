@@ -61,6 +61,13 @@ row.geary-settings entry {
     color: $backdrop_fg_color;
     font-size: smaller;
   }
+
+  @if $gnome >= 3.32 {
+    &-match {
+      color: $fg_color;
+      background-color: transparentize($warning_color, 0.6);
+    }
+  }
 }
 
 .gedit-document-panel {
@@ -118,21 +125,21 @@ row.geary-settings entry {
 }
 
 .gedit-search-slider {
-    background-color: $menu_color;
-    padding: 6px;
-    border-color: $borders_color;
-    border-radius: 0 0 3px 3px;
-    border-width: 0 1px 1px 1px;
-    border-style: solid;
+  background-color: $menu_color;
+  padding: 6px;
+  border-color: $borders_color;
+  border-radius: 0 0 3px 3px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
 }
 
 .gedit-search-entry-occurrences-tag {
-    background-color: $base_color;
-    background-image: none;
-    color: mix($fg_color, $base_color, 70%);
-    border: 0px;
-    margin: 2px;
-    padding: 2px;
+  background-color: $base_color;
+  background-image: none;
+  color: mix($fg_color, $base_color, 70%);
+  border: 0px;
+  margin: 2px;
+  padding: 2px;
 }
 
 
