@@ -1926,6 +1926,22 @@ StScrollBar {
     -boxpointer-gap: 5px;
   }
 
+@if $shell >= 3.32 {
+  .emoji-page {
+    .keyboard-key {
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  .emoji-panel {
+    .keyboard-key:latched {
+      border-color: #005684;
+      background-color: #006098;
+    }
+  }
+}
+
 // IBus Candidate Popup
 
 .candidate-popup-content {
