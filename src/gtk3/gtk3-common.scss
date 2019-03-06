@@ -2044,14 +2044,6 @@ menuitem {
   }
 }
 
-window.popup {
-  &, &.solid-csd { border-radius: 3px; box-shadow: 0 1px 2px transparentize(black, 0.8); }
-
-  &.csd { // round corners for CSD menus
-    border-radius: 3px; box-shadow: 0 1px 2px transparentize(black, 0.8); // same with the combobox
-  }
-}
-
 /***************
  * Popovers   *
  ***************/
