@@ -1692,6 +1692,29 @@ headerbar { // headerbar border rounding
 
 headerbar entry { min-height: 28px; }
 
+// Development versions of apps to use a differently styled headerbar
+
+window.devel {
+  headerbar.titlebar:not(.selection-mode) {
+    $gradient: -gtk-icontheme("system-run-symbolic") 90% 0/256px 256px no-repeat,
+               linear-gradient(to right, transparent 65%, transparentize($selected_bg_color, 0.7));
+    @if $variant == 'dark' {
+      $gradient: -gtk-icontheme("system-run-symbolic") 90% 0/256px 256px no-repeat,
+                 linear-gradient(to right, transparent 65%, transparentize($selected_bg_color, 0.7));
+    }
+
+    background: $bg_color $gradient;
+    color: transparentize($fg_color,.9);
+
+    label { color: $fg_color; }
+
+    &:backdrop {
+      background: $bg_color -gtk-icontheme("system-run-symbolic") 90% 0/256px 256px no-repeat,
+                  image($bg_color); /* background-color would flash */
+      color: transparentize($fg_color,.95);
+    }
+  }
+}
 
 /************
  * Pathbars *
