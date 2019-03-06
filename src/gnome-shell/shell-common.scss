@@ -1049,7 +1049,10 @@ StScrollBar {
     }
 
     .pager-button {
-      color: white;
+      @if $shell <= 3.30 {
+        color: white;
+      }
+
       background-color: transparent;
       width: 32px;
       border-radius: 4px;
@@ -1057,13 +1060,22 @@ StScrollBar {
       &:active { background-color: transparentize($bg_color,0.95); }
     }
 
-      .calendar-change-month-back { //arrow back
-        background-image: url("assets/calendar-arrow-left.svg");
-        &:rtl { background-image: url("assets/calendar-arrow-right.svg"); }
+      @if $shell <= 3.30 {
+        .calendar-change-month-back { //arrow back
+          background-image: url("assets/calendar-arrow-left.svg");
+          &:rtl { background-image: url("assets/calendar-arrow-right.svg"); }
+        }
+        .calendar-change-month-forward { //arrow foreward
+          background-image: url("assets/calendar-arrow-right.svg");
+          &:rtl { background-image: url("assets/calendar-arrow-left.svg"); }
+        }
       }
-      .calendar-change-month-forward { //arrow foreward
-        background-image: url("assets/calendar-arrow-right.svg");
-        &:rtl { background-image: url("assets/calendar-arrow-left.svg"); }
+
+      @if $shell >= 3.32 {
+        .calendar-change-month-back StIcon,
+        .calendar-change-month-forward StIcon {
+          icon-size: 1.09em;
+        }
       }
 
     .calendar-day-base {
