@@ -1679,7 +1679,13 @@ headerbar { // headerbar border rounding
     box-shadow: none;
   }
 
-  > separator { background-color: $borders_color; }  // FIXME: use darker border?
+  @if $gtk == 3.22 {
+    > separator { background-color: $borders_color; }  // FIXME: use darker border?
+  }
+
+  @if $gtk >= 3.24 {
+    separator { background-color: $borders_color; }  // FIXME: use darker border?
+  }
 
   @extend %titlebar;
 }
