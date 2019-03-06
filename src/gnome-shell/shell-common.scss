@@ -1844,7 +1844,18 @@ StScrollBar {
 }
 
 #keyboard {
-    background-color: transparentize($osd_bg_color, 0.3);
+  background-color: transparentize($osd_bg_color, 0.3);
+
+  @if $shell >= 3.32 {
+    .page-indicator {
+      padding: 4px 4px;
+
+      .page-indicator-icon {
+        width: 6px;
+        height: 6px
+      }
+    }
+  }
 }
 
   .key-container {
@@ -1854,8 +1865,17 @@ StScrollBar {
 
   .keyboard-key {
     background-color: $bg_color;
-    min-height: 2em;
-    min-width: 2em;
+
+    @if $shell <= 3.30 {
+      min-height: 2em;
+      min-width: 2em;
+    }
+
+    @if $shell >= 3.32 {
+      min-height: 1.2em;
+      min-width: 1.2em;
+    }
+
     font-size: 16pt;
     border-radius: 3px;
     border: 1px solid darken($bg_color, 10%);
