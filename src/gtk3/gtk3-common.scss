@@ -3605,7 +3605,7 @@ stacksidebar {
 
     &.selection-mode,
     .selection-mode & {
-      background-color: darken($selected_bg_color, 20%);
+      background-color: darken($selected_bl_color, 20%);
     }
   }
 }
