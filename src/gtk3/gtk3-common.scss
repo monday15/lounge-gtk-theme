@@ -3522,7 +3522,7 @@ filechooserbutton:drop(active) {
     }
   }
 
-  @if $gtk == 3.24 {
+  @if $gtk >= 3.24 {
     &:not(separator) {
       @at-root %sidebar_left,
       &:dir(ltr),
@@ -3572,7 +3572,7 @@ stacksidebar {
   }
 }
 
-@if $gtk == 3.24 {
+@if $gtk >= 3.24 {
   separator.sidebar {
     background-color: $borders_color;
 
@@ -4090,7 +4090,7 @@ button.titlebutton {
   .titlebar.selection-mode button.titlebutton { @extend %selection_mode_titlebutton; }
 }
 
-@if $gtk == 3.24 {
+@if $gtk >= 3.24 {
   .selection-mode headerbar button.titlebutton,
   .selection-mode .titlebar button.titlebutton,
   headerbar.selection-mode button.titlebutton,
@@ -4256,7 +4256,7 @@ button.emoji-section {
   .emoji { @extend %emoji_united; }
 }
 
-@if $gtk == 3.24 {
+@if $gtk >= 3.24 {
   popover.emoji-picker .emoji { @extend %emoji_united; }
 
   popover.emoji-completion arrow {
