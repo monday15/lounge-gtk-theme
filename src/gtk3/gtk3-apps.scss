@@ -190,53 +190,73 @@ treeview .sidebar.view {
 
   // Path bar
   .path-bar { /* undecorate the buttons */
-    button {
-      background-image: none;
-      border-radius: 0;
 
-      &:not(:checked) {
-        image { opacity: 0.8; }
-      }
+    // nautilus 3.32 has separate class .nautilus-path-bar
+    @if $nautilus <= 3.30 {
+      button {
+        background-image: none;
+        border-radius: 0;
 
-      &:hover {
-        box-shadow: inset 0 -2px if($variant == 'light', $borders_color, mix($bg_color, $fg_color, 60%));
-      }
+        &:not(:checked) {
+          image { opacity: 0.8; }
+        }
 
-      @if $nautilus == 3.28 {
-        border-color: transparent;
-        background-color: transparent;
-        box-shadow: none;
-        text-shadow: none;
-        -gtk-icon-shadow: none;
+        &:hover {
+          box-shadow: inset 0 -2px if($variant == 'light', $borders_color, mix($bg_color, $fg_color, 60%));
+        }
 
-        &.text-button {
-          label {
-            padding-left: 6px;
-            padding-right: 6px;
-          }
+        @if $nautilus == 3.28 {
+          border-color: transparent;
+          background-color: transparent;
+          box-shadow: none;
+          text-shadow: none;
+          -gtk-icon-shadow: none;
 
-          &.image-button {
-            label { padding-left: 4px; }
+          &.text-button {
+            label {
+              padding-left: 6px;
+              padding-right: 6px;
+            }
+
+            &.image-button {
+              label { padding-left: 4px; }
+            }
           }
         }
-      }
 
-      @if $nautilus >= 3.30 {
-        border-width: 0px;
-        margin: 0px;
+        @if $nautilus >= 3.30 {
+          border-width: 0px;
+          margin: 0px;
 
-        &:backdrop:checked { background-image: none; }
+          &:backdrop:checked { background-image: none; }
+        }
       }
     }
 
-    &-box {
-      transition: border 200ms;
-      transition: background-color 200ms;
+    @if $nautilus >= 3.30 {
+      &-box {
+        transition: border 200ms;
+        transition: background-color 200ms;
 
-      &.width-maximized {
-        border: 1px $borders_color solid;
-        border-radius: 3px;
-        background-color: $bg_color;
+        &.width-maximized {
+          border: 1px $borders_color solid;
+          background-color: $bg_color;
+          border-radius: 2px;
+
+          @if $nautilus >= 3.32 {
+            button {
+              &:first-child {
+                border-radius: 2px 0px 0px 2px;
+                border-width: 0px 1px 0px 0px;
+              }
+
+              &:not(:first-child) {
+                border-width: 0px 1px 0px 1px;
+                border-radius: 0px 0px 0px 0px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -314,6 +334,15 @@ treeview .sidebar.view {
 
     &:selected {
       color: mix($selected_fg_color, $selected_bg_color, 20%);
+    }
+  }
+}
+
+@if $nautilus >= 3.32 {
+  .nautilus-path-bar {
+    button {
+      margin: 0;
+      &:not(:checked) { image { opacity: 0.8; }} // dim the icon when not checked
     }
   }
 }
