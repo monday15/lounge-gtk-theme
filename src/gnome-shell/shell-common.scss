@@ -1319,14 +1319,39 @@ StScrollBar {
 //close buttons
 
 .window-close {
-  background-image: url("assets/close-window.svg");
-  background-size: 32px;
-  height: 32px;
-  width: 32px;
-  -shell-close-overlap: 16px;
+  @if $shell <= 3.30 {
+    background-image: url("assets/close-window.svg");
+    background-size: 32px;
+    height: 32px;
+    width: 32px;
+    -shell-close-overlap: 16px;
 
-  &:hover { background-image: url("assets/close-window-hover.svg"); }
-  &:active { background-image: url("assets/close-window-active.svg"); }
+    &:hover { background-image: url("assets/close-window-hover.svg"); }
+    &:active { background-image: url("assets/close-window-active.svg"); }
+  }
+
+  @if $shell >= 3.32 {
+    background-color: $selected_bg_color;
+    border-radius: 24px;
+    border: 4px solid $selected_bg_color;
+    box-shadow: 0 1px 2px 1px transparentize(black, 0.7);
+    color: $fg_color;
+    height: 24px;
+    width: 24px;
+    -shell-close-overlap: 14px;
+
+    &:hover {
+      background-color: lighten($selected_bg_color, 5%);
+      border-color: lighten($selected_bg_color, 5%);
+      color: $selected_fg_color;
+    }
+
+    &:active {
+      background-color: darken($selected_bg_color, 7%);
+      border-color: darken($selected_bg_color, 7%);
+      color: $selected_fg_color;
+    }
+  }
 }
 
 /* NETWORK DIALOGS */
