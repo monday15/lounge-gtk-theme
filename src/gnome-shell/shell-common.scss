@@ -133,7 +133,7 @@ StScrollBar {
   height: 1.6em;
   color: $fg_color;
 
-  @if $shell == 3.28 {
+  @if $shell <= 3.28 {
     -slider-height: 0.3em;
     -slider-background-color: mix($borders_color, $bg_color, 50%); //background of the trough
     -slider-border-color: mix($borders_color, $bg_color, 50%); //trough border color
@@ -610,7 +610,7 @@ StScrollBar {
 
   .osd-monitor-label { font-size: 3em; }
 
-  @if $shell == 3.28 {
+  @if $shell <= 3.28 {
     .level {
       height: 0.6em;
       border-radius: 0.3em;
