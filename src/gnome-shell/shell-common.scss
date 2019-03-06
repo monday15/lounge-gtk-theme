@@ -1226,13 +1226,22 @@ StScrollBar {
 
   // a little unstructured mess:
 
-  .system-switch-user-submenu-icon.user-icon {
-    icon-size: 20px;
-    padding: 0 2px;
-  }
-  .system-switch-user-submenu-icon.default-icon {
-    icon-size: 16px;
-    padding: 0 4px;
+  .system-switch-user-submenu-icon {
+    @if $shell <= 3.30 {
+      &.user-icon {
+        icon-size: 20px;
+        padding: 0 2px;
+      }
+      &.default-icon {
+        icon-size: 16px;
+        padding: 0 4px;
+      }
+    }
+
+    @if $shell >= 3.32 {
+      icon-size: 16px;
+      padding: 0 4px;
+    }
   }
 
   #appMenu {
