@@ -1007,6 +1007,11 @@ button.color {
   }
 }
 
+list row button {
+  @extend %undecorated_button;
+  border: 1px solid transparentize($borders_color, .3);
+}
+
 
 /*********
  * Links *
