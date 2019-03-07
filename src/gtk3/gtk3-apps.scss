@@ -1,4 +1,4 @@
-  // Chromium & Chrome
+  //// Chromium & Chrome
 
 // Chromium uses treeview background color for adressbar border
 // and colored buttons background
@@ -10,7 +10,7 @@ window.background.chromium {
 }
 
 
-  // Evince & Gnome-documents
+  //// Evince & Gnome-documents
 
 // Cant use light selection with dark text in light theme because evince overrides
 // background color of evview:selected; background color needed for gnome-documents,
@@ -21,7 +21,7 @@ evview.content-view.view:selected  {
 }
 
 
-  // Firefox
+  //// Firefox
 
 #MozillaGtkWidget.background {
   text {
@@ -34,7 +34,7 @@ evview.content-view.view:selected  {
 }
 
 
-  // Geary
+  //// Geary
 
 row.geary-settings entry {
   @if $variant == 'light' {
@@ -45,7 +45,7 @@ row.geary-settings entry {
 }
 
 
-  // Gedit
+  //// Gedit
 
 .open-document-selector {
   &-treeview {
@@ -143,12 +143,12 @@ row.geary-settings entry {
 }
 
 
-  // Gnome-calendar
+  //// Gnome-calendar
 
 headerbar button.sources-button { min-height: 36px; }
 
 
-  // Gnome-todo
+  //// Gnome-todo
 
 .org-gnome-Todo {
   taskrow.activatable.new-task-row button.popup.toggle {
@@ -157,7 +157,7 @@ headerbar button.sources-button { min-height: 36px; }
 }
 
 
-  // Lollypop
+  //// Lollypop
 
 treeview .sidebar.view {
   &:selected {
@@ -173,7 +173,7 @@ treeview .sidebar.view {
 }
 
 
-  // Nautilus
+  //// Nautilus
 
 .nautilus-window {
   &,
@@ -484,7 +484,7 @@ flowboxchild {
 }
 
 
-  // Thunar
+  //// Thunar
 
 .thunar {
   scrolledwindow.standard-view {
