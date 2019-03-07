@@ -53,6 +53,8 @@ style "panelbar" {
 
 style "panelbuttons" {
 
+  GtkButton::inner-border = {1, 1, 1, 1}
+
   xthickness = 4
   ythickness = 0
 
