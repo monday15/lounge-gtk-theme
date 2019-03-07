@@ -2600,19 +2600,23 @@ switch {
 
 
 //selection-mode
-@each $s,$as in ('','-selectionmode'),
-                (':checked', '-checked-selectionmode') {
-  .view.content-view.check#{$s}:not(list),
-  .content-view .tile check#{$s}:not(list) {
-    -gtk-icon-shadow: none;
-    -gtk-icon-source: -gtk-scaled(url("../gtk3-assets/checkbox#{$as}#{$asset_suffix}.png"), url("../gtk3-assets/checkbox#{$as}#{$asset_suffix}@2.png"));
+.view.content-view.check:not(list),
+.content-view .tile check:not(list) {
+  -gtk-icon-shadow: none;
     background-color: transparent;
     min-width: 40px;
     min-height: 40px;
-    background-image: none;
-    transition: none;
+    background-image: -gtk-scaled(url("../gtk3-assets/checkbox-selectionmode#{$asset_suffix}.png"),
+                                  url("../gtk3-assets/checkbox-selectionmode#{$asset_suffix}@2.png"));
+    transition: 200ms;
     box-shadow: none;
     border-width: 0;
+
+    &:checked {
+      background-image: -gtk-scaled(url("../gtk3-assets/checkbox-checked-selectionmode#{$asset_suffix}.png"),
+                                    url("../gtk3-assets/checkbox-checked-selectionmode#{$asset_suffix}@2.png"));
+      -gtk-icon-source: -gtk-scaled(url("../gtk3-assets/check-selectionmode#{$asset_suffix}.png"),
+                                    url("../gtk3-assets/check-selectionmode#{$asset_suffix}@2.png"));
   }
 }
 
