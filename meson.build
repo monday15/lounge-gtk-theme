@@ -81,7 +81,7 @@ endif
 
 if get_option('flatpak-ver') == 'night'
   custom_target('gtk-lounge-night',
-                input: gtk322_scss_dark,
+                input: gtk324_scss_dark,
                 output: 'gtk.css',
                 command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@', ],
                 install: true,
