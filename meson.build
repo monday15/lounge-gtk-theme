@@ -144,17 +144,7 @@ configure_file(input : index_file,
                install_dir: dark_theme_dir)
 
 
-# Generate and install gnome-shell theme
-
-shell_sources = [
-  'shell-colors.scss',
-  'shell-drawing.scss',
-#  'shell-common-shell.scss',
-  'shell-extensions.scss'
-]
-
-
-  # Check Gnome version
+# Check Gnome version
 
 if gnomeshell.found()
   gnome_ver_array = run_command([gnomeshell, '--version']).stdout().split('\n')[0].split(' ')[-1].strip().split('.')
@@ -173,7 +163,16 @@ else
 
 endif
 
-  # Configure scss file for building right version of shell theme
+
+# Generate and install gnome-shell theme
+
+shell_sources = [
+  'shell-colors.scss',
+  'shell-drawing.scss',
+  'shell-extensions.scss'
+]
+
+  # Configure scss file
 
 shell_conf = configuration_data()
 shell_conf.set('gnome_version', gnome_ver)
@@ -206,7 +205,6 @@ else
                configuration : copy)
 
 endif
-
 
   # Generate shell theme
 
@@ -256,7 +254,6 @@ gtk3_version = [
   '3.22',
   '3.24'
 ]
-
 
 foreach ver : gtk3_version
 
@@ -350,7 +347,7 @@ gtk324_scss_dark  = join_paths(meson.build_root(), 'gtk3-dark-3.24.scss')
                 install_dir: gtk324_dir,
                 build_by_default: true)
 
-  # Rename Lounge dark variant css files
+  # Rename Lounge gtk 3.24 css files
   meson.add_install_script('sh', '-c', 'mv $MESON_INSTALL_DESTDIR_PREFIX/'+gtk324_dir+'/gtk-dark324.css $MESON_INSTALL_DESTDIR_PREFIX/'+gtk324_dir+'/gtk-dark.css')
   meson.add_install_script('sh', '-c', 'mv $MESON_INSTALL_DESTDIR_PREFIX/'+gtk324_dir+'/gtk324.css $MESON_INSTALL_DESTDIR_PREFIX/'+gtk324_dir+'/gtk.css')
 
