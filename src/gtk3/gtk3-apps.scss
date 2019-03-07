@@ -182,12 +182,6 @@ treeview .sidebar.view {
     background: $base_color;
   }
 
-  &.devel headerbar {
-    background: linear-gradient(to left, if($variant == 'light', #a5b1bd, darken(#a5b1bd, 35%)) 0%,
-                                         if($variant == 'light', #a5b1bd, darken(#a5b1bd, 35%)) 12%,
-                                         $bg_color 30%);
-  }
-
   // Path bar
   .path-bar { /* undecorate the buttons */
 
