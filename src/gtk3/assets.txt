@@ -42,7 +42,9 @@ slider-vert-scale-has-marks-above-dark
 slider-vert-scale-has-marks-above-hover-dark
 slider-vert-scale-has-marks-above-active-dark
 slider-vert-scale-has-marks-above-insensitive-dark
+check-selectionmode
 checkbox-selectionmode
 checkbox-checked-selectionmode
+check-selectionmode-dark
 checkbox-selectionmode-dark
 checkbox-checked-selectionmode-dark
