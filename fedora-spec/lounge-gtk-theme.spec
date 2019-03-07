@@ -1,9 +1,5 @@
-# Set boostrap to 1 for initial bootstrapping when gtk3 is not yet built
-# Taken from adwaita-icon-theme spec, dont know how it works
-%global bootstrap 0
-
 Name:           lounge-gtk-theme
-Version:        1.14
+Version:        1.15
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Simple and clean gtk theme
@@ -12,7 +8,7 @@ License:        GPLv3+
 URL:            https://github.com/monday15/lounge-gtk-theme
 Source0:        https://github.com/monday15/lounge-gtk-theme/archive/%{version}.tar.gz
 
-BuildArch:	noarch
+BuildArch:	    noarch
 
 BuildRequires:  sassc
 BuildRequires:  meson >= 0.45.0
@@ -21,13 +17,11 @@ BuildRequires:  gnome-shell
 
 BuildRequires:  intltool
 BuildRequires:  librsvg2
-%if ! 0%{bootstrap}
-BuildRequires:  /usr/bin/gtk-encode-symbolic-svg
-%endif
 
-Requires:	gdk-pixbuf2
-Requires:	gtk-murrine-engine
-Recommends:	lounge-aux-icon-theme
+Requires:	    gdk-pixbuf2
+Requires:	    gtk-murrine-engine
+Recommends:	    lounge-aux-icon-theme
+Recommends:	    google-roboto-fonts
 
 %global debug_package %{nil}
 
@@ -69,6 +63,11 @@ Set of auxiliary symbolic icons for Lounge gtk theme
 
 
 %changelog
+* Fri Mar 08 2019 Alex Monday <monday15@gmx.com>
+- Update to 1.15
+- Add Roboto font to recommends
+- Clean spec
+
 * Tue Feb 26 2019 Alex Monday <monday15@gmx.com>
 - Update to 1.14
 
