@@ -378,7 +378,15 @@ install_subdir('src/xfwm4-dark',
 
 # Install assets
 
-install_subdir('src/gnome-shell/assets', install_dir: shell_dir)
+if gnome_ver.version_compare('<=3.30')
+  install_subdir('src/gnome-shell/assets', install_dir: shell_dir)
+else
+  install_subdir('src/gnome-shell/assets', install_dir: shell_dir,
+                 exclude_files: ['close-window.svg', 'close-window-active.svg', 'close-window-hover.svg',
+                                 'calendar-arrow-left.svg', 'calendar-arrow-right.svg'])
+endif
+
+
 install_subdir('src/gtk2/assets', install_dir: gtk2_dir)
 install_subdir('src/gtk3/gtk3-assets', install_dir: theme_dir)
 install_subdir('src/gtk2-dark/assets', install_dir: dark_gtk2_dir)
