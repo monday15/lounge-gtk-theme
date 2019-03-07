@@ -199,7 +199,7 @@ treeview .sidebar.view {
           box-shadow: inset 0 -2px if($variant == 'light', $borders_color, mix($bg_color, $fg_color, 60%));
         }
 
-        @if $nautilus == 3.28 {
+        @if $nautilus <= 3.28 {
           border-color: transparent;
           background-color: transparent;
           box-shadow: none;
@@ -305,7 +305,7 @@ treeview .sidebar.view {
     }
   }
 
-  @if $nautilus == 3.28 {
+  @if $nautilus <= 3.28 {
     .search-bar {
       box-shadow: none;
     }
@@ -437,7 +437,7 @@ $conflict_bg: #fef6b6;
 flowboxchild {
   &:selected { background-color: transparent; }
 
-  @if $nautilus == 3.28 {
+  @if $nautilus <= 3.28 {
     & > widget > box > .icon-background,
     &:selected > widget > box > .icon-background {
       background-color: black;
