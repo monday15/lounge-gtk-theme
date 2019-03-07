@@ -282,13 +282,13 @@ treeview .sidebar.view {
     &:selected {
       &,
       &.has-open-popup {
-        background: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 4%));
+        background: if($variant == 'light', transparentize(black, .9), transparentize(white, .94));
         text-shadow: none;
         -gtk-icon-shadow: none;
       }
 
       &:hover {
-        background: if($variant == 'light', darken($bg_color, 10%), lighten($bg_color, 7%));
+        background: if($variant == 'light', transparentize(black, .87), transparentize(white, .92));
       }
 
       &,
@@ -345,8 +345,6 @@ treeview .sidebar.view {
     }
   }
 }
-
-
 
 // Toolbar
 
