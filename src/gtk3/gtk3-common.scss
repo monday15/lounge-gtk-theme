@@ -2061,9 +2061,6 @@ popover.background {
 
   &:backdrop { box-shadow: none; }
 
-  > stack, 
-  > box { margin: -4px; }
-
   &.scale-popup { padding: 4px 2px; }
 
   > list,
