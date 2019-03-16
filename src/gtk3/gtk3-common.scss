@@ -2554,6 +2554,7 @@ switch {
   &:checked slider {
     border: 1px solid if($variant == 'light', desaturate(darken($selected_bl_color, 25%), 20%),
                                               darken($selected_bl_color, 0%));
+    @if $variant == 'dark' { &:hover { background-image: image(lighten($bg_color, 5%)); }}
   }
 
   &:disabled slider {
@@ -2563,27 +2564,13 @@ switch {
 
   row:selected & {
     @if $variant == 'light' {
-      box-shadow: none;
       border-color: desaturate(darken($selected_bl_color, 50%), 30%);
+      &:not(:checked):not(:disabled) { background-color: darken($dark_fill, 5%); }
 
-      slider:dir(rtl) { border-left-color: $borders_color; }
-      slider:dir(ltr) { border-right-color: $borders_color; }
-
-      slider { &:checked, & { border-color: darken($selected_borders_color, 10%); } }
+      slider { &:checked, & { border-color: desaturate(darken($selected_bl_color, 50%), 30%); }}
     }
     @else {
-      &:checked {
-        border-color: darken($selected_bl_color, 10%); 
-        slider { border-color: darken($selected_bl_color, 10%); }
-      }
-
-//      slider:dir(rtl) { border-left-color: $borders_color; }
-//      slider:dir(ltr) { border-right-color: $borders_color; }
-
-//      slider { 
-//        border-color: white;
-//        &:checked { border-color: darken($selected_bl_color, 10%); }
-//      }
+      &:checked { box-shadow: 0 0 0 1px transparentize(black, .6); }
     }
   }
 }
