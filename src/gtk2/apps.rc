@@ -80,3 +80,23 @@ style "gimp_spin_scale" {
 
 # Disable spin button assets for GimpSpinScale
 class "GimpSpinScale" style "gimp_spin_scale"
+
+
+# Thunar
+
+style "thunar-sidebar" {
+  GtkTreeView::odd_row_color = mix (0.5, @bg_color, @base_color)
+  GtkTreeView::even_row_color = mix (0.5, @bg_color, @base_color)
+
+  base[NORMAL] = mix (0.5, @bg_color, @base_color)
+  base[ACTIVE] = "#dddddd"
+  base[SELECTED] = "#dddddd"
+  base[INSENSITIVE] = mix (0.5, @bg_color, @base_color)
+
+  text[NORMAL] = @text_color
+  text[ACTIVE] = @selected_fg_color
+  text[SELECTED] = @selected_fg_color
+}
+
+widget_class "*ThunarShortcutsView*"                    style "thunar-sidebar"
+widget_class "*ThunarTreeView*"                         style "thunar-sidebar"
