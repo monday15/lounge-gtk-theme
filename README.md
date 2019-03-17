@@ -1,3 +1,6 @@
+## News
+New build option implemented in 1.16 - gtk2-solid-menu, by default it is turned off. Looks bad in Gnome, but provides better expirience for Xfce/Sway users. [Screenshot from Xfce with comparison](https://user-images.githubusercontent.com/42862490/54489243-230b9280-48cc-11e9-9191-7912a4ef328f.png). Installation section updated with option description.
+
 ## Info
 Simple and clean gtk theme, based on original Adwaita.  
 Supported desktop environments: gnome 3.28+, xfce 4.12+.  
@@ -22,11 +25,12 @@ Requirements:
 `meson build` 
  
   Additional options are availiable, to use them add `-D` before option name and set value after: `-Doption='value'`, quotes needed only if value has multiple words separated by space. For example,  
-`meson build -Dshell-font='Liberation Sans' -Dicon-theme=Suru`  
-builds gnome-shell theme with Liberation Sans font and Lounge-aux icon theme that will inherit icons from Suru icon theme.
+`meson build -Dshell-font='Liberation Sans' -Dicon-theme=Suru -Dgtk2-solid-menu=true`  
+builds gnome-shell theme with Liberation Sans font, Lounge-aux icon theme that will inherit icons from Suru icon theme and with gtk2 theme fixes for Xfce desktop.
 
   Option | Description
   --- | ---
+  gtk2-solid-menu | Use solid border for menus in gtk2 theme - highly recommended option for Xfce/Sway users, but looks bad in GNOME; can be true or false (default: false)
   icon-theme | Specify main icon theme for Lounge-aux (default: Adwaita)
   icons | Install Lounge-aux, can be true or false (default: true)
   shell-font | Specify font for gnome-shell theme (default: Roboto)
