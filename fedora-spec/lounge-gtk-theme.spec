@@ -1,5 +1,5 @@
 Name:           lounge-gtk-theme
-Version:        1.15
+Version:        1.16
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Simple and clean gtk theme
@@ -67,69 +67,4 @@ Set of auxiliary symbolic icons for Lounge gtk theme
 - Update to 1.15
 - Add Roboto font to recommends
 - Clean spec
-
-* Tue Feb 26 2019 Alex Monday <monday15@gmx.com>
-- Update to 1.14
-
-* Sat Feb 09 2019 Alex Monday <monday15@gmx.com>
-- Update to 1.13
-
-* Sun Feb 03 2019 Alex Monday <monday15@gmx.com>
-- Update to 1.12
-- Update required version of meson
-
-* Wed Jan 16 2019 Alex Monday <monday15@gmx.com>
-- Update to 1.11
-- Revert required version of meson
-
-* Sun Dec 30 2018 Alex Monday <monday15@gmx.com>
-- Update to 1.10
-- Update required version of meson
-
-* Sat Dec 23 2018 Alex Monday <monday15@gmx.com>
-- Update to 1.9
-- Merge Lounge-aux-icon-theme
-
-* Sat Dec 01 2018 Alex Monday <monday15@gmx.com>
-- Update to 1.8
-
-* Tue Nov 27 2018 Alex Monday <monday15@gmx.com>
-- Update to 1.7
-
-* Tue Nov 13 2018 Alex Monday <monday15@gmx.com>
-- Update to 1.6
-
-* Sat Oct 20 2018 Alex Monday <monday15@gmx.com>
-- Update to 1.5
-
-* Sat Oct 13 2018 Alex Monday <monday15@gmx.com>
-- Update to 1.4
-- Drop gtk dependency
-- Add gnome-shell dependency (required for build)
-
-* Wed Sep 29 2018 Alex Monday <monday15@gmx.com>
-- Update to 1.3
-
-* Wed Sep 29 2018 Alex Monday <monday15@gmx.com>
-- Update to 1.2
-
-* Wed Sep 26 2018 Alex Monday <monday15@gmx.com>
-- Update to 1.1
-
-* Sun Sep 23 2018 Alex Monday <monday15@gmx.com>
-- Update to 1.0
-
-* Tue Sep 18 2018 Alex Monday <monday15@gmx.com>
-- Update to 3.30.3
-
-* Mon Sep 10 2018 Alex Monday <monday15@gmx.com>
-- Prepare to 3.28.2
-- Add sassc dependency
-
-* Sat Sep 08 2018 Alex Monday <monday15@gmx.com>
-- Update to 3.28.1
-- Drop sassc dependency
-
-* Tue Sep 04 2018 Alex Monday <monday15@gmx.com>
-- Initial package
 

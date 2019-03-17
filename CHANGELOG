@@ -1,3 +1,14 @@
+1.16
+====
+
+gtk3/shell: GNOME 3.32 adjustments;
+gtk3: Minor fixes;
+shell: Minor fixes;
+gtk2: New meson option for solid border menus;
+xfce: Added Thunar gtk2 style;
+xfce: Minor fixes.
+
+
 1.15
 ====
 
