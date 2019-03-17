@@ -106,9 +106,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="64"
-     inkscape:cx="12.646268"
-     inkscape:cy="1.2893012"
+     inkscape:zoom="45.254834"
+     inkscape:cx="66.478143"
+     inkscape:cy="-0.12607895"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2912,5 +2912,13 @@
        width="1"
        id="menubar-item-active"
        style="opacity:1;fill:#80b1e1;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       inkscape:label="#rect4938"
+       y="513.125"
+       x="70.5"
+       height="2"
+       width="2"
+       id="menu-border"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#c8c8c8;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>

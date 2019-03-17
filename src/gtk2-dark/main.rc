@@ -84,7 +84,10 @@ style "default" {
   # TODO: find out what this comment means:
   # ( every window is misaligned for the sake of menus ):
   GtkMenuBar::internal-padding = 0
+
+# xfce/sway users, change "0" to "1" in next line, to set proper menu padding
   GtkMenu::horizontal-padding  = 0
+
   GtkMenu::vertical-padding    = 2
   GtkMenu::double-arrows       = 0
   GtkMenuItem::arrow-scaling   = 1
@@ -1414,6 +1417,18 @@ style "menu" {
 
 }
 
+style "menu_border" {
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      file     = "assets/menu-border.png"
+      border   = {1, 1, 1, 1}
+      stretch  = TRUE
+    }
+  }
+}
+
 style "menu_item" {
 
   xthickness = 3
@@ -2403,6 +2418,10 @@ widget_class "*<GtkLabel>"    style "text"
 widget_class "*<GtkCellView>" style "text"
 
 # Menu and menubar items
+
+# xfce/sway users, uncomment next line to enable proper menu border
+#widget_class "*<GtkMenu>*"                                         style "menu_border"
+
 widget_class "*<GtkMenuItem>*"                                     style "menu_item"
 widget_class "*<GtkMenuItem>*<GtkLabel>"                           style "text" 			
 widget_class "*<GtkMenuBar>.<GtkMenuItem>*"                        style "menubar_item"

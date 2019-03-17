@@ -42,6 +42,7 @@ focus
 handle
 handle-horz
 handle-vert
+menu-border
 menu-item-active
 menubar-item-active
 notebook-entry
