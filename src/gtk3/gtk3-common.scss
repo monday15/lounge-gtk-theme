@@ -1931,6 +1931,7 @@ menubar,
   > menuitem {
     min-height: 16px;
     padding: 3px 8px;
+    border-left: 3px solid transparent;
 
     &:hover { //Seems like it :hover even with keyboard focus
       color: $link_color;
