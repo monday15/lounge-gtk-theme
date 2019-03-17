@@ -1,5 +1,6 @@
 option('shell-font', type : 'string', description : 'Shell font name')
 option('icon-theme', type : 'string', description : 'Main icon theme name')
 option('icons', type : 'boolean', value : true)
+option('gtk2-solid-menu', type : 'boolean', value : false, description : 'Gtk2 solid border menus')
 option('flatpak', type : 'boolean', value : false)
 option('flatpak-ver', type : 'string')

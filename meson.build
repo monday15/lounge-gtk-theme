@@ -210,7 +210,7 @@ custom_target('shell-gen',
 
 gtk2_data = [
   'src/gtk2/gtkrc',
-  'src/gtk2/main.rc',
+#  'src/gtk2/main.rc',
   'src/gtk2/apps.rc',
   'src/gtk2/hacks.rc',
   'src/gtk2/xfce.rc',
@@ -218,14 +218,44 @@ gtk2_data = [
 
 dark_gtk2_data = [
   'src/gtk2-dark/gtkrc',
-  'src/gtk2-dark/main.rc',
+#  'src/gtk2-dark/main.rc',
   'src/gtk2-dark/apps.rc',
   'src/gtk2-dark/hacks.rc',
   'src/gtk2-dark/xfce.rc',
 ]
 
+if get_option('gtk2-solid-menu')
+
+  configure_file(input : 'src/gtk2/main.rc',
+                 output : 'main.rc',
+                 capture : true,
+                 command: ['sed', '-e', 's!GtkMenu::horizontal-padding  = 0!GtkMenu::horizontal-padding  = 1!g',
+                                  '-e', 's!#widget_class!widget_class!g', '@INPUT@'],
+                 install_dir: gtk2_dir)
+
+  configure_file(input : 'src/gtk2-dark/main.rc',
+                 output : 'main.rc.dark',
+                 capture : true,
+                 command: ['sed', '-e', 's!GtkMenu::horizontal-padding  = 0!GtkMenu::horizontal-padding  = 1!g',
+                                  '-e', 's!#widget_class!widget_class!g', '@INPUT@'],
+                 install_dir: dark_gtk2_dir)
+else
+
+  configure_file(input : 'src/gtk2/main.rc',
+                 output : 'main.rc',
+                 configuration : copy,
+                 install_dir: gtk2_dir)
+
+  configure_file(input : 'src/gtk2-dark/main.rc',
+                 output : 'main.rc.dark',
+                 configuration : copy,
+                 install_dir: dark_gtk2_dir)
+endif
+
 install_data(gtk2_data, install_dir: gtk2_dir)
 install_data(dark_gtk2_data, install_dir: dark_gtk2_dir)
+
+meson.add_install_script('sh', '-c', 'mv $MESON_INSTALL_DESTDIR_PREFIX/'+dark_gtk2_dir+'/main.rc.dark $MESON_INSTALL_DESTDIR_PREFIX/'+dark_gtk2_dir+'/main.rc')
 
 
 # Generate and install gtk3 theme
