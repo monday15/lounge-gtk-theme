@@ -5,8 +5,8 @@ button_spacing=3
 active_text_color=#c8c8c8
 inactive_text_color=#707272
 
-shadow_delta_x=-3
-shadow_delta_y=-10
-shadow_delta_width=-3
-shadow_delta_height=0 
-shadow_opacity=30
+shadow_delta_x=-12
+shadow_delta_y=-13
+shadow_delta_width=-12
+shadow_delta_height=-12 
+shadow_opacity=70
