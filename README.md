@@ -70,4 +70,4 @@ List of applications (their original css styles used in the theme): [Gedit](http
 ## Screenshots
 ![auxdiff](https://user-images.githubusercontent.com/42862490/50310672-82702700-04c4-11e9-9e3c-e806dcc942eb.png)
 
-![sh1](https://user-images.githubusercontent.com/42862490/51241701-205df100-19a0-11e9-9bd4-8b06807d5619.png)
+![loungescreen](https://user-images.githubusercontent.com/42862490/54494054-1c931000-48f8-11e9-89aa-ef9862b33005.png)
