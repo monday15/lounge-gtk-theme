@@ -1444,7 +1444,7 @@ StScrollBar {
   .search-entry {
     width: 320px;
     padding: 6px 8px;
-    border-color: darken($osd_fg_color,50%);
+    border-color: transparentize($osd_fg_color, .7);
     color: $osd_fg_color;
     &:focus {
       border-color: $selected_bg_color;
