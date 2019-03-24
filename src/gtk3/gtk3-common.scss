@@ -636,7 +636,7 @@ button {
     }
   }
 
- popover.background &:not(.flat) {
+  popover &:not(.flat) {
 
     @include button(normal, $popover_button_color, $selected_fl_color);
     @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
