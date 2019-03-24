@@ -28,7 +28,7 @@ style "theme-panel" {
     glazestyle       = 0
     glow_shade       = 1.0
     highlight_shade  = 1.0
-    roundness        = 1
+    roundness        = 0
     gradient_shades  = {1.0,1.0,1.0,1.0}
     textstyle        = 0
     contrast         = 0.0
