@@ -1,8 +1,8 @@
-Name:           lounge-gtk-theme
+Name:           lounge-gtk-theme-xfce-sway
 Version:        1.16
 Release:        1%{?dist}
 Epoch:          1
-Summary:        Simple and clean gtk theme
+Summary:        Simple and clean gtk theme, version for xfce and sway
 
 License:        GPLv3+
 URL:            https://github.com/monday15/lounge-gtk-theme
@@ -22,30 +22,18 @@ BuildRequires:  librsvg2
 Requires:       gdk-pixbuf2
 Requires:       gtk-murrine-engine
 Recommends:     lounge-aux-icon-theme
-Recommends:     google-roboto-fonts
-Conflicts:      lounge-gtk-theme-xfce-sway
+Conflicts:      lounge-gtk-theme
 
 %global debug_package %{nil}
 
 %description
 %{summary}
 
-
-%package	-n lounge-aux-icon-theme
-
-Summary:	Set of auxiliary symbolic icons for Lounge gtk theme
-
-Requires:	adwaita-icon-theme
-
-%description    -n lounge-aux-icon-theme
-
-Set of auxiliary symbolic icons for Lounge gtk theme
-
 %prep
 %autosetup -p1
 
 %build
-%meson
+%meson -Dicons=false
 %meson_build
 
 %install
@@ -57,16 +45,8 @@ Set of auxiliary symbolic icons for Lounge gtk theme
 %{_datadir}/themes/Lounge/*
 %{_datadir}/themes/Lounge-night/*
 
-%files -n lounge-aux-icon-theme
-%license LICENSE COPYRIGHT
-%doc README.md
-%{_datadir}/icons/Lounge-aux/*
-%ghost %{_datadir}/icons/Lounge-aux/icon-theme.cache
-
 
 %changelog
-* Fri Mar 08 2019 Alex Monday <monday15@gmx.com>
-- Update to 1.15
-- Add Roboto font to recommends
-- Clean spec
+* Mon Mar 25 2019 Alex Monday <monday15@gmx.com>
+- Initial commit
 
