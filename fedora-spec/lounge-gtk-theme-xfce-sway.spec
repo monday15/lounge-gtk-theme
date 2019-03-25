@@ -22,7 +22,7 @@ BuildRequires:  librsvg2
 Requires:       gdk-pixbuf2
 Requires:       gtk-murrine-engine
 Recommends:     lounge-aux-icon-theme
-Obsoletes:      lounge-gtk-theme
+Conflicts:      lounge-gtk-theme
 
 %global debug_package %{nil}
 
