@@ -1,5 +1,5 @@
 Name:           lounge-gtk-theme-xfce-sway
-Version:        1.16.92
+Version:        1.16.93
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Simple and clean gtk theme, version for xfce and sway
@@ -33,7 +33,7 @@ Conflicts:      lounge-gtk-theme
 %autosetup -p1 -n lounge-gtk-theme-%{version}
 
 %build
-%meson -Dicons=false
+%meson -Dicons=false -Dgtk2-solid-menu=true
 %meson_build
 
 %install
