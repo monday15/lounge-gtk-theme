@@ -35,10 +35,8 @@ gtk3_sources = [
 gtk3_version = '3.24'
 gnome_version = '3.32'
 
-gtk3_conf = configuration_data()
-gtk3_conf.set('gtk_version', gtk3_version)
-gtk3_conf.set('gnome_version', gnome_version)
-gtk3_conf.set('nautilus_version', gnome_version)
+copy = configuration_data()
+copy.set('something', 'something')
 
 foreach file : gtk3_sources
   configure_file(input : join_paths('src/gtk3/' + file),
