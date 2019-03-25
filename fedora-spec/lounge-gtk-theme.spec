@@ -8,20 +8,21 @@ License:        GPLv3+
 URL:            https://github.com/monday15/lounge-gtk-theme
 Source0:        https://github.com/monday15/lounge-gtk-theme/archive/%{version}.tar.gz
 
-BuildArch:	    noarch
+BuildArch:      noarch
 
 BuildRequires:  sassc
 BuildRequires:  meson >= 0.45.0
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  gnome-shell
+BuildRequires:  gtk3
 
 BuildRequires:  intltool
 BuildRequires:  librsvg2
 
-Requires:	    gdk-pixbuf2
-Requires:	    gtk-murrine-engine
-Recommends:	    lounge-aux-icon-theme
-Recommends:	    google-roboto-fonts
+Requires:       gdk-pixbuf2
+Requires:       gtk-murrine-engine
+Recommends:     lounge-aux-icon-theme
+Recommends:     google-roboto-fonts
 
 %global debug_package %{nil}
 
