@@ -1,3 +1,7 @@
+## Attention!
+
+**Updating from version ≤ 1.16 to version ≥ 1.17 (will be released soon) requires comlete removal of theme files (folders `/usr/share/themes/Lounge` and `/usr/share/themes/Lounge-night`, icons folder doesn't require removal).**
+
 ## News
 New build option implemented in 1.16 - gtk2-solid-menu, by default it is turned off. Looks bad in Gnome, but provides better expirience for Xfce/Sway users. [Screenshot from Xfce with comparison](https://user-images.githubusercontent.com/42862490/54489243-230b9280-48cc-11e9-9191-7912a4ef328f.png). Installation section updated with option description.
 
@@ -15,10 +19,10 @@ Fedora users can install theme via copr:
 
 
 Requirements:  
+`gtk3` (3.22+)   
 `meson` (0.45+)  
 `sassc`  
 `gtk-murrine-engine` (`gtk2-engines-murrine` for debian/ubuntu).
-> `gtk-murrine-engine` only needed for xfce theme and Lounge-night gtk2 theme.
 
 - Download and decompress source tarball (or clone repository);
 - Build theme:  
