@@ -62,11 +62,9 @@ row.geary-settings entry {
     font-size: smaller;
   }
 
-  @if $gnome >= 3.32 {
-    &-match {
-      color: $fg_color;
-      background-color: transparentize($warning_color, 0.6);
-    }
+  &-match {
+    color: $fg_color;
+    background-color: transparentize($warning_color, 0.6);
   }
 }
 
