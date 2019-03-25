@@ -1,3 +1,14 @@
+1.17
+====
+
+general: Build optimized, now creates single gtk-3.0 folder.
+icons: Restyled maximize/restore icons;
+xfwm4: Restyled maximize/restore icons;
+shell: One fix;
+gtk3: Several fixes;
+xfce: Several fixes.
+
+
 1.16
 ====
 
