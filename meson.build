@@ -1,5 +1,5 @@
 project('lounge-gtk-theme',
-        version: '1.16',
+        version: '1.16.91',
         meson_version: '>= 0.45',
         license : ['GPL3+'],
         default_options: ['prefix=/usr'])
@@ -314,7 +314,6 @@ else
                  exclude_files: ['close-window.svg', 'close-window-active.svg', 'close-window-hover.svg',
                                  'calendar-arrow-left.svg', 'calendar-arrow-right.svg'])
 endif
-
 
 install_subdir('src/gtk2/assets', install_dir: gtk2_dir)
 install_subdir('src/gtk2-dark/assets', install_dir: dark_gtk2_dir)
