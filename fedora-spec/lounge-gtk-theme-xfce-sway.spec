@@ -1,5 +1,5 @@
 Name:           lounge-gtk-theme-xfce-sway
-Version:        1.16.93
+Version:        1.16.94
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Simple and clean gtk theme, version for xfce and sway
@@ -22,7 +22,7 @@ BuildRequires:  librsvg2
 Requires:       gdk-pixbuf2
 Requires:       gtk-murrine-engine
 Recommends:     lounge-aux-icon-theme
-Conflicts:      lounge-gtk-theme
+Obsoletes:      lounge-gtk-theme
 
 %global debug_package %{nil}
 

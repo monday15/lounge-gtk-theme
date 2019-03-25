@@ -1,5 +1,5 @@
 Name:           lounge-gtk-theme
-Version:        1.16.91
+Version:        1.16.94
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Simple and clean gtk theme
@@ -23,7 +23,7 @@ Requires:       gdk-pixbuf2
 Requires:       gtk-murrine-engine
 Recommends:     lounge-aux-icon-theme
 Recommends:     google-roboto-fonts
-Conflicts:      lounge-gtk-theme-xfce-sway
+Obsoletes:      lounge-gtk-theme-xfce-sway
 
 %global debug_package %{nil}
 
