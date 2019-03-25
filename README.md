@@ -3,7 +3,7 @@
 **Updating from version ≤ 1.16 to version ≥ 1.17 (will be released soon) requires comlete removal of theme files (folders `/usr/share/themes/Lounge` and `/usr/share/themes/Lounge-night`, icons folder doesn't require removal).**
 
 ## News
-New build option implemented in 1.16 - gtk2-solid-menu, by default it is turned off. Looks bad in Gnome, but provides better expirience for Xfce/Sway users. [Screenshot from Xfce with comparison](https://user-images.githubusercontent.com/42862490/54489243-230b9280-48cc-11e9-9191-7912a4ef328f.png). Installation section updated with option description.
+New build option implemented in 1.16 - gtk2-solid-menu, by default it is turned off. Looks bad in Gnome, but provides better expirience for Xfce/Sway users. [Screenshot from Xfce with comparison](https://user-images.githubusercontent.com/42862490/54489243-230b9280-48cc-11e9-9191-7912a4ef328f.png). Installation section updated with option description. There is an additional package for Fedora xfce/sway users.
 
 ## Info
 Simple and clean gtk theme, based on original Adwaita.  
@@ -13,7 +13,9 @@ Theme also provides Lounge-aux icon theme - auxiliary set of symbolic icons for 
 ## Installation
 Fedora users can install theme via copr:  
 `sudo dnf copr enable monday15/lounge`  
-`sudo dnf install lounge-gtk-theme`
+`sudo dnf install lounge-gtk-theme`  
+or  
+`sudo dnf install lounge-gtk-theme-xfce-sway` for xfce/sway users.
 
 > Fedora users will get Lounge-aux as a weak dependency with Adwaita as a main icon theme, for other icon themes - build theme with custom icon-theme option.
 
