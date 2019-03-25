@@ -4,7 +4,7 @@ INKSCAPE="/usr/bin/inkscape"
 OPTIPNG="/usr/bin/optipng"
 
 SRC_FILE="assets.svg"
-ASSETS_DIR="gtk3-assets"
+ASSETS_DIR="assets"
 INDEX="assets.txt"
 
 for i in `cat $INDEX | grep -v '^#'`
