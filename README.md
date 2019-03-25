@@ -1,6 +1,6 @@
 ## Attention!
 
-**Updating from version ≤ 1.16 to version ≥ 1.17 (will be released soon) requires comlete removal of theme files (folders `/usr/share/themes/Lounge` and `/usr/share/themes/Lounge-night`, icons folder doesn't require removal).**
+**Updating from version ≤ 1.16 to version ≥ 1.17 requires comlete removal of theme files before installation (folders `/usr/share/themes/Lounge` and `/usr/share/themes/Lounge-night`, icons folder doesn't require removal).**
 
 ## News
 New build option implemented in 1.16 - gtk2-solid-menu, by default it is turned off. Looks bad in Gnome, but provides better expirience for Xfce/Sway users. [Screenshot from Xfce with comparison](https://user-images.githubusercontent.com/42862490/54489243-230b9280-48cc-11e9-9191-7912a4ef328f.png). Installation section updated with option description. There is an additional package for Fedora xfce/sway users.
@@ -76,4 +76,4 @@ List of applications (their original css styles used in the theme): [Gedit](http
 ## Screenshots
 ![auxdiff](https://user-images.githubusercontent.com/42862490/50310672-82702700-04c4-11e9-9e3c-e806dcc942eb.png)
 
-![loungescreen](https://user-images.githubusercontent.com/42862490/54494054-1c931000-48f8-11e9-89aa-ef9862b33005.png)
+![lounge-screenshot](https://user-images.githubusercontent.com/42862490/54952185-26a3b700-4f67-11e9-8a4c-2b761ee5dd17.png)
