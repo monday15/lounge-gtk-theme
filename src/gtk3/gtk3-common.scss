@@ -1442,12 +1442,6 @@ headerbar {
       @include headerbar_fill($selected_bl_color, $_hc);
     }
 
-    &:backdrop {
-      background-color: if($variant == 'light', darken($backdrop_selected_bl_color, 5%), $backdrop_selected_bl_color);
-      background-image: none;
-      box-shadow: inset 0 1px mix($top_hilight, $selected_bl_color, 60%);
-    }
-
     .subtitle:link { @extend *:link:selected;  }
 
     button {
