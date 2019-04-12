@@ -97,21 +97,11 @@ configure_file(input : join_paths('src/gnome-shell/' + file),
                configuration : copy)
 endforeach
 
-  # Select font
-if get_option('shell-font') != ''
-
-  configure_file(input :  join_paths('src/gnome-shell/shell-common.scss'),
-                 output : 'shell-common.scss',
-                 capture : true,
-                 command: ['sed', 's#$font-family: Roboto#$font-family: ' + get_option('shell-font') + '#g', '@INPUT@'])
-
-else 
-
-  configure_file(input : join_paths('src/gnome-shell/shell-common.scss'),
+  # Set font
+configure_file(input :  join_paths('src/gnome-shell/shell-common.scss'),
                output : 'shell-common.scss',
-               configuration : copy)
-
-endif
+               capture : true,
+               command: ['sed', 's#$font-family: Roboto#$font-family: ' + get_option('shell-font') + '#g', '@INPUT@'])
 
   # Generate shell theme
 custom_target('shell-gen',

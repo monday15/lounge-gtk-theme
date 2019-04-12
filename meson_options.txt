@@ -1,4 +1,4 @@
-option('shell-font', type : 'string',
+option('shell-font', type : 'string', value: 'Roboto',
   description : 'Set font name for gnome-shell theme')
 
 option('icons', type : 'boolean', value : true,
