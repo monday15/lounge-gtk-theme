@@ -660,7 +660,7 @@ button {
 
   // Suggested and Destructive Action buttons
   @each $b_type, $b_color in (suggested-action, if($variant == 'light', lighten($selected_bg_color, 0%), $selected_bg_color)),
-                             (destructive-action, $destructive_color) {
+                             (destructive-action, if($variant == 'light', lighten($error_color, 5%), $error_color)) {
     &.#{$b_type}, popover.background &.#{$b_type} {
       @include button(normal, $b_color, $selected_fg_color);
 
