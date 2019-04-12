@@ -8,72 +8,7 @@ project('lounge-gtk-theme',
 
 sassc = find_program('sassc')
 gnomeshell = find_program('gnome-shell', required: false)
-# gtk3 is also a dependency, located below fltapak build
-
-
-##### Flatpak build
-
-if get_option('flatpak')
-
-if get_option('flatpak-ver') == 'day'
-  theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge')
-else
-  theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-night')
-endif
-
-gtk3_dir = join_paths(theme_dir, 'gtk-3.0')
-
-gtk3_sources = [
-  'gtk3-colors.scss',
-  'gtk3-colors-public.scss',
-  'gtk3-drawing.scss',
-  'gtk3-common.scss',
-  'gtk3-apps.scss',
-  'gtk3-xfce.scss'
-]
-
-gtk3_version = '3.24'
-gnome_version = '3.32'
-
-copy = configuration_data()
-copy.set('something', 'something')
-
-foreach file : gtk3_sources
-  configure_file(input : join_paths('src/gtk3/' + file),
-                 output : file,
-                 configuration : copy)
-endforeach
-
-if get_option('flatpak-ver') == 'day'
-  gtk3_variants = [['light', ''],
-                   ['dark',  '-dark']]
-else
-  gtk3_variants = [['dark', '']]
-endif
-
-foreach variant : gtk3_variants
-  gtk3_conf = configuration_data()
-  gtk3_conf.set('gtk_variant', variant[0])
-  gtk3_conf.set('gtk_version', gtk3_version)
-  gtk3_conf.set('gnome_version', gnome_version)
-  gtk3_conf.set('nautilus_version', gnome_version)
-
-  gtk3_scss = configure_file(input : 'src/gtk3/gtk3.scss',
-                             output : 'gtk3' + variant[1] + '.scss',
-                             configuration : gtk3_conf)
-
-  custom_target('generate css for ' + variant[0] + ' theme',
-                input: gtk3_scss,
-                output: 'gtk' + variant[1] + '.css',
-                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@' ],
-                install: true,
-                install_dir: gtk3_dir, 
-                build_by_default: true)
-endforeach
-
-install_subdir('src/gtk3/assets', install_dir: gtk3_dir)
-
-endif
+# gtk3 is also a dependency, located below, becuase it is not required for fltapak build
 
 
 ##### Regular build
@@ -324,5 +259,70 @@ install_subdir('src/gtk3/assets', install_dir: dark_gtk3_dir)
 if get_option('icons')
   subdir('src/aux-icons')
 endif
+
+endif
+
+
+##### Flatpak build
+
+if get_option('flatpak')
+
+if get_option('flatpak-ver') == 'day'
+  theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge')
+else
+  theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-night')
+endif
+
+gtk3_dir = join_paths(theme_dir, 'gtk-3.0')
+
+gtk3_sources = [
+  'gtk3-colors.scss',
+  'gtk3-colors-public.scss',
+  'gtk3-drawing.scss',
+  'gtk3-common.scss',
+  'gtk3-apps.scss',
+  'gtk3-xfce.scss'
+]
+
+gtk3_version = '3.24'
+gnome_version = '3.32'
+
+copy = configuration_data()
+copy.set('something', 'something')
+
+foreach file : gtk3_sources
+  configure_file(input : join_paths('src/gtk3/' + file),
+                 output : file,
+                 configuration : copy)
+endforeach
+
+if get_option('flatpak-ver') == 'day'
+  gtk3_variants = [['light', ''],
+                   ['dark',  '-dark']]
+else
+  gtk3_variants = [['dark', '']]
+endif
+
+foreach variant : gtk3_variants
+  gtk3_conf = configuration_data()
+  gtk3_conf.set('gtk_variant', variant[0])
+  gtk3_conf.set('gtk_version', gtk3_version)
+  gtk3_conf.set('gnome_version', gnome_version)
+  gtk3_conf.set('nautilus_version', gnome_version)
+
+  gtk3_scss = configure_file(input : 'src/gtk3/gtk3.scss',
+                             output : 'gtk3' + variant[1] + '.scss',
+                             configuration : gtk3_conf)
+
+  custom_target('generate css for ' + variant[0] + ' theme',
+                input: gtk3_scss,
+                output: 'gtk' + variant[1] + '.css',
+                command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@' ],
+                install: true,
+                install_dir: gtk3_dir, 
+                build_by_default: true)
+endforeach
+
+install_subdir('src/gtk3/assets', install_dir: gtk3_dir)
 
 endif
