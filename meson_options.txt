@@ -1,6 +1,17 @@
-option('shell-font', type : 'string', description : 'Shell font name')
-option('icon-theme', type : 'string', description : 'Main icon theme name')
-option('icons', type : 'boolean', value : true)
-option('gtk2-solid-menu', type : 'boolean', value : false, description : 'Gtk2 solid border menus')
-option('flatpak', type : 'boolean', value : false)
-option('flatpak-ver', type : 'string')
+option('shell-font', type : 'string',
+  description : 'Set font name for gnome-shell theme')
+
+option('icons', type : 'boolean', value : true,
+  description : 'Install auxiliary icon theme')
+
+option('icon-theme', type : 'string',
+  description : 'Set main icon theme name')
+
+option('gtk2-solid-menu', type : 'boolean', value : false,
+  description : 'Solid borders for gtk2 menus')
+
+option('flatpak', type : 'boolean', value : false,
+  description : 'Build theme for flatpak package')
+
+option('flatpak-variant', type : 'string',
+  description : 'Flatpak variant (light/dark)')

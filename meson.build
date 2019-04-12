@@ -267,7 +267,7 @@ endif
 
 if get_option('flatpak')
 
-if get_option('flatpak-ver') == 'day'
+if get_option('flatpak-variant') == 'light'
   theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge')
 else
   theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-night')
@@ -296,7 +296,7 @@ foreach file : gtk3_sources
                  configuration : copy)
 endforeach
 
-if get_option('flatpak-ver') == 'day'
+if get_option('flatpak-variant') == 'light'
   gtk3_variants = [['light', ''],
                    ['dark',  '-dark']]
 else
