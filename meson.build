@@ -73,10 +73,12 @@ endforeach
 
 install_subdir('src/gtk3/assets', install_dir: gtk3_dir)
 
-else
+endif
 
 
 ##### Regular build
+
+if get_option('flatpak') == false
 
 # Installation directories
 
