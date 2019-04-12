@@ -1485,11 +1485,11 @@ headerbar {
         }
 
         &:backdrop {
-          @include button(backdrop, if($variant == 'light', $selected_bg_color, darken($selected_bg_color, 5%)), $selected_fg_color);
+          color: if($variant == 'light', darken($selected_fg_color, 10%), $backdrop_fg_color);
         }
 
         &:backdrop:disabled {
-          @include button(backdrop-insensitive, if($variant == 'light', $selected_bg_color, darken($selected_bg_color, 5%)), $selected_fg_color);
+          color: $insensitive_fg_color;
         }
       }
     }
