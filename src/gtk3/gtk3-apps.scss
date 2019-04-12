@@ -341,8 +341,9 @@ treeview .sidebar.view {
       &:not(:checked) { image { opacity: 0.8; }} // dim the icon when not checked
 
       &.text-button.image-button {
-        // add padding before home/computer icon
+        // add padding before home/computer icon, reduce padding between icon and label
         image:first-child { padding-left: 8px; }
+        label:not(:first-child) { padding-left: 2px; }
       }
     }
   }
