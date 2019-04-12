@@ -2218,7 +2218,7 @@ notebook {
       }
 
       &:backdrop {
-        color: mix($backdrop_fg_color, $backdrop_bg_color, 60%);
+        color: mix($backdrop_fg_color, $bg_color, 60%);
         &:checked { color: $backdrop_fg_color; }
       }
 
@@ -4037,7 +4037,7 @@ decoration {
     border-radius: 0;
     box-shadow: inset 0 0 0 3px $headerbar_color, inset 0 1px $top_hilight;
 
-    &:backdrop { box-shadow: inset 0 0 0 3px $backdrop_bg_color, inset 0 1px $top_hilight; }
+    &:backdrop { box-shadow: inset 0 0 0 3px $bg_color, inset 0 1px $top_hilight; }
   }
 }
 
