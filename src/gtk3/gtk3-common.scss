@@ -690,7 +690,7 @@ button {
         @include button(insensitive);
 
         &:active,
-        &:checked { @include button(insensitive-active, $b_color, $backdrop_insensitive_color); }
+        &:checked { @include button(insensitive-active, $b_color, $insensitive_fg_color); }
       }
 
       .osd & {

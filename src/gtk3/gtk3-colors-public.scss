@@ -67,7 +67,7 @@ text/foreground color of selections on backdrop windows */
 
 /*
 insensitive color on backdrop windows*/
-@define-color unfocused_insensitive_color #{"" + $backdrop_insensitive_color};
+@define-color unfocused_insensitive_color #{"" + $insensitive_fg_color};
 
 /*
 widgets main borders color */
