@@ -33,7 +33,6 @@ $popover_hover_color: $selected_bl_color;
 $popover_button_color: if($variant == 'light', darken($menu_color, 2%), lighten($popover_bg_color, 4%));
 
 $scrollbar_bg_color: if($variant == 'light', mix($bg_color, $fg_color, 95%), mix($base_color, $bg_color, 50%));
-$scrollbar_borders_color: if($variant == 'light', darken($bg_color, 40%), $borders_color);
 $scrollbar_slider_color: mix($fg_color, $bg_color, 35%);
 $scrollbar_slider_hover_color: mix($fg_color, $bg_color, 45%);
 $scrollbar_slider_active_color: $scrollbar_slider_hover_color;
