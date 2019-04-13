@@ -1111,7 +1111,7 @@ spinbutton {
 
       &:hover {
         color: $fg_color;
-        background-color: $base_hover_color;
+        background-color: transparentize($fg_color, 0.95);
       }
 
       &:disabled {
