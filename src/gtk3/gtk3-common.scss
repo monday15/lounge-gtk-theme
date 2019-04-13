@@ -1452,7 +1452,7 @@ headerbar {
       &:hover { @include button(hover, if($variant == 'light', darken($selected_bl_color, 5%), $selected_bl_color), $selected_fl_color); }
 
       &:active,
-      &:checked { @include button(active, if($variant == 'light', darken($selected_bl_color, 5%), $selected_bl_color), $selected_fl_color); }
+      &:checked { @include button(active, if($variant == 'light', darken($selected_bl_color, 5%), darken($selected_bl_color, 2%)), $selected_fl_color); }
 
       &.flat { &:backdrop, &:disabled, &:backdrop:disabled { @include button(undecorated); }}
 
@@ -1464,18 +1464,18 @@ headerbar {
       }
 
       &.suggested-action {
-         @include button(normal, if($variant == 'light', $selected_bg_color, darken($selected_bg_color, 5%)), $selected_fg_color);
+         @include button(normal, if($variant == 'light', $selected_bg_color, darken($selected_bg_color, 10%)), $selected_fg_color);
 
         &:hover {
-          @include button(hover, if($variant == 'light', $selected_bg_color, darken($selected_bg_color, 5%)), $selected_fg_color);
+          @include button(hover, if($variant == 'light', $selected_bg_color, darken($selected_bg_color, 10%)), $selected_fg_color);
         }
 
         &:active {
-          @include button(active, if($variant == 'light', $selected_bg_color, darken($selected_bg_color, 5%)), $selected_fg_color);
+          @include button(active, if($variant == 'light', $selected_bg_color, darken($selected_bg_color, 10%)), $selected_fg_color);
         }
 
         &:disabled {
-          @include button(insensitive, if($variant == 'light', $selected_bg_color, darken($selected_bg_color, 5%)), $selected_fg_color);
+          @include button(insensitive, if($variant == 'light', $selected_bg_color, darken($selected_bg_color, 10%)), $selected_fg_color);
         }
 
         &:backdrop {
