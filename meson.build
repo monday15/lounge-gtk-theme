@@ -187,13 +187,8 @@ foreach variant : gtk3_variants
 
     # Ubuntu 18.10 hack
     # Replace nautilus variable in scss files with gnome after Ubuntu 19.04 release
-    check_nautilus = find_program('nautilus', required: false)
-    if check_nautilus.found()
-      nautilus_version_array = run_command([check_nautilus, '--version']).stdout().split('\n')[0].split(' ')[-1].strip().split('.')
-      nautilus_version = '.'.join([ nautilus_version_array[0], nautilus_version_array[1] ])
-      message ('nautilus version is ' + nautilus_version)
-
-      gtk3_conf.set('nautilus_version', nautilus_version)
+    if get_option('ubuntu1810')
+      gtk3_conf.set('nautilus_version', '3.28')
     else
       gtk3_conf.set('nautilus_version', gnome_version)
     endif

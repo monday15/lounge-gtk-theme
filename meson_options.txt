@@ -15,3 +15,6 @@ option('flatpak', type : 'boolean', value : false,
 
 option('flatpak-variant', type : 'string',
   description : 'Flatpak variant (light/dark)')
+
+option('ubuntu1810', type : 'boolean', value : false,
+  description : 'Hack for proper nautilus styling in ubuntu 18.10')
