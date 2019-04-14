@@ -1,7 +1,6 @@
 /.gitignore export-ignore
 /.gitattributes export-ignore
 /fedora-spec export-ignore
-/screenshots export-ignore
 
 /src/gtk2/render-assets.sh export-ignore
 /src/gtk2/assets.svg export-ignore
@@ -24,3 +23,11 @@
 /src/aux-icons/aux-iconslist export-ignore
 /src/aux-icons/aux-icons-symbolic.svg export-ignore
 /src/aux-icons/render-icons.sh export-ignore
+
+/src/xfwm4/xfwm4-assets.svg export-ignore
+/src/xfwm4/xfwm4-assets.txt export-ignore
+/src/xfwm4/xfwm4-render-assets.sh export-ignore
+
+/src/xfwm4-dark/xfwm4-assets.svg export-ignore
+/src/xfwm4-dark/xfwm4-assets.txt export-ignore
+/src/xfwm4-dark/xfwm4-render-assets.sh export-ignore

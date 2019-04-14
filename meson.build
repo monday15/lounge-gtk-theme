@@ -220,7 +220,6 @@ xfwm_variants = [['', xfwm_dir],
 foreach variant : xfwm_variants
   install_subdir('src/xfwm4' + variant[0],
                  install_dir: variant[1],
-                 exclude_files: ['xfwm4-assets.txt', 'xfwm4-assets.svg', 'xfwm4-render-assets.sh'],
                  strip_directory: true)
 endforeach
 
