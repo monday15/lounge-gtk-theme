@@ -1,5 +1,5 @@
 project('lounge-gtk-theme',
-        version: '1.17',
+        version: '1.18',
         meson_version: '>= 0.45',
         license : ['GPL3+'],
         default_options: ['prefix=/usr'])
