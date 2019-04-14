@@ -1,9 +1,5 @@
-## Attention!
-
-**Updating from version ≤ 1.16 to version ≥ 1.17 requires comlete removal of theme files before installation (folders `/usr/share/themes/Lounge` and `/usr/share/themes/Lounge-night`, icons folder doesn't require removal).**
-
 ## News
-New build option implemented in 1.16 - gtk2-solid-menu, by default it is turned off. Looks bad in Gnome, but provides better expirience for Xfce/Sway users. [Screenshot from Xfce with comparison](https://user-images.githubusercontent.com/42862490/54489243-230b9280-48cc-11e9-9191-7912a4ef328f.png). Installation section updated with option description. There is an additional package for Fedora xfce/sway users.
+Ubuntu PPA availiable! Check installation section.
 
 ## Info
 Simple and clean gtk theme, based on original Adwaita.  
@@ -11,14 +7,23 @@ Supported desktop environments: gnome 3.28+, xfce 4.12+.
 Theme also provides Lounge-aux icon theme - auxiliary set of symbolic icons for better user experience.
  
 ## Installation
-Fedora users can install theme via copr:  
+**Fedora** users can install theme via copr:  
 `sudo dnf copr enable monday15/lounge`  
 `sudo dnf install lounge-gtk-theme`  
 or  
 `sudo dnf install lounge-gtk-theme-xfce-sway` for xfce/sway users.
 
-> Fedora users will get Lounge-aux as a weak dependency with Adwaita as a main icon theme, for other icon themes - build theme with custom icon-theme option.
+> Fedora users will get Lounge-aux-icon-theme as a weak dependency with Adwaita as a main icon theme, for other icon themes - build theme with custom icon-theme option.
+---
 
+**Ubuntu** (18.04+) users can install theme via ppa:  
+`sudo add-apt-repository ppa:monday15/lounge`  
+`sudo apt install lounge-gtk-theme`  
+or  
+`sudo apt install lounge-gtk-theme-xfce-sway` for xfce/sway users.
+
+> Ubuntu users will get Lounge-aux-icon-theme as a weak dependency with 'Yaru, Humanity, Adwaita' as a main icon theme (if Yaru is not installed Lounge-aux will inherit Humanity, etc), for other icon themes - build theme with custom icon-theme option.
+---
 
 Requirements:  
 `gtk3` (3.22+)   
@@ -36,7 +41,7 @@ builds gnome-shell theme with Liberation Sans font, Lounge-aux icon theme that w
 
   Option | Description
   --- | ---
-  gtk2-solid-menu | Use solid border for menus in gtk2 theme - highly recommended option for Xfce/Sway users, but looks bad in GNOME; can be true or false (default: false)
+  gtk2-solid-menu | Use solid border for menus in gtk2 theme - highly recommended option for Xfce/Sway users, but looks bad in GNOME. [Xfce screenshot with comparison](https://user-images.githubusercontent.com/42862490/54489243-230b9280-48cc-11e9-9191-7912a4ef328f.png), can be true or false (default: false)
   icon-theme | Specify main icon theme for Lounge-aux (default: Adwaita)
   icons | Install Lounge-aux, can be true or false (default: true)
   shell-font | Specify font for gnome-shell theme (default: Roboto)
@@ -51,7 +56,9 @@ Flatpak apps support available via Flathub:
 `flatpak install flathub org.gtk.Gtk3theme.Lounge-night`
 
 ## Updating
-Use regular installation instructions, old files will be overwritten with a new ones.
+**Attention! Updating from version ≤ 1.16 to version ≥ 1.17 requires comlete removal of theme files before installation** (folders `/usr/share/themes/Lounge` and `/usr/share/themes/Lounge-night`, icons folder doesn't require removal).
+
+In other cases, use regular installation instructions, old files will be overwritten with a new ones.
 
 ## Removing
 Remove installation folders:  
@@ -70,7 +77,7 @@ Report bugs to [issues page](https://github.com/monday15/lounge-gtk-theme/issues
 Allan Day, dcbaker, Emmanuele Bassi, horst3180, nana-4, NicoHood, Sam Hewitt, Thibault Saunier, tista500, vinceliuice, ZMA, all people in copyright file, Gnome developers and maintainers, Fedora developers and maintainers, Greybird theme developers, Meson developers, Yaru theme developers.
 
 ## Links
-[Absolute gtk2 theme](https://www.gnome-look.org/p/1080258/), [Adapta theme](https://github.com/adapta-project/adapta-gtk-theme), [Adwaita gtk2 theme](https://gitlab.gnome.org/GNOME/gnome-themes-extra), [Adwaita gtk3 theme](https://gitlab.gnome.org/GNOME/gtk), [gnome-shell theme](https://gitlab.gnome.org/GNOME/gnome-shell), [Materia theme](https://github.com/nana-4/materia-theme), [Yaru theme](https://github.com/ubuntu/yaru).  
+[Adwaita gtk2 theme](https://gitlab.gnome.org/GNOME/gnome-themes-extra), [Adwaita gtk3 theme](https://gitlab.gnome.org/GNOME/gtk), [gnome-shell theme](https://gitlab.gnome.org/GNOME/gnome-shell), [Materia theme](https://github.com/nana-4/materia-theme), [Yaru theme](https://github.com/ubuntu/yaru).  
 List of applications (their original css styles used in the theme): [Gedit](https://gitlab.gnome.org/GNOME/gedit), [Nautilus](https://gitlab.gnome.org/GNOME/nautilus).
 
 ## Screenshots
