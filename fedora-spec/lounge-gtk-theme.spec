@@ -1,5 +1,5 @@
 Name:           lounge-gtk-theme
-Version:        1.18
+Version:        1.19
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Simple and clean gtk theme

@@ -1,3 +1,12 @@
+1.19
+====
+
+shell: Fixed bug #10;
+gtk2: Tabs style updated to match gtk3 theme;
+gtk3: Added Epiphany style;
+gtk3: Several fixes.
+
+
 1.18
 ====
 
