@@ -33,8 +33,6 @@
 //
 // $t: entry type
 // $fc: focus color
-// $edge: set to none to not draw the bottom edge or specify a color to not
-//        use the default one
 //
 // possible $t values:
 // normal, focus, insensitive, backdrop, backdrop-insensitive, osd, osd-focus, osd-backdrop;
@@ -156,8 +154,6 @@
 // $t:    button type,
 // $c:    base button color for colored* types
 // $tc:   optional text color for colored* types
-// $edge: set to none to not draw the bottom edge or specify a color to not
-//        use the default one
 //
 // possible $t values:
 // normal, hover, active, insensitive, insensitive-active,
