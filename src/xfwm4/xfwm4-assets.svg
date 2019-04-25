@@ -23,9 +23,9 @@
        inkscape:collect="always"
        id="linearGradient7056">
       <stop
-         style="stop-color:#848484;stop-opacity:1"
          offset="0"
-         id="stop7052" />
+         id="stop7052"
+         style="stop-color:#919191;stop-opacity:1" />
       <stop
          style="stop-color:#aaaaaa;stop-opacity:1"
          offset="1"
@@ -120,9 +120,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="66.608175"
-     inkscape:cy="176.82513"
+     inkscape:zoom="4"
+     inkscape:cx="45.302479"
+     inkscape:cy="281.53145"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
