@@ -2509,12 +2509,12 @@ switch {
     -gtk-outline-radius: 9999px;
 
 
-    @include button(normal-alt, $edge: $shadow_color);
+    @include button(normal-alt);
   }
 
   image { color: transparent; } // hide i / o
 
-  &:hover slider { @include button(hover-alt, $edge: $shadow_color); }
+  &:hover slider { @include button(hover-alt); }
 
   &:checked slider {
     border: 1px solid if($variant == 'light', desaturate(darken($selected_bl_color, 25%), 20%),
@@ -2604,11 +2604,11 @@ radio {
   border: 1px solid;
   -gtk-icon-source: none;
 
-  @include button(normal-alt, $edge: none);
+  @include button(normal-alt);
   box-shadow: none;
 
   &:hover {
-    @include button(hover-alt, $edge: none); box-shadow: none;
+    @include button(hover-alt); box-shadow: none;
     @if $variant == 'dark' { background: image(lighten($bg_color, 5.5%)); }
   }
   &:active { @include button(active); box-shadow: none; }
@@ -2835,14 +2835,14 @@ scale {
   }
 
   slider {
-    @include button(normal-alt, $edge: $shadow_color);
+    @include button(normal-alt);
 
     border: 1px solid $alt_borders_color;
     border-radius: 100%;
     transition: $button_transition;
     transition-property: background, border, box-shadow;
 
-    &:hover { @include button(hover-alt, $edge: $shadow_color); }
+    &:hover { @include button(hover-alt); }
 
     &:active { border-color: if($variant == 'light', $selected_borders_color, $alt_borders_color); }
 
@@ -3744,17 +3744,17 @@ infobar {
 
     button {
       // FIXME: extend selection mode buttons
-      @include button(normal, $infobar_color, $selected_fl_color, none);
+      @include button(normal, $infobar_color, $selected_fl_color);
       border-color: _border_color(desaturate($infobar_color, 10%));
 
-      &:hover { @include button(hover, $infobar_color, $selected_fl_color, none);
+      &:hover { @include button(hover, $infobar_color, $selected_fl_color);
                 border-color: _border_color(desaturate($infobar_color, 10%)); }
 
       &:active,
-      &:checked { @include button(active, $infobar_color, $selected_fl_color, none);
+      &:checked { @include button(active, $infobar_color, $selected_fl_color);
                   border-color: _border_color(desaturate($infobar_color, 10%)); }
 
-      &:disabled { @include button(insensitive,$infobar_color,$selected_fl_color,none); }
+      &:disabled { @include button(insensitive,$infobar_color,$selected_fl_color); }
     }
 
     selection { background-color: darken($infobar_color, 10%); }
