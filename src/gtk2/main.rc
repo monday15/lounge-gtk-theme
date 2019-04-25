@@ -765,8 +765,8 @@ style "default" {
     image {
       function = EXTENSION
       state    = NORMAL
-      file     = "assets/tab-left-active.png"
-      border   = {3, 0, 3, 3}
+      file     = "assets/tab-active.png"
+      border   = {0, 2, 0, 0}
       stretch  = TRUE
       gap_side = RIGHT
     }
@@ -781,8 +781,8 @@ style "default" {
     image {
       function = EXTENSION
       state    = NORMAL
-      file     = "assets/tab-right-active.png"
-      border   = {0, 3, 3, 3}
+      file     = "assets/tab-active.png"
+      border   = {2, 0, 0, 0}
       stretch  = TRUE
       gap_side = LEFT
     }
@@ -797,8 +797,8 @@ style "default" {
     image {
       function = EXTENSION
       state    = NORMAL
-      file     = "assets/tab-up-active.png"
-      border   = {3, 3, 3, 0}
+      file     = "assets/tab-active.png"
+      border   = {0, 0, 0, 2}
       stretch  = TRUE
       gap_side = BOTTOM
     }
@@ -813,8 +813,8 @@ style "default" {
     image {
       function = EXTENSION
       state    = NORMAL
-      file     = "assets/tab-down-active.png"
-      border   = {3, 3, 0, 3}
+      file     = "assets/tab-active.png"
+      border   = {0, 0, 2, 0}
       stretch  = TRUE
       gap_side = TOP
     }
@@ -832,43 +832,8 @@ style "default" {
       file       = "assets/frame-notebook.png"
       border     = {1, 1, 1, 1}
       stretch    = TRUE
-      gap_file   = "assets/tab-vert-gap.png"
-      gap_border = {1, 0, 1, 1}
-      gap_side   = LEFT
     }
 
-    image {
-      function   = BOX_GAP
-      detail     = "notebook"
-      file       = "assets/frame-notebook.png"
-      border     = {1, 1, 1, 1}
-      stretch    = TRUE
-      gap_file   = "assets/tab-vert-gap.png"
-      gap_border = {0, 1, 1, 1}
-      gap_side   = RIGHT
-    }
-
-    image {
-      function   = BOX_GAP
-      detail     = "notebook"
-      file       = "assets/frame-notebook.png"
-      border     = {1, 1, 1, 1}
-      stretch    = TRUE
-      gap_file   = "assets/tab-horz-gap.png"
-      gap_border = {1, 1, 1, 0}
-      gap_side   = TOP
-    }
-
-    image {
-      function   = BOX_GAP
-      detail     = "notebook"
-      file       = "assets/frame-notebook.png"
-      border     = {1, 1, 1, 1}
-      stretch    = TRUE
-      gap_file   = "assets/tab-horz-gap.png"
-      gap_border = {1, 1, 0, 1}
-      gap_side   = BOTTOM
-    }
 
     # Standalone frame
     image {
