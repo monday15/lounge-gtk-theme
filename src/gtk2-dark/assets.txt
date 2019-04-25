@@ -99,12 +99,7 @@ scale-horz-trough
 scale-horz-trough-active
 scale-vert-trough
 scale-vert-trough-active
-tab-left-active
-tab-right-active
-tab-up-active
-tab-down-active
-tab-horz-gap
-tab-vert-gap
+tab-active
 tooltip-bg
 transparent-dot
 treeview-pan-up

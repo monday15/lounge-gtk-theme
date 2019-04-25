@@ -39,9 +39,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="14.44"
-     inkscape:cx="63.403129"
-     inkscape:cy="5.6249593"
+     inkscape:zoom="10.210622"
+     inkscape:cx="44.62417"
+     inkscape:cy="13.96601"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2785,5 +2785,13 @@
        width="2"
        id="menu-border"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#202324;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="fill:#31587e;fill-opacity:1;stroke-width:1.25881994;stroke-miterlimit:4;stroke-dasharray:none"
+       id="tab-active"
+       width="2"
+       height="2"
+       x="26"
+       y="513.625"
+       inkscape:label="#rect2240" />
   </g>
 </svg>
