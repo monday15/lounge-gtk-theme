@@ -548,7 +548,7 @@ treeview .sidebar.view {
   }
 
   @if $nautilus >= 3.32 {
-    .entry-tag { margin-top: 4px; margin-bottom: 4px; }
+    .entry-tag { margin-top: 4px; margin-bottom: 4px; margin-right: -3px; }
   }
 
   @if $nautilus >= 3.30 {
