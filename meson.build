@@ -183,16 +183,6 @@ foreach variant : gtk3_variants
   gtk3_conf.set('gtk_variant', variant[0])
   gtk3_conf.set('gtk_version', gtk3_version)
   gtk3_conf.set('gnome_version', gnome_version)
-  #gtk3_conf.set('nautilus_version', gnome_version)
-
-    # Ubuntu 18.10 hack
-    # Replace nautilus variable in scss files with gnome after Ubuntu 19.04 release
-    if get_option('ubuntu1810')
-      gtk3_conf.set('nautilus_version', '3.28')
-    else
-      gtk3_conf.set('nautilus_version', gnome_version)
-    endif
-    # End of hack
 
   gtk3_scss = configure_file(input : 'src/gtk3/gtk3.scss',
                              output : 'gtk3' + variant[1] + '.scss',
