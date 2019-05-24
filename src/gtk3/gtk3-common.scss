@@ -412,12 +412,12 @@ treeview entry {
   // side margins: compensate the entry padding with a negative margin
   // then the negative margin itself
   :dir(ltr) & {
-    margin-left: 8px;
-    margin-right: -5px;
+    margin-left: 6px;
+    margin-right: -3px;
   }
   :dir(rtl) & {
-    margin-left: -5px;
-    margin-right: 8px;
+    margin-left: -3px;
+    margin-right: 6px;
   }
 
   border-style: none;
