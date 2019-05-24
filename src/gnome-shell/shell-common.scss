@@ -667,13 +667,12 @@ StScrollBar {
   }
 
   .switcher-list .item-box:outlined {
-    padding: 7px;
-    background-color: darken($_bubble_bg_color, 4%);
-    border: 1px solid darken($borders_color,10%);
+    background-color: transparentize($selected_bg_color, .4);
+    border: none;
   }
 
   .switcher-list .item-box:selected {
-    background-color: $selected_bg_color;
+    background-color: transparentize($selected_bg_color, .1);
     color: $selected_fg_color;
     text-shadow: 1px 1px transparentize(black, .7);
   }
