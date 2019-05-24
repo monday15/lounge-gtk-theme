@@ -41,6 +41,20 @@ Requires:	adwaita-icon-theme
 
 Set of auxiliary symbolic icons for Lounge gtk theme
 
+
+%package	-n lounge-gtk-theme-xfce-sway
+
+Summary:	Simple and clean gtk theme for xfce/sway users
+
+Requires:       gdk-pixbuf2
+Requires:       gtk-murrine-engine
+Recommends:     lounge-aux-icon-theme
+Conflicts:      lounge-gtk-theme
+
+%description    -n lounge-gtk-theme-xfce-sway
+
+Simple and clean gtk theme for xfce/sway users
+
 %prep
 %autosetup -p1
 
@@ -51,7 +65,19 @@ Set of auxiliary symbolic icons for Lounge gtk theme
 %install
 %meson_install
 
+%post -n lounge-gtk-theme-xfce-sway
+sed -i 's!GtkMenu::horizontal-padding  = 0!GtkMenu::horizontal-padding  = 1!g' %{_datadir}/themes/Lounge/gtk-2.0/main.rc
+sed -i 's!#widget_class!widget_class!g' %{_datadir}/themes/Lounge/gtk-2.0/main.rc
+sed -i 's!GtkMenu::horizontal-padding  = 0!GtkMenu::horizontal-padding  = 1!g' %{_datadir}/themes/Lounge-night/gtk-2.0/main.rc
+sed -i 's!#widget_class!widget_class!g' %{_datadir}/themes/Lounge-night/gtk-2.0/main.rc
+
 %files
+%license LICENSE COPYRIGHT
+%doc README.md
+%{_datadir}/themes/Lounge/*
+%{_datadir}/themes/Lounge-night/*
+
+%files -n lounge-gtk-theme-xfce-sway
 %license LICENSE COPYRIGHT
 %doc README.md
 %{_datadir}/themes/Lounge/*
@@ -69,4 +95,5 @@ Set of auxiliary symbolic icons for Lounge gtk theme
 - Update to 1.15
 - Add Roboto font to recommends
 - Clean spec
+
 
