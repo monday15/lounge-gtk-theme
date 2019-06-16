@@ -1,0 +1,65 @@
+$size_suffix: if($size == compact, -compact, '');
+
+$base_radius: if($size == compact, 2px, 3px);
+
+$button_height: if($size == compact, 20px, 24px);
+$button_width: if($size == compact, 16px, 16px);
+$button_horz_padding: 4px;
+$button_vert_padding: if($size == compact, 6px, 8px);
+
+$spinbutton_size: if($size == compact, 16px, 24px);
+
+$combobox_button_height: if($size == compact, 22px, 24px);
+$combobox_button_padding: if($size == compact, 3px 4px, 4px 6px);
+
+$entry_height: if($size == compact, 28px, 32px);
+$spinbutton_entry_width: if($size == compact, 24px, 28px);
+//$entry_padding: if($size == compact, 6px, 8px);
+
+$popover_radius: if($size == compact, 3px, 5px);
+
+$headerbar_padding: if($size == compact, 4px, 5px);
+$headerbar_height: if($size == compact, 38px, 44px);
+$headerbar_switch_padding: if($size == compact, 8px, 9px);
+
+$window_top_radius: if($size == compact, 3px, 5px);
+$titlebar_height: if($size == compact, 20px, 24px);
+$titlebar_padding: if($size == compact, 3px, 4px);
+$titlebar_titlebutton_size: if($size == compact, 20px, 24px);
+
+$menubar_height: if($size == compact, 20px, 16px); // that's correct (compact > regular)
+$menuitem_height: if($size == compact, 20px, 24px);
+$base_menuitem_padding: if($size == compact, 2px 6px, 2px 8px);
+$popover_menuitem_padding: if($size == compact, 3px 5px, 2px 5px);
+
+$switch_size: if($size == compact, 20px, 24px);
+$scale_slider: if($size == compact, 16px, 18px);
+$scale_slider_margin: if($size == compact, -6px, -7px);
+$scale_slider_finetune_margin: if($size == compact, -4px, -5px);
+
+$sidebar_row_height: if($size == compact, 28px, 30px);
+$sidebar_row_padding: if($size == compact, 0, 1px);
+
+$tab_min_size: if($size == compact, 24px, 28px);
+$tab_button_padding: if($size == compact, 0, 1px);
+$tab_button_horz_margin: if($size == compact, 1px, 2px);
+$notebook_header_button_padding: if($size == compact, 1px 3px, 1px 5px);
+$notebook_header_circular_button_padding: if($size == compact, 1px, 2px);
+
+$scrollbar_slider_size: if($size == compact, 9px, 11px);
+
+$checkradio_padding: if($size == compact, 0, 1px);
+$scale_with_marks_slider_width: if($size == compact, 20px, 22px);
+$scale_with_marks_slider_height: if($size == compact, 24px, 26px);
+$scale_with_marks_slider_margin: if($size == compact, -6px, -8px);
+$scale_with_marks_slider_finetune_margin: if($size == compact, -4px, -6px);
+$scale_with_marks_slider_asymmetric_margin: if($size == compact, -12px, -12px);
+
+$text_handle_width: $scale_with_marks_slider_width;
+$text_handle_height: $scale_with_marks_slider_height;
+
+$searchbar_revealer_padding: if($size == compact, 4px, 5px);
+
+$menuitem_margin: if($size == compact, 2px, 2px);
+
+$stackswitcher_textbutton_width: if($size == compact, 60px, 80px);

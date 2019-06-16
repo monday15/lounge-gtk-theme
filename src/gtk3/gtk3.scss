@@ -5,6 +5,7 @@ $gtk: @gtk_version@;
 $gnome: @gnome_version@;
 
 @import 'gtk3-colors';
+@import 'gtk3-variables';
 @import 'gtk3-colors-public';
 @import 'gtk3-drawing';
 @import 'gtk3-common';
