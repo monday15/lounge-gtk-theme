@@ -7,6 +7,12 @@ option('icons', type : 'boolean', value : true,
 option('icon-theme', type : 'string',
   description : 'Set main icon theme name')
 
+option('gtk3-version', type : 'string',
+  description : 'Set gtk3 version to build against it')
+
+option('gnome-version', type : 'string',
+  description : 'Set gnome version to build against it')
+
 option('gtk2-solid-menu', type : 'boolean', value : false,
   description : 'Solid borders for gtk2 menus')
 
