@@ -21,8 +21,8 @@ $button_transition: all 200ms $ease-out-quad;
 
   -GtkToolItemGroup-expander-size: 11;
 
-  -GtkWidget-text-handle-width: 20;
-  -GtkWidget-text-handle-height: 24;
+  -GtkWidget-text-handle-width: $text_handle_width;
+  -GtkWidget-text-handle-height: $text_handle_height;
 
   -GtkDialog-button-spacing: 4;
   -GtkDialog-action-area-border: 0;
@@ -35,7 +35,7 @@ $button_transition: all 200ms $ease-out-quad;
   outline-style: dashed;
   outline-offset: -3px;
   outline-width: 1px;
-  -gtk-outline-radius: 2px;
+  -gtk-outline-radius: $base_radius;
 
   -gtk-secondary-caret-color: $selected_bl_color;
 }
@@ -229,11 +229,11 @@ spinner {
 %entry,
 entry {
   %entry_basic, & {
-    min-height: 24px;
+    min-height: $entry_height;
     padding-left: 6px;
     padding-right: 6px;
     border: 1px solid;
-    border-radius: 2px;
+    border-radius: $base_radius;
     transition: all 200ms $ease-out-quad;
 
     @include entry(normal);
@@ -475,11 +475,11 @@ $_dot_color: if($variant=='light', $selected_bg_color,
 button {
   @at-root %button_basic, & {
 
-    min-height: 20px;
-    min-width: 16px;
-    padding: 4px 6px;
+    min-height: $button_height;
+    min-width: $button_width;
+    padding: $button_horz_padding $button_vert_padding;
     border: 1px solid;
-    border-radius: 2px;
+    border-radius: $base_radius;
     transition: $button_transition;
 
     @include button(normal);
@@ -522,9 +522,9 @@ button {
     }
 
     &.image-button {
-      min-width: 20px;
-      padding-left: 4px;
-      padding-right: 4px;
+      min-width: $button_height;
+      padding-left: $button_horz_padding;
+      padding-right: $button_horz_padding;
     }
 
     &.text-button {
@@ -763,7 +763,7 @@ button {
 
   // inline-toolbar buttons
   .inline-toolbar & {
-    border-radius: 2px;
+    border-radius: $base_radius;
     border-width: 1px;
     @extend %linked;
   }
@@ -875,8 +875,8 @@ toolbar.inline-toolbar toolbutton {
 }
 
 %linked_left {
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
+    border-top-left-radius: $base_radius;
+    border-bottom-left-radius: $base_radius;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right-style: none;
@@ -885,8 +885,8 @@ toolbar.inline-toolbar toolbutton {
 %linked_right {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
+    border-top-right-radius: $base_radius;
+    border-bottom-right-radius: $base_radius;
     border-right-style: solid;
 }
 
@@ -898,7 +898,7 @@ toolbar.inline-toolbar toolbutton {
   &:last-child { @extend %linked_right; }
 
   &:only-child {
-    border-radius: 2px;
+    border-radius: $base_radius;
     border-style: solid;
   }
 }
@@ -918,7 +918,7 @@ toolbar.inline-toolbar toolbutton {
   }
 
   &:only-child {
-    border-radius: 2px;
+    border-radius: $base_radius;
     border-style: solid;
   }
 }
@@ -932,18 +932,18 @@ toolbar.inline-toolbar toolbutton {
   @extend %linked_vertical_middle;
 
   &:first-child {
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
+    border-top-left-radius: $base_radius;
+    border-top-right-radius: $base_radius;
   }
 
   &:last-child {
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: $base_radius;
+    border-bottom-right-radius: $base_radius;
     border-style: solid;
   }
 
   &:only-child {
-    border-radius: 2px;
+    border-radius: $base_radius;
     border-style: solid;
   }
 }
@@ -961,9 +961,9 @@ toolbar.inline-toolbar toolbutton {
 /* menu buttons */
 modelbutton.flat,
 .menuitem.button.flat {
-  min-height: 16px;
-  padding: 3px 5px;
-  border-radius: 2px;
+  min-height: $menuitem_height;
+  padding: $popover_menuitem_padding;
+  border-radius: $base_radius;
   outline-offset: -2px;
 
   @extend %undecorated_button;
@@ -1087,8 +1087,8 @@ spinbutton {
 
     padding: 0;
 
-    entry {
-      min-width: 24px;
+    %spinbutton_horz_entry {
+      min-width: $spinbutton_entry_width;
       // reset all the other props since the spinbutton node is styled here
       margin: 0;
       background: none;
@@ -1098,8 +1098,14 @@ spinbutton {
       box-shadow: none;
     }
 
+
+    entry {
+      @extend %spinbutton_horz_entry;
+    }
+
     button {
-      min-height: 16px;
+      min-height: $spinbutton_size;
+      min-width: $spinbutton_size;
       margin: 0;
       padding: 0px 2px;
       color: mix($fg_color, $base_color, 90%);
@@ -1135,14 +1141,7 @@ spinbutton {
   // OSD horizontal
   .osd &:not(.vertical) {
     entry {
-      min-width: 24px;
-      // reset all the other props since the spinbutton node is styled here
-      margin: 0;
-      background: none;
-      background-color: transparent;
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
+      @extend %spinbutton_horz_entry;
     }
 
     button {
@@ -1176,9 +1175,9 @@ spinbutton {
         box-shadow: none;
       }
 
-      &:dir(ltr):last-child { border-radius: 0 2px 2px 0; }
+      &:dir(ltr):last-child { border-radius: 0 $base_radius $base_radius 0; }
 
-      &:dir(rtl):first-child { border-radius: 2px 0 0 2px; }
+      &:dir(rtl):first-child { border-radius: $base_radius 0 0 $base_radius; }
     }
   }
 
@@ -1198,15 +1197,15 @@ spinbutton {
     }
 
     entry {
-      min-height: 24px;
-      min-width: 24px;
+      min-height: $entry_height;
+      min-width: $entry_height;
       padding: 0;
       border-radius: 0;
     }
 
     button {
-      min-height: 16px;
-      min-width: 16px;
+      min-height: $spinbutton_size;
+      min-width: $spinbutton_size;
       padding: 2px;
 
       &.up { @extend %top_button; }
@@ -1215,12 +1214,12 @@ spinbutton {
     }
 
     %top_button {
-      border-radius: 2px 2px 0 0;
+      border-radius: $base_radius $base_radius 0 0;
       border-style: solid solid none solid;
     }
 
     %bottom_button {
-      border-radius: 0 0 2px 2px;
+      border-radius: 0 0 $base_radius $base_radius;
       border-style: none solid solid solid;
     }
   }
@@ -1254,10 +1253,10 @@ spinbutton {
  * ComboBoxes *
  **************/
 combobox {
-  // lounge workaround, with regular 'min-height' arrow button on combobox button is deformed
+  // lounge workaround, with regular 'min-height' arrow button is deformed (compact theme)
   button {
-    min-height: 22px;
-    padding: 3px 4px;
+    min-height: $combobox_button_height;
+    padding: $combobox_button_padding;
   }
   arrow {
     -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
@@ -1367,7 +1366,7 @@ searchbar > revealer > box,
 searchbar > revealer > box {
   // workaround: undo the GtkContainer:border-width and use CSS padding instead
   margin: -6px;
-  padding: 4px;
+  padding: $searchbar_revealer_padding;
 
   button.flat { padding: 2px 4px; }
 }
@@ -1385,8 +1384,8 @@ searchbar > revealer > box {
  ***************/
 %titlebar,
 headerbar {
-  padding: 0 4px;
-  min-height: 38px;
+  padding: 0 $headerbar_padding;
+  min-height: $headerbar_height;
   border-width: 0 0 1px;
   border-style: solid;
   border-color: $borders_color;
@@ -1524,12 +1523,12 @@ headerbar {
   }
 
   &.default-decoration {
-    min-height: 20px;
-    padding: 3px;
+    min-height: $titlebar_height;
+    padding: $titlebar_padding;
 
     button.titlebutton {
-      min-height: 20px;
-      min-width: 20px;
+      min-height: $titlebar_titlebutton_size;
+      min-width: $titlebar_titlebutton_size;
       margin: 0;
       padding: 0;
     }
@@ -1558,12 +1557,12 @@ headerbar {
   spinbutton,
   separator:not(.sidebar),
   button {
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-top: $headerbar_padding;
+    margin-bottom: $headerbar_padding;
   }
   switch {
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: $headerbar_switch_padding;
+    margin-bottom: $headerbar_switch_padding;
   }
 
   &.titlebar headerbar:not(.titlebar) {
@@ -1579,8 +1578,8 @@ headerbar {
 
 .background .titlebar {
   &:backdrop, & {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: $window_top_radius;
+    border-top-right-radius: $window_top_radius;
   }
 }
 
@@ -1600,14 +1599,14 @@ headerbar {
 headerbar { // headerbar border rounding
 
   window separator:first-child + &,
-  window &:first-child { &:backdrop, & { border-top-left-radius: 3px; }}
-  window &:last-child { &:backdrop, & { border-top-right-radius: 3px; }}
+  window &:first-child { &:backdrop, & { border-top-left-radius: $window_top_radius; }}
+  window &:last-child { &:backdrop, & { border-top-right-radius: $window_top_radius; }}
 
   window stack & { // tackles the stacked headerbars case
     &:first-child, &:last-child {
       &:backdrop, & {
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
+        border-top-left-radius: $window_top_radius;
+        border-top-right-radius: $window_top_radius;
       }
     }
   }
@@ -1893,7 +1892,7 @@ menubar,
   box-shadow: inset 0 -1px transparentize(black, 0.9);
 
   > menuitem {
-    min-height: 16px;
+    min-height: $menubar_height;
     padding: 3px 8px;
     border-left: 3px solid transparent;
 
@@ -1925,9 +1924,9 @@ menu,
   .csd & { border: none; }  // axes borders in a composited env
 
   menuitem {
-    min-height: 16px;
+    min-height: $menuitem_height;
     min-width: 40px;
-    padding: 3px 6px;
+    padding: $base_menuitem_padding;
     text-shadow: none;
     border-radius: 0;
 
@@ -2017,7 +2016,7 @@ menuitem {
 
 popover.background {
   padding: 2px;
-  border-radius: 3px;
+  border-radius: $popover_radius;
   background-color: $popover_bg_color;
 
   .csd &, & { border: 1px solid $borders_color; }
@@ -2026,7 +2025,9 @@ popover.background {
 
   &:backdrop { box-shadow: none; }
 
-  > stack { margin: -4px; }
+  @if $size == compact {
+    > stack { margin: -4px; }
+  }
 
   &.scale-popup { padding: 4px 2px; }
 
@@ -2067,11 +2068,10 @@ notebook {
     background-color: darken($bg_color, 3%);
 
     button {
-      padding: 1px 3px;
+      padding: $notebook_header_button_padding;
 
-      &.circular { padding: 1px; }
+      &.circular { padding: $notebook_header_circular_button_padding; }
     }
-
 
     tabs { margin: -1px; }
 
@@ -2198,8 +2198,8 @@ notebook {
     }
 
     tab {
-      min-height: 24px;
-      min-width: 24px;
+      min-height: $tab_min_size;
+      min-width: $tab_min_size;
       padding: 3px 12px;
 
       outline-offset: -5px;
@@ -2240,9 +2240,9 @@ notebook {
 
         &:hover { color: currentColor; }
 
-        padding: 0;
-        margin-top: 1px;
-        margin-bottom: 1px;
+        padding: $tab_button_padding;
+        margin-top: $tab_button_horz_margin;
+        margin-bottom: $tab_button_horz_margin;
         // FIXME: generalize .small-button?
         min-width: 20px;
         min-height: 20px;
@@ -2332,8 +2332,8 @@ scrollbar {
 
   // slider
   slider {
-    min-width: 9px;
-    min-height: 9px;
+    min-width: $scrollbar_slider_size;
+    min-height: $scrollbar_slider_size;
     margin: -1px;
     border: 3px solid transparent;
     border-radius: 5px;
@@ -2503,8 +2503,8 @@ switch {
 
   slider {
     margin: -1px;
-    min-width: 20px;
-    min-height: 20px;
+    min-width: $switch_size;
+    min-height: $switch_size;
     border: 1px solid;
     border-radius: 9999px;
     transition: $button_transition;
@@ -2604,6 +2604,7 @@ radio {
   min-height: 14px;
   min-width: 14px;
   border: 1px solid;
+  padding: $checkradio_padding;
   -gtk-icon-source: none;
 
   @include button(normal-alt);
@@ -2648,7 +2649,7 @@ radio {
 
 %check,
 check {
-  border-radius: 2px;
+  border-radius: $base_radius;
 
   &:checked { -gtk-icon-source: image(-gtk-recolor(url("assets/check-symbolic.svg")),
                                       -gtk-recolor(url("assets/check-symbolic.symbolic.png"))); }
@@ -2772,9 +2773,9 @@ scale {
   // the slider is inside the trough, so to have make it bigger there's a negative margin
 
   slider {
-    min-height: 16px;
-    min-width: 16px;
-    margin: -6px;
+    min-height: $scale_slider;
+    min-width: $scale_slider;
+    margin: $scale_slider_margin;
   }
 
   // click-and-hold the slider to activate
@@ -2792,7 +2793,7 @@ scale {
     }
 
     // to make the trough grow in fine-tune mode
-    slider { margin: -4px; }
+    slider { margin: $scale_slider_finetune_margin; }
 
     fill,
     highlight,
@@ -2937,8 +2938,8 @@ scale {
             &#{$state} {
               // an asymmetric slider asset is used here, so the margins are uneven, the smaller
               // margin is set on the point side.
-              margin: -6px;
-              $_scale_asset: 'assets/slider-#{$dir_infix}-#{$marks_infix}#{$state_infix}#{$suffix}';
+              margin: $scale_with_marks_slider_margin;
+              $_scale_asset: 'assets/slider-#{$dir_infix}-#{$marks_infix}#{$state_infix}#{$size_suffix}#{$suffix}';
               border-style: none;
               border-radius: 0;
 
@@ -2948,8 +2949,8 @@ scale {
               $_scale_slider_bg_pos: bottom;
 
               @if $dir_class == 'horizontal' {
-                min-height: 24px;
-                min-width: 20px;
+                min-height: $scale_with_marks_slider_height;
+                min-width: $scale_with_marks_slider_width;
 
                 @if $marks_infix == 'scale-has-marks-above' {
                   margin-top: -12px;
@@ -2961,8 +2962,8 @@ scale {
               }
 
               @else {
-                min-height: 20px;
-                min-width: 24px;
+                min-height: $scale_with_marks_slider_width;
+                min-width: $scale_with_marks_slider_height;
 
                 @if $marks_infix == 'scale-has-marks-above' {
                   margin-left: -12px;
@@ -2985,7 +2986,7 @@ scale {
 
           &.fine-tune slider {
             // bigger negative margins to make the trough grow here as well
-            margin: -4px;
+            margin: $scale_with_marks_slider_finetune_margin;
 
             @if $dir_class == 'horizontal' {
               @if $marks_infix == 'scale-has-marks-above' { margin-top: -10px; }
@@ -3581,8 +3582,8 @@ placessidebar {
 
   row {
     // Needs overriding of the GtkListBoxRow padding
-    min-height: 28px;
-    padding: 0px;
+    min-height: $sidebar_row_height;
+    padding: $sidebar_row_padding;
 
     // Using margins/padding directly in the SidebarRow
     // will make the animation of the new bookmark row jump
@@ -3983,7 +3984,7 @@ colorchooser .popover.osd { border-radius: 3px; box-shadow: inset 0 1px $osd_bor
  * Window Decorations *
  *********************/
 decoration {
-  border-radius: 3px 3px 0 0;
+  border-radius: $window_top_radius $window_top_radius 0 0;
   // lamefun trick to get rounded borders regardless of CSD use
   border-width: 0px;
 
@@ -4144,21 +4145,21 @@ cursor-handle {
                   (':hover','-hover'),
                   (':active','-active') { //no need for insensitive and backdrop
     &.top#{$s}:dir(ltr), &.bottom#{$s}:dir(rtl) {
-      $_url: 'assets/text-select-start#{$as}#{$asset_suffix}';
+      $_url: 'assets/text-select-start#{$as}#{$size_suffix}#{$asset_suffix}';
       -gtk-icon-source: -gtk-scaled(url('#{$_url}.png'),
                                     url('#{$_url}@2.png'));
       padding-left: 10px;
     }
 
     &.bottom#{$s}:dir(ltr), &.top#{$s}:dir(rtl) {
-      $_url: 'assets/text-select-end#{$as}#{$asset_suffix}';
+      $_url: 'assets/text-select-end#{$as}#{$size_suffix}#{$asset_suffix}';
       -gtk-icon-source: -gtk-scaled(url('#{$_url}.png'),
                                     url('#{$_url}@2.png'));
       padding-right: 10px;
     }
 
     &.insertion-cursor#{$s}:dir(ltr), &.insertion-cursor#{$s}:dir(rtl) {
-      $_url: 'assets/slider-horz-scale-has-marks-above#{$as}#{$asset_suffix}';
+      $_url: 'assets/slider-horz-scale-has-marks-above#{$as}#{$size_suffix}#{$asset_suffix}';
       -gtk-icon-source: -gtk-scaled(url('#{$_url}.png'),
                                     url('#{$_url}@2.png'));
     }
@@ -4192,7 +4193,7 @@ cursor-handle {
   caret-color: $drop_target_color;
 }
 
-stackswitcher button.text-button { min-width: 60px; } // FIXME aggregate with buttons
+stackswitcher button.text-button { min-width: $stackswitcher_textbutton_width; } // FIXME aggregate with buttons
 
 stackswitcher button.circular,
 stackswitcher button.text-button.circular { // FIXME aggregate with buttons
