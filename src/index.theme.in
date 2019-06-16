@@ -1,0 +1,6 @@
+[X-GNOME-Metatheme]
+Name=@theme_name@
+Type=X-GNOME-Metatheme
+Comment=@theme_name@ theme
+Encoding=UTF-8
+GtkTheme=@theme_name@
