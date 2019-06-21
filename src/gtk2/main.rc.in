@@ -2339,8 +2339,8 @@ style "inline_toolbar" {
 
 style "tooltip" {
 
-$regular  xthickness = 19
-$regular  ythickness = 19
+$regular  xthickness = 15
+$regular  ythickness = 15
 $compact  xthickness = 13
 $compact  ythickness = 13
 
