@@ -21,7 +21,6 @@ $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentiz
 
 $top_hilight: $borders_edge;
 $dark_fill: if($variant == 'light', mix($borders_color, $bg_color, 30%), mix($borders_color, $bg_color, 32%));
-$infobar_color: if($variant == 'light', #dbd2c9, desaturate(darken(#dbd2c9, 50%), 10%));
 
 $link_color: if($variant == 'light', desaturate(darken($selected_bg_color, 15%), 10%), lighten($selected_bg_color, 15%));
 $link_visited_color: if($variant == 'light', desaturate(darken($selected_bg_color, 25%), 10%), lighten($selected_bg_color, 7%));
@@ -40,6 +39,11 @@ $scrollbar_slider_finetune_color: if($variant=='light', desaturate(darken($selec
 $warning_color: #da802a;
 $error_color: if($variant == 'light', #c82828, desaturate(darken(#c82828, 10%), 10%));
 $success_color: if($variant == 'light', #8bcb4d, desaturate(darken(#8bcb4d, 10%), 10%));
+
+$infobar_color: if($variant == 'light', #dbd2c9, desaturate(darken(#dbd2c9, 50%), 10%));
+$questionbar_color: if($variant == light, darken($selected_bl_color, 5%), $selected_bl_color);
+$warningbar_color: if($variant == light, desaturate(lighten($warning_color, 25%), 15%), saturate(darken($warning_color, 15%), 10%));
+$errorbar_color: if($variant == light, lighten($error_color, 22%), $error_color);
 
 $osd_fg_color: if($variant == 'light', $fg_color, #d2d2d2);
 $osd_text_color: if($variant == 'light', $text_color, #d2d2d2);

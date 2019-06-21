@@ -3760,34 +3760,41 @@ paned {
 infobar {
   border-style: none;
 
-  &.info,
-  &.question,
-  &.warning,
-  &.error {
+  @each $bartype, $barcolor in (info, $infobar_color),
+                               (question, $questionbar_color),
+                               (warning, $warningbar_color),
+                               (error, $errorbar_color) {
+    &.#{$bartype} {
+      background-color: $barcolor;
+      border-color: darken($barcolor, 10%);
+
       label, & { color: $selected_fl_color; }
-      background-color: $infobar_color;
-      border-color: darken($infobar_color, 10%);
 
-//    text-shadow: 0 1px darken($selected_bl_color, 10%);
+      button {
+        @include button(normal, $barcolor, $selected_fl_color);
+        border-color: if($variant == light, _border_color(desaturate($barcolor, 10%)), lighten(_border_color(desaturate($barcolor, 10%)), 7%));
 
-    button {
-      // FIXME: extend selection mode buttons
-      @include button(normal, $infobar_color, $selected_fl_color);
-      border-color: _border_color(desaturate($infobar_color, 10%));
+        &:hover {
+          @include button(hover, $barcolor, $selected_fl_color);
+          border-color: if($variant == light, _border_color(desaturate($barcolor, 10%)), lighten(_border_color(desaturate($barcolor, 10%)), 7%));
+        }
 
-      &:hover { @include button(hover, $infobar_color, $selected_fl_color);
-                border-color: _border_color(desaturate($infobar_color, 10%)); }
+        &:active,
+        &:checked {
+          @include button(active, $barcolor, $selected_fl_color);
+          border-color: if($variant == light, _border_color(desaturate($barcolor, 10%)), lighten(_border_color(desaturate($barcolor, 10%)), 7%));
+        }
 
-      &:active,
-      &:checked { @include button(active, $infobar_color, $selected_fl_color);
-                  border-color: _border_color(desaturate($infobar_color, 10%)); }
+        &:disabled {
+          @include button(insensitive,$barcolor,$selected_fl_color);
+          border-color: if($variant == light, _border_color(desaturate($barcolor, 10%)), lighten(_border_color(desaturate($barcolor, 10%)), 7%));
+        }
+      }
 
-      &:disabled { @include button(insensitive,$infobar_color,$selected_fl_color); }
+      selection { background-color: darken($barcolor, 10%); }
+
+      *:link { @extend %link_selected; }
     }
-
-    selection { background-color: darken($infobar_color, 10%); }
-
-    *:link { @extend %link_selected; }
   }
 }
 
