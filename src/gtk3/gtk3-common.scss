@@ -1669,8 +1669,6 @@ headerbar { // headerbar border rounding
   @extend %titlebar;
 }
 
-headerbar entry { min-height: 28px; }
-
 // Development versions of apps to use a differently styled headerbar
 
 window.devel {
