@@ -721,6 +721,23 @@ flowboxchild {
 }
 
 
+  //// Polari
+
+.polari-room-list row,
+.polari-room-list row * {
+  &:selected {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+
+    label, label:selected { color: $selected_fg_color; }
+
+    &:hover { background-color: darken($selected_bg_color, 5%); }
+
+    &.has-open-popup { background-color: $selected_bg_color; }
+  }
+}
+
+
   //// Thunar
 
 .thunar {
