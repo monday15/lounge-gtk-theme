@@ -155,7 +155,7 @@ label {
   }
 
   row:selected &,
-  &:selected { @extend %nobg_selected_items; }
+  &:selected { @extend %nobg_selected_items_light; }
 
   selection {
     background-color: $selected_bl_color;
