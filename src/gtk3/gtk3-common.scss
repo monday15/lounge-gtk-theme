@@ -1011,14 +1011,28 @@ button.color {
   }
 }
 
-list row button.image-button:not(.flat):not(.sidebar-button) {
-  @extend %undecorated_button;
-  border: 1px solid if($variant=='light', transparentize($borders_color, .3), $borders_color);
-  &:hover { @include button(hover); }
-  &:active,
-  &:checked { @include button(active); }
-}
+// list row buttons
+list {
+  row {
+    &,
+    &:selected,
+    &:selected:hover {
+      button.image-button:not(.flat):not(.sidebar-button) {
+        @extend %undecorated_button;
 
+        &:hover { @include button(hover); }
+        &:active,
+        &:checked { @include button(active); }
+      }
+    }
+    & button.image-button:not(.flat):not(.sidebar-button) { border: 1px solid if($variant=='light', transparentize($borders_color, .3), $borders_color); }
+    
+    &:selected,
+    &:selected:hover {
+      button.image-button:not(.flat):not(.sidebar-button) { border: 1px solid $alt_borders_color; }
+    }
+  }
+}
 
 /*********
  * Links *
