@@ -1391,18 +1391,18 @@ style "menu" {
   bg[SELECTED]    = @selected_bg_color
 
 }
-$solid_menu 
-$solid_menu style "menu_border" {
-$solid_menu 
-$solid_menu   engine "pixmap" {
-$solid_menu     image {
-$solid_menu       function = BOX
-$solid_menu       file     = "assets/menu-border.png"
-$solid_menu       border   = {1, 1, 1, 1}
-$solid_menu       stretch  = TRUE
-$solid_menu     }
-$solid_menu   }
-$solid_menu }
+
+style "menu_border" {
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      file     = "assets/menu-border.png"
+      border   = {1, 1, 1, 1}
+      stretch  = TRUE
+    }
+  }
+}
 
 style "menu_item" {
 
