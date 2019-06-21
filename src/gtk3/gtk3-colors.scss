@@ -7,7 +7,7 @@ $bg_color: if($variant == 'light', #eeeeee, #353839);
 $fg_color: if($variant == 'light', #101010, #c8c8c8);
 
 // These colors are used to provide dark fg on light bg in a light theme
-$selected_bl_color: if($variant == 'light', #cee5fc, desaturate(darken(#cee5fc, 50%), 35%));
+$selected_bl_color: if($variant == 'light', #c1ddfd, desaturate(darken(#c1ddfd, 45%), 35%));
 $selected_fl_color: if($variant == 'light', #101010, #d2d2d2);
 
 // These colors are sent to colors-public, for applications
