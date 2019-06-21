@@ -1407,7 +1407,8 @@ style "menu_border" {
 style "menu_item" {
 
   xthickness = 3
-  ythickness = 3
+$regular  ythickness = 5
+$compact  ythickness = 3
 
   bg[PRELIGHT]   = @selected_bg_color
   # Chromium uses this setting
