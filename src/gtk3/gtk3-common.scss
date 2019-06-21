@@ -2569,6 +2569,7 @@ switch {
     transition: 200ms;
     box-shadow: none;
     border-width: 0;
+    padding: 0;
 
     &:checked {
       background-image: -gtk-scaled(url("assets/checkbox-checked-selectionmode#{$asset_suffix}.png"),
