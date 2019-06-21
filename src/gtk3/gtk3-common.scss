@@ -2543,13 +2543,7 @@ switch {
   }
 
   row:selected & {
-    @if $variant == 'light' {
-      border-color: desaturate(darken($selected_bl_color, 50%), 30%);
-      &:not(:checked):not(:disabled) { background-color: darken($dark_fill, 5%); }
-
-      slider { &:checked, & { border-color: desaturate(darken($selected_bl_color, 50%), 30%); }}
-    }
-    @else {
+    @if $variant == 'dark' {
       &:checked { box-shadow: 0 0 0 1px transparentize(black, .6); }
     }
   }
@@ -2629,12 +2623,6 @@ radio {
   }
   &:active { @include button(active); box-shadow: none; }
   &:disabled { @include button(insensitive); }
-
-  @if $variant == 'light' {
-    // the borders of the light variant versions of checks and radios are too similar in luminosity to the selected background
-    // color, hence we need special casing.
-    row:selected & { border-color: $selected_borders_color; }
-  }
 
   .osd & {
     @include button(osd);
@@ -2729,7 +2717,13 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   &:disabled { background-color: if($variant=='light', mix($insensitive_bg_color, $dark_fill, 40%), mix($insensitive_bg_color, $dark_fill, 70%)); }
 
   // ...on selected list rows
-  row:selected & { box-shadow: 0 0 0 1px $bg_color; }
+  @if $variant == light {
+    row:selected & { background-color: darken($dark_fill, 10%); }
+    row:selected:hover & { background-color: darken($dark_fill, 15%); }
+  }
+  @else {
+    row:selected & { box-shadow: 0 0 0 1px $bg_color; }
+  }
 
   // OSD
   .osd & {
@@ -2762,7 +2756,9 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   }
 
   // ...on selected list rows
-  row:selected & { box-shadow: 0 0 0 1px $bg_color; }
+  @if $variant == dark {
+    row:selected & { box-shadow: 0 0 0 1px $bg_color; }
+  }
 
   // OSD
   .osd & {  }
@@ -2865,7 +2861,6 @@ scale {
     &:disabled { @include button(insensitive); @if $variant=='dark' { border-color: lighten($borders_color, 4%); } }
 
     // ...on selected list rows
-    row:selected & { &:disabled, & { border-color: $selected_borders_color; } }
 
     // OSD
     .osd & {
