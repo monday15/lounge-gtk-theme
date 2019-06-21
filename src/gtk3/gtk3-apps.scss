@@ -512,14 +512,11 @@ headerbar button.sources-button { min-height: 36px; }
 
   .sidebar-row {
     &:selected {
-      &,
-      &.has-open-popup {
-        background: if($variant == 'light', transparentize(black, .9), transparentize(white, .94));
-        text-shadow: none;
-        -gtk-icon-shadow: none;
-      }
+      background: if($variant == 'light', transparentize(black, .9), transparentize(white, .94));
+      text-shadow: none;
+      -gtk-icon-shadow: none;
 
-      &:hover {
+      &:hover, &.has-open-popup {
         background: if($variant == 'light', transparentize(black, .87), transparentize(white, .92));
       }
 
