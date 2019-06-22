@@ -2416,6 +2416,10 @@ $dark widget_class "*<GtkCellView>" style "text"
 $solid_menu # enable solid menu border
 $solid_menu widget_class "*<GtkMenu>*"                                         style "menu_border"
 
+# lounge: workaround for deb/rpm packaging - instead of rebuilding whole theme,
+# this line is uncommented for xfce/sway theme
+#widget_class "*<GtkMenu>*"                                         style "menu_border"
+
 widget_class "*<GtkMenuItem>*"                                     style "menu_item"
 $dark widget_class "*<GtkMenuItem>*<GtkLabel>"                           style "text"
 widget_class "*<GtkMenuBar>.<GtkMenuItem>*"                        style "menubar_item"
