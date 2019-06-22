@@ -2318,8 +2318,8 @@ notebook {
       }
     }
 
-    &.top tab { padding-bottom: 4px; }
-    &.bottom tab { padding-top: 4px; }
+    &.top tab { padding-bottom: 3px; }
+    &.bottom tab { padding-top: 3px; }
   }
 
   > stack:not(:only-child) { // the :not(:only-child) is for "hidden" notebooks
