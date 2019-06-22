@@ -49,6 +49,7 @@ $notebook_header_circular_button_padding: if($size == compact, 1px, 2px);
 $scrollbar_slider_size: if($size == compact, 9px, 11px);
 
 $checkradio_padding: if($size == compact, 0, 1px);
+$check_radius: $base_radius;
 $scale_with_marks_slider_width: if($size == compact, 20px, 22px);
 $scale_with_marks_slider_height: if($size == compact, 24px, 26px);
 $scale_with_marks_slider_margin: if($size == compact, -6px, -8px);
