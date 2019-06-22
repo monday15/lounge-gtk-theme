@@ -41,12 +41,12 @@ style "default" {
 
   GtkButton::default-border         = {0, 0, 0, 0}
   GtkButton::default-outside-border = {0, 0, 0, 0}
-$regular  GtkButton::inner-border           = {4, 4, 4, 4}
-$compact  GtkButton::inner-border           = {4, 4, 3, 3}
+$regular   GtkButton::inner-border           = {4, 4, 4, 4}
+$compact   GtkButton::inner-border           = {4, 4, 3, 3}
 
   GtkEntry::state-hint = 1
-$regular  GtkEntry::inner-border = {3, 3, 6, 6}
-$compact  GtkEntry::inner-border = {3, 3, 3, 3}
+$regular   GtkEntry::inner-border = {3, 3, 6, 6}
+$compact   GtkEntry::inner-border = {3, 3, 3, 3}
 
   GtkPaned::handle-size = 9
   GtkHPaned::handle-size = 9
@@ -54,8 +54,8 @@ $compact  GtkEntry::inner-border = {3, 3, 3, 3}
 
   GtkScrollbar::trough-border = 0
   GtkRange::trough-border     = 0
-$regular  GtkRange::slider-width      = 15
-$compact  GtkRange::slider-width      = 13
+$regular   GtkRange::slider-width      = 15
+$compact   GtkRange::slider-width      = 13
   GtkRange::stepper-size      = 0
   GtkRange::activate-slider   = 1
 
@@ -67,10 +67,10 @@ $compact  GtkRange::slider-width      = 13
   GtkScrolledWindow::scrollbar-spacing       = 0
   GtkScrolledWindow::scrollbars-within-bevel = 1
 
-$regular  GtkScale::slider_length       = 24
-$regular  GtkScale::slider_width        = 24
-$compact  GtkScale::slider_length       = 22
-$compact  GtkScale::slider_width        = 22
+$regular   GtkScale::slider_length       = 24
+$regular   GtkScale::slider_width        = 24
+$compact   GtkScale::slider_length       = 22
+$compact   GtkScale::slider_width        = 22
   GtkScale::trough-side-details = 1
 
   GtkProgressBar::min-horizontal-bar-height = 8
@@ -98,8 +98,8 @@ $solid_menu   GtkMenu::horizontal-padding  = 1
   GtkMenuItem::arrow-scaling   = 1
   GtkMenuItem::toggle-spacing  = 10
 
-$regular  GtkCheckButton::indicator_spacing = 4
-$compact  GtkCheckButton::indicator_spacing = 3
+$regular   GtkCheckButton::indicator_spacing = 4
+$compact   GtkCheckButton::indicator_spacing = 3
   GtkOptionMenu::indicator_spacing  = {12, 12, 4, 4}
 
   GtkTreeView::expander-size        = 16
@@ -910,8 +910,8 @@ $compact  GtkCheckButton::indicator_spacing = 3
       function    = BOX
       detail      = "trough-upper"
       file        = "assets/scale-horz-trough-$size.png"
-$regular      border      = {8, 8, 0, 0}
-$compact      border      = {7, 7, 0, 0}
+$regular       border      = {8, 8, 0, 0}
+$compact       border      = {7, 7, 0, 0}
       stretch     = TRUE
       orientation = HORIZONTAL
     }
@@ -920,8 +920,8 @@ $compact      border      = {7, 7, 0, 0}
       function    = BOX
       detail      = "trough-lower"
       file        = "assets/scale-horz-trough-active-$size.png"
-$regular      border      = {8, 8, 0, 0}
-$compact      border      = {7, 7, 0, 0}
+$regular       border      = {8, 8, 0, 0}
+$compact       border      = {7, 7, 0, 0}
       stretch     = TRUE
       orientation = HORIZONTAL
     }
@@ -930,8 +930,8 @@ $compact      border      = {7, 7, 0, 0}
       function    = BOX
       detail      = "trough-upper"
       file        = "assets/scale-vert-trough-$size.png"
-$regular      border      = {0, 0, 8, 8}
-$compact      border      = {0, 0, 7, 7}
+$regular       border      = {0, 0, 8, 8}
+$compact       border      = {0, 0, 7, 7}
       stretch     = TRUE
       orientation = VERTICAL
     }
@@ -940,8 +940,8 @@ $compact      border      = {0, 0, 7, 7}
       function    = BOX
       detail      = "trough-lower"
       file        = "assets/scale-vert-trough-active-$size.png"
-$regular      border      = {0, 0, 8, 8}
-$compact      border      = {0, 0, 7, 7}
+$regular       border      = {0, 0, 8, 8}
+$compact       border      = {0, 0, 7, 7}
       stretch     = TRUE
       orientation = VERTICAL
     }
@@ -1407,8 +1407,8 @@ style "menu_border" {
 style "menu_item" {
 
   xthickness = 3
-$regular  ythickness = 5
-$compact  ythickness = 3
+$regular   ythickness = 5
+$compact   ythickness = 3
 
   bg[PRELIGHT]   = @selected_bg_color
   # Chromium uses this setting
@@ -1654,10 +1654,10 @@ style "separator_menu_item" {
 
 style "button" {
 
-$regular  xthickness = 3
-$regular  ythickness = 3
-$compact  xthickness = 2
-$compact  ythickness = 2
+$regular   xthickness = 3
+$regular   ythickness = 3
+$compact   xthickness = 2
+$compact   ythickness = 2
 
   # For the sake of sanity style buttons this way
   engine "pixmap" {
@@ -1925,10 +1925,10 @@ style "combo_button_padding" {
 
 style "notebook" {
 
-$regular  xthickness = 7
-$regular  ythickness = 4
-$compact  xthickness = 5
-$compact  ythickness = 2
+$regular   xthickness = 7
+$regular   ythickness = 4
+$compact   xthickness = 5
+$compact   ythickness = 2
 
 }
 
@@ -2100,8 +2100,8 @@ style "scale_horz" {
       function    = BOX
       detail      = "trough-upper"
       file        = "assets/scale-horz-trough-$size.png"
-$regular      border      = {8, 8, 0, 0}
-$compact      border      = {7, 7, 0, 0}
+$regular       border      = {8, 8, 0, 0}
+$compact       border      = {7, 7, 0, 0}
       stretch     = TRUE
     }
 
@@ -2109,8 +2109,8 @@ $compact      border      = {7, 7, 0, 0}
       function    = BOX
       detail      = "trough-lower"
       file        = "assets/scale-horz-trough-active-$size.png"
-$regular      border      = {8, 8, 0, 0}
-$compact      border      = {7, 7, 0, 0}
+$regular       border      = {8, 8, 0, 0}
+$compact       border      = {7, 7, 0, 0}
       stretch     = TRUE
     }
 
@@ -2126,8 +2126,8 @@ style "scale_vert" {
       function    = BOX
       detail      = "trough-upper"
       file        = "assets/scale-vert-trough-$size.png"
-$regular      border      = {0, 0, 8, 8}
-$compact      border      = {0, 0, 7, 7}
+$regular       border      = {0, 0, 8, 8}
+$compact       border      = {0, 0, 7, 7}
       stretch     = TRUE
     }
 
@@ -2135,8 +2135,8 @@ $compact      border      = {0, 0, 7, 7}
       function    = BOX
       detail      = "trough-lower"
       file        = "assets/scale-vert-trough-active-$size.png"
-$regular      border      = {0, 0, 8, 8}
-$compact      border      = {0, 0, 7, 7}
+$regular       border      = {0, 0, 8, 8}
+$compact       border      = {0, 0, 7, 7}
       stretch     = TRUE
     }
 
@@ -2340,10 +2340,10 @@ style "inline_toolbar" {
 
 style "tooltip" {
 
-$regular  xthickness = 15
-$regular  ythickness = 15
-$compact  xthickness = 13
-$compact  ythickness = 13
+$regular   xthickness = 15
+$regular   ythickness = 15
+$compact   xthickness = 13
+$compact   ythickness = 13
 
   fg[NORMAL]   = @tooltip_fg_color
 
