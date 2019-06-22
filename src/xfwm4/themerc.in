@@ -1,6 +1,9 @@
-button_offset=3
-maximized_offset=3
-button_spacing=3
+$regular button_offset=4
+$regular maximized_offset=4
+$regular button_spacing=4
+$compact button_offset=3
+$compact maximized_offset=3
+$compact button_spacing=3
 
 $light active_text_color=#101010
 $light inactive_text_color=#969696
