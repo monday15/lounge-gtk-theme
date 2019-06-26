@@ -2341,10 +2341,10 @@ style "inline_toolbar" {
 
 style "tooltip" {
 
-$regular   xthickness = 15
-$regular   ythickness = 15
-$compact   xthickness = 13
-$compact   ythickness = 13
+$regular   xthickness = 14
+$regular   ythickness = 14
+$compact   xthickness = 10
+$compact   ythickness = 10
 
   fg[NORMAL]   = @tooltip_fg_color
 
