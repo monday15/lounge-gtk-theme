@@ -2755,8 +2755,6 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   headerbar & {
     @if $variant == 'dark' { background-color: darken($dark_fill, 3%); }
   }
-
-  infobar & { background-color: if($variant == 'light', darken($infobar_color, 8%), darken($infobar_color, 4%)); }
 }
 
 %scale_highlight {
@@ -2774,9 +2772,6 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   }
 
   // OSD
-  .osd & {  }
-
-  infobar & { background-color: if($variant == 'light', desaturate(darken($infobar_color, 20%), 5%), desaturate(lighten($infobar_color, 12%), 5%)); }
 }
 
 scale {
@@ -3803,6 +3798,12 @@ infobar {
 
           label, & { color: if($variant == light, transparentize($selected_fl_color, .6), transparentize($selected_fl_color, .5)); }
         }
+      }
+
+      // gedit uses progressbar inside infobar
+      progressbar {
+        trough { background-color: if($variant == 'light', darken($barcolor, 8%), darken($barcolor, 4%)); }
+        progress { background-color: if($variant == 'light', desaturate(darken($barcolor, 20%), 5%), desaturate(lighten($barcolor, 12%), 5%)); }
       }
 
       selection { background-color: darken($barcolor, 10%); }
