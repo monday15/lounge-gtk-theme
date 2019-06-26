@@ -4247,10 +4247,10 @@ stackswitcher button.text-button.circular { // FIXME aggregate with buttons
 @if $gtk >= 3.24 {
   /* Outline for low res icons */
   .lowres-icon {
-    -gtk-icon-shadow: 1px 1px rgba(0,0,0,0.2),
-                      -1px -1px rgba(0,0,0,0.2),
-                      -1px 1px rgba(0,0,0,0.2),
-                      1px -1px rgba(0,0,0,0.2);
+    -gtk-icon-shadow: 1px 0 rgba(0,0,0,0.2),
+                      -1px 0 rgba(0,0,0,0.2),
+                      0 1px rgba(0,0,0,0.3),
+                      0 -1px rgba(0,0,0,0.2);
   }
 
   /* Drapshadow for large icons */ 
