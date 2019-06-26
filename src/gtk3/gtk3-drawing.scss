@@ -189,51 +189,11 @@
     outline-color: transparentize($tc, 0.7);
     border-color: $_button_border_color;
     border-bottom-color: if($c != $bg_color, _border_color($c), darken($borders_color, 10%));
-    @if $variant == 'light' {
-      $button_fill: image(lighten($c, 5%)) !global;
-    }
-    @else {
-      $button_fill: image(lighten($c, 2%)) !global;
-    }
+    $button_fill: if($variant == 'light', image(lighten($c, 5%)),
+                                          image(lighten($c, 2%))) !global;
     @include _button_text_shadow($tc,lighten($c, 6%));
     background-image: $button_fill;
     @include _shadows(inset 0 1px $_hilight_color);
-  }
-
-  @if $t==normal-alt {
-  //
-  // normal button alternative look
-  //
-    color: $tc;
-    outline-color: transparentize($tc, 0.7);
-    border-color: $_button_alt_border_color;
-    @include _button_text_shadow($tc, $c);
-    @if $variant == 'light' {
-      background-image: image(lighten($c, 4%));
-      @include _shadows(inset 0 1px _button_hilight_color(lighten($c, 6%)), 0 1px 2px 0 transparentize($_button_alt_border_color, .8));
-    }
-    @else {
-      background-image: image(lighten($c, 2%));
-      @include _shadows(inset 0 1px $_hilight_color, 0 1px 2px 0 transparentize($_button_alt_border_color, .8));
-    }
-  }
-
-  @else if $t==hover-alt {
-  //
-  // hovered button alternative look
-  //
-    color: $tc;
-    outline-color: transparentize($tc, 0.7);
-    border-color: $_button_alt_border_color;
-    @if $variant == 'light' {
-      $button_fill: image(lighten($c, 7%)) !global;
-      @include _shadows(inset 0 1px _button_hilight_color(lighten($c, 6%)), 0 1px 2px 0 transparentize($_button_alt_border_color, .8));
-    }
-    @else {
-      $button_fill: image(lighten($c, 7%)) !global;
-      @include _shadows(inset 0 1px $_hilight_color, 0 1px 2px 0 transparentize($_button_alt_border_color, .8));
-    }
-    background-image: $button_fill;
   }
 
   @else if $t==active {
@@ -288,6 +248,42 @@
     @include _shadows(inset 0 1px transparentize(white, 1));
   }
 
+  @if $t==normal-alt {
+  //
+  // normal button alternative look
+  //
+    color: $tc;
+    outline-color: transparentize($tc, 0.7);
+    border-color: $_button_alt_border_color;
+    @include _button_text_shadow($tc, $c);
+    @if $variant == 'light' {
+      background-image: image(lighten($c, 4%));
+      @include _shadows(inset 0 1px _button_hilight_color(lighten($c, 6%)), 0 1px 2px 0 transparentize($_button_alt_border_color, .8));
+    }
+    @else {
+      background-image: image(lighten($c, 2%));
+      @include _shadows(inset 0 1px $_hilight_color, 0 1px 2px 0 transparentize($_button_alt_border_color, .8));
+    }
+  }
+
+  @else if $t==hover-alt {
+  //
+  // hovered button alternative look
+  //
+    color: $tc;
+    outline-color: transparentize($tc, 0.7);
+    border-color: $_button_alt_border_color;
+    @if $variant == 'light' {
+      $button_fill: image(lighten($c, 7%)) !global;
+      @include _shadows(inset 0 1px _button_hilight_color(lighten($c, 6%)), 0 1px 2px 0 transparentize($_button_alt_border_color, .8));
+    }
+    @else {
+      $button_fill: image(lighten($c, 7%)) !global;
+      @include _shadows(inset 0 1px $_hilight_color, 0 1px 2px 0 transparentize($_button_alt_border_color, .8));
+    }
+    background-image: $button_fill;
+  }
+
   @else if $t==osd {
   //
   // normal osd button
@@ -303,8 +299,6 @@
     box-shadow: inset 0 1px if($variant == 'light', transparentize(white, 0.9), transparentize(white, 0.95));
     text-shadow: none;
     -gtk-icon-shadow: none;
-//    text-shadow: 0 1px black;
-//    -gtk-icon-shadow: 0 1px black;
     outline-color: transparentize($osd_fg_color, 0.7);
   }
 
@@ -323,8 +317,6 @@
     box-shadow: inset 0 1px transparentize(white, 0.9);
     text-shadow: none;
     -gtk-icon-shadow: none;
-//    text-shadow: 0 1px black;
-//    -gtk-icon-shadow: 0 1px black;
     outline-color: transparentize($osd_fg_color, 0.7);
   }
 
@@ -385,10 +377,10 @@
 // $hc: top highlight color
 // $ov: a background layer for background shorthand (hence no commas!)
 //
-  $gradient: image($c);
+  $fill: image($c);
 
-  @if $ov != none { background: $c $ov, $gradient; }
-  @else { background: $c $gradient; }
+  @if $ov != none { background: $c $ov, $fill; }
+  @else { background: $c $fill; }
 
   box-shadow: inset 0 1px $hc; // top highlight
 }
