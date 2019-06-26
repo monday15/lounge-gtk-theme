@@ -1933,9 +1933,23 @@ menu,
   padding: 2px 0;
   background-color: $menu_color;
   border: 1px solid $borders_color; // adds borders in a non composited env
-  border-radius: 3px;
 
-  .csd & { border: none; }  // axes borders in a composited env
+  // lounge: light theme looks bad in non composited env without margins on menuitems
+  menuitem {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+
+  .csd & {
+    border: none; // axes borders in a composited env
+    border-radius: $menu_radius;
+
+    //lounge: disable margins in composited env
+    menuitem {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 
   menuitem {
     min-height: $menuitem_height;
