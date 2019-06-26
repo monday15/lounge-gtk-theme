@@ -3800,6 +3800,8 @@ infobar {
         &:disabled {
           @include button(insensitive,$barcolor,$selected_fl_color);
           border-color: if($variant == light, _border_color(desaturate($barcolor, 10%)), lighten(_border_color(desaturate($barcolor, 10%)), 7%));
+
+          label, & { color: if($variant == light, transparentize($selected_fl_color, .6), transparentize($selected_fl_color, .5)); }
         }
       }
 
