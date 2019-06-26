@@ -2041,8 +2041,9 @@ menuitem {
 
 popover.background {
   padding: 2px;
-  border-radius: $popover_radius;
   background-color: $popover_bg_color;
+
+  .csd & { border-radius: $popover_radius; }
 
   .csd &, & { border: 1px solid $borders_color; }
 
