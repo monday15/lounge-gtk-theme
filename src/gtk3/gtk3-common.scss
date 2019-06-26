@@ -3833,6 +3833,8 @@ tooltip {
   box-shadow: none; // otherwise it gets inherited by windowframe.csd
   text-shadow: none;
 
+  &:not(.csd) { border-radius: 0; }
+
   // FIXME: we need a border or tooltips vanish on black background.
   decoration { background-color: transparent; }
 
