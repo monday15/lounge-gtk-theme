@@ -40,10 +40,10 @@ $warning_color: #da802a;
 $error_color: if($variant == 'light', #c82828, desaturate(darken(#c82828, 10%), 10%));
 $success_color: if($variant == 'light', #8bcb4d, desaturate(darken(#8bcb4d, 10%), 10%));
 
-$infobar_color: if($variant == 'light', #dbd2c9, desaturate(darken(#dbd2c9, 50%), 10%));
-$questionbar_color: if($variant == light, darken($selected_bl_color, 5%), $selected_bl_color);
-$warningbar_color: if($variant == light, desaturate(lighten($warning_color, 25%), 15%), saturate(darken($warning_color, 15%), 10%));
-$errorbar_color: if($variant == light, lighten($error_color, 22%), $error_color);
+$infobar_color: if($variant == 'light', lighten(#dbd2c9, 3%), desaturate(darken(#dbd2c9, 50%), 10%));
+$questionbar_color: if($variant == light, lighten($selected_bl_color, 2%), $selected_bl_color);
+$warningbar_color: if($variant == light, desaturate(lighten($warning_color, 30%), 15%), saturate(darken($warning_color, 15%), 10%));
+$errorbar_color: if($variant == light, desaturate(lighten($error_color, 35%), 10%), $error_color);
 
 $osd_fg_color: if($variant == 'light', $fg_color, #d2d2d2);
 $osd_text_color: if($variant == 'light', $text_color, #d2d2d2);

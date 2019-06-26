@@ -3772,10 +3772,12 @@ infobar {
                                (warning, $warningbar_color),
                                (error, $errorbar_color) {
     &.#{$bartype} {
-      background-color: $barcolor;
-      border-color: darken($barcolor, 10%);
+      & > revealer > box {
+        label, & { color: $selected_fl_color; }
 
-      label, & { color: $selected_fl_color; }
+        background-color: $barcolor;
+        border-bottom: 1px solid lighten($borders_color, 5%);
+      }
 
       button {
         @include button(normal, $barcolor, $selected_fl_color);
