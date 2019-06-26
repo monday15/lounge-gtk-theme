@@ -3833,7 +3833,11 @@ tooltip {
   box-shadow: none; // otherwise it gets inherited by windowframe.csd
   text-shadow: none;
 
-  &:not(.csd) { border-radius: 0; }
+  &:not(.csd) {
+    border-radius: 0;
+    // lounge: border colors should be based on tooltip color (transparency doesnt work)
+    border-color: if($variant == light, darken($tooltip_bg_color, 20%), lighten($tooltip_bg_color, 15%));
+  }
 
   // FIXME: we need a border or tooltips vanish on black background.
   decoration { background-color: transparent; }
