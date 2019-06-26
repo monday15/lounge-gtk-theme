@@ -120,7 +120,7 @@
 //
   @if lightness($c)>95% { @return transparentize(white, 0.4); }
   @else if lightness($c)>90% { @return transparentize(white, 0.6); }
-  @else if lightness($c)>80% { @return transparentize(white, 0.7); }
+  @else if lightness($c)>80% { @return transparentize(white, 0.8); }
   @else if lightness($c)>50% { @return transparentize(white, 0.9); }
   @else if lightness($c)>40% { @return transparentize(white, 0.94); }
   @else { @return transparentize(white, 0.97); }
