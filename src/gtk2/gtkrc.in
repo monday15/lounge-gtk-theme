@@ -27,8 +27,8 @@ $dark gtk-color-scheme = "insensitive_fg_color:#707272\ninsensitive_bg_color:#32
 $light gtk-color-scheme = "menu_color:#fbfbfb"
 $dark gtk-color-scheme = "menu_color:#2d2f2f"
 # Links
-$light gtk-color-scheme = "link_color:#2f72b5\nvisited_link_color:#25598d"
-$dark gtk-color-scheme = "link_color:#4e8cc9\nvisited_link_color:#3877b7"
+$light gtk-color-scheme = "link_color:#2073d2\nvisited_link_color:#195ba6"
+$dark gtk-color-scheme = "link_color:#538ed2\nvisited_link_color:#3479c8"
 # Treeview headers
 $light gtk-color-scheme = "column_header_color:#979a9b\nhover_column_header_color:#636769"
 $dark gtk-color-scheme = "column_header_color:#979a9b\nhover_column_header_color:#636769"
