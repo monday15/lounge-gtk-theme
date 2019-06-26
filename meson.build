@@ -449,19 +449,15 @@ endforeach
 
 theme = 'gtk3'
 
-set_variable(theme + '_assets_none', '')
-set_variable(theme + '_assets_light',
-             run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
-                                         ' | grep dark | sed s/-dark//').stdout().split('\n'))
-set_variable(theme + '_assets_dark',
-             run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
-                                         ' | grep dark').stdout().split('\n'))
-set_variable(theme + '_assets_regular',
-             run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
-                                         ' | grep compact | sed s/-compact//').stdout().split('\n'))
-set_variable(theme + '_assets_compact',
-             run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
-                                         ' | grep compact').stdout().split('\n'))
+gtk3_assets_none = ''
+gtk3_assets_light = run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                                ' | grep dark | sed s/-dark//').stdout().split('\n')
+gtk3_assets_dark = run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                               ' | grep dark').stdout().split('\n')
+gtk3_assets_regular = run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                                  ' | grep compact | sed s/-compact//').stdout().split('\n')
+gtk3_assets_compact = run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                                  ' | grep compact').stdout().split('\n')
 
 install_subdir('src/' + theme +'/assets',
                 install_dir: gtk3_dir,
