@@ -108,8 +108,8 @@ StScrollBar {
   padding: 0;
 
   StScrollView & {
-    min-width: 14px;
-    min-height: 14px;
+    min-width: 16px;
+    min-height: 16px;
   }
 
   StBin#trough {
@@ -173,8 +173,8 @@ StScrollBar {
 
 /* Switches */
 .toggle-switch {
-  width: 40px;
-  height: 22px;
+  width: 46px;
+  height: 26px;
   background-size: contain;
 
   background-image: url("assets/toggle-off.svg");
