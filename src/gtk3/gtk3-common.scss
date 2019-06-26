@@ -3509,7 +3509,7 @@ filechooserbutton:drop(active) {
 
 .sidebar {
   border-style: none;
-  background-color: mix($bg_color, $base_color, 60%);
+  background-color: $sidebar_bg_color;
 
   @if $gtk == 3.22 {
     @at-root %sidebar_left,
