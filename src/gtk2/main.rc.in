@@ -2418,7 +2418,7 @@ $solid_menu # enable solid menu border
 $solid_menu widget_class "*<GtkMenu>*"                                         style "menu_border"
 
 # lounge: workaround for deb/rpm packaging - instead of rebuilding whole theme,
-# this line is uncommented for xfce/sway theme
+# next line will be uncommented for xfce/sway theme package
 #widget_class "*<GtkMenu>*"                                         style "menu_border"
 
 widget_class "*<GtkMenuItem>*"                                     style "menu_item"
