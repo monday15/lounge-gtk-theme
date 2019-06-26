@@ -561,7 +561,7 @@ button {
       @if $variant == 'light' { &:not(.sidebar-button) { border-color: $selected_borders_color; }}
 
       &.flat:not(:active):not(:checked):not(:hover):not(disabled) {
-        color: $selected_fg_color;
+        color: $selected_fl_color;
         border-color: transparent;
 
         &.sidebar-button { color: $fg_color; }
