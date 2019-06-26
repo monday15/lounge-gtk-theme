@@ -1,20 +1,9 @@
-/.gitignore export-ignore
 /.gitattributes export-ignore
 /fedora-spec export-ignore
 
 /src/gtk2/render-assets.sh export-ignore
 /src/gtk2/assets.svg export-ignore
 /src/gtk2/assets.txt export-ignore
-/src/gtk2/render-assets-external.sh export-ignore
-/src/gtk2/assets-external.txt export-ignore
-/src/gtk2/assets-external.svg export-ignore
-
-/src/gtk2-dark/render-assets.sh export-ignore
-/src/gtk2-dark/assets.svg export-ignore
-/src/gtk2-dark/assets.txt export-ignore
-/src/gtk2-dark/render-assets-external.sh export-ignore
-/src/gtk2-dark/assets-external.txt export-ignore
-/src/gtk2-dark/assets-external.svg export-ignore
 
 /src/gtk3/render-assets.sh export-ignore
 /src/gtk3/assets.svg export-ignore
@@ -27,7 +16,3 @@
 /src/xfwm4/xfwm4-assets.svg export-ignore
 /src/xfwm4/xfwm4-assets.txt export-ignore
 /src/xfwm4/xfwm4-render-assets.sh export-ignore
-
-/src/xfwm4-dark/xfwm4-assets.svg export-ignore
-/src/xfwm4-dark/xfwm4-assets.txt export-ignore
-/src/xfwm4-dark/xfwm4-render-assets.sh export-ignore
