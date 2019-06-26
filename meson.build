@@ -320,16 +320,16 @@ foreach theme : assets_themes
   set_variable(theme + '_assets_none', '')
   set_variable(theme + '_assets_light',
                run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
-                                           ' | grep dark | sed s/-dark//').stdout().split('\n'))
+                                           ' | grep dark | sed s/-dark//').stdout())
   set_variable(theme + '_assets_dark',
                run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
-                                           ' | grep dark').stdout().split('\n'))
+                                           ' | grep dark').stdout())
   set_variable(theme + '_assets_regular',
                run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
-                                           ' | grep compact | sed s/-compact//').stdout().split('\n'))
+                                           ' | grep compact | sed s/-compact//').stdout())
   set_variable(theme + '_assets_compact',
                run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
-                                           ' | grep compact').stdout().split('\n'))
+                                           ' | grep compact').stdout())
 
   foreach assets : assets_array
     # Exclude different types of assets from gtk3 theme
@@ -349,8 +349,8 @@ foreach theme : assets_themes
 
     install_subdir('src/' + theme +'/assets',
                     install_dir: assets_install_dir,
-                    exclude_files : [get_variable(theme + '_assets' + assets[1]),
-                                     get_variable(theme + '_assets' + exclude_color_variants)],
+                    exclude_files : [get_variable(theme + '_assets' + assets[1]).split('\n'),
+                                     get_variable(theme + '_assets' + exclude_color_variants).split('\n')],
                                      strip_directory: true)
 
     if theme == 'xfwm4'
@@ -449,19 +449,23 @@ endforeach
 
 theme = 'gtk3'
 
-gtk3_assets_none = ''
-gtk3_assets_light = run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
-                                                ' | grep dark | sed s/-dark//').stdout().split('\n')
-gtk3_assets_dark = run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
-                                               ' | grep dark').stdout().split('\n')
-gtk3_assets_regular = run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
-                                                  ' | grep compact | sed s/-compact//').stdout().split('\n')
-gtk3_assets_compact = run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
-                                                  ' | grep compact').stdout().split('\n')
+set_variable(theme + '_assets_none', '')
+set_variable(theme + '_assets_light',
+             run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                         ' | grep dark | sed s/-dark//').stdout())
+set_variable(theme + '_assets_dark',
+             run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                         ' | grep dark').stdout())
+set_variable(theme + '_assets_regular',
+             run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                         ' | grep compact | sed s/-compact//').stdout())
+set_variable(theme + '_assets_compact',
+             run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                         ' | grep compact').stdout())
 
 install_subdir('src/' + theme +'/assets',
                 install_dir: gtk3_dir,
-                exclude_files : [get_variable(theme + '_assets' + exclude_assets[0]),
-                                 get_variable(theme + '_assets' + exclude_assets[1])])
+                exclude_files : [get_variable(theme + '_assets' + exclude_assets[0]).split('\n'),
+                                 get_variable(theme + '_assets' + exclude_assets[1]).split('\n')])
 
 endif
