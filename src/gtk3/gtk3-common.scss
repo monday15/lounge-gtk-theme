@@ -558,13 +558,11 @@ button {
 
   @at-root %button_selected, & {
     row:selected & {
-      @if $variant == 'light' { &:not(.sidebar-button) { border-color: $selected_borders_color; }}
+      @if $variant == 'light' { &:not(.sidebar-button) { border-color: mix($selected_borders_color, $borders_color, 40%); }}
 
       &.flat:not(:active):not(:checked):not(:hover):not(disabled) {
         color: $selected_fl_color;
         border-color: transparent;
-
-        &.sidebar-button { color: $fg_color; }
       }
     }
   }
