@@ -70,18 +70,26 @@ sed -i 's!GtkMenu::horizontal-padding  = 0!GtkMenu::horizontal-padding  = 1!g' %
 sed -i 's!#widget_class!widget_class!g' %{_datadir}/themes/Lounge/gtk-2.0/main.rc
 sed -i 's!GtkMenu::horizontal-padding  = 0!GtkMenu::horizontal-padding  = 1!g' %{_datadir}/themes/Lounge-night/gtk-2.0/main.rc
 sed -i 's!#widget_class!widget_class!g' %{_datadir}/themes/Lounge-night/gtk-2.0/main.rc
+sed -i 's!GtkMenu::horizontal-padding  = 0!GtkMenu::horizontal-padding  = 1!g' %{_datadir}/themes/Lounge/gtk-2.0/main.rc
+sed -i 's!#widget_class!widget_class!g' %{_datadir}/themes/Lounge-compact/gtk-2.0/main.rc
+sed -i 's!GtkMenu::horizontal-padding  = 0!GtkMenu::horizontal-padding  = 1!g' %{_datadir}/themes/Lounge-night/gtk-2.0/main.rc
+sed -i 's!#widget_class!widget_class!g' %{_datadir}/themes/Lounge-night-compact/gtk-2.0/main.rc
 
 %files
 %license LICENSE COPYRIGHT
 %doc README.md
 %{_datadir}/themes/Lounge/*
 %{_datadir}/themes/Lounge-night/*
+%{_datadir}/themes/Lounge-compact/*
+%{_datadir}/themes/Lounge-night-compact/*
 
 %files -n lounge-gtk-theme-xfce-sway
 %license LICENSE COPYRIGHT
 %doc README.md
 %{_datadir}/themes/Lounge/*
 %{_datadir}/themes/Lounge-night/*
+%{_datadir}/themes/Lounge-compact/*
+%{_datadir}/themes/Lounge-night-compact/*
 
 %files -n lounge-aux-icon-theme
 %license LICENSE COPYRIGHT
