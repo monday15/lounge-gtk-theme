@@ -16,14 +16,14 @@ $selected_fg_color: if($variant == 'light', #ffffff, $selected_fl_color);
 
 $borders_color: if($variant == 'light', darken($bg_color, 26.5%), darken($bg_color, 8.5%));
 $alt_borders_color: if($variant == 'light', darken($bg_color, 35%), darken($bg_color, 8.5%));
-$selected_borders_color: if($variant== 'light', desaturate(darken($selected_bg_color, 10%), 25%), darken($selected_bg_color, 20%));
+$selected_borders_color: if($variant== 'light', desaturate(darken($selected_bg_color, 10%), 20%), darken($selected_bg_color, 20%));
 $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
 
 $top_hilight: $borders_edge;
 $dark_fill: if($variant == 'light', mix($borders_color, $bg_color, 30%), mix($borders_color, $bg_color, 32%));
 
-$link_color: if($variant == 'light', desaturate(darken($selected_bg_color, 15%), 10%), lighten($selected_bg_color, 15%));
-$link_visited_color: if($variant == 'light', desaturate(darken($selected_bg_color, 25%), 10%), lighten($selected_bg_color, 7%));
+$link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 15%));
+$link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 7%));
 
 $headerbar_color: if($variant == 'light', lighten($bg_color, 4%), darken($bg_color, 2%));
 $menu_color: if($variant == 'light', lighten($bg_color, 5%), mix($bg_color, $base_color, 40%));
