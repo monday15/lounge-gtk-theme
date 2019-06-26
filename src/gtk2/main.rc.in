@@ -910,8 +910,8 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function    = BOX
       detail      = "trough-upper"
       file        = "assets/scale-horz-trough-$size.png"
-$regular       border      = {8, 8, 0, 0}
-$compact       border      = {7, 7, 0, 0}
+$regular       border      = {10, 10, 0, 0}
+$compact       border      = {9, 9, 0, 0}
       stretch     = TRUE
       orientation = HORIZONTAL
     }
@@ -920,8 +920,8 @@ $compact       border      = {7, 7, 0, 0}
       function    = BOX
       detail      = "trough-lower"
       file        = "assets/scale-horz-trough-active-$size.png"
-$regular       border      = {8, 8, 0, 0}
-$compact       border      = {7, 7, 0, 0}
+$regular       border      = {10, 10, 0, 0}
+$compact       border      = {9, 9, 0, 0}
       stretch     = TRUE
       orientation = HORIZONTAL
     }
@@ -930,8 +930,8 @@ $compact       border      = {7, 7, 0, 0}
       function    = BOX
       detail      = "trough-upper"
       file        = "assets/scale-vert-trough-$size.png"
-$regular       border      = {0, 0, 8, 8}
-$compact       border      = {0, 0, 7, 7}
+$regular       border      = {0, 0, 10, 10}
+$compact       border      = {0, 0, 9, 9}
       stretch     = TRUE
       orientation = VERTICAL
     }
@@ -940,8 +940,8 @@ $compact       border      = {0, 0, 7, 7}
       function    = BOX
       detail      = "trough-lower"
       file        = "assets/scale-vert-trough-active-$size.png"
-$regular       border      = {0, 0, 8, 8}
-$compact       border      = {0, 0, 7, 7}
+$regular       border      = {0, 0, 10, 10}
+$compact       border      = {0, 0, 9, 9}
       stretch     = TRUE
       orientation = VERTICAL
     }
@@ -2101,8 +2101,8 @@ style "scale_horz" {
       function    = BOX
       detail      = "trough-upper"
       file        = "assets/scale-horz-trough-$size.png"
-$regular       border      = {8, 8, 0, 0}
-$compact       border      = {7, 7, 0, 0}
+$regular       border      = {10, 10, 0, 0}
+$compact       border      = {9, 9, 0, 0}
       stretch     = TRUE
     }
 
@@ -2110,8 +2110,8 @@ $compact       border      = {7, 7, 0, 0}
       function    = BOX
       detail      = "trough-lower"
       file        = "assets/scale-horz-trough-active-$size.png"
-$regular       border      = {8, 8, 0, 0}
-$compact       border      = {7, 7, 0, 0}
+$regular       border      = {10, 10, 0, 0}
+$compact       border      = {9, 9, 0, 0}
       stretch     = TRUE
     }
 
@@ -2127,8 +2127,8 @@ style "scale_vert" {
       function    = BOX
       detail      = "trough-upper"
       file        = "assets/scale-vert-trough-$size.png"
-$regular       border      = {0, 0, 8, 8}
-$compact       border      = {0, 0, 7, 7}
+$regular       border      = {0, 0, 10, 10}
+$compact       border      = {0, 0, 9, 9}
       stretch     = TRUE
     }
 
@@ -2136,8 +2136,8 @@ $compact       border      = {0, 0, 7, 7}
       function    = BOX
       detail      = "trough-lower"
       file        = "assets/scale-vert-trough-active-$size.png"
-$regular       border      = {0, 0, 8, 8}
-$compact       border      = {0, 0, 7, 7}
+$regular       border      = {0, 0, 10, 10}
+$compact       border      = {0, 0, 9, 9}
       stretch     = TRUE
     }
 

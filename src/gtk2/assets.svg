@@ -203,9 +203,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.0699556"
-     inkscape:cx="225.86376"
-     inkscape:cy="-20.510338"
+     inkscape:zoom="1.785"
+     inkscape:cx="209.50716"
+     inkscape:cy="322.67231"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -216,7 +216,7 @@
      inkscape:window-x="1280"
      inkscape:window-y="25"
      inkscape:window-maximized="1"
-     showguides="false"
+     showguides="true"
      inkscape:guide-bbox="true">
     <inkscape:grid
        type="xygrid"
@@ -897,14 +897,14 @@
        transform="scale(-1)"
        inkscape:label="#rect2707" />
     <g
-       transform="rotate(90,98.000005,469.625)"
+       transform="rotate(90,100,469.625)"
        id="scale-horz-trough"
        inkscape:label="#g898">
       <rect
          y="488.62503"
          x="3.999999"
-         height="19"
-         width="22"
+         height="21"
+         width="24"
          id="rect2709"
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1" />
       <rect
@@ -914,23 +914,23 @@
          id="rect2711"
          width="5"
          height="6"
-         x="12.499998"
-         y="495.125" />
+         x="13.499998"
+         y="496.125" />
     </g>
     <g
        inkscape:label="#g898"
        id="scale-horz-trough-active"
-       transform="rotate(90,108,479.625)">
+       transform="rotate(90,111.5,481.125)">
       <rect
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
          id="rect2715"
-         width="22"
-         height="19"
+         width="24"
+         height="21"
          x="3.999999"
          y="488.62503" />
       <rect
-         y="495.125"
-         x="12.499998"
+         y="496.125"
+         x="13.499998"
          height="6"
          width="5"
          id="rect2717"
@@ -974,17 +974,17 @@
     <g
        inkscape:label="#g898"
        id="scale-vert-trough"
-       transform="rotate(180,63,444.12499)">
+       transform="rotate(180,66.5,444.12499)">
       <rect
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
          id="rect2792"
-         width="22"
-         height="19"
+         width="24"
+         height="21"
          x="3.999999"
          y="490.62503" />
       <rect
-         y="497.125"
-         x="12.499998"
+         y="498.125"
+         x="13.499998"
          height="6"
          width="5"
          id="rect2794"
@@ -993,14 +993,14 @@
          rx="1.5" />
     </g>
     <g
-       transform="rotate(180,73.999995,444.125)"
+       transform="rotate(180,78.999995,444.125)"
        id="scale-vert-trough-active"
        inkscape:label="#g898">
       <rect
          y="490.62503"
          x="3.999999"
-         height="19"
-         width="22"
+         height="21"
+         width="24"
          id="rect2798"
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1" />
       <rect
@@ -1010,8 +1010,8 @@
          id="rect2800"
          width="5"
          height="6"
-         x="12.499998"
-         y="497.125" />
+         x="13.499998"
+         y="498.125" />
     </g>
     <g
        transform="translate(1,-171.00002)"
@@ -3756,14 +3756,14 @@
          sodipodi:nodetypes="scscsscscss" />
     </g>
     <g
-       transform="rotate(90,243.00001,324.62501)"
+       transform="rotate(90,247.50001,327.12501)"
        id="scale-horz-trough-compact"
        inkscape:label="#g898">
       <rect
          y="490.625"
          x="5.999999"
-         height="17"
-         width="20"
+         height="19"
+         width="22"
          id="rect2709-49"
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1" />
       <rect
@@ -3773,23 +3773,23 @@
          id="rect2711-9"
          width="5"
          height="6"
-         x="13.499998"
-         y="496.125" />
+         x="14.499998"
+         y="497.125" />
     </g>
     <g
        inkscape:label="#g898"
        id="scale-horz-trough-active-compact"
-       transform="rotate(90,253.00002,334.62501)">
+       transform="rotate(90,257.50002,337.12501)">
       <rect
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
          id="rect2715-3"
-         width="20"
-         height="17"
+         width="22"
+         height="19"
          x="5.999999"
          y="490.625" />
       <rect
-         y="496.125"
-         x="13.499998"
+         y="497.125"
+         x="14.499998"
          height="6"
          width="5"
          id="rect2717-6"
@@ -3832,17 +3832,17 @@
     <g
        inkscape:label="#g898"
        id="scale-vert-trough-compact"
-       transform="rotate(180,63.000009,299.125)">
+       transform="rotate(180,66.500009,299.125)">
       <rect
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
          id="rect2792-4"
-         width="20"
-         height="17"
+         width="22"
+         height="19"
          x="5.999999"
          y="490.625" />
       <rect
-         y="496.125"
-         x="13.499998"
+         y="497.125"
+         x="14.499998"
          height="6"
          width="5"
          id="rect2794-3"
@@ -3851,14 +3851,14 @@
          rx="1.5" />
     </g>
     <g
-       transform="rotate(180,73,299.125)"
+       transform="rotate(180,78,299.125)"
        id="scale-vert-trough-active-compact"
        inkscape:label="#g898">
       <rect
          y="490.625"
          x="5.999999"
-         height="17"
-         width="20"
+         height="19"
+         width="22"
          id="rect2798-5"
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1" />
       <rect
@@ -3868,8 +3868,8 @@
          id="rect2800-1"
          width="5"
          height="6"
-         x="13.499998"
-         y="496.125" />
+         x="14.499998"
+         y="497.125" />
     </g>
     <g
        inkscape:label="#g2836"
@@ -6692,14 +6692,14 @@
          rx="2" />
     </g>
     <g
-       transform="rotate(90,343.00001,424.62501)"
+       transform="rotate(90,347.50001,427.12501)"
        id="scale-horz-trough-compact-dark"
        inkscape:label="#g898">
       <rect
          y="490.625"
          x="5.999999"
-         height="17"
-         width="20"
+         height="19"
+         width="22"
          id="rect2709-4-4"
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1" />
       <rect
@@ -6709,23 +6709,23 @@
          id="rect2711-7-7"
          width="5"
          height="6"
-         x="13.499998"
-         y="496.125" />
+         x="14.499998"
+         y="497.125" />
     </g>
     <g
        inkscape:label="#g898"
        id="scale-horz-trough-active-compact-dark"
-       transform="rotate(90,353,434.625)">
+       transform="rotate(90,357.75,437.375)">
       <rect
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
          id="rect2715-4-4"
-         width="20"
-         height="17"
+         width="22"
+         height="19"
          x="5.999999"
          y="490.625" />
       <rect
-         y="496.125"
-         x="13.499998"
+         y="497.125"
+         x="14.499998"
          height="6"
          width="5"
          id="rect2717-4-4"
@@ -6736,17 +6736,17 @@
     <g
        inkscape:label="#g898"
        id="scale-vert-trough-compact-dark"
-       transform="rotate(180,163,299.12499)">
+       transform="rotate(180,167,299.12499)">
       <rect
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
          id="rect2792-3-3"
-         width="20"
-         height="17"
+         width="22"
+         height="19"
          x="5.999999"
          y="490.625" />
       <rect
-         y="496.125"
-         x="13.499998"
+         y="497.125"
+         x="14.499998"
          height="6"
          width="5"
          id="rect2794-0-0"
@@ -6755,14 +6755,14 @@
          rx="1.5" />
     </g>
     <g
-       transform="rotate(180,172.99999,299.12499)"
+       transform="rotate(180,178.49999,299.12499)"
        id="scale-vert-trough-active-compact-dark"
        inkscape:label="#g898">
       <rect
          y="490.625"
          x="5.999999"
-         height="17"
-         width="20"
+         height="19"
+         width="22"
          id="rect2798-7-7"
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1" />
       <rect
@@ -6772,8 +6772,8 @@
          id="rect2800-8-8"
          width="5"
          height="6"
-         x="13.499998"
-         y="496.125" />
+         x="14.499998"
+         y="497.125" />
     </g>
     <g
        inkscape:label="#g2836"
@@ -8937,14 +8937,14 @@
          ry="3" />
     </g>
     <g
-       transform="rotate(90,197.99998,569.625)"
+       transform="rotate(90,199.99999,569.62499)"
        id="scale-horz-trough-dark"
        inkscape:label="#g898">
       <rect
          y="488.62503"
          x="3.999999"
-         height="19"
-         width="22"
+         height="21"
+         width="24"
          id="rect2709-5"
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1" />
       <rect
@@ -8954,23 +8954,23 @@
          id="rect2711-8"
          width="5"
          height="6"
-         x="12.499998"
-         y="495.125" />
+         x="13.499998"
+         y="496.125" />
     </g>
     <g
        inkscape:label="#g898"
        id="scale-horz-trough-active-dark"
-       transform="rotate(90,207.99998,579.625)">
+       transform="rotate(90,210.99999,580.62499)">
       <rect
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
          id="rect2715-7"
-         width="22"
-         height="19"
+         width="24"
+         height="21"
          x="3.999999"
          y="488.62503" />
       <rect
-         y="495.125"
-         x="12.499998"
+         y="496.125"
+         x="13.499998"
          height="6"
          width="5"
          id="rect2717-0"
@@ -9014,17 +9014,17 @@
     <g
        inkscape:label="#g898"
        id="scale-vert-trough-dark"
-       transform="rotate(180,163,444.12501)">
+       transform="rotate(180,166,444.12501)">
       <rect
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
          id="rect2792-2"
-         width="22"
-         height="19"
+         width="24"
+         height="21"
          x="3.999999"
          y="490.62503" />
       <rect
-         y="497.125"
-         x="12.499998"
+         y="498.125"
+         x="13.499998"
          height="6"
          width="5"
          id="rect2794-9"
@@ -9033,14 +9033,14 @@
          rx="1.5" />
     </g>
     <g
-       transform="rotate(180,173.99999,444.12501)"
+       transform="rotate(180,178.49999,444.12501)"
        id="scale-vert-trough-active-dark"
        inkscape:label="#g898">
       <rect
          y="490.62503"
          x="3.999999"
-         height="19"
-         width="22"
+         height="21"
+         width="24"
          id="rect2798-6"
          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1" />
       <rect
@@ -9050,8 +9050,8 @@
          id="rect2800-10"
          width="5"
          height="6"
-         x="12.499998"
-         y="497.125" />
+         x="13.499998"
+         y="498.125" />
     </g>
     <g
        transform="translate(201,-171.00001)"
