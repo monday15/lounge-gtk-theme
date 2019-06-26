@@ -19,5 +19,8 @@ option('gtk2-solid-menu', type : 'boolean', value : false,
 option('flatpak', type : 'boolean', value : false,
   description : 'Build theme for flatpak package')
 
+option('flatpak-size', type : 'string',
+  description : 'Flatpak size variant (regular/compact)')
+
 option('flatpak-variant', type : 'string',
   description : 'Flatpak variant (light/dark)')

@@ -376,16 +376,39 @@ endif
 if get_option('flatpak')
 
 if get_option('flatpak-variant') == 'light'
-  theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge')
+  if get_option('flatpak-size') == 'regular'
+    theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge')
+    gtk3_variants = [['light', '',      'regular'],
+                     ['dark',  '-dark', 'regular']]
+    exclude_assets = ['_none', '_compact']
+
+  else
+    theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-compact')
+    gtk3_variants = [['light', '',      'compact'],
+                     ['dark',  '-dark', 'compact']]
+    exclude_assets = ['_none', '_regular']
+
+  endif
 else
-  theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-night')
+  if get_option('flatpak-size') == 'regular'
+    theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-night')
+    gtk3_variants = [['dark', '', 'regular']]
+    exclude_assets = ['_light', '_compact']
+
+  else
+    theme_dir = join_paths(get_option('datadir'), 'themes', 'Lounge-night-compact')
+    gtk3_variants = [['dark', '', 'compact']]
+    exclude_assets = ['_light', '_regular']
+
+  endif
 endif
 
 gtk3_dir = join_paths(theme_dir, 'gtk-3.0')
 
-gtk3_sources = [
+gtk3_noconf_sources = [
   'gtk3-colors.scss',
   'gtk3-colors-public.scss',
+  'gtk3-variables.scss',
   'gtk3-drawing.scss',
   'gtk3-common.scss',
   'gtk3-apps.scss',
@@ -398,25 +421,19 @@ gnome_version = '3.32'
 copy = configuration_data()
 copy.set('something', 'something')
 
-foreach file : gtk3_sources
+foreach file : gtk3_noconf_sources
   configure_file(input : join_paths('src/gtk3/' + file),
                  output : file,
                  configuration : copy)
 endforeach
 
-if get_option('flatpak-variant') == 'light'
-  gtk3_variants = [['light', ''],
-                   ['dark',  '-dark']]
-else
-  gtk3_variants = [['dark', '']]
-endif
 
 foreach variant : gtk3_variants
   gtk3_conf = configuration_data()
   gtk3_conf.set('gtk_variant', variant[0])
+  gtk3_conf.set('gtk_size', variant[2])
   gtk3_conf.set('gtk_version', gtk3_version)
   gtk3_conf.set('gnome_version', gnome_version)
-  gtk3_conf.set('nautilus_version', gnome_version)
 
   gtk3_scss = configure_file(input : 'src/gtk3/gtk3.scss',
                              output : 'gtk3' + variant[1] + '.scss',
@@ -427,10 +444,28 @@ foreach variant : gtk3_variants
                 output: 'gtk' + variant[1] + '.css',
                 command: [ sassc, '-M', '-t', 'compact', '@INPUT@', '@OUTPUT@' ],
                 install: true,
-                install_dir: gtk3_dir, 
-                build_by_default: true)
+                install_dir: gtk3_dir)
 endforeach
 
-install_subdir('src/gtk3/assets', install_dir: gtk3_dir)
+theme = 'gtk3'
+
+set_variable(theme + '_assets_none', '')
+set_variable(theme + '_assets_light',
+             run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                         ' | grep dark | sed s/-dark//').stdout().split('\n'))
+set_variable(theme + '_assets_dark',
+             run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                         ' | grep dark').stdout().split('\n'))
+set_variable(theme + '_assets_regular',
+             run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                         ' | grep compact | sed s/-compact//').stdout().split('\n'))
+set_variable(theme + '_assets_compact',
+             run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                         ' | grep compact').stdout().split('\n'))
+
+install_subdir('src/' + theme +'/assets',
+                install_dir: gtk3_dir,
+                exclude_files : [get_variable(theme + '_assets' + exclude_assets[0]),
+                                 get_variable(theme + '_assets' + exclude_assets[1])])
 
 endif
