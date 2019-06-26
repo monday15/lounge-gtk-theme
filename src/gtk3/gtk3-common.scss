@@ -3828,7 +3828,7 @@ tooltip {
                                               // very dark backgrounds
   }
 
-  padding: 4px; /* not working */
+  padding: $tooltip_padding; /* not working */
   border-radius: 5px;
   box-shadow: none; // otherwise it gets inherited by windowframe.csd
   text-shadow: none;
@@ -3839,7 +3839,7 @@ tooltip {
   decoration { background-color: transparent; }
 
   * { // Yeah this is ugly
-    padding: 4px;
+    padding: $tooltip_padding;
     background-color: transparent;
     color: $fg_color;
   }

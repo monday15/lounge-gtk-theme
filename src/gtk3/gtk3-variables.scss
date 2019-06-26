@@ -65,3 +65,5 @@ $searchbar_revealer_padding: if($size == compact, 4px, 5px);
 $menuitem_margin: if($size == compact, 2px, 2px);
 
 $stackswitcher_textbutton_width: if($size == compact, 60px, 80px);
+
+$tooltip_padding: if($size == compact, 2px, 4px);
