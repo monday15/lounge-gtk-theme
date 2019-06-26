@@ -1363,7 +1363,8 @@ style "menubar" {
 style "menubar_item" {
 
   xthickness = 3
-  ythickness = 3
+$regular   ythickness = 4
+$compact   ythickness = 3
 
   fg[PRELIGHT] = @link_color
   bg[PRELIGHT] = @bg_color
