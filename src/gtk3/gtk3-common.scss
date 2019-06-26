@@ -533,8 +533,8 @@ button {
     }
 
     &.text-button {
-      padding-left: 12px;
-      padding-right: 12px;
+      padding-left: $text_button_side_padding;
+      padding-right: $text_button_side_padding;
       padding-top: 4px;
       padding-bottom: 4px;
     }
