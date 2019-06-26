@@ -529,7 +529,10 @@ headerbar button.sources-button { min-height: 36px; }
   }
 
   @if $gnome >= 3.32 {
-    .entry-tag { margin-top: 4px; margin-bottom: 4px; }
+    .entry-tag {
+      margin-top: $nautilus_entry_tag_vertical_margin;
+      margin-bottom: $nautilus_entry_tag_vertical_margin;
+    }
   }
 
   @if $gnome >= 3.30 {

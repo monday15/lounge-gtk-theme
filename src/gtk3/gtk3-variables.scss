@@ -15,7 +15,6 @@ $combobox_button_padding: if($size == compact, 3px 4px, 4px 6px);
 
 $entry_height: if($size == compact, 28px, 32px);
 $spinbutton_entry_width: if($size == compact, 24px, 28px);
-//$entry_padding: if($size == compact, 6px, 8px);
 
 $popover_radius: if($size == compact, 3px, 5px);
 
@@ -68,3 +67,5 @@ $menuitem_margin: if($size == compact, 2px, 2px);
 $stackswitcher_textbutton_width: if($size == compact, 60px, 80px);
 
 $tooltip_padding: if($size == compact, 2px, 4px);
+
+$nautilus_entry_tag_vertical_margin: if($size == compact, 4px, 5px);
