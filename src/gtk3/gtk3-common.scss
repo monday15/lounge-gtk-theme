@@ -434,7 +434,7 @@ treeview entry {
   background-color: $_entry_tag_bg;
 
   &:hover {
-    background-color: if($variant=='light', darken($_entry_tag_bg, 10%), lighten($_entry_tag_bg, 10%));
+    background-color: if($variant=='light', darken($_entry_tag_bg, 5%), lighten($_entry_tag_bg, 5%));
   }
 
   &.button {
