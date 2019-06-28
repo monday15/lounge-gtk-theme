@@ -68,4 +68,7 @@ $stackswitcher_textbutton_width: if($size == compact, 60px, 80px);
 
 $tooltip_padding: if($size == compact, 2px, 4px);
 
+$app_notification_padding: if($size == compact, 6px 8px, 10px 12px);
+$app_notification_radius: if($size == compact, 3px, 5px);
+
 $nautilus_entry_tag_vertical_margin: if($size == compact, 4px, 5px);

@@ -3377,8 +3377,8 @@ row {
 .app-notification.frame {
   @extend %osd;
 
-  padding: 6px 8px;
-  border-radius: 0 0 3px 3px;
+  padding: $app_notification_padding;
+  border-radius: 0 0 $app_notification_radius $app_notification_radius;
   background-color: $osd_bg_color;
   background-image: linear-gradient(to bottom, transparentize(black, 0.8),
                                                transparent 1px);
