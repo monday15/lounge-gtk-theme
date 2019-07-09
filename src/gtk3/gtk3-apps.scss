@@ -281,6 +281,13 @@ window:not(.incognito-mode) .main-notebook tab:not(.reorderable-page) {
       }
     }
   }
+
+  @if $size == regular {
+    menuitem {
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+  }
 }
 
 
