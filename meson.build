@@ -43,7 +43,7 @@ message('Gnome ' + gnome_version)
   # CHECK GTK3 VERSION
 
 if get_option('gtk3-version') != ''
-  gtk_version = get_option('gtk-version')
+  gtk3_version = get_option('gtk3-version')
 else
   gtk3_version_check = find_program('gtk-launch')
   gtk3_version_array = run_command([gtk3_version_check, '--version']).stdout().split('\n')[0].split(' ')[-1].strip().split('.')
