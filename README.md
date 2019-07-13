@@ -1,5 +1,6 @@
 ## News
-PLEASE, USE 1.19 RELEASE FOR NOW, 1.20 IS NOT YET PROPERLY TESTED (ACTUAL RELEASE WILL BE TOMORROW).
+Added non-compact theme variant, old Lounge theme renamed to Lounge-compact.  
+Added dynamic background for gnome desktop [(repository)](https://github.com/monday15/lounge-backgrounds). Fedora/Ubuntu users will get Lounge-backgrounds package with updates (recommended dependency).
 
 ## Info
 Simple and clean gtk theme, based on original Adwaita.  
@@ -83,4 +84,4 @@ List of applications (their original css styles used in the theme): [Gedit](http
 ## Screenshots
 ![auxdiff](https://user-images.githubusercontent.com/42862490/50310672-82702700-04c4-11e9-9e3c-e806dcc942eb.png)
 
-![lounge-screenshot](https://user-images.githubusercontent.com/42862490/54952185-26a3b700-4f67-11e9-8a4c-2b761ee5dd17.png)
+![lounge-screenshot](https://user-images.githubusercontent.com/42862490/61176961-95bf1d00-a5e3-11e9-9d83-e9c992e4d1ab.png)
