@@ -584,6 +584,7 @@ headerbar button.sources-button { min-height: 36px; }
       &.text-button.image-button {
         // add padding before home/computer icon, reduce padding between icon and label
         image:first-child { padding-left: 8px; }
+        label:first-child { padding-left: 12px; }
         label:not(:first-child) { padding-left: 2px; }
       }
     }
