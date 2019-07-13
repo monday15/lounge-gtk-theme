@@ -22,6 +22,7 @@ BuildRequires:  librsvg2
 Requires:       gdk-pixbuf2
 Requires:       gtk-murrine-engine
 Recommends:     lounge-aux-icon-theme
+Recommends:     lounge-backgrounds
 Recommends:     google-roboto-fonts
 Conflicts:      lounge-gtk-theme-xfce-sway
 
