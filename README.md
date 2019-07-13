@@ -1,5 +1,5 @@
 ## News
-Ubuntu PPA availiable! Check installation section.
+PLEASE, USE 1.19 RELEASE FOR NOW, 1.20 IS NOT YET PROPERLY TESTED (ACTUAL RELEASE WILL BE TOMORROW).
 
 ## Info
 Simple and clean gtk theme, based on original Adwaita.  
