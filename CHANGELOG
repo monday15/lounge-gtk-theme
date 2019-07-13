@@ -1,3 +1,11 @@
+1.20
+====
+
+general: Added non-compact theme;
+gtk3/gtk2/shell: Several fixes;
+gtk3: New style for infobars.
+
+
 1.19
 ====
 

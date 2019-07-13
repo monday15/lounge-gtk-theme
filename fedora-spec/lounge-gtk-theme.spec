@@ -1,5 +1,5 @@
 Name:           lounge-gtk-theme
-Version:        1.19
+Version:        1.20
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Simple and clean gtk theme
@@ -100,9 +100,12 @@ sed -i 's!#widget_class!widget_class!g' %{_datadir}/themes/Lounge-night-compact/
 
 
 %changelog
+* Sat Jul 13 2019 Alex Monday <monday15@gmx.com>
+- Update to 1.20
+- Merge xfce/sway variant into regular spec
+- Add recommendation for lounge-backgrounds
+
 * Fri Mar 08 2019 Alex Monday <monday15@gmx.com>
 - Update to 1.15
 - Add Roboto font to recommends
 - Clean spec
-
-
