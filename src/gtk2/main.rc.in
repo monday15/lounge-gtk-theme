@@ -771,8 +771,8 @@ $compact   GtkCheckButton::indicator_spacing = 3
     image {
       function = EXTENSION
       state    = NORMAL
-      file     = "assets/tab-active.png"
-      border   = {0, 2, 0, 0}
+      file     = "assets/tab-left-active.png"
+      border   = {3, 0, 3, 3}
       stretch  = TRUE
       gap_side = RIGHT
     }
@@ -787,8 +787,8 @@ $compact   GtkCheckButton::indicator_spacing = 3
     image {
       function = EXTENSION
       state    = NORMAL
-      file     = "assets/tab-active.png"
-      border   = {2, 0, 0, 0}
+      file     = "assets/tab-right-active.png"
+      border   = {0, 3, 3, 3}
       stretch  = TRUE
       gap_side = LEFT
     }
@@ -803,8 +803,8 @@ $compact   GtkCheckButton::indicator_spacing = 3
     image {
       function = EXTENSION
       state    = NORMAL
-      file     = "assets/tab-active.png"
-      border   = {0, 0, 0, 2}
+      file     = "assets/tab-up-active.png"
+      border   = {3, 3, 3, 0}
       stretch  = TRUE
       gap_side = BOTTOM
     }
@@ -819,8 +819,8 @@ $compact   GtkCheckButton::indicator_spacing = 3
     image {
       function = EXTENSION
       state    = NORMAL
-      file     = "assets/tab-active.png"
-      border   = {0, 0, 2, 0}
+      file     = "assets/tab-down-active.png"
+      border   = {3, 3, 0, 3}
       stretch  = TRUE
       gap_side = TOP
     }
@@ -838,8 +838,43 @@ $compact   GtkCheckButton::indicator_spacing = 3
       file       = "assets/frame-notebook.png"
       border     = {1, 1, 1, 1}
       stretch    = TRUE
+      gap_file   = "assets/tab-gap-vert.png"
+      gap_border = {1, 0, 1, 1}
+      gap_side   = LEFT
     }
 
+    image {
+      function   = BOX_GAP
+      detail     = "notebook"
+      file       = "assets/frame-notebook.png"
+      border     = {1, 1, 1, 1}
+      stretch    = TRUE
+      gap_file   = "assets/tab-gap-vert.png"
+      gap_border = {0, 1, 1, 1}
+      gap_side   = RIGHT
+    }
+
+    image {
+      function   = BOX_GAP
+      detail     = "notebook"
+      file       = "assets/frame-notebook.png"
+      border     = {1, 1, 1, 1}
+      stretch    = TRUE
+      gap_file   = "assets/tab-gap-horz.png"
+      gap_border = {1, 1, 1, 0}
+      gap_side   = TOP
+    }
+
+    image {
+      function   = BOX_GAP
+      detail     = "notebook"
+      file       = "assets/frame-notebook.png"
+      border     = {1, 1, 1, 1}
+      stretch    = TRUE
+      gap_file   = "assets/tab-gap-horz.png"
+      gap_border = {1, 1, 0, 1}
+      gap_side   = BOTTOM
+    }
 
     # Standalone frame
     image {
