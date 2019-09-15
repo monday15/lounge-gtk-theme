@@ -158,7 +158,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = NORMAL
       shadow          = OUT
-      overlay_file    = "assets/checkbox-unchecked-$size.png"
+      overlay_file    = "assets/checkbox-unchecked-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -166,7 +166,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = PRELIGHT
       shadow          = OUT
-      overlay_file    = "assets/checkbox-unchecked-hover-$size.png"
+      overlay_file    = "assets/checkbox-unchecked-hover-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -174,7 +174,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = ACTIVE
       shadow          = OUT
-      overlay_file    = "assets/checkbox-unchecked-active-$size.png"
+      overlay_file    = "assets/checkbox-unchecked-active-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -182,7 +182,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = SELECTED
       shadow          = OUT
-      overlay_file    = "assets/checkbox-unchecked-$size.png"
+      overlay_file    = "assets/checkbox-unchecked-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -190,7 +190,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = INSENSITIVE
       shadow          = OUT
-      overlay_file    = "assets/checkbox-unchecked-insensitive-$size.png"
+      overlay_file    = "assets/checkbox-unchecked-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -198,7 +198,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = NORMAL
       shadow          = IN
-      overlay_file    = "assets/checkbox-checked-$size.png"
+      overlay_file    = "assets/checkbox-checked-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -206,7 +206,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = PRELIGHT
       shadow          = IN
-      overlay_file    = "assets/checkbox-checked-hover-$size.png"
+      overlay_file    = "assets/checkbox-checked-hover-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -214,7 +214,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = ACTIVE
       shadow          = IN
-      overlay_file    = "assets/checkbox-checked-active-$size.png"
+      overlay_file    = "assets/checkbox-checked-active-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -222,7 +222,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = SELECTED
       shadow          = IN
-      overlay_file    = "assets/checkbox-checked-$size.png"
+      overlay_file    = "assets/checkbox-checked-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -230,7 +230,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = INSENSITIVE
       shadow          = IN
-      overlay_file    = "assets/checkbox-checked-insensitive-$size.png"
+      overlay_file    = "assets/checkbox-checked-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -238,7 +238,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = NORMAL
       shadow          = ETCHED_IN
-      overlay_file    = "assets/checkbox-mixed-$size.png"
+      overlay_file    = "assets/checkbox-mixed-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -246,7 +246,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = PRELIGHT
       shadow          = ETCHED_IN
-      overlay_file    = "assets/checkbox-mixed-hover-$size.png"
+      overlay_file    = "assets/checkbox-mixed-hover-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -254,7 +254,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = ACTIVE
       shadow          = ETCHED_IN
-      overlay_file    = "assets/checkbox-mixed-active-$size.png"
+      overlay_file    = "assets/checkbox-mixed-active-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -262,7 +262,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = SELECTED
       shadow          = ETCHED_IN
-      overlay_file    = "assets/checkbox-mixed-$size.png"
+      overlay_file    = "assets/checkbox-mixed-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -270,7 +270,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = CHECK
       state           = INSENSITIVE
       shadow          = ETCHED_IN
-      overlay_file    = "assets/checkbox-mixed-insensitive-$size.png"
+      overlay_file    = "assets/checkbox-mixed-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -282,7 +282,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = NORMAL
       shadow          = OUT
-      overlay_file    = "assets/radio-unchecked-$size.png"
+      overlay_file    = "assets/radio-unchecked-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -290,7 +290,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = PRELIGHT
       shadow          = OUT
-      overlay_file    = "assets/radio-unchecked-hover-$size.png"
+      overlay_file    = "assets/radio-unchecked-hover-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -298,7 +298,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = ACTIVE
       shadow          = OUT
-      overlay_file    = "assets/radio-unchecked-active-$size.png"
+      overlay_file    = "assets/radio-unchecked-active-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -306,7 +306,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = SELECTED
       shadow          = OUT
-      overlay_file    = "assets/radio-unchecked-$size.png"
+      overlay_file    = "assets/radio-unchecked-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -314,7 +314,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = INSENSITIVE
       shadow          = OUT
-      overlay_file    = "assets/radio-unchecked-insensitive-$size.png"
+      overlay_file    = "assets/radio-unchecked-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -322,7 +322,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = NORMAL
       shadow          = IN
-      overlay_file    = "assets/radio-checked-$size.png"
+      overlay_file    = "assets/radio-checked-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -330,7 +330,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = PRELIGHT
       shadow          = IN
-      overlay_file    = "assets/radio-checked-hover-$size.png"
+      overlay_file    = "assets/radio-checked-hover-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -338,7 +338,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = ACTIVE
       shadow          = IN
-      overlay_file    = "assets/radio-checked-active-$size.png"
+      overlay_file    = "assets/radio-checked-active-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -346,7 +346,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = SELECTED
       shadow          = IN
-      overlay_file    = "assets/radio-checked-$size.png"
+      overlay_file    = "assets/radio-checked-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -354,7 +354,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = INSENSITIVE
       shadow          = IN
-      overlay_file    = "assets/radio-checked-insensitive-$size.png"
+      overlay_file    = "assets/radio-checked-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -362,7 +362,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = NORMAL
       shadow          = ETCHED_IN
-      overlay_file    = "assets/radio-mixed-$size.png"
+      overlay_file    = "assets/radio-mixed-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -370,7 +370,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = PRELIGHT
       shadow          = ETCHED_IN
-      overlay_file    = "assets/radio-mixed-hover-$size.png"
+      overlay_file    = "assets/radio-mixed-hover-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -378,7 +378,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = ACTIVE
       shadow          = ETCHED_IN
-      overlay_file    = "assets/radio-mixed-active-$size.png"
+      overlay_file    = "assets/radio-mixed-active-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -386,7 +386,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = SELECTED
       shadow          = ETCHED_IN
-      overlay_file    = "assets/radio-mixed-$size.png"
+      overlay_file    = "assets/radio-mixed-$style.png"
       overlay_stretch = FALSE
     }
 
@@ -394,7 +394,7 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = OPTION
       state           = INSENSITIVE
       shadow          = ETCHED_IN
-      overlay_file    = "assets/radio-mixed-insensitive-$size.png"
+      overlay_file    = "assets/radio-mixed-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -991,7 +991,7 @@ $with_handles       overlay_stretch = FALSE
     image {
       function    = BOX
       detail      = "trough-upper"
-      file        = "assets/scale-horz-trough-$size.png"
+      file        = "assets/scale-horz-trough-$style-$size.png"
 $regular       border      = {10, 10, 0, 0}
 $compact       border      = {9, 9, 0, 0}
       stretch     = TRUE
@@ -1001,7 +1001,7 @@ $compact       border      = {9, 9, 0, 0}
     image {
       function    = BOX
       detail      = "trough-lower"
-      file        = "assets/scale-horz-trough-active-$size.png"
+      file        = "assets/scale-horz-trough-active-$scales_style-$tone-$style-$size.png"
 $regular       border      = {10, 10, 0, 0}
 $compact       border      = {9, 9, 0, 0}
       stretch     = TRUE
@@ -1011,7 +1011,7 @@ $compact       border      = {9, 9, 0, 0}
     image {
       function    = BOX
       detail      = "trough-upper"
-      file        = "assets/scale-vert-trough-$size.png"
+      file        = "assets/scale-vert-trough-$style-$size.png"
 $regular       border      = {0, 0, 10, 10}
 $compact       border      = {0, 0, 9, 9}
       stretch     = TRUE
@@ -1021,7 +1021,7 @@ $compact       border      = {0, 0, 9, 9}
     image {
       function    = BOX
       detail      = "trough-lower"
-      file        = "assets/scale-vert-trough-active-$size.png"
+      file        = "assets/scale-vert-trough-active-$scales_style-$tone-$style-$size.png"
 $regular       border      = {0, 0, 10, 10}
 $compact       border      = {0, 0, 9, 9}
       stretch     = TRUE
@@ -1034,21 +1034,22 @@ $compact       border      = {0, 0, 9, 9}
       function = SLIDER
       state    = NORMAL
       detail   = "hscale"
-      file     = "assets/scale-slider-$size.png"
+      file     = "assets/scale-slider-$style-$size.png"
     }
 
     image {
       function = SLIDER
       state    = PRELIGHT
       detail   = "hscale"
-      file     = "assets/scale-slider-hover-$size.png"
+      file     = "assets/scale-slider-hover-$style-$size.png"
     }
 
     image {
       function = SLIDER
       state    = ACTIVE
       detail   = "hscale"
-      file     = "assets/scale-slider-active-$size.png"
+$light       file     = "assets/scale-slider-active-$scales_style-$tone-$size.png"
+$dark       file     = "assets/scale-slider-active-$size.png"
     }
 
     image {
@@ -1061,21 +1062,22 @@ $compact       border      = {0, 0, 9, 9}
       function = SLIDER
       state    = NORMAL
       detail   = "vscale"
-      file     = "assets/scale-slider-$size.png"
+      file     = "assets/scale-slider-$style-$size.png"
     }
 
     image {
       function = SLIDER
       state    = PRELIGHT
       detail   = "vscale"
-      file     = "assets/scale-slider-hover-$size.png"
+      file     = "assets/scale-slider-hover-$style-$size.png"
     }
 
     image {
       function = SLIDER
       state    = ACTIVE
       detail   = "vscale"
-      file     = "assets/scale-slider-active-$size.png"
+$light       file     = "assets/scale-slider-active-$scales_style-$tone-$size.png"
+$dark       file     = "assets/scale-slider-active-$size.png"
     }
 
     image {
@@ -1137,7 +1139,8 @@ $compact       border      = {0, 0, 9, 9}
       function = SHADOW
       state    = ACTIVE
       detail   = "entry"
-      file     = "assets/entry-active-$size.png"
+$light       file     = "assets/entry-active-$tone-$style.png"
+$dark       file     = "assets/entry-active-$tone.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -1146,7 +1149,7 @@ $compact       border      = {0, 0, 9, 9}
       function = SHADOW
       state    = INSENSITIVE
       detail   = "entry"
-      file     = "assets/entry-insensitive-$size.png"
+      file     = "assets/entry-insensitive.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -1154,7 +1157,7 @@ $compact       border      = {0, 0, 9, 9}
     image {
       function = SHADOW
       detail   = "entry"
-      file     = "assets/entry-$size.png"
+      file     = "assets/entry-$style.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -1188,7 +1191,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = NORMAL
       detail          = "spinbutton_up"
-      file            = "assets/spin-ltr-up-$size.png"
+      file            = "assets/spin-ltr-up.png"
       border          = {1, 4, 4, 0}
       stretch         = TRUE
       overlay_file    = "assets/spin-up.png"
@@ -1200,7 +1203,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = PRELIGHT
       detail          = "spinbutton_up"
-      file            = "assets/spin-ltr-up-hover-$size.png"
+      file            = "assets/spin-ltr-up-hover.png"
       border          = {1, 4, 4, 0}
       stretch         = TRUE
       overlay_file    = "assets/spin-up.png"
@@ -1212,7 +1215,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = ACTIVE
       detail          = "spinbutton_up"
-      file            = "assets/spin-ltr-up-active-$size.png"
+      file            = "assets/spin-ltr-up-active.png"
       border          = {1, 4, 4, 0}
       stretch         = TRUE
       overlay_file    = "assets/spin-up.png"
@@ -1224,7 +1227,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = INSENSITIVE
       detail          = "spinbutton_up"
-      file            = "assets/spin-ltr-up-insensitive-$size.png"
+      file            = "assets/spin-ltr-up-insensitive.png"
       border          = {1, 4, 4, 0}
       stretch         = TRUE
       overlay_file    = "assets/spin-up-insensitive.png"
@@ -1238,7 +1241,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = NORMAL
       detail          = "spinbutton_up"
-      file            = "assets/spin-rtl-up-$size.png"
+      file            = "assets/spin-rtl-up.png"
       border          = {4, 1, 4, 0}
       stretch         = TRUE
       overlay_file    = "assets/spin-up.png"
@@ -1250,7 +1253,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = PRELIGHT
       detail          = "spinbutton_up"
-      file            = "assets/spin-rtl-up-hover-$size.png"
+      file            = "assets/spin-rtl-up-hover.png"
       border          = {4, 1, 4, 0}
       stretch         = TRUE
       overlay_file    = "assets/spin-up.png"
@@ -1262,7 +1265,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = ACTIVE
       detail          = "spinbutton_up"
-      file            = "assets/spin-rtl-up-hover-$size.png"
+      file            = "assets/spin-rtl-up-hover.png"
       border          = {4, 1, 4, 0}
       stretch         = TRUE
       overlay_file    = "assets/spin-up.png"
@@ -1274,7 +1277,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = INSENSITIVE
       detail          = "spinbutton_up"
-      file            = "assets/spin-rtl-up-insensitive-$size.png"
+      file            = "assets/spin-rtl-up-insensitive.png"
       border          = {4, 1, 4, 0}
       stretch         = TRUE
       overlay_file    = "assets/spin-up-insensitive.png"
@@ -1288,7 +1291,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = NORMAL
       detail          = "spinbutton_down"
-      file            = "assets/spin-ltr-down-$size.png"
+      file            = "assets/spin-ltr-down.png"
       border          = {1, 4, 1, 4}
       stretch         = TRUE
       overlay_file    = "assets/spin-down.png"
@@ -1300,7 +1303,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = PRELIGHT
       detail          = "spinbutton_down"
-      file            = "assets/spin-ltr-down-hover-$size.png"
+      file            = "assets/spin-ltr-down-hover.png"
       border          = {1, 4, 1, 4}
       stretch         = TRUE
       overlay_file    = "assets/spin-down.png"
@@ -1312,7 +1315,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = ACTIVE
       detail          = "spinbutton_down"
-      file            = "assets/spin-ltr-down-active-$size.png"
+      file            = "assets/spin-ltr-down-active.png"
       border          = {1, 4, 1, 4}
       stretch         = TRUE
       overlay_file    = "assets/spin-down.png"
@@ -1324,7 +1327,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = INSENSITIVE
       detail          = "spinbutton_down"
-      file            = "assets/spin-ltr-down-insensitive-$size.png"
+      file            = "assets/spin-ltr-down-insensitive.png"
       border          = {1, 4, 1, 4}
       stretch         = TRUE
       overlay_file    = "assets/spin-down-insensitive.png"
@@ -1338,7 +1341,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = NORMAL
       detail          = "spinbutton_down"
-      file            = "assets/spin-rtl-down-$size.png"
+      file            = "assets/spin-rtl-down.png"
       border          = {1, 4, 1, 4}
       stretch         = TRUE
       overlay_file    = "assets/spin-down.png"
@@ -1350,7 +1353,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = PRELIGHT
       detail          = "spinbutton_down"
-      file            = "assets/spin-rtl-down-hover-$size.png"
+      file            = "assets/spin-rtl-down-hover.png"
       border          = {1, 4, 1, 4}
       stretch         = TRUE
       overlay_file    = "assets/spin-down.png"
@@ -1362,7 +1365,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = ACTIVE
       detail          = "spinbutton_down"
-      file            = "assets/spin-rtl-down-active-$size.png"
+      file            = "assets/spin-rtl-down-active.png"
       border          = {1, 4, 1, 4}
       stretch         = TRUE
       overlay_file    = "assets/spin-down.png"
@@ -1374,7 +1377,7 @@ $compact       border      = {0, 0, 9, 9}
       function        = BOX
       state           = INSENSITIVE
       detail          = "spinbutton_down"
-      file            = "assets/spin-rtl-down-insensitive-$size.png"
+      file            = "assets/spin-rtl-down-insensitive.png"
       border          = {1, 4, 1, 4}
       stretch         = TRUE
       overlay_file    = "assets/spin-down-insensitive.png"
@@ -1446,7 +1449,7 @@ $compact   ythickness = 3
     image {
       function    = BOX
       state       = PRELIGHT
-      file        = "assets/menubar-item-active.png"
+      file        = "assets/menubar-item-active-$tone.png"
       border      = {0, 0, 0, 2}
     }
   }
@@ -1514,7 +1517,7 @@ $compact   ythickness = 3
       function        = CHECK
       state           = NORMAL
       shadow          = OUT
-      overlay_file    = "assets/menu-checkbox-$size.png"
+      overlay_file    = "assets/menu-checkbox.png"
       overlay_stretch = FALSE
     }
 
@@ -1522,7 +1525,7 @@ $compact   ythickness = 3
       function        = CHECK
       state           = PRELIGHT
       shadow          = OUT
-      overlay_file    = "assets/menu-checkbox-$size.png"
+      overlay_file    = "assets/menu-checkbox.png"
       overlay_stretch = FALSE
     }
 
@@ -1530,7 +1533,7 @@ $compact   ythickness = 3
       function        = CHECK
       state           = ACTIVE
       shadow          = OUT
-      overlay_file    = "assets/menu-checkbox-$size.png"
+      overlay_file    = "assets/menu-checkbox.png"
       overlay_stretch = FALSE
     }
 
@@ -1538,7 +1541,7 @@ $compact   ythickness = 3
       function        = CHECK
       state           = INSENSITIVE
       shadow          = OUT
-      overlay_file    = "assets/menu-checkbox-insensitive-$size.png"
+      overlay_file    = "assets/menu-checkbox-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -1546,7 +1549,7 @@ $compact   ythickness = 3
       function        = CHECK
       state           = NORMAL
       shadow          = IN
-      overlay_file    = "assets/menu-checkbox-checked-$size.png"
+      overlay_file    = "assets/menu-checkbox-checked.png"
       overlay_stretch = FALSE
     }
 
@@ -1554,7 +1557,7 @@ $compact   ythickness = 3
       function        = CHECK
       state           = PRELIGHT
       shadow          = IN
-      overlay_file    = "assets/menu-checkbox-checked-$size.png"
+      overlay_file    = "assets/menu-checkbox-checked.png"
       overlay_stretch = FALSE
     }
 
@@ -1562,7 +1565,7 @@ $compact   ythickness = 3
       function        = CHECK
       state           = ACTIVE
       shadow          = IN
-      overlay_file    = "assets/menu-checkbox-checked-$size.png"
+      overlay_file    = "assets/menu-checkbox-checked.png"
       overlay_stretch = FALSE
     }
 
@@ -1570,7 +1573,7 @@ $compact   ythickness = 3
       function        = CHECK
       state           = INSENSITIVE
       shadow          = IN
-      overlay_file    = "assets/menu-checkbox-checked-insensitive-$size.png"
+      overlay_file    = "assets/menu-checkbox-checked-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -1578,7 +1581,7 @@ $compact   ythickness = 3
       function        = CHECK
       state           = NORMAL
       shadow          = ETCHED_IN
-      overlay_file    = "assets/menu-checkbox-mixed-$size.png"
+      overlay_file    = "assets/menu-checkbox-mixed.png"
       overlay_stretch = FALSE
     }
 
@@ -1586,7 +1589,7 @@ $compact   ythickness = 3
       function        = CHECK
       state           = PRELIGHT
       shadow          = ETCHED_IN
-      overlay_file    = "assets/menu-checkbox-mixed-$size.png"
+      overlay_file    = "assets/menu-checkbox-mixed.png"
       overlay_stretch = FALSE
     }
 
@@ -1594,7 +1597,7 @@ $compact   ythickness = 3
       function        = CHECK
       state           = ACTIVE
       shadow          = ETCHED_IN
-      overlay_file    = "assets/menu-checkbox-mixed-$size.png"
+      overlay_file    = "assets/menu-checkbox-mixed.png"
       overlay_stretch = FALSE
     }
 
@@ -1602,7 +1605,7 @@ $compact   ythickness = 3
       function        = CHECK
       state           = INSENSITIVE
       shadow          = ETCHED_IN
-      overlay_file    = "assets/menu-checkbox-mixed-insensitive-$size.png"
+      overlay_file    = "assets/menu-checkbox-mixed-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -1614,7 +1617,7 @@ $compact   ythickness = 3
       function        = OPTION
       state           = NORMAL
       shadow          = OUT
-      overlay_file    = "assets/menu-radio-$size.png"
+      overlay_file    = "assets/menu-radio.png"
       overlay_stretch = FALSE
     }
 
@@ -1622,7 +1625,7 @@ $compact   ythickness = 3
       function        = OPTION
       state           = PRELIGHT
       shadow          = OUT
-      overlay_file    = "assets/menu-radio-$size.png"
+      overlay_file    = "assets/menu-radio.png"
       overlay_stretch = FALSE
     }
 
@@ -1630,7 +1633,7 @@ $compact   ythickness = 3
       function        = OPTION
       state           = ACTIVE
       shadow          = OUT
-      overlay_file    = "assets/menu-radio-$size.png"
+      overlay_file    = "assets/menu-radio.png"
       overlay_stretch = FALSE
     }
 
@@ -1638,7 +1641,7 @@ $compact   ythickness = 3
       function        = OPTION
       state           = INSENSITIVE
       shadow          = OUT
-      overlay_file    = "assets/menu-radio-insensitive-$size.png"
+      overlay_file    = "assets/menu-radio-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -1646,7 +1649,7 @@ $compact   ythickness = 3
       function        = OPTION
       state           = NORMAL
       shadow          = IN
-      overlay_file    = "assets/menu-radio-checked-$size.png"
+      overlay_file    = "assets/menu-radio-checked.png"
       overlay_stretch = FALSE
     }
 
@@ -1654,7 +1657,7 @@ $compact   ythickness = 3
       function        = OPTION
       state           = PRELIGHT
       shadow          = IN
-      overlay_file    = "assets/menu-radio-checked-$size.png"
+      overlay_file    = "assets/menu-radio-checked.png"
       overlay_stretch = FALSE
     }
 
@@ -1662,7 +1665,7 @@ $compact   ythickness = 3
       function        = OPTION
       state           = ACTIVE
       shadow          = IN
-      overlay_file    = "assets/menu-radio-checked-$size.png"
+      overlay_file    = "assets/menu-radio-checked.png"
       overlay_stretch = FALSE
     }
 
@@ -1670,7 +1673,7 @@ $compact   ythickness = 3
       function        = OPTION
       state           = INSENSITIVE
       shadow          = IN
-      overlay_file    = "assets/menu-radio-checked-insensitive-$size.png"
+      overlay_file    = "assets/menu-radio-checked-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -1678,7 +1681,7 @@ $compact   ythickness = 3
       function        = OPTION
       state           = NORMAL
       shadow          = ETCHED_IN
-      overlay_file    = "assets/menu-radio-mixed-$size.png"
+      overlay_file    = "assets/menu-radio-mixed.png"
       overlay_stretch = FALSE
     }
 
@@ -1686,7 +1689,7 @@ $compact   ythickness = 3
       function        = OPTION
       state           = PRELIGHT
       shadow          = ETCHED_IN
-      overlay_file    = "assets/menu-radio-mixed-$size.png"
+      overlay_file    = "assets/menu-radio-mixed.png"
       overlay_stretch = FALSE
     }
 
@@ -1694,7 +1697,7 @@ $compact   ythickness = 3
       function        = OPTION
       state           = ACTIVE
       shadow          = ETCHED_IN
-      overlay_file    = "assets/menu-radio-mixed-$size.png"
+      overlay_file    = "assets/menu-radio-mixed.png"
       overlay_stretch = FALSE
     }
 
@@ -1702,7 +1705,7 @@ $compact   ythickness = 3
       function        = OPTION
       state           = INSENSITIVE
       shadow          = ETCHED_IN
-      overlay_file    = "assets/menu-radio-mixed-insensitive-$size.png"
+      overlay_file    = "assets/menu-radio-mixed-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -1743,7 +1746,7 @@ $compact   ythickness = 2
     image {
       function = BOX
       state    = NORMAL
-      file     = "assets/button-$size.png"
+      file     = "assets/button-$style.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -1752,7 +1755,7 @@ $compact   ythickness = 2
       function = BOX
       state    = PRELIGHT
       shadow   = OUT
-      file     = "assets/button-hover-$size.png"
+      file     = "assets/button-hover-$style.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -1762,7 +1765,7 @@ $compact   ythickness = 2
       function = BOX
       state    = PRELIGHT
       shadow   = IN
-      file     = "assets/button-active-$size.png"
+      file     = "assets/button-active-$style.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -1770,7 +1773,7 @@ $compact   ythickness = 2
     image {
       function = BOX
       state    = ACTIVE
-      file     = "assets/button-active-$size.png"
+      file     = "assets/button-active-$style.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -1778,7 +1781,7 @@ $compact   ythickness = 2
     image {
       function = BOX
       state    = INSENSITIVE
-      file     = "assets/button-insensitive-$size.png"
+      file     = "assets/button-insensitive.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -1835,7 +1838,7 @@ style "combobox_entry" {
       function  = SHADOW
       state     = NORMAL
       detail    = "entry"
-      file      = "assets/combo-entry-ltr-entry-$size.png"
+      file      = "assets/combo-entry-ltr-entry-$style.png"
       border    = {4, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
@@ -1845,7 +1848,8 @@ style "combobox_entry" {
       function  = SHADOW
       state     = ACTIVE
       detail    = "entry"
-      file      = "assets/combo-entry-ltr-entry-active-$size.png"
+$light       file      = "assets/combo-entry-ltr-entry-active-$tone-$style.png"
+$dark       file      = "assets/combo-entry-ltr-entry-active-$tone.png"
       border    = {4, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
@@ -1855,7 +1859,7 @@ style "combobox_entry" {
       function  = SHADOW
       state     = INSENSITIVE
       detail    = "entry"
-      file      = "assets/combo-entry-ltr-entry-insensitive-$size.png"
+      file      = "assets/combo-entry-ltr-entry-insensitive.png"
       border    = {4, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
@@ -1869,7 +1873,7 @@ style "combobox_entry" {
       function  = SHADOW
       state     = NORMAL
       detail    = "entry"
-      file      = "assets/combo-entry-rtl-entry-$size.png"
+      file      = "assets/combo-entry-rtl-entry-$style.png"
       border    = {4, 4, 4, 4}
       stretch   = TRUE
       direction = RTL
@@ -1879,7 +1883,8 @@ style "combobox_entry" {
       function  = SHADOW
       state     = ACTIVE
       detail    = "entry"
-      file      = "assets/combo-entry-rtl-entry-active-$size.png"
+$light       file      = "assets/combo-entry-rtl-entry-active-$tone-$style.png"
+$dark       file      = "assets/combo-entry-rtl-entry-active-$tone.png"
       border    = {4, 4, 4, 4}
       stretch   = TRUE
       direction = RTL
@@ -1889,7 +1894,7 @@ style "combobox_entry" {
       function  = SHADOW
       state     = INSENSITIVE
       detail    = "entry"
-      file      = "assets/combo-entry-rtl-entry-insensitive-$size.png"
+      file      = "assets/combo-entry-rtl-entry-insensitive.png"
       border    = {4, 4, 4, 4}
       stretch   = TRUE
       direction = RTL
@@ -1903,7 +1908,7 @@ style "combobox_entry" {
       function  = BOX
       state     = NORMAL
       detail    = "button"
-      file      = "assets/combo-entry-ltr-button-$size.png"
+      file      = "assets/combo-entry-ltr-button-$style.png"
       border    = {1, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
@@ -1913,7 +1918,7 @@ style "combobox_entry" {
       function  = BOX
       state     = PRELIGHT
       detail    = "button"
-      file      = "assets/combo-entry-ltr-button-hover-$size.png"
+      file      = "assets/combo-entry-ltr-button-hover-$style.png"
       border    = {1, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
@@ -1923,7 +1928,7 @@ style "combobox_entry" {
       function  = BOX
       state     = ACTIVE
       detail    = "button"
-      file      = "assets/combo-entry-ltr-button-active-$size.png"
+      file      = "assets/combo-entry-ltr-button-active-$style.png"
       border    = {1, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
@@ -1933,7 +1938,7 @@ style "combobox_entry" {
       function  = BOX
       state     = INSENSITIVE
       detail    = "button"
-      file      = "assets/combo-entry-ltr-button-insensitive-$size.png"
+      file      = "assets/combo-entry-ltr-button-insensitive.png"
       border    = {1, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
@@ -1947,7 +1952,7 @@ style "combobox_entry" {
       function  = BOX
       state     = NORMAL
       detail    = "button"
-      file      = "assets/combo-entry-rtl-button-$size.png"
+      file      = "assets/combo-entry-rtl-button-$style.png"
       border    = {4, 1, 4, 4}
       stretch   = TRUE
       direction = RTL
@@ -1957,7 +1962,7 @@ style "combobox_entry" {
       function  = BOX
       state     = PRELIGHT
       detail    = "button"
-      file      = "assets/combo-entry-rtl-button-hover-$size.png"
+      file      = "assets/combo-entry-rtl-button-hover-$style.png"
       border    = {4, 1, 4, 4}
       stretch   = TRUE
       direction = RTL
@@ -1967,7 +1972,7 @@ style "combobox_entry" {
       function  = BOX
       state     = ACTIVE
       detail    = "button"
-      file      = "assets/combo-entry-rtl-button-active-$size.png"
+      file      = "assets/combo-entry-rtl-button-active-$style.png"
       border    = {4, 1, 4, 4}
       stretch   = TRUE
       direction = RTL
@@ -1977,7 +1982,7 @@ style "combobox_entry" {
       function  = BOX
       state     = INSENSITIVE
       detail    = "button"
-      file      = "assets/combo-entry-rtl-button-insensitive-$size.png"
+      file      = "assets/combo-entry-rtl-button-insensitive.png"
       border    = {4, 1, 4, 4}
       stretch   = TRUE
       direction = RTL
@@ -2024,7 +2029,8 @@ style "notebook_entry" {
       function = SHADOW
       state    = ACTIVE
       detail   = "entry"
-      file     = "assets/notebook-entry-active-$size.png"
+$light       file     = "assets/notebook-entry-active-$tone-$style.png"
+$dark       file     = "assets/notebook-entry-active-$tone.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -2033,7 +2039,7 @@ style "notebook_entry" {
       function = SHADOW
       state    = INSENSITIVE
       detail   = "entry"
-      file     = "assets/notebook-entry-insensitive-$size.png"
+      file     = "assets/notebook-entry-insensitive.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -2041,7 +2047,7 @@ style "notebook_entry" {
     image {
       function = SHADOW
       detail   = "entry"
-      file     = "assets/notebook-entry-$size.png"
+      file     = "assets/notebook-entry-$style.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -2062,7 +2068,8 @@ style "normal_entry" {
       function = SHADOW
       state    = ACTIVE
       detail   = "entry"
-      file     = "assets/entry-active-$size.png"
+$light       file     = "assets/entry-active-$tone-$style.png"
+$dark       file     = "assets/entry-active-$tone.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -2071,7 +2078,7 @@ style "normal_entry" {
       function = SHADOW
       state    = INSENSITIVE
       detail   = "entry"
-      file     = "assets/entry-insensitive-$size.png"
+      file     = "assets/entry-insensitive.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -2079,7 +2086,7 @@ style "normal_entry" {
     image {
       function = SHADOW
       detail   = "entry"
-      file     = "assets/entry-$size.png"
+      file     = "assets/entry-$style.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
@@ -2098,7 +2105,7 @@ style "notebook_combo" {
       function  = SHADOW
       state     = NORMAL
       detail    = "entry"
-      file      = "assets/notebook-combo-entry-ltr-entry-$size.png"
+      file      = "assets/notebook-combo-entry-ltr-entry-$style.png"
       border    = {4, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
@@ -2108,7 +2115,8 @@ style "notebook_combo" {
       function  = SHADOW
       state     = ACTIVE
       detail    = "entry"
-      file      = "assets/notebook-combo-entry-ltr-entry-active-$size.png"
+$light       file      = "assets/notebook-combo-entry-ltr-entry-active-$tone-$style.png"
+$dark       file      = "assets/notebook-combo-entry-ltr-entry-active-$tone.png"
       border    = {4, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
@@ -2118,7 +2126,7 @@ style "notebook_combo" {
       function  = SHADOW
       state     = INSENSITIVE
       detail    = "entry"
-      file      = "assets/notebook-combo-entry-ltr-entry-insensitive-$size.png"
+      file      = "assets/notebook-combo-entry-ltr-entry-insensitive.png"
       border    = {4, 4, 4, 4}
       stretch   = TRUE
       direction = LTR
@@ -2132,7 +2140,7 @@ style "notebook_combo" {
       function  = SHADOW
       state     = NORMAL
       detail    = "entry"
-      file      = "assets/notebook-combo-entry-rtl-entry-$size.png"
+      file      = "assets/notebook-combo-entry-rtl-entry-$style.png"
       border    = {4, 4, 4, 4}
       stretch   = TRUE
       direction = RTL
@@ -2142,7 +2150,8 @@ style "notebook_combo" {
       function  = SHADOW
       state     = ACTIVE
       detail    = "entry"
-      file      = "assets/notebook-combo-entry-rtl-entry-active-$size.png"
+$light       file      = "assets/notebook-combo-entry-rtl-entry-active-$tone-$style.png"
+$dark       file      = "assets/notebook-combo-entry-rtl-entry-active-$tone.png"
       border    = {4, 4, 4, 4}
       stretch   = TRUE
       direction = RTL
@@ -2152,7 +2161,7 @@ style "notebook_combo" {
       function  = SHADOW
       state     = INSENSITIVE
       detail    = "entry"
-      file      = "assets/notebook-combo-entry-rtl-entry-insensitive-$size.png"
+      file      = "assets/notebook-combo-entry-rtl-entry-insensitive.png"
       border    = {4, 4, 4, 4}
       stretch   = TRUE
       direction = RTL
@@ -2173,7 +2182,7 @@ style "scale_horz" {
     image {
       function    = BOX
       detail      = "trough-upper"
-      file        = "assets/scale-horz-trough-$size.png"
+      file        = "assets/scale-horz-trough-$style-$size.png"
 $regular       border      = {10, 10, 0, 0}
 $compact       border      = {9, 9, 0, 0}
       stretch     = TRUE
@@ -2182,7 +2191,7 @@ $compact       border      = {9, 9, 0, 0}
     image {
       function    = BOX
       detail      = "trough-lower"
-      file        = "assets/scale-horz-trough-active-$size.png"
+      file        = "assets/scale-horz-trough-active-$scales_style-$tone-$style-$size.png"
 $regular       border      = {10, 10, 0, 0}
 $compact       border      = {9, 9, 0, 0}
       stretch     = TRUE
@@ -2199,7 +2208,7 @@ style "scale_vert" {
     image {
       function    = BOX
       detail      = "trough-upper"
-      file        = "assets/scale-vert-trough-$size.png"
+      file        = "assets/scale-vert-trough-$style-$size.png"
 $regular       border      = {0, 0, 10, 10}
 $compact       border      = {0, 0, 9, 9}
       stretch     = TRUE
@@ -2208,7 +2217,7 @@ $compact       border      = {0, 0, 9, 9}
     image {
       function    = BOX
       detail      = "trough-lower"
-      file        = "assets/scale-vert-trough-active-$size.png"
+      file        = "assets/scale-vert-trough-active-$scales_style-$tone-$style-$size.png"
 $regular       border      = {0, 0, 10, 10}
 $compact       border      = {0, 0, 9, 9}
       stretch     = TRUE
@@ -2265,16 +2274,16 @@ style "treeview_header" {
 
     image {
       function  = BOX
-      file      = "assets/treeview-separator-ltr.png"
-      border    = {0, 1, 0, 1}
+      file      = "assets/treeview-separator-ltr-$style.png"
+      border    = {0, 1, 1, 1}
       stretch   = TRUE
       direction = LTR
     }
 
     image {
       function  = BOX
-      file      = "assets/treeview-separator-rtl.png"
-      border    = {1, 0, 0, 1}
+      file      = "assets/treeview-separator-rtl-$style.png"
+      border    = {1, 0, 1, 1}
       stretch   = TRUE
       direction = RTL
     }
@@ -2425,7 +2434,7 @@ $compact   ythickness = 10
 
     image {
       function = FLAT_BOX
-      file     = "assets/tooltip-bg.png"
+      file     = "assets/tooltip-bg-$style.png"
       border   = {4, 4, 4, 4}
       stretch  = TRUE
     }
