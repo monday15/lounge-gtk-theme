@@ -1,9 +1,16 @@
 /.gitattributes export-ignore
 /fedora-spec export-ignore
 
+/src/gnome-shell/render-cut-assets.sh export-ignore
+/src/gnome-shell/shell-assets.svg export-ignore
+/src/gnome-shell/shell-assets.txt export-ignore
+
 /src/gtk2/render-assets.sh export-ignore
 /src/gtk2/assets.svg export-ignore
 /src/gtk2/assets.txt export-ignore
+/src/gtk2/render-assets-extra.sh export-ignore
+/src/gtk2/assets-extra.svg export-ignore
+/src/gtk2/assets-extra.txt export-ignore
 
 /src/gtk3/render-assets.sh export-ignore
 /src/gtk3/assets.svg export-ignore
