@@ -13,7 +13,7 @@ $spinbutton_size: if($size == compact, 16px, 24px);
 $combobox_button_height: if($size == compact, 22px, 24px);
 $combobox_button_padding: if($size == compact, 3px 4px, 4px 6px);
 
-$entry_height: if($size == compact, 28px, 32px);
+$entry_height: if($size == compact, 28px, 30px);
 $spinbutton_entry_width: if($size == compact, 24px, 28px);
 
 $popover_radius: if($size == compact, 3px, 5px);

@@ -251,6 +251,8 @@ entry {
         border-color: transparent;
         border-radius: 0;
       }
+
+      &, &:disabled { box-shadow: none; }
     }
 
     &:focus { @include entry(focus); }
@@ -264,13 +266,12 @@ entry {
                                (warning, $warning_color) {
       &.#{$e_type} {
         color: if($variant == 'light', darken($e_color, 15%), lighten($e_color, 10%));
-        background-color: if($variant == 'light', mix($e_color, $base_color, 15%), mix($e_color, $base_color, 10%));
         border-color: entry_focus_border($e_color);
 
         &:focus { @include entry(focus, $e_color); }
 
         selection {
-          background-color: if($variant == 'light', desaturate(lighten($e_color, 20%), 10%), darken($e_color, 5%));
+          background-color: if($variant == 'light', desaturate(lighten($e_color, 25%), 10%), darken($e_color, 3%));
 
           @if $variant == dark and $e_type == warning { background-color: darken($e_color, 20%); }
         }
@@ -298,11 +299,19 @@ entry {
       &:focus { @include entry(osd-focus); }
 
       &:disabled { @include entry(osd-insensitive); }
+
+      @if $variant == light {
+        selection {
+          background-color: $selected_bg_color;
+          color: $selected_fg_color;
+        }
+      }
     }
 
     popover.background &:not(.flat) {
       @include entry(normal);
       border-color: if($variant == 'light', _border_color($popover_button_color), darken($menu_color, 7%));
+      box-shadow: none;
 
       &:focus { @include entry(focus); }
 
