@@ -70,6 +70,7 @@ $text_handle_width: $scale_with_marks_slider_width;
 $text_handle_height: $scale_with_marks_slider_height;
 
 $searchbar_revealer_padding: if($size == compact, 4px, 5px);
+$searchbar_revealer_location_bar_padding: if($size == compact, 0, 1px);
 
 $menuitem_margin: if($size == compact, 2px, 2px);
 
