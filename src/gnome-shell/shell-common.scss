@@ -1225,10 +1225,11 @@ StScrollBar {
         }
 
         .message {
-          margin: 1px;
+          border: 1px solid $borders_color;
           background-color: lighten($bg_color, 2%);
-          box-shadow: 1px 1px darken($bg_color, 4%);
-          border-radius: 2px;
+          box-shadow: inset 0 0 0 1px transparentize(white, .95);
+          border-radius: 3px;
+
           &:hover,&:focus { background-color: lighten($bg_color,5%); }
         }
 
