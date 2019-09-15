@@ -3922,33 +3922,44 @@ messagedialog { // Message Dialog styling
     background-image: none;
     background-color: $bg_color;
     border-style: none;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: $messagedialog_popup_radius;
+    border-top-right-radius: $messagedialog_popup_radius;
+
+    @if $style == standard {
+      @if $variant == light {
+        box-shadow: inset 1px 1px transparentize(white, .2), inset -1px 0 transparentize(black, .9);
+      }
+      @else {
+        box-shadow: inset 1px 1px transparentize(white, .95), inset -1px 0 transparentize(black, .85);
+      }
+    }
+
+    &:backdrop {
+      background-image: none;
+    }
   }
 
   &.csd { // rounded bottom border styling for csd version
     &.background {
       // bigger radius for better antialiasing
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: $messagedialog_popup_radius;
+      border-bottom-right-radius: $messagedialog_popup_radius;
+
+      @if $style == standard {
+        @if $variant == light {
+          box-shadow: inset 1px 0 transparentize(white, .2), inset -1px -1px transparentize(black, .9);
+        }
+        @else {
+          box-shadow: inset 1px 0 transparentize(white, .95), inset -1px -1px transparentize(black, .85);
+        }
+      }
     }
 
-    .dialog-action-area button {
-      padding: 10px 14px; // labels are not vertically centered on message dialog, this is a workaround
-      border-radius: 0;
-      border-left-style: solid;
-      border-right-style: none;
-      border-bottom-style: none;
+    .dialog-action-area {
+      margin: 0 10px 10px 10px;
 
-      &:first-child{
-        border-left-style: none;
-        border-bottom-left-radius: 3px;
-        -gtk-outline-bottom-left-radius: 5px;
-      }
-
-      &:last-child {
-        border-bottom-right-radius: 3px;
-        -gtk-outline-bottom-right-radius: 5px;
+      button {
+        padding: 6px 12px; // labels are not vertically centered on message dialog, this is a workaround
       }
     }
   }
@@ -3959,7 +3970,10 @@ filechooser {
     border-top: 1px solid $borders_color;
   }
 
-  #pathbarbox { border-bottom: 1px solid $bg_color; }
+  #pathbarbox {
+    background-color: $sidebar_bg_color;
+    border-bottom: 1px solid transparentize(black, .83);
+  }
 }
 
 filechooserbutton:drop(active) {
@@ -4568,7 +4582,7 @@ decoration {
   }
 
   messagedialog.csd & {
-    border-radius: 3px;
+    border-radius: $messagedialog_popup_radius;
     box-shadow: 0 1px 2px transparentize(black, 0.8),
                 0 0 0 1px transparentize($_wm_border, 0.1);
   }
