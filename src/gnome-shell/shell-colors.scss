@@ -2,28 +2,38 @@
 // it gets @if ed depending on $variant
 
 
-$base_color: #292e2f;
-$bg_color: #333839;
+$base_color: #2a2a2a;
+$bg_color: #3a3a3a;
 $fg_color: #ddd;
 
 $selected_fg_color: #eee;
-$selected_bg_color: desaturate(darken(#cee5fc, 40%), 40%);
+$selected_bg_color: if($tone == tango, desaturate(darken(#3982d5, 5%), 10%),
+                    if($tone == salsa, desaturate(darken(#7f4979, 5%), 5%),
+                    if($tone == rumba, desaturate(darken(#7565c7, 10%), 10%),
+                    // lounge: tone is jive
+                    desaturate(darken(#369282, 10%), 0%))));
+
 $selected_borders_color: darken($selected_bg_color, 20%);
-$borders_color: darken($bg_color, 8%);
+$borders_color: darken($bg_color, 7%);
 $borders_edge: transparentize($fg_color, 0.9);
 $link_color: lighten($selected_bg_color, 20%);
 $link_visited_color: lighten($selected_bg_color, 10%);
 $top_hilight: $borders_edge;
 
 $warning_color: #f57900;
-$error_color: #e63232;
+$error_color: #be3232;
 $success_color: desaturate(darken(#9fc57b, 25%), 10%);
 $destructive_color: desaturate(darken(#d97b7b, 25%), 10%);
 
 $osd_fg_color: #ddd;
-$osd_bg_color: #2c3132;
+$osd_bg_color: #303030;
 $osd_borders_color: transparentize(black, 0.5);
 $osd_outer_borders_color: transparentize(white, 0.9);
+
+$_bubble_bg_color: opacify($osd_bg_color,0.25);
+$_bubble_fg_color: $osd_fg_color;
+//$_bubble_borders_color: transparentize($osd_fg_color, .8);
+$_bubble_borders_color: darken($_bubble_bg_color, 10%);
 
 $tooltip_borders_color: $osd_outer_borders_color;
 
