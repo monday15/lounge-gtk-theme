@@ -1,3 +1,13 @@
+1.21
+====
+
+general: Added color variants;
+general: Added flat/non-flat variants;
+general: Added other build opions;
+general: Massive style and assets update;
+shell: Added support for gnome-shell 3.34.
+
+
 1.20
 ====
 
