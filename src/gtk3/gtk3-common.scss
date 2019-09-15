@@ -4267,26 +4267,31 @@ infobar {
         label, & { color: $selected_fl_color; }
 
         background-color: $barcolor;
-        border-bottom: 1px solid lighten($borders_color, 5%);
+        border-bottom: 1px solid;
+        border-bottom-color: if($variant == light, darken($barcolor, 15%), darken($barcolor, 10%));
       }
 
       button {
         @include button(normal, $barcolor, $selected_fl_color);
+
         border-color: if($variant == light, _border_color(desaturate($barcolor, 10%)), lighten(_border_color(desaturate($barcolor, 10%)), 7%));
 
         &:hover {
           @include button(hover, $barcolor, $selected_fl_color);
+
           border-color: if($variant == light, _border_color(desaturate($barcolor, 10%)), lighten(_border_color(desaturate($barcolor, 10%)), 7%));
         }
 
         &:active,
         &:checked {
           @include button(active, $barcolor, $selected_fl_color);
+
           border-color: if($variant == light, _border_color(desaturate($barcolor, 10%)), lighten(_border_color(desaturate($barcolor, 10%)), 7%));
         }
 
         &:disabled {
           @include button(insensitive,$barcolor,$selected_fl_color);
+
           border-color: if($variant == light, _border_color(desaturate($barcolor, 10%)), lighten(_border_color(desaturate($barcolor, 10%)), 7%));
 
           label, & { color: if($variant == light, transparentize($selected_fl_color, .6), transparentize($selected_fl_color, .5)); }
@@ -4296,6 +4301,7 @@ infobar {
       // gedit uses progressbar inside infobar
       progressbar {
         trough { background-color: if($variant == 'light', darken($barcolor, 8%), darken($barcolor, 4%)); }
+
         progress { background-color: if($variant == 'light', desaturate(darken($barcolor, 20%), 5%), desaturate(lighten($barcolor, 12%), 5%)); }
       }
 
