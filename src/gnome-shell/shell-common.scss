@@ -648,7 +648,7 @@ StScrollBar {
     height: 1px; //not really the whole box
     margin: 2px 64px;
     background-color: transparent;
-    border-color: lighten($bg_color, 7%);
+    border-color: transparentize(white, .92);
     border-bottom-width: 1px;
     border-bottom-style: solid;
   }
