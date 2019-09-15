@@ -1,10 +1,6 @@
-pan-start-symbolic
-pan-end-symbolic
-pan-up-symbolic
 pan-down-symbolic
-pan-start-symbolic-rtl
+pan-end-symbolic
 pan-end-symbolic-rtl
-window-close-symbolic
-window-maximize-symbolic
-window-restore-symbolic
-window-minimize-symbolic
+pan-up-symbolic
+pan-start-symbolic
+pan-start-symbolic-rtl
