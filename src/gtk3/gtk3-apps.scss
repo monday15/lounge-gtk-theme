@@ -825,11 +825,11 @@ flowboxchild {
     treeview.view {
       background: mix($bg_color, $base_color, 60%);
 
-      &:hover { background: if($variant == 'light', darken($bg_color, 2%), lighten($bg_color, 2%)); }
+      &:hover { background: if(variant == light, transparentize($fg_color, 0.9), transparentize($fg_color, 0.95)); }
 
       &:selected, &:active {
-        background: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 4%));
-        &:hover { background: if($variant == 'light', darken($bg_color, 10%), lighten($bg_color, 7%)); }
+        background: if($variant == 'light', transparentize(black, .9), transparentize(white, .94));
+        &:hover { background: if($variant == 'light', transparentize(black, .87), transparentize(white, .92)); }
       }
     }
   }
