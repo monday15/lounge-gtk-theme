@@ -490,12 +490,12 @@ button.black-transparent.menu-button { margin-right: 0; }
         &.width-maximized {
           border: 1px $borders_color solid;
           background-color: $bg_color;
-          border-radius: 2px;
+          border-radius: $base_radius;
 
           @if $gnome >= 3.32 {
             button {
               &:first-child {
-                border-radius: 2px 0px 0px 2px;
+                border-radius: $base_radius 0px 0px $base_radius;
                 border-width: 0px 1px 0px 0px;
               }
 
@@ -594,7 +594,48 @@ button.black-transparent.menu-button { margin-right: 0; }
 @if $gnome >= 3.32 {
   .nautilus-path-bar {
     button {
-      margin: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      &, &.text-button, &.text-button.image-button {
+      &, &:hover, &:active, &:disabled {
+        border-right-color: transparent;
+        border-left-color: $borders_color;
+
+        &:drop(active) { border-color: $drop_target_color; }
+
+        &:dir(rtl) {
+          border-right-color: $borders_color;
+          border-left-color: transparent;
+
+          &:drop(active) { border-color: $drop_target_color; }
+        }
+
+        &:first-child {
+          &:dir(rtl) {
+            border-right-color: $borders_color;
+            border-left-color: $borders_color;
+
+            &:drop(active) { border-color: $drop_target_color; }
+          }
+        }
+
+        &:last-child, &:only-child {
+          border-right-color: $borders_color;
+          border-left-color: $borders_color;
+
+          &:drop(active) { border-color: $drop_target_color; }
+
+          &:dir(rtl):not(:only-child) {
+            border-right-color: $borders_color;
+            border-left-color: transparent;
+
+            &:drop(active) { border-color: $drop_target_color; }
+          }
+        }
+      }
+      }
+
       &:not(:checked) { image { opacity: 0.8; }} // dim the icon when not checked
 
       &.text-button.image-button {
@@ -672,12 +713,13 @@ $disk_space_free: #eeeeec;
 // View
 .nautilus-list-view .view {
   border-bottom: 1px solid;
-  border-bottom-color:  if($variant == 'light', $bg_color, mix($bg_color, $base_color, 60%));
+  border-bottom-color:  if($variant == 'light', mix($bg_color, $base_color, 50%), mix($bg_color, $base_color, 60%));
 
   &:selected { border-bottom-color: $selected_bl_color; }
 
   // Hide superfluous treeview drop target indication
-  &.dnd { border-style: none; }
+  // lounge: looks like it doesnt work
+//  &.dnd { border-style: none; }
 }
 
 $conflict_bg: #fef6b6;
