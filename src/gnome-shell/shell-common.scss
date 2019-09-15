@@ -116,12 +116,13 @@ StScrollBar {
   }
 
   StButton#vhandle, StButton#hhandle {
-    border-radius: 2px;
-    background-color: mix($fg_color, $bg_color, 50%);
+    border-radius: 3px;
+    background-color: mix($fg_color, $bg_color, 35%);
+    border: 1px solid $borders_color;
     //border: 3px solid transparent; //would be nice to margin or at least to transparent
-    margin: 3px;
-    &:hover { background-color: mix($fg_color, $bg_color, 70%); }
-    &:active { background-color: mix($fg_color, $bg_color, 70%); }
+    margin: 2px;
+    &:hover,
+    &:active { background-color: mix($fg_color, $bg_color, 50%); }
   }
 }
 
