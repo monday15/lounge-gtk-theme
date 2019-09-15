@@ -36,6 +36,29 @@ $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentiz
 $top_hilight: $borders_edge;
 $dark_fill: if($variant == 'light', mix($borders_color, $bg_color, 40%), mix($borders_color, $bg_color, 32%));
 
+$scale_trough_color: if($variant == 'light', darken($bg_color, 5%), darken($bg_color, 3%));
+$scale_highlight_color: if($scales_style == greyscale,
+                        if($variant == 'light', lighten($bg_color, 6%), lighten($bg_color, 7.5%)),
+                        if($variant == 'light', lighten($selected_bg_color, 20%), $selected_bg_color));
+$scale_highlight_borders_color: if($scales_style == greyscale, $borders_color,
+                                if($variant == 'light', lighten($selected_borders_color, 10%), $selected_borders_color));
+
+$treeview_progressbar_trough_color: if($variant == 'light', darken($bg_color, 2%), darken($bg_color, 3%));
+$treeview_progressbar_highlight_color: if($scales_style == greyscale,
+                                       if($variant == 'light', lighten($bg_color, 6%), lighten($bg_color, 7.5%)),
+                                       if($variant == 'light', $selected_bl_color, $selected_bg_color));
+$treeview_progressbar_selected_highlight_color: if($scales_style == greyscale,
+                                                if($variant == 'light', $scale_highlight_color, lighten($scale_highlight_color, 7%)),
+                                                if($variant == 'light', darken($selected_bl_color, 7%), lighten($selected_bg_color, 5%)));
+$treeview_progressbar_borders_color: if($variant == 'light', darken($bg_color, 25%), darken($bg_color, 10%));
+$treeview_progressbar_selected_borders_color: if($scales_style == greyscale,
+                                              if($variant == 'light', darken($bg_color, 40%), darken($bg_color, 10%)),
+                                              if($variant == 'light', darken($bg_color, 40%), darken($bg_color, 10%)));
+$treeview_progressbar_highlight_borders_color: if($scales_style == greyscale, $treeview_progressbar_borders_color,
+                                               if($variant == 'light', darken($selected_bl_color, 20%), $selected_borders_color));
+$treeview_progressbar_selected_highlight_borders_color: if($scales_style == greyscale, $treeview_progressbar_selected_borders_color,
+                                                        if($variant == 'light', darken($selected_bl_color, 30%), $selected_borders_color));
+
 $link_color: if($variant == 'light', darken($selected_bg_color, 15%), lighten($selected_bg_color, 20%));
 $link_visited_color: if($variant == 'light', darken($selected_bg_color, 25%), lighten($selected_bg_color, 12%));
 

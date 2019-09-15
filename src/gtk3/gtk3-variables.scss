@@ -1,6 +1,7 @@
 $size_suffix: if($size == compact, -compact, '');
 
 $base_radius: if($size == compact, 3px, 3px);
+$progressbar_radius: $base_radius;
 
 $button_height: if($size == compact, 20px, 22px);
 $button_width: if($size == compact, 16px, 16px);
@@ -35,8 +36,8 @@ $popover_menuitem_padding: if($size == compact, 1px 5px, 1px 5px);
 
 $switch_size: if($size == compact, 20px, 24px);
 $scale_slider: if($size == compact, 16px, 18px);
-$scale_slider_margin: if($size == compact, -6px, -7px);
-$scale_slider_finetune_margin: if($size == compact, -4px, -5px);
+$scale_slider_margin: if($size == compact, -7px, -8px);
+$scale_slider_finetune_margin: if($size == compact, -4px, -6px);
 
 $sidebar_row_height: if($size == compact, 28px, 30px);
 $sidebar_row_padding: if($size == compact, 0, 1px);

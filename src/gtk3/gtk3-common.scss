@@ -2050,30 +2050,33 @@ treeview.view {
 
   &.progressbar { // progress bar in treeviews
 
-    border: none;
+    border: 1px solid $treeview_progressbar_highlight_borders_color;
+    background-color: $treeview_progressbar_highlight_color;
     border-radius: 2px;
-    background-color: if($variant == 'light', darken($selected_bl_color, 5%), $selected_bl_color);
-    box-shadow: inset 0 -1px transparentize(black, 0.9);
 
     &:selected {
       &:focus, & {
+        border-color: $treeview_progressbar_selected_highlight_borders_color;
+        background-color: $treeview_progressbar_selected_highlight_color;
         border-radius: 2px;
-        background-color: if($variant == 'light', darken($selected_bl_color, 12%), lighten($selected_bl_color, 7%));
       }
     }
 
-    &:disabled { @if $variant == 'dark' { color: mix($insensitive_fg_color, $selected_fg_color, 70%); } }
+    &:disabled {
+      @if $scales_style == fancy and $variant == light { border-color: mix($treeview_progressbar_borders_color, $treeview_progressbar_highlight_borders_color, 50%); }
+
+      @if $variant == 'dark' { color: mix($insensitive_fg_color, $selected_fg_color, 70%); } }
   }
 
   &.trough { // progress bar trough in treeviews
-    background-color: transparentize($fg_color,0.9);
+    border: 1px solid $treeview_progressbar_borders_color;
+    background-color: $treeview_progressbar_trough_color;
     border-radius: 2px;
 
     &:selected {
       &:focus, & {
-        background-color: if($variant == 'light',
-                             transparentize($selected_fl_color, 0.9),
-                             darken($selected_bl_color, 10%));
+        border-color: $treeview_progressbar_selected_borders_color;
+        background-color: mix($treeview_progressbar_trough_color, $selected_bl_color, 85%);
         border-radius: 2px;
       }
     }
@@ -2975,11 +2978,19 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
  * GtkScale *
  ************/
 %scale_trough {
-  border: none;
-  border-radius: 2px;
-  background-color: $dark_fill;
+  border: 1px solid $borders_color;
+  border-radius: $base_radius;
+  background-color: $scale_trough_color;
 
-  &:disabled { background-color: if($variant=='light', mix($insensitive_bg_color, $dark_fill, 40%), mix($insensitive_bg_color, $dark_fill, 70%)); }
+  @if $style == standard {
+    box-shadow: inset 1px 1px transparentize(black, .95);
+  }
+
+  &:disabled { 
+    background-color: if($variant=='light', mix($insensitive_bg_color, $dark_fill, 40%), mix($insensitive_bg_color, $dark_fill, 70%));
+    border-color: mix($borders_color, $bg_color, 70%);
+    box-shadow: none;
+  }
 
   // ...on selected list rows
   @if $variant == light {
@@ -2992,6 +3003,7 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
 
   // OSD
   .osd & {
+    border-color: darken($osd_borders_color, 10%);
     background-color: if($variant=='light', transparentize($osd_borders_color, 0.2), transparentize(black, 0.6));
 
     &:disabled { background-color: $osd_insensitive_bg_color; }
@@ -3005,12 +3017,27 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
 }
 
 %scale_highlight {
-  border: none;
-  border-radius: 2px;
-  background-color: if($variant == 'light', darken($selected_bl_color, 15%), lighten($selected_bl_color, 2%));
+  border: 1px solid $scale_highlight_borders_color;
+  border-radius: $base_radius;
+  background-color: $scale_highlight_color;
+
+  @if $style == standard {
+    @if $variant == light {
+      box-shadow: inset 1px 1px transparentize(white, .3), inset -1px -1px transparentize($borders_color, .85);
+
+      @if $scales_style == fancy { box-shadow: inset 1px 1px transparentize(white, .9), inset -1px -1px transparentize($selected_borders_color, .85); }
+    }
+    @else {
+      box-shadow: inset 1px 1px transparentize(white, .92), inset -1px -1px transparentize($borders_color, .8);
+    }
+  }
 
   &:disabled {
     background-color: transparent;
+    border-color: mix($borders_color, $bg_color, 70%);
+    box-shadow: none;
+
+    @if $variant=='dark' { border-color: lighten($borders_color, 4%); }
   }
 
   // ...on selected list rows
@@ -3019,6 +3046,19 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   }
 
   // OSD
+  .osd & {
+    border-color: darken($osd_borders_color, 10%);
+    background-color: if($scales_style == greyscale, lighten($osd_bg_color, 15%), $selected_bg_color);
+
+    @if $style == standard {
+      box-shadow: inset 1px 1px transparentize(white, .9), inset -1px -1px transparentize(darken($osd_borders_color, 10%), .8);
+    }
+
+    &:disabled {
+      background-color: $osd_insensitive_bg_color;
+      box-shadow: none;
+    }
+  }
 }
 
 scale {
@@ -3032,7 +3072,7 @@ scale {
 
   // those are inside the trough node, I need them to show their own border over the trough one, so negative margin
   fill,
-  highlight { margin: 0px; }
+  highlight { margin: -1px; }
 
   // the slider is inside the trough, so to have make it bigger there's a negative margin
 
@@ -3062,7 +3102,7 @@ scale {
     fill,
     highlight,
     trough {
-      border-radius: 2px;
+      border-radius: $base_radius;
       -gtk-outline-radius: 3px;
     }
   }
@@ -3071,8 +3111,13 @@ scale {
   trough {
     @extend %scale_trough;
 
-    outline-offset: 2px;
-    -gtk-outline-radius: 3px;
+    outline-color: if($variant == light, gtkalpha(currentColor, 0.25), gtkalpha(black, 0.25));
+    outline-offset: 1px;
+    -gtk-outline-radius: 4px;
+
+    .osd & {
+      outline-color: gtkalpha(black, 0.4);
+    }
   }
 
   // the colored part of the backing bit
@@ -3111,9 +3156,18 @@ scale {
 
     &:hover { @include button(hover-alt); }
 
-    &:active { border-color: if($variant == 'light', $selected_borders_color, $alt_borders_color); }
+    &:active {
+      @include button(hover-alt);
+      box-shadow: none;
 
-    &:disabled { @include button(insensitive); @if $variant=='dark' { border-color: lighten($borders_color, 4%); } }
+      @if $scales_style == fancy { border-color: $selected_borders_color; }
+    }
+
+    &:disabled {
+      @include button(insensitive);
+
+      border-color: mix($borders_color, $bg_color, 85%);
+    }
 
     // ...on selected list rows
 
@@ -3129,7 +3183,6 @@ scale {
 
       &:active {
         @include button(osd-hover);
-        @if $variant == 'light' { border-color: transparentize($selected_borders_color, 0.2); }
         background-color: if($variant == 'light', opacify($osd_bg_color, 1), opacify(lighten($osd_bg_color, 15%), 1)); // solid background needed here
       }
 
@@ -3392,12 +3445,12 @@ progressbar {
   // sizing
   &.horizontal {
     trough,
-    progress { min-height: 6px; }
+    progress { min-height: 4px; }
   }
 
   &.vertical {
     trough,
-    progress { min-width: 6px; }
+    progress { min-width: 4px; }
   }
 
   &.horizontal progress { margin: 0 -1px; } // the progress node is positioned after the trough border
@@ -3413,26 +3466,26 @@ progressbar {
   progress {
     @extend %scale_highlight;
 
-    border-radius: 1.5px;
+    border-radius: $progressbar_radius;
 
     &.left {
-      border-top-left-radius: 2px;
-      border-bottom-left-radius: 2px;
+      border-top-left-radius: $progressbar_radius;
+      border-bottom-left-radius: $progressbar_radius;
     }
 
     &.right {
-      border-top-right-radius: 2px;
-      border-bottom-right-radius: 2px;
+      border-top-right-radius: $progressbar_radius;
+      border-bottom-right-radius: $progressbar_radius;
     }
 
     &.top {
-      border-top-right-radius: 2px;
-      border-top-left-radius: 2px;
+      border-top-right-radius: $progressbar_radius;
+      border-top-left-radius: $progressbar_radius;
     }
 
     &.bottom {
-      border-bottom-right-radius: 2px;
-      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: $progressbar_radius;
+      border-bottom-left-radius: $progressbar_radius;
     }
   }
 
