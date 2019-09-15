@@ -94,10 +94,10 @@ $light   base[NORMAL] = mix (0.5, @bg_color, @base_color)
 $light   base[ACTIVE] = "#dddddd"
 $light   base[SELECTED] = "#dddddd"
 $light   base[INSENSITIVE] = mix (0.5, @bg_color, @base_color)
-$dark   base[NORMAL] = "#2f3233"
-$dark   base[ACTIVE] = "#373a3b"
-$dark   base[SELECTED] = "#373a3b"
-$dark   base[INSENSITIVE] = "#2f3233"
+$dark   base[NORMAL] = mix (0.5, @bg_color, @base_color)
+$dark   base[ACTIVE] = "#444444"
+$dark   base[SELECTED] = "#444444"
+$dark   base[INSENSITIVE] = mix (0.5, @bg_color, @base_color)
 
   text[NORMAL] = @text_color
   text[ACTIVE] = @selected_fg_color
