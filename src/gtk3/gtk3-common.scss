@@ -3846,12 +3846,14 @@ row {
 .app-notification.frame {
   @extend %osd;
 
+  margin: 4px;
   padding: $app_notification_padding;
-  border-radius: 0 0 $app_notification_radius $app_notification_radius;
-  background-color: $osd_bg_color;
+  border-radius: $app_notification_radius;
+  background-color: if($variant == light, $osd_bg_color, opacify($osd_bg_color, .0));
   background-image: linear-gradient(to bottom, transparentize(black, 0.8),
                                                transparent 1px);
   background-clip: padding-box;
+  box-shadow: 1px 1px transparentize(black, .7);
 
   &:backdrop {
     background-image: none;
