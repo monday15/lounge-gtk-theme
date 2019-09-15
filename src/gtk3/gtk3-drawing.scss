@@ -75,15 +75,6 @@
   }
   @if $t==osd-insensitive {
     color: $osd_insensitive_fg_color;
-    border-color: $osd_borders_color_dark;
-    background-color: $osd_insensitive_bg_color;
-    background-clip: padding-box;
-    box-shadow: none;
-    text-shadow: none;
-    -gtk-icon-shadow: none;
-  }
-  @if $t==osd-backdrop {
-    color: $osd_text_color;
     border-color: $osd_borders_color;
     background-color: if($variant == 'light', transparentize(white, 0.3), transparentize(opacify($osd_borders_color, 1), 0.5));
     background-clip: padding-box;
