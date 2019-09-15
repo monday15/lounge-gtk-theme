@@ -88,7 +88,7 @@ $tooltip_bg_color: if($variant == 'light', transparentize(#ececdc, 0.07), transp
 $tooltip_fg_color: if($variant == light, $fg_color, $osd_fg_color);
 $tooltip_borders_color: transparentize(black, 0.8);
 
-$infobar_color: if($variant == 'light', opacify(darken(desaturate($tooltip_bg_color, 25%), 8%), 1), opacify($tooltip_bg_color, 1));
+$infobar_color: if($variant == 'light', opacify(darken(desaturate($tooltip_bg_color, 20%), 4%), 1), opacify($tooltip_bg_color, 1));
 $questionbar_color: if($variant == light, lighten($selected_bl_color, 2%), darken($selected_bl_color, 3%));
 $warningbar_color: if($variant == light, desaturate(lighten($warning_color, 30%), 15%), desaturate(darken($warning_color, 20%), 30%));
 $errorbar_color: if($variant == light, lighten($error_color, 20%), darken($error_color, 3%));
