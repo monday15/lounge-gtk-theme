@@ -2916,21 +2916,23 @@ switch {
 .view.content-view.check:not(list),
 .content-view .tile check:not(list) {
   -gtk-icon-shadow: none;
-    background-color: transparent;
-    min-width: 40px;
-    min-height: 40px;
-    background-image: -gtk-scaled(url("assets/checkbox-selectionmode#{$asset_suffix}.png"),
-                                  url("assets/checkbox-selectionmode#{$asset_suffix}@2.png"));
-    transition: 200ms;
-    box-shadow: none;
-    border-width: 0;
-    padding: 0;
+  background-color: transparent;
+  min-width: 40px;
+  min-height: 40px;
+  background-image: -gtk-scaled(url("assets/checkbox-selectionmode#{$style_suffix}#{$asset_suffix}.png"),
+                                 url("assets/checkbox-selectionmode#{$style_suffix}#{$asset_suffix}@2.png"));
+  transition: 200ms;
+  box-shadow: none;
+  border-width: 0;
+  padding: 0;
+  // lounge: margins are for space between check and outline (outline-offset and -gtk-outline-radius doesnt work here)
+  margin: 2px;
 
-    &:checked {
-      background-image: -gtk-scaled(url("assets/checkbox-checked-selectionmode#{$asset_suffix}.png"),
-                                    url("assets/checkbox-checked-selectionmode#{$asset_suffix}@2.png"));
-      -gtk-icon-source: -gtk-scaled(url("assets/check-selectionmode#{$asset_suffix}.png"),
-                                    url("assets/check-selectionmode#{$asset_suffix}@2.png"));
+  &:checked {
+    background-image: -gtk-scaled(url("assets/checkbox-checked-selectionmode#{$style_suffix}#{$asset_suffix}.png"),
+                                  url("assets/checkbox-checked-selectionmode#{$style_suffix}#{$asset_suffix}@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/check-selectionmode#{$style_suffix}#{$asset_suffix}.png"),
+                                  url("assets/check-selectionmode#{$style_suffix}#{$asset_suffix}@2.png"));
   }
 }
 
@@ -2967,31 +2969,64 @@ radio {
   min-height: 14px;
   min-width: 14px;
   border: 1px solid;
-  padding: $checkradio_padding;
   -gtk-icon-source: none;
 
   @include button(normal-alt);
-  box-shadow: none;
+
+  @if $style == standard {
+    box-shadow: inset 1px 1px transparentize(black, .9);
+
+    &:not(check) { box-shadow: inset 0 1px transparentize(black, .9); }
+  }
 
   &:hover {
-    @include button(hover-alt); box-shadow: none;
-    @if $variant == 'dark' { background: image(lighten($bg_color, 5.5%)); }
+    @include button(hover-alt);
+
+    @if $style == standard {
+      box-shadow: inset 1px 1px transparentize(black, .9);
+
+      &:not(check) { box-shadow: inset 0 1px transparentize(black, .9); }
+    }
+
+    @if $variant == 'dark' { background: image(lighten($bg_color, 5%)); }
   }
-  &:active { @include button(active); box-shadow: none; }
-  &:disabled { @include button(insensitive); }
+
+  &:active {
+    @include button(active);
+    border-color: $alt_borders_color;
+
+    @if $style == standard {
+      box-shadow: inset 1px 1px transparentize(black, .9);
+
+      &:not(check) { box-shadow: inset 0 1px transparentize(black, .9); }
+    }
+
+    @if $variant == 'dark' { background: image(darken($bg_color, 3%)); }
+  }
+
+  &:disabled {
+    @include button(insensitive);
+
+    @if $variant == 'dark' { border-color: mix($alt_borders_color, $bg_color, 50%); }
+  }
 
   .osd & {
     @include button(osd);
 
     &:hover { @include button(osd); }
+
     &:active { @include button(osd-active); }
+
     &:disabled { @include button(osd-insensitive); }
   }
 
-  menu menuitem & {
-    margin: 0; // this is a workaround for a menu check/radio size allocation issue
+  menu menuitem & { margin: 0; } // this is a workaround for a menu check/radio size allocation issue
 
-    &, &:hover, &:disabled { //FIXME use button reset mixin
+  menu menuitem &,
+  popover & {
+    &,
+    &:hover,
+    &:disabled { //FIXME use button reset mixin
       min-height: 14px;
       min-width: 14px;
       background-image: none;
@@ -2999,7 +3034,7 @@ radio {
       box-shadow: none;
       -gtk-icon-shadow: none;
       color: inherit;
-      border-color: currentColor;
+      border-color: gtkalpha(currentColor, .7);
     }
   }
 }
