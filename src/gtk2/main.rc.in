@@ -45,7 +45,7 @@ $regular   GtkButton::inner-border           = {4, 4, 4, 4}
 $compact   GtkButton::inner-border           = {4, 4, 3, 3}
 
   GtkEntry::state-hint = 1
-$regular   GtkEntry::inner-border = {3, 3, 6, 6}
+$regular   GtkEntry::inner-border = {3, 3, 4, 4}
 $compact   GtkEntry::inner-border = {3, 3, 3, 3}
 
   GtkPaned::handle-size = 9
@@ -54,8 +54,8 @@ $compact   GtkEntry::inner-border = {3, 3, 3, 3}
 
   GtkScrollbar::trough-border = 0
   GtkRange::trough-border     = 0
-$regular   GtkRange::slider-width      = 15
-$compact   GtkRange::slider-width      = 13
+$regular   GtkRange::slider-width      = 17
+$compact   GtkRange::slider-width      = 15
   GtkRange::stepper-size      = 0
   GtkRange::activate-slider   = 1
 
