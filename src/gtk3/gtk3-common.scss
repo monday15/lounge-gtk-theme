@@ -2874,7 +2874,6 @@ scale {
     // OSD
     .osd & {
       @include button(osd);
-      border-color: $osd_borders_color_dark;
       background-color: if($variant == 'light', opacify($osd_bg_color, 1), opacify(lighten($osd_bg_color, 10%), 1)); // solid background needed here
 
       &:hover {

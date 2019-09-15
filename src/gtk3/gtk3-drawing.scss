@@ -57,8 +57,8 @@
   }
   @if $t==osd {
     color: $osd_text_color;
-    border-color: $osd_borders_color_dark;
     background-color: if($variant == 'light', transparentize(white, 0.2), transparentize(opacify($osd_borders_color, 1), 0.5));
+    border-color: $osd_borders_color;
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: none;
@@ -282,7 +282,7 @@
     $_bg: if($c != $bg_color, transparentize($c, 0.5), if($variant == 'light', $osd_bg_color, lighten($osd_bg_color, 3%)));
 
     color: $osd_fg_color;
-    border-color: $osd_borders_color_dark;
+    border-color: $osd_borders_color;
     background-color: transparent;
     $button_fill: image($_bg) !global;
     background-image: $button_fill;
@@ -300,7 +300,7 @@
     $_bg: if($c != $bg_color, transparentize($c, 0.3), if($variant == 'light', lighten($osd_bg_color, 5%), lighten($osd_bg_color, 7%)));
 
     color: $fg_color;
-    border-color: $osd_borders_color_dark;
+    border-color: $osd_borders_color;
     background-color: transparent;
     $button_fill: image($_bg) !global;
     background-image: $button_fill;
@@ -318,7 +318,7 @@
     $_bg: if($c != $bg_color, $c, if($variant == 'light', darken($osd_bg_color, 10%), darken($osd_bg_color, 2%)));
 
     color: $fg_color;
-    border-color: $osd_borders_color_dark;
+    border-color: $osd_borders_color;
     background-color: transparent;
     $button_fill: image($_bg) !global;
     background-image: $button_fill;
