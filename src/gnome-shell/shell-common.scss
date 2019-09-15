@@ -134,25 +134,36 @@ StScrollBar {
   @if $shell <= 3.28 {
     -slider-height: 0.3em;
     -slider-background-color: mix($borders_color, $bg_color, 50%); //background of the trough
-    -slider-border-color: mix($borders_color, $bg_color, 50%); //trough border color
+    -slider-border-color: $borders_color; //trough border color
     -slider-active-background-color: $selected_bg_color; //active trough fill
-    -slider-active-border-color: $selected_bg_color; //active trough border
+    -slider-active-border-color: $borders_color; //active trough border
     -slider-border-width: 1px;
+    -slider-handle-radius: 6px;
   }
 
   @if $shell >= 3.30 {
     -barlevel-height: 0.3em;
     -barlevel-background-color: mix($borders_color, $bg_color, 50%); //background of the trough
-    -barlevel-border-color: mix($borders_color, $bg_color, 50%); //trough border color
-    -barlevel-active-background-color: $selected_bg_color; //active trough fill
-    -barlevel-active-border-color: $selected_bg_color; //active trough border
+    -barlevel-border-color: mix($borders_color, $bg_color, 100%); //trough border color
+    -barlevel-active-background-color: lighten($bg_color, 25%); //active trough fill
+    -barlevel-active-border-color: $borders_color; //active trough border
     -barlevel-overdrive-color: $destructive_color;
-    -barlevel-overdrive-border-color: $destructive_color;
+    -barlevel-overdrive-border-color: $borders_color;
     -barlevel-overdrive-separator-width: 0.2em;
     -barlevel-border-width: 1px;
+    -slider-handle-radius: 6px;
+
+    @if $shell >= 3.34 {
+      -slider-handle-radius: 8px;
+      -slider-handle-border-width: 1px;
+      -slider-handle-border-color: $borders_color;
+      color: lighten($bg_color, 10%);
+
+      &:hover,
+      &:active { color: lighten($bg_color, 25%); } // lounge: doesnt work, even in default theme
+    }
   }
 
-  -slider-handle-radius: 6px;
 }
 
 /* Check Boxes */
