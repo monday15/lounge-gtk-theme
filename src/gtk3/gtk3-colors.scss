@@ -85,6 +85,7 @@ $osd_bg_color: if($variant == 'light', transparentize(#606060, 0.1), transparent
 $osd_borders_color: if($variant == 'light', transparentize(darken(#606060, 17%), 0.1), transparentize(darken(#505050, 12%), 0.1));
 
 $tooltip_bg_color: if($variant == 'light', transparentize(#ececdc, 0.07), transparentize(#505050, 0.05));
+$tooltip_fg_color: if($variant == light, $fg_color, $osd_fg_color);
 $tooltip_borders_color: transparentize(black, 0.8);
 
 $infobar_color: if($variant == 'light', opacify(darken(desaturate($tooltip_bg_color, 25%), 8%), 1), opacify($tooltip_bg_color, 1));

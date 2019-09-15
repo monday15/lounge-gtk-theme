@@ -4261,6 +4261,17 @@ tooltip {
     border: 1px solid $tooltip_borders_color; // this suble border is meant to
                                               // not make the tooltip melt with
                                               // very dark backgrounds
+
+    @if $style == standard {
+      @if $variant == light { box-shadow: inset 0 0 0 1px transparentize(white, .4), 1px 1px transparentize(black, .9); }
+
+      @else { box-shadow: inset 0 0 0 1px transparentize(white, .92), 1px 1px transparentize(black, .9); }
+    }
+    @if $style == flat {
+      @if $variant == light { box-shadow: 1px 1px transparentize(black, .9); }
+
+      @else { box-shadow: 1px 1px transparentize(black, .9); }
+    }
   }
 
   padding: $tooltip_padding; /* not working */
@@ -4271,7 +4282,7 @@ tooltip {
   &:not(.csd) {
     border-radius: 0;
     // lounge: border colors should be based on tooltip color (transparency doesnt work)
-    border-color: if($variant == light, darken($tooltip_bg_color, 20%), lighten($tooltip_bg_color, 15%));
+    border-color: if($variant == light, desaturate(darken($tooltip_bg_color, 20%), 20%), darken($tooltip_bg_color, 12%));
   }
 
   // FIXME: we need a border or tooltips vanish on black background.
@@ -4280,7 +4291,7 @@ tooltip {
   * { // Yeah this is ugly
     padding: $tooltip_padding;
     background-color: transparent;
-    color: $fg_color;
+    color: $tooltip_fg_color;
   }
 }
 
