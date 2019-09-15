@@ -1389,19 +1389,9 @@ $compact       border      = {0, 0, 9, 9}
     image {
       function    = BOX
       detail      = "bar"
-      file        = "assets/progressbar-horz.png"
+      file        = "assets/progressbar-highlight-$scales_style-$tone-$style.png"
       stretch     = TRUE
       border      = {2, 2, 2, 2}
-      orientation = HORIZONTAL
-    }
-
-    image {
-      function    = BOX
-      detail      = "bar"
-      file        = "assets/progressbar-vert.png"
-      stretch     = TRUE
-      border      = {2, 2, 2, 2}
-      orientation = VERTICAL
     }
 
     #############
@@ -1506,8 +1496,9 @@ $compact   ythickness = 3
     image {
       function    = BOX
       state       = PRELIGHT
-      file        = "assets/menu-item-active.png"
-      border      = {0, 0, 1, 1}
+      file        = "assets/menu-item-active-$tone-$style.png"
+      border      = {5, 5, 4, 4}
+      stretch  = TRUE
     }
   }
 
