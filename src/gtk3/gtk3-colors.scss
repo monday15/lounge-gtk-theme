@@ -35,6 +35,7 @@ $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentiz
 
 $top_hilight: $borders_edge;
 $dark_fill: if($variant == 'light', mix($borders_color, $bg_color, 40%), mix($borders_color, $bg_color, 32%));
+$column_header_bg_color: mix($base_color, $bg_color, 40%);
 
 $scale_trough_color: if($variant == 'light', darken($bg_color, 5%), darken($bg_color, 3%));
 $scale_highlight_color: if($scales_style == greyscale,

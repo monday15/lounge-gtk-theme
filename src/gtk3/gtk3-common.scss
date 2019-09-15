@@ -2084,22 +2084,74 @@ treeview.view {
   }
 
   header {
+    padding: 4px;
+    margin: 4px;
     button {
-      $_column_header_color: mix($fg_color, $base_color, 50%);
+      $_column_header_color: mix($fg_color, $base_color, 60%);
+
+      $_column_header_bg_focus_color: if($variant == light, mix($column_header_bg_color, $fg_color, 92%), mix($column_header_bg_color, $fg_color, 90%));
+      $_column_header_edge_shadow: if($variant == light, transparentize(white, .4), transparentize(white, .96));
+      $_column_header_separator_above_table_grid: if($variant == light, transparentize(black, .85), transparentize(white, .85));
+      $_column_header_separator_right_shadow: if($variant == light, transparentize(white, .6), transparentize(black, .9));
 
       @extend %column_header_button;
 
       color: $_column_header_color;
-      background-color: $base_color;
+      background-color: $column_header_bg_color;
+
       font-weight: bold;
+      font-size: smaller;
       text-shadow: none;
-      box-shadow: none;
+
+      outline-style: none;
+
+      @if $style == standard {
+        box-shadow: -7px 0px 0px -6px $_column_header_separator_above_table_grid,
+                    inset 0 1px $_column_header_edge_shadow;
+
+        &:first-child { box-shadow: inset 1px 1px $_column_header_edge_shadow; }
+
+        &:last-child {
+          box-shadow: -7px 0px 0px -6px $_column_header_separator_above_table_grid,
+                      inset -1px 1px $_column_header_edge_shadow;
+        }
+
+        &:only-child {
+          box-shadow: inset 1px 1px $_column_header_edge_shadow,
+                      inset -1px 0 $_column_header_edge_shadow;
+        }
+      }
+
+      @if $style == flat {
+        box-shadow: -7px 0px 0px -6px $_column_header_separator_above_table_grid;
+
+        &:first-child,
+        &:only-child { box-shadow: none; }
+      }
+
+      &:focus {
+        @extend %column_header_button;
+
+        background-color: $_column_header_bg_focus_color;
+
+        box-shadow: inset -2px 0 $column_header_bg_color,
+                    inset 1px 0 $column_header_bg_color,
+                    -7px 0px 0px -6px $_column_header_separator_above_table_grid;
+
+        &:first-child { box-shadow: inset -2px 0 $column_header_bg_color; }
+
+        &:last-child {
+          box-shadow: inset 1px 0 $column_header_bg_color,
+                      -7px 0px 0px -6px $_column_header_separator_above_table_grid;
+        }
+
+        &:only-child { box-shadow: none; }
+      }
 
       &:hover {
         @extend %column_header_button;
 
         color: mix($_column_header_color, $fg_color, 50%);
-        box-shadow: none;
         transition: none; //I shouldn't need this
       }
 
@@ -2133,8 +2185,8 @@ treeview.view {
 %column_header_button {
   padding: 0 6px;
   background-image: none;
-  border-style: none solid solid none;
-  border-color: $bg_color;
+  border-style: none none solid none;
+  border-color: mix($bg_color, $borders_color, 50%);
   border-radius: 0;
   text-shadow: none;
 

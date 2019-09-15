@@ -74,3 +74,5 @@ $app_notification_padding: if($size == compact, 6px 8px, 10px 12px);
 $app_notification_radius: if($size == compact, 3px, 5px);
 
 $nautilus_entry_tag_vertical_margin: if($size == compact, 4px, 5px);
+
+$column_header_separator_offset: 6px;
