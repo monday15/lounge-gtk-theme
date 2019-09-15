@@ -87,8 +87,8 @@ class "GimpSpinScale" style "gimp_spin_scale"
 style "thunar-sidebar" {
 $light   GtkTreeView::odd_row_color = mix (0.5, @bg_color, @base_color)
 $light   GtkTreeView::even_row_color = mix (0.5, @bg_color, @base_color)
-$dark   GtkTreeView::odd_row_color = "#2f3233"
-$dark   GtkTreeView::even_row_color = "#2f3233"
+$dark   GtkTreeView::odd_row_color = mix (0.5, @bg_color, @base_color)
+$dark   GtkTreeView::even_row_color = mix (0.5, @bg_color, @base_color)
 
 $light   base[NORMAL] = mix (0.5, @bg_color, @base_color)
 $light   base[ACTIVE] = "#dddddd"

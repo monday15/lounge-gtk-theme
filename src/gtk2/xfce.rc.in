@@ -1,6 +1,9 @@
-gtk-color-scheme = "xfce_panel_bg:#333839"
+gtk-color-scheme = "xfce_panel_bg:#3a3a3a"
 gtk-color-scheme = "xfce_panel_fg:#d2d2d2"
-gtk-color-scheme = "xfce_panel_selected_bg:#417fbd"
+$tango gtk-color-scheme = "xfce_panel_selected_bg:#3776bd"
+$salsa gtk-color-scheme = "xfce_panel_selected_bg:#6a4466"
+$rumba gtk-color-scheme = "xfce_panel_selected_bg:#5e4faa"
+$jive gtk-color-scheme = "xfce_panel_selected_bg:#286d61"
 gtk-color-scheme = "xfce_panel_selected_fg:#e2e2e2"
 
 style "theme-panel" {
