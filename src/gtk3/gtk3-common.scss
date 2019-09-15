@@ -1189,13 +1189,40 @@ modelbutton.flat,
   min-height: $menuitem_height;
   padding: $popover_menuitem_padding;
   border-radius: $base_radius;
-  outline-offset: -2px;
+  outline-offset: -1px;
+  border: 1px solid transparent;
+  -gtk-outline-radius: $base_radius;
 
   @extend %undecorated_button;
 
-  &:hover { background-color: $selected_bl_color; }
+  &:hover { @extend %menuitem_hover; }
 
   &:selected { @extend %selected_items; }
+}
+
+%menuitem_hover {
+  color: $selected_fl_color;
+  background-color: $selected_bl_color;
+  border-radius: 3px;
+
+  @if $style == standard {
+    border-color: darken($selected_bl_color, 10%);
+
+    @if $variant == light {
+      
+    box-shadow: inset 0 -1px transparentize(black, .95), inset 0 1px transparentize(white, .75);
+// lounge: doesnt work as intended (shadow becomes brighter on active menuitem with child menu)
+//    text-shadow: 0px 1px transparentize(white, .85);
+    }
+    @else {
+      box-shadow: inset 0 -1px transparentize(black, .9), inset 0 1px transparentize(white, .92);
+//      text-shadow: 0px 1px transparentize(black, .85);
+    }
+  }
+
+  @if $style == flat {
+    border-color: $selected_bl_color;
+  }
 }
 
 
@@ -2154,10 +2181,14 @@ menu,
   background-color: $menu_color;
   border: 1px solid $borders_color; // adds borders in a non composited env
 
+  @if $style == standard {
+    box-shadow: inset 0 0 0 1px if($variant == light, transparentize(white, .2), transparentize(white, .97));
+  }
+
   // lounge: light theme looks bad in non composited env without margins on menuitems
   menuitem {
-    margin-left: 1px;
-    margin-right: 1px;
+    margin-left: 3px;
+    margin-right: 3px;
   }
 
   .csd & {
@@ -2166,8 +2197,8 @@ menu,
 
     //lounge: disable margins in composited env
     menuitem {
-      margin-left: 0;
-      margin-right: 0;
+      margin-left: 2px;
+      margin-right: 2px;
     }
   }
 
@@ -2177,11 +2208,9 @@ menu,
     padding: $base_menuitem_padding;
     text-shadow: none;
     border-radius: 0;
+    border: 1px solid transparent;
 
-    &:hover {
-      color: $selected_fl_color;
-      background-color: $selected_bl_color;
-    }
+    &:hover { @extend %menuitem_hover; }
 
     &:disabled { color: $insensitive_fg_color; }
 
@@ -2241,7 +2270,7 @@ menu,
       border-color: transparent ;
     }
   }
-  separator { margin: 1px 0; }
+  separator { margin: 1px; }
 }
 
 menuitem {

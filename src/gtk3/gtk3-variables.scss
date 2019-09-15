@@ -27,11 +27,11 @@ $titlebar_height: if($size == compact, 20px, 24px);
 $titlebar_padding: if($size == compact, 3px, 4px);
 $titlebar_titlebutton_size: if($size == compact, 20px, 24px);
 
-$menubar_height: if($size == compact, 18px, 20px);
+$menubar_height: if($size == compact, 16px, 18px);
 $menu_radius: 3px;
 $menuitem_height: if($size == compact, 20px, 24px);
-$base_menuitem_padding: if($size == compact, 2px 6px, 2px 8px);
-$popover_menuitem_padding: if($size == compact, 3px 5px, 2px 5px);
+$base_menuitem_padding: if($size == compact, 1px 6px, 1px 8px);
+$popover_menuitem_padding: if($size == compact, 1px 5px, 1px 5px);
 
 $switch_size: if($size == compact, 20px, 24px);
 $scale_slider: if($size == compact, 16px, 18px);
