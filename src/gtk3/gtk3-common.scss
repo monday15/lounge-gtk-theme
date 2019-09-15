@@ -4,7 +4,7 @@
 
 $ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 $asset_suffix: if($variant=='dark', '-dark', '');
-$style_suffix: if($style == standard, '', '-flat');
+$style_suffix: if($style == prime, '', '-flat');
 $backdrop_transition: 200ms ease-out;
 $button_transition: all 200ms $ease-out-quad;
 
@@ -325,7 +325,7 @@ entry {
     background-image: none;
     border-radius: 0;
     border-width: 0 0 2px;
-    border-color: if($scales_style == greyscale,
+    border-color: if($scale_style == casual,
                   if($variant == 'light', lighten($selected_bg_color, 20%), $selected_bg_color),
                   $scale_highlight_color);
     border-style: solid;
@@ -1215,7 +1215,7 @@ modelbutton.flat,
   background-color: $selected_bl_color;
   border-radius: 3px;
 
-  @if $style == standard {
+  @if $style == prime {
     border-color: darken($selected_bl_color, 10%);
 
     @if $variant == light {
@@ -2073,7 +2073,7 @@ treeview.view {
     }
 
     &:disabled {
-      @if $scales_style == fancy and $variant == light { border-color: mix($treeview_progressbar_borders_color, $treeview_progressbar_highlight_borders_color, 50%); }
+      @if $scale_style == fancy and $variant == light { border-color: mix($treeview_progressbar_borders_color, $treeview_progressbar_highlight_borders_color, 50%); }
 
       @if $variant == 'dark' { color: mix($insensitive_fg_color, $selected_fg_color, 70%); } }
   }
@@ -2114,7 +2114,7 @@ treeview.view {
 
       outline-style: none;
 
-      @if $style == standard {
+      @if $style == prime {
         box-shadow: -7px 0px 0px -6px $_column_header_separator_above_table_grid,
                     inset 0 1px $_column_header_edge_shadow;
 
@@ -2246,7 +2246,7 @@ menu,
   background-color: $menu_color;
   border: 1px solid $borders_color; // adds borders in a non composited env
 
-  @if $style == standard {
+  @if $style == prime {
     box-shadow: inset 0 0 0 1px if($variant == light, transparentize(white, .2), transparentize(white, .97));
   }
 
@@ -2729,7 +2729,7 @@ scrollbar {
     background-position: center;
     background-repeat: no-repeat;
 
-    @if $style == standard {
+    @if $style == prime {
       @if $variant == 'light' {
         box-shadow: inset 1px 1px transparentize(white, 0.8),
                     inset -1px -1px transparentize(black, 0.92);
@@ -2895,7 +2895,7 @@ switch {
   color: $fg_color;
   background-color: $dark_fill;
 
-  @if $style == standard {
+  @if $style == prime {
     box-shadow: inset 1px 1px transparentize(black, .92);
   }
 
@@ -3019,7 +3019,7 @@ radio {
 
   @include button(normal-alt);
 
-  @if $style == standard {
+  @if $style == prime {
     box-shadow: inset 1px 1px transparentize(black, .9);
 
     &:not(check) { box-shadow: inset 0 1px transparentize(black, .9); }
@@ -3028,7 +3028,7 @@ radio {
   &:hover {
     @include button(hover-alt);
 
-    @if $style == standard {
+    @if $style == prime {
       box-shadow: inset 1px 1px transparentize(black, .9);
 
       &:not(check) { box-shadow: inset 0 1px transparentize(black, .9); }
@@ -3041,7 +3041,7 @@ radio {
     @include button(active);
     border-color: $alt_borders_color;
 
-    @if $style == standard {
+    @if $style == prime {
       box-shadow: inset 1px 1px transparentize(black, .9);
 
       &:not(check) { box-shadow: inset 0 1px transparentize(black, .9); }
@@ -3151,7 +3151,7 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   border-radius: $base_radius;
   background-color: $scale_trough_color;
 
-  @if $style == standard {
+  @if $style == prime {
     box-shadow: inset 1px 1px transparentize(black, .95);
   }
 
@@ -3190,11 +3190,11 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   border-radius: $base_radius;
   background-color: $scale_highlight_color;
 
-  @if $style == standard {
+  @if $style == prime {
     @if $variant == light {
       box-shadow: inset 1px 1px transparentize(white, .3), inset -1px -1px transparentize($borders_color, .85);
 
-      @if $scales_style == fancy { box-shadow: inset 1px 1px transparentize(white, .9), inset -1px -1px transparentize($selected_borders_color, .85); }
+      @if $scale_style == fancy { box-shadow: inset 1px 1px transparentize(white, .9), inset -1px -1px transparentize($selected_borders_color, .9); }
     }
     @else {
       box-shadow: inset 1px 1px transparentize(white, .92), inset -1px -1px transparentize($borders_color, .8);
@@ -3211,17 +3211,17 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
 
   // ...on selected list rows
   row:selected & {
-    @if $variant == light and $scales_style == greyscale { border-color: $alt_borders_color; }
+    @if $variant == light and $scale_style == casual { border-color: $alt_borders_color; }
 
     @if $variant == dark { box-shadow: 0 0 0 1px $bg_color; }
   }
 
   // OSD
   .osd & {
-    background-color: if($scales_style == greyscale, lighten($osd_bg_color, 15%), $selected_bg_color);
     border-color: $osd_borders_color;
+    background-color: if($scale_style == casual, lighten($osd_bg_color, 15%), $selected_bg_color);
 
-    @if $style == standard {
+    @if $style == prime {
       box-shadow: inset 1px 1px transparentize(white, .9), inset -1px -1px transparentize(darken($osd_borders_color, 10%), .8);
     }
 
@@ -3331,7 +3331,7 @@ scale {
       @include button(hover-alt);
       box-shadow: none;
 
-      @if $scales_style == fancy { border-color: $selected_borders_color; }
+      @if $scale_style == fancy { border-color: $selected_borders_color; }
     }
 
     &:disabled {
@@ -3409,10 +3409,10 @@ scale {
 
   // FIXME: OSD and selected list rows missing, I don't feel like adding the other 144 assets needed for those...
   $suffix: if($variant == 'light', '', '-dark');
-  $active_state_scale: if($scales_style == fancy and $variant == light and $tone == tango, '-active-fancy-tango',
-                       if($scales_style == fancy and $variant == light and $tone == rumba, '-active-fancy-rumba',
-                       if($scales_style == fancy and $variant == light and $tone == salsa, '-active-fancy-salsa',
-                       if($scales_style == fancy and $variant == light and $tone == jive, '-active-fancy-jive',
+  $active_state_scale: if($scale_style == fancy and $variant == light and $tone == tango, '-active-fancy-tango',
+                       if($scale_style == fancy and $variant == light and $tone == rumba, '-active-fancy-rumba',
+                       if($scale_style == fancy and $variant == light and $tone == salsa, '-active-fancy-salsa',
+                       if($scale_style == fancy and $variant == light and $tone == jive, '-active-fancy-jive',
                        '-active')))); 
 
 
@@ -3428,7 +3428,7 @@ scale {
 
           slider {
             &#{$state} {
-              $style_suffix_marks: if($style == standard, '',
+              $style_suffix_marks: if($style == prime, '',
                                    if($style == flat and $state == ':active', '',
                                    if($style == flat and $state == ':disabled', '',
                                    '-flat')));
@@ -3730,17 +3730,17 @@ levelbar {
     border-radius: 1px;
 
     &.low {
-      background-color: if($scales_style == greyscale, transparentize($fg_color, 0.78), $warning_color);
+      background-color: if($scale_style == casual, transparentize($fg_color, 0.78), $warning_color);
     }
 
     &.high,
     &:not(.empty) {
-      background-color: if($scales_style == greyscale, transparentize($fg_color, 0.7),
+      background-color: if($scale_style == casual, transparentize($fg_color, 0.7),
                         if($variant == 'light', darken($selected_bl_color, 10%), $selected_bl_color));
     }
 
     &.full {
-      background-color: if($scales_style == greyscale, transparentize($fg_color, 0.6), $success_color);
+      background-color: if($scale_style == casual, transparentize($fg_color, 0.6), $success_color);
     }
 
     &.empty {
@@ -3937,7 +3937,7 @@ messagedialog { // Message Dialog styling
     border-top-left-radius: $messagedialog_popup_radius;
     border-top-right-radius: $messagedialog_popup_radius;
 
-    @if $style == standard {
+    @if $style == prime {
       @if $variant == light {
         box-shadow: inset 1px 1px transparentize(white, .2), inset -1px 0 transparentize(black, .9);
       }
@@ -3957,7 +3957,7 @@ messagedialog { // Message Dialog styling
       border-bottom-left-radius: $messagedialog_popup_radius;
       border-bottom-right-radius: $messagedialog_popup_radius;
 
-      @if $style == standard {
+      @if $style == prime {
         @if $variant == light {
           box-shadow: inset 1px 0 transparentize(white, .2), inset -1px -1px transparentize(black, .9);
         }
@@ -4345,7 +4345,7 @@ tooltip {
                                               // not make the tooltip melt with
                                               // very dark backgrounds
 
-    @if $style == standard {
+    @if $style == prime {
       @if $variant == light { box-shadow: inset 0 0 0 1px transparentize(white, .4), 1px 1px transparentize(black, .9); }
 
       @else { box-shadow: inset 0 0 0 1px transparentize(white, .92), 1px 1px transparentize(black, .9); }
@@ -4709,17 +4709,17 @@ cursor-handle {
   box-shadow: none;
   border-style: none;
 
-  $active_state_text_select: if($scales_style == fancy and $variant == light and $tone == tango, '-active-fancy-tango',
-                             if($scales_style == fancy and $variant == light and $tone == rumba, '-active-fancy-rumba',
-                             if($scales_style == fancy and $variant == light and $tone == salsa, '-active-fancy-salsa',
-                             if($scales_style == fancy and $variant == light and $tone == jive, '-active-fancy-jive',
+  $active_state_text_select: if($scale_style == fancy and $variant == light and $tone == tango, '-active-fancy-tango',
+                             if($scale_style == fancy and $variant == light and $tone == rumba, '-active-fancy-rumba',
+                             if($scale_style == fancy and $variant == light and $tone == salsa, '-active-fancy-salsa',
+                             if($scale_style == fancy and $variant == light and $tone == jive, '-active-fancy-jive',
                              '-active')))); 
 
   @each $s,$as in ('',''),
                   (':hover','-hover'),
                   (':active','#{$active_state_text_select}') { //no need for insensitive and backdrop
 
-    $style_suffix_text_select: if($style == standard, '',
+    $style_suffix_text_select: if($style == prime, '',
                                if($style == flat and $s == ':active', '',
                               '-flat'));
 

@@ -16,14 +16,14 @@ option('gnome-version', type : 'string',
 option('gtk2-solid-menu', type : 'boolean', value : false,
   description : 'Solid borders for gtk2 menus')
 
-option('scales_style', type : 'string', value: 'greyscale',
-  description : 'Set style for scale (greyscale/fancy)')
+option('scale_style', type : 'string', value: 'casual',
+  description : 'Set style for scale (casual/fancy)')
 
 option('scrollbar_handles', type : 'string', value: 'no_handles',
   description : 'Set scrollbar slider style')
 
-option('style', type : 'string', value: 'standard',
-  description : 'Set style for gtk2/gtk3 theme (standard/flat)')
+option('style', type : 'string', value: 'prime',
+  description : 'Set style for gtk2/gtk3 theme (prime/flat)')
 
 option('tone', type : 'string', value: 'tango',
   description : 'Set tone for gtk2/gtk3 theme (tango/salsa/rumba/jive)')

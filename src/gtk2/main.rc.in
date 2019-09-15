@@ -1001,7 +1001,7 @@ $compact       border      = {9, 9, 0, 0}
     image {
       function    = BOX
       detail      = "trough-lower"
-      file        = "assets/scale-horz-trough-active-$scales_style-$tone-$style-$size.png"
+      file        = "assets/scale-horz-trough-active-$scale_style-$tone-$style-$size.png"
 $regular       border      = {10, 10, 0, 0}
 $compact       border      = {9, 9, 0, 0}
       stretch     = TRUE
@@ -1021,7 +1021,7 @@ $compact       border      = {0, 0, 9, 9}
     image {
       function    = BOX
       detail      = "trough-lower"
-      file        = "assets/scale-vert-trough-active-$scales_style-$tone-$style-$size.png"
+      file        = "assets/scale-vert-trough-active-$scale_style-$tone-$style-$size.png"
 $regular       border      = {0, 0, 10, 10}
 $compact       border      = {0, 0, 9, 9}
       stretch     = TRUE
@@ -1048,7 +1048,7 @@ $compact       border      = {0, 0, 9, 9}
       function = SLIDER
       state    = ACTIVE
       detail   = "hscale"
-$light       file     = "assets/scale-slider-active-$scales_style-$tone-$size.png"
+$light       file     = "assets/scale-slider-active-$scale_style-$tone-$size.png"
 $dark       file     = "assets/scale-slider-active-$size.png"
     }
 
@@ -1076,7 +1076,7 @@ $dark       file     = "assets/scale-slider-active-$size.png"
       function = SLIDER
       state    = ACTIVE
       detail   = "vscale"
-$light       file     = "assets/scale-slider-active-$scales_style-$tone-$size.png"
+$light       file     = "assets/scale-slider-active-$scale_style-$tone-$size.png"
 $dark       file     = "assets/scale-slider-active-$size.png"
     }
 
@@ -1392,7 +1392,7 @@ $dark       file     = "assets/entry-active-$tone.png"
     image {
       function    = BOX
       detail      = "bar"
-      file        = "assets/progressbar-highlight-$scales_style-$tone-$style.png"
+      file        = "assets/progressbar-highlight-$scale_style-$tone-$style.png"
       stretch     = TRUE
       border      = {2, 2, 2, 2}
     }
@@ -2191,7 +2191,7 @@ $compact       border      = {9, 9, 0, 0}
     image {
       function    = BOX
       detail      = "trough-lower"
-      file        = "assets/scale-horz-trough-active-$scales_style-$tone-$style-$size.png"
+      file        = "assets/scale-horz-trough-active-$scale_style-$tone-$style-$size.png"
 $regular       border      = {10, 10, 0, 0}
 $compact       border      = {9, 9, 0, 0}
       stretch     = TRUE
@@ -2217,7 +2217,7 @@ $compact       border      = {0, 0, 9, 9}
     image {
       function    = BOX
       detail      = "trough-lower"
-      file        = "assets/scale-vert-trough-active-$scales_style-$tone-$style-$size.png"
+      file        = "assets/scale-vert-trough-active-$scale_style-$tone-$style-$size.png"
 $regular       border      = {0, 0, 10, 10}
 $compact       border      = {0, 0, 9, 9}
       stretch     = TRUE

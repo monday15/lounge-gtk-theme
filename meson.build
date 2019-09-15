@@ -20,7 +20,7 @@ if get_option('flatpak') == false
 
 theme_tone = get_option('tone')
 theme_style = get_option('style')
-theme_scales_style = get_option('scales_style')
+theme_scale_style = get_option('scale_style')
 theme_scrollbar_handles = get_option('scrollbar_handles')
 theme_button_outlines = get_option('button_outlines')
 
@@ -193,7 +193,7 @@ foreach theme : gtk3_array
   gtk3_conf.set('gtk_size', theme[2])
   gtk3_conf.set('tone', theme_tone)
   gtk3_conf.set('style', theme_style)
-  gtk3_conf.set('scales_style', theme_scales_style)
+  gtk3_conf.set('scale_style', theme_scale_style)
   gtk3_conf.set('scrollbar_handles', theme_scrollbar_handles)
   gtk3_conf.set('button_outlines', theme_button_outlines)
   gtk3_conf.set('gtk_version', gtk3_version)
@@ -263,10 +263,10 @@ foreach theme : gtk2_array
     endif
 
     # Scales style suffix
-    if theme_scales_style == 'fancy'
-      set_scales_style = 's/\-$scales_style\-$tone/\-fancy-' + theme_tone + '/g'
+    if theme_scale_style == 'fancy'
+      set_scale_style = 's/\-$scale_style\-$tone/\-fancy-' + theme_tone + '/g'
     else
-      set_scales_style = 's/\-$scales_style\-$tone//g'
+      set_scale_style = 's/\-$scale_style\-$tone//g'
     endif
 
     # Set tone suffix
@@ -294,14 +294,14 @@ foreach theme : gtk2_array
                    capture : true,
                    command: ['sed', '-e', 's/' + theme[1] + '//g',
                                     '-e', 's/' + theme[2] + '//g',
-                                    '-e', 's/^\$' + theme_scales_style + '\ //g',
+                                    '-e', 's/^\$' + theme_scale_style + '\ //g',
                                     '-e', 's/^\$' + theme_tone + '\ //g',
                                     '-e', 's/^\$' + theme_style + '\ //g',
                                     '-e', 's/^\$' + theme_scrollbar_handles + '\ //g',
                                     '-e', gtk2_menu_border,
                                     '-e', '/^\$/ d',
                                     '-e', set_assets_size,
-                                    '-e', set_scales_style,
+                                    '-e', set_scale_style,
                                     '-e', set_tone,
                                     '-e', set_style,
                                     '-e', set_color_variant,
@@ -375,13 +375,13 @@ foreach theme : assets_themes
   set_variable(theme + '_assets_excluded_from_flat',
                run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
                                            ' | grep flat | sed s/-flat//').stdout())
-  set_variable(theme + '_assets_excluded_from_standard',
+  set_variable(theme + '_assets_excluded_from_prime',
                run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
                                            ' | grep flat').stdout())
   set_variable(theme + '_assets_tone',
                run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
                                            ' | grep "tango\|salsa\|rumba\|jive" | grep -v ' + theme_tone).stdout())
-  set_variable(theme + '_assets_excluded_from_greyscale',
+  set_variable(theme + '_assets_excluded_from_casual',
                run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
                                            ' | grep fancy | grep ' + theme_tone).stdout())
   set_variable(theme + '_assets_excluded_from_fancy',
@@ -416,7 +416,7 @@ foreach theme : assets_themes
                                      get_variable(theme + '_assets' + exclude_color_variants).split('\n'),
                                      get_variable(theme + '_assets_excluded_from_' + theme_style).split('\n'),
                                      get_variable(theme + '_assets_tone').split('\n'),
-                                     get_variable(theme + '_assets_excluded_from_' + theme_scales_style).split('\n'),
+                                     get_variable(theme + '_assets_excluded_from_' + theme_scale_style).split('\n'),
                                      get_variable(theme + '_assets_excluded_from_' + theme_scrollbar_handles).split('\n')],
                                      strip_directory: true)
 

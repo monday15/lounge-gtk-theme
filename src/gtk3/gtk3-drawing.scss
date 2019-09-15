@@ -43,7 +43,7 @@
     border-color: $borders_color;
     background-color: $base_color;
 
-    @if $style == standard {
+    @if $style == prime {
       @include _shadows(inset 1px 1px transparentize($borders_color, .7));
     }
     @if $style == flat {
@@ -194,7 +194,7 @@
 
     @include _button_text_shadow($tc, $c);
 
-    @if $style == standard {
+    @if $style == prime {
       @include _shadows(1px 1px transparentize($_button_border_color, .8),
                         inset 0 0 0 1px $_hilight_color,
                         inset 0 -1px transparentize($_button_border_color, .8));
@@ -227,7 +227,7 @@
     @include _button_text_shadow($tc,lighten($c, 6%));
     background-image: $button_fill;
 
-    @if $style == standard {
+    @if $style == prime {
       @include _shadows(1px 1px transparentize($_button_border_color, .8),
                         inset 0 0 0 1px $_hilight_color,
                         inset 0 -1px transparentize($_button_border_color, .8));
@@ -248,7 +248,7 @@
     text-shadow: none;
     -gtk-icon-shadow: none;
 
-    @if $style == standard {
+    @if $style == prime {
       @include _shadows(inset 1px 1px transparentize($_button_border_color, 0.8));
 
       .nautilus-path-bar &,
@@ -303,7 +303,7 @@
     background-image: if($variant == light, image(lighten($c, 5%)),
                                             image(lighten($c, 2%)));
 
-    @if $style == standard {
+    @if $style == prime {
       @include _shadows(0 1px transparentize(black, .9),
                         inset 0 1px _button_hilight_color(lighten($c, 6%)),
                         inset 0px -2px transparentize($_button_alt_border_color, .95),
@@ -324,7 +324,7 @@
                                         image(lighten($c, 7%))) !global;
     background-image: $button_fill;
 
-    @if $style == standard {
+    @if $style == prime {
       @include _shadows(0 1px transparentize(black, .9),
                         inset 0 1px _button_hilight_color(lighten($c, 6%)),
                         inset 0px -2px transparentize($_button_alt_border_color, .95),
@@ -345,7 +345,7 @@
     background-image: $button_fill;
     background-clip: padding-box;
 
-    @if $style == standard {
+    @if $style == prime {
       @include _shadows(inset 0 -1px transparentize($osd_borders_color, .75),
                         inset 0 1px if($variant == 'light', transparentize(white, 0.9), transparentize(white, 0.95)));
     }
@@ -368,7 +368,7 @@
     background-image: $button_fill;
     background-clip: padding-box;
 
-    @if $style == standard {
+    @if $style == prime {
       box-shadow: inset 0 1px transparentize(white, 0.9);
     }
 
@@ -439,7 +439,7 @@
   @if $ov != none { background: $c $ov, $fill; }
   @else { background: $c $fill; }
 
-  @if $style == standard {
+  @if $style == prime {
     box-shadow: inset 0 1px $hc; // top highlight
   }
 }
