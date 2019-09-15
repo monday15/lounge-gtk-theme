@@ -3798,8 +3798,7 @@ scrolledwindow {
 
 //vbox and hbox separators
 separator {
-  @if $variant == 'light' { background: transparentize(black, 0.9); }
-  @else { background: transparentize(white, 0.95); }
+  background: if($variant == light, transparentize(black, .9), transparentize(black, .8));
   min-width: 1px;
   min-height: 1px;
 }
