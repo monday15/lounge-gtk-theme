@@ -6,9 +6,9 @@ $compact maximized_offset=3
 $compact button_spacing=3
 
 $light active_text_color=#101010
-$light inactive_text_color=#969696
-$dark active_text_color=#c8c8c8
-$dark inactive_text_color=#707272
+$light inactive_text_color=#9c9c9c
+$dark active_text_color=#cccccc
+$dark inactive_text_color=#777777
 
 shadow_delta_x=-12
 shadow_delta_y=-13
