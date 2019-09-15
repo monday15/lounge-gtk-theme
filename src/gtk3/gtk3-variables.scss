@@ -57,6 +57,8 @@ $sidebar_row_padding: if($size == compact, 0, 1px);
 $tab_min_size: if($size == compact, 24px, 28px);
 $tab_button_padding: if($size == compact, 0, 1px);
 $tab_button_horz_margin: if($size == compact, 1px, 2px);
+$notebook_tab_radius: 3px;
+$notebook_header_gap_padding: if($size == compact, 2px, 3px);
 $notebook_header_button_padding: if($size == compact, 1px 3px, 1px 5px);
 $notebook_header_circular_button_padding: if($size == compact, 1px, 2px);
 
