@@ -69,6 +69,7 @@ $popover_bg_color: $menu_color;
 $popover_button_color: if($variant == 'light', darken($popover_bg_color, 2%), lighten($popover_bg_color, 4%));
 
 $scrollbar_bg_color: if($variant == 'light', mix($bg_color, $fg_color, 95%), mix($base_color, $bg_color, 50%));
+$scrollbar_borders_color: if($variant == 'light', darken($borders_color, 6%), darken($borders_color, 1%));
 $scrollbar_slider_color: if($variant == 'light', darken($bg_color, 12%), lighten($bg_color, 7%));
 $scrollbar_slider_hover_color: if($variant == 'light', darken($bg_color, 17%), lighten($bg_color, 12%));
 $scrollbar_slider_active_color: $scrollbar_slider_hover_color;

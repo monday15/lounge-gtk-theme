@@ -2660,20 +2660,40 @@ scrollbar {
     -GtkScrollbar-has-forward-stepper: false;
   }
 
-  background-color: $scrollbar_bg_color;
+  background-color: transparent;
   transition: 300ms $ease-out-quad;
+
+  &.horizontal trough {
+    border-image: -gtk-scaled(url("assets/scrollbar-trough-horz#{$style_suffix}#{$asset_suffix}.png"), url("assets/scrollbar-trough-horz#{$style_suffix}#{$asset_suffix}@2.png")) 9 9 8 8 / 9px 9px 8px 8px stretch;
+  }
+
+  &.vertical trough {
+    border-image: -gtk-scaled(url("assets/scrollbar-trough-vert#{$style_suffix}#{$asset_suffix}.png"), url("assets/scrollbar-trough-vert#{$style_suffix}#{$asset_suffix}@2.png")) 9 9 8 8 / 9px 9px 8px 8px stretch;
+  }
 
   // slider
   slider {
     min-width: $scrollbar_slider_size;
     min-height: $scrollbar_slider_size;
-    margin: -1px;
-    border: 3px solid transparent;
-    border-radius: 5px;
+    margin: 2px;
+    border: 1px solid $scrollbar_borders_color;
+    border-radius: 3px;
     background-clip: padding-box;
     background-color: $scrollbar_slider_color;
     background-position: center;
     background-repeat: no-repeat;
+
+    @if $style == standard {
+      @if $variant == 'light' {
+        box-shadow: inset 1px 1px transparentize(white, 0.8),
+                    inset -1px -1px transparentize(black, 0.92);
+      }
+      @else {
+        box-shadow: inset 1px 1px transparentize(white, 0.95),
+                    inset -1px -1px transparentize(black, 0.9);
+      }
+    }
+
 
     &:hover { background-color: $scrollbar_slider_hover_color; }
 
@@ -2682,12 +2702,22 @@ scrollbar {
     &:disabled { background-color: transparent; }
   }
 
+  @if $scrollbar_handles == with_handles {
+    &.horizontal slider {
+      background-image: -gtk-scaled(url("assets/scrollbar-handle-horz#{$asset_suffix}.png"), url("assets/scrollbar-handle-horz#{$asset_suffix}@2.png"));
+    }
+
+    &.vertical slider {
+      background-image: -gtk-scaled(url("assets/scrollbar-handle-vert#{$asset_suffix}.png"), url("assets/scrollbar-handle-ver#{$asset_suffix}t@2.png"));
+    }
+  }
+
   &.fine-tune {
     slider {
       &:hover:active {
         background-image: none;
         background-color: $scrollbar_slider_finetune_color;
-        box-shadow: inset 0 0 0 1px $selected_borders_color;
+        border-color: $selected_borders_color;
       }
     }
   }
@@ -2704,7 +2734,7 @@ scrollbar {
         min-width: 3px;
         min-height: 3px;
         border-radius: 1px;
-        background-color: transparentize($fg_color, 0.6);
+        background-color: transparentize($fg_color, 0.8);
         border: 1px solid if($variant == 'light', transparentize(white, 0.6), transparentize(black, 0.6));
         box-shadow: none;
         background-image: none;
@@ -2734,7 +2764,7 @@ scrollbar {
 
       &.vertical {
         slider {
-          margin: 1px 0;
+          margin: 2px 0;
           min-height: $_slider_min_length;
         }
 
