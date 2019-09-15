@@ -1,20 +1,20 @@
-option('shell-font', type : 'string', value: 'Roboto',
-  description : 'Set font name for gnome-shell theme')
+option('button_outlines', type : 'string', value: 'strong',
+  description : 'Set outline style for regular buttons in a light theme')
+
+option('gtk2_solid_menu', type : 'boolean', value : false,
+  description : 'Solid borders for gtk2 menus')
+
+option('gtk3_version', type : 'string',
+  description : 'Set gtk3 version to build against it')
+
+option('gnome_version', type : 'string',
+  description : 'Set gnome version to build against it')
 
 option('icons', type : 'boolean', value : true,
   description : 'Install auxiliary icon theme')
 
-option('icon-theme', type : 'string',
+option('icon_theme', type : 'string', value: 'Adwaita',
   description : 'Set main icon theme name')
-
-option('gtk3-version', type : 'string',
-  description : 'Set gtk3 version to build against it')
-
-option('gnome-version', type : 'string',
-  description : 'Set gnome version to build against it')
-
-option('gtk2-solid-menu', type : 'boolean', value : false,
-  description : 'Solid borders for gtk2 menus')
 
 option('scale_style', type : 'string', value: 'casual',
   description : 'Set style for scale (casual/fancy)')
@@ -22,14 +22,14 @@ option('scale_style', type : 'string', value: 'casual',
 option('scrollbar_handles', type : 'string', value: 'no_handles',
   description : 'Set scrollbar slider style')
 
+option('shell_font', type : 'string', value: 'Roboto',
+  description : 'Set font name for gnome-shell theme')
+
 option('style', type : 'string', value: 'prime',
   description : 'Set style for gtk2/gtk3 theme (prime/flat)')
 
 option('tone', type : 'string', value: 'tango',
   description : 'Set tone for gtk2/gtk3 theme (tango/salsa/rumba/jive)')
-
-option('button_outlines', type : 'string', value: 'strong',
-  description : 'Set outline style for regular buttons in a light theme')
 
 
 

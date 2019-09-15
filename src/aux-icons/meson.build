@@ -1,21 +1,10 @@
 icons_dir = join_paths(get_option('datadir'), 'icons', 'Lounge-aux')
 
-if get_option('icon-theme') != ''
-
-  configure_file(input : 'index.theme',
-                 output : 'index.theme',
-                 capture : true,
-                 command: ['sed', 's#Adwaita#' + get_option('icon-theme') + '#g', '@INPUT@'],
-                 install_dir: icons_dir)
-
-else
-
-  configure_file(input : 'index.theme',
-                 output : 'index.theme',
-                 configuration : copy,
-                 install_dir: icons_dir)
-
-endif
+configure_file(input : 'index.theme',
+               output : 'index.theme',
+               capture : true,
+               command: ['sed', 's#Adwaita#' + get_option('icon_theme') + '#g', '@INPUT@'],
+               install_dir: icons_dir)
 
 install_subdir('16x16', install_dir: icons_dir )
 install_subdir('24x24', install_dir: icons_dir )

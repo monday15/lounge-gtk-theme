@@ -26,8 +26,8 @@ theme_button_outlines = get_option('button_outlines')
 
   # CHECK GNOME VERSION
 
-if get_option('gnome-version') != ''
-  gnome_version = get_option('gnome-version')
+if get_option('gnome_version') != ''
+  gnome_version = get_option('gnome_version')
 else
 
   if gnomeshell.found()
@@ -47,8 +47,8 @@ message('Gnome ' + gnome_version)
 
   # CHECK GTK3 VERSION
 
-if get_option('gtk3-version') != ''
-  gtk3_version = get_option('gtk3-version')
+if get_option('gtk3_version') != ''
+  gtk3_version = get_option('gtk3_version')
 else
   gtk3_version_check = find_program('gtk-launch')
   gtk3_version_array = run_command([gtk3_version_check, '--version']).stdout().split('\n')[0].split(' ')[-1].strip().split('.')
@@ -124,7 +124,7 @@ endforeach
 configure_file(input :  join_paths('src/gnome-shell/shell-common.scss'),
                output : 'shell-common.scss',
                capture : true,
-               command: ['sed', 's#Roboto#' + get_option('shell-font') + '#g', '@INPUT@'])
+               command: ['sed', 's#Roboto#' + get_option('shell_font') + '#g', '@INPUT@'])
 
 # Configure main scss file
 shell_conf = configuration_data()
@@ -245,7 +245,7 @@ gtk2_array = [
 
 # Solid menu option for xfce/sway and other environments without compositor,
 # uses png asset to draw menu's border 
-if get_option('gtk2-solid-menu')
+if get_option('gtk2_solid_menu')
   gtk2_menu_border = 's/$solid_menu //g'
 else
   gtk2_menu_border = 's/$normal_menu //g'
