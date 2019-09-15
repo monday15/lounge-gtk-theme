@@ -176,18 +176,18 @@ StScrollBar {
     background-image: url("assets/checkbox-off.svg");
   }
   &:focus StBin { background-image: url("assets/checkbox-off-focused.svg"); }
-  &:checked StBin { background-image: url("assets/checkbox.svg"); }
-  &:focus:checked StBin { background-image: url("assets/checkbox-focused.svg"); }
+  &:checked StBin { background-image: url("assets/checkbox-#{$tone}.svg"); }
+  &:focus:checked StBin { background-image: url("assets/checkbox-focused-#{$tone}.svg"); }
 }
 
 /* Switches */
 .toggle-switch {
-  width: 46px;
-  height: 26px;
+  width: 40px;
+  height: 22px;
   background-size: contain;
 
   background-image: url("assets/toggle-off.svg");
-  &:checked { background-image: url("assets/toggle-on.svg"); }
+  &:checked { background-image: url("assets/toggle-on-#{$tone}.svg"); }
 }
 
 /* links */
@@ -1356,10 +1356,10 @@ StScrollBar {
   height: 52px;
 
   @if $shell <= 3.30 {
-    background-image: url("assets/corner-ripple-ltr.png");
+    background-image: url("assets/corner-ripple-ltr-#{$tone}.png");
     background-size: contain;
 
-    &:rtl { background-image: url("assets/corner-ripple-rtl.png"); }
+    &:rtl { background-image: url("assets/corner-ripple-rtl-#{$tone}.png"); }
   }
 
   @if $shell >= 3.32 {
@@ -1382,14 +1382,14 @@ StScrollBar {
 
 .window-close {
   @if $shell <= 3.30 {
-    background-image: url("assets/close-window.svg");
+    background-image: url("assets/close-window-#{$tone}.svg");
     background-size: 32px;
     height: 32px;
     width: 32px;
     -shell-close-overlap: 16px;
 
-    &:hover { background-image: url("assets/close-window-hover.svg"); }
-    &:active { background-image: url("assets/close-window-active.svg"); }
+    &:hover { background-image: url("assets/close-window-hover-#{$tone}.svg"); }
+    &:active { background-image: url("assets/close-window-active-#{$tone}.svg"); }
   }
 
   @if $shell >= 3.32 {
@@ -1973,10 +1973,10 @@ StScrollBar {
       background-image: url("assets/key-shift.svg");
     }
     &.shift-key-uppercase {
-      background-image: url("assets/key-shift-uppercase.svg");
+      background-image: url("assets/key-shift-uppercase-#{$tone}.svg");
     }
     &.shift-key-uppercase:latched {
-      background-image: url("assets/key-shift-latched-uppercase.svg");
+      background-image: url("assets/key-shift-latched-uppercase-#{$tone}.svg");
     }
     &.hide-key {
       background-image: url("assets/key-hide.svg");
