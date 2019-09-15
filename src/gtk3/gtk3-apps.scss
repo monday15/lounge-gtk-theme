@@ -7,6 +7,10 @@ window.background.chromium {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
   }
+
+  menuitem {
+    border-radius: 0;
+  }
 }
 
 
@@ -280,6 +284,10 @@ window:not(.incognito-mode) .main-notebook tab:not(.reorderable-page) {
         @extend %selected_items_invert;
       }
     }
+  }
+
+  menuitem {
+    border-radius: 0;
   }
 
   @if $size == regular {
