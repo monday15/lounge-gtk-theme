@@ -416,9 +416,16 @@ headerbar button.sources-button { min-height: 36px; }
 
 .org-gnome-Todo {
   taskrow.activatable.new-task-row button.popup.toggle {
-   border-left: 1px solid $borders-color;
+    border-left: 1px solid $borders-color;
   }
 }
+
+
+  //// Lollypop
+
+// these are linked semi-transparent buttons, regular %linked overlapping creates border
+button.black-transparent.menu-button-48,
+button.black-transparent.menu-button { margin-right: 0; }
 
 
   //// Nautilus
