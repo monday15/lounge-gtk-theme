@@ -2944,9 +2944,9 @@ switch {
   }
 
   row:selected & {
-    @if $variant == 'dark' {
-      &:checked { box-shadow: 0 0 0 1px transparentize(black, .5); }
-    }
+    @if $variant == light { &:not(:checked):not(:disabled) { border-color: $alt_borders_color; }}
+
+    @if $variant == 'dark' { &:checked { box-shadow: 0 0 0 1px transparentize(black, .5); }}
   }
 }
 
