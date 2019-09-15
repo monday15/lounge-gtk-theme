@@ -298,17 +298,19 @@
   // normal button alternative look
   //
     color: $tc;
-    outline-color: transparentize($tc, 0.7);
+    outline-color: $_outline_color;
     border-color: $_button_alt_border_color;
+    background-image: if($variant == light, image(lighten($c, 5%)),
+                                            image(lighten($c, 2%)));
+
+    @if $style == standard {
+      @include _shadows(0 1px transparentize(black, .9),
+                        inset 0 1px _button_hilight_color(lighten($c, 6%)),
+                        inset 0px -2px transparentize($_button_alt_border_color, .95),
+                        inset 0px -1px transparentize($_button_alt_border_color, .8));
+    }
+
     @include _button_text_shadow($tc, $c);
-    @if $variant == 'light' {
-      background-image: image(lighten($c, 4%));
-      @include _shadows(inset 0 1px _button_hilight_color(lighten($c, 6%)), 0 1px 2px 0 transparentize($_button_alt_border_color, .8));
-    }
-    @else {
-      background-image: image(lighten($c, 2%));
-      @include _shadows(inset 0 1px $_hilight_color, 0 1px 2px 0 transparentize($_button_alt_border_color, .8));
-    }
   }
 
   @else if $t==hover-alt {
@@ -316,17 +318,18 @@
   // hovered button alternative look
   //
     color: $tc;
-    outline-color: transparentize($tc, 0.7);
+    outline-color: $_outline_color;
     border-color: $_button_alt_border_color;
-    @if $variant == 'light' {
-      $button_fill: image(lighten($c, 7%)) !global;
-      @include _shadows(inset 0 1px _button_hilight_color(lighten($c, 6%)), 0 1px 2px 0 transparentize($_button_alt_border_color, .8));
-    }
-    @else {
-      $button_fill: image(lighten($c, 7%)) !global;
-      @include _shadows(inset 0 1px $_hilight_color, 0 1px 2px 0 transparentize($_button_alt_border_color, .8));
-    }
+    $button_fill: if($variant == light, image(lighten($c, 7%)),
+                                        image(lighten($c, 7%))) !global;
     background-image: $button_fill;
+
+    @if $style == standard {
+      @include _shadows(0 1px transparentize(black, .9),
+                        inset 0 1px _button_hilight_color(lighten($c, 6%)),
+                        inset 0px -2px transparentize($_button_alt_border_color, .95),
+                        inset 0px -1px transparentize($_button_alt_border_color, .8));
+    }
   }
 
   @else if $t==osd {

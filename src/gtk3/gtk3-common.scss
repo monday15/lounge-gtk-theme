@@ -2849,19 +2849,23 @@ switch {
   color: $fg_color;
   background-color: $dark_fill;
 
+  @if $style == standard {
+    box-shadow: inset 1px 1px transparentize(black, .92);
+  }
+
   &:checked {
     color: $selected_fl_color;
     border-color: if($variant == 'light', desaturate(darken($selected_bl_color, 25%), 20%),
                                           darken($selected_bl_color, 0%));
     background-color: if($variant == 'light', darken($selected_bl_color, 10%),
-                                              lighten($selected_bl_color, 3%));
+                                              lighten($selected_bl_color, 5%));
   }
 
   &:disabled {
     color: $insensitive_fg_color;
-    border-color: if($variant == 'light', $borders_color,
-                                          lighten($borders_color, 3%));
+    border-color: if($variant == 'light', $borders_color, lighten($borders_color, 3%));
     background-color: $insensitive_bg_color;
+    box-shadow: none;
   }
 
   slider {
@@ -2872,7 +2876,7 @@ switch {
     border-radius: 9999px;
     transition: $button_transition;
     -gtk-outline-radius: 9999px;
-
+    outline-offset: if($variant == 'light', -1px, -2px);
 
     @include button(normal-alt);
   }
@@ -2882,8 +2886,9 @@ switch {
   &:hover slider { @include button(hover-alt); }
 
   &:checked slider {
-    border: 1px solid if($variant == 'light', desaturate(darken($selected_bl_color, 25%), 20%),
-                                              darken($selected_bl_color, 0%));
+    @include button(normal-alt);
+    border: 1px solid if($variant == 'light', desaturate(darken($selected_bl_color, 25%), 20%), darken($selected_bl_color, 0%));
+
     @if $variant == 'dark' { &:hover { background-image: image(lighten($bg_color, 5%)); }}
   }
 
@@ -2894,7 +2899,7 @@ switch {
 
   row:selected & {
     @if $variant == 'dark' {
-      &:checked { box-shadow: 0 0 0 1px transparentize(black, .6); }
+      &:checked { box-shadow: 0 0 0 1px transparentize(black, .5); }
     }
   }
 }
