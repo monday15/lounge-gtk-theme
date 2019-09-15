@@ -1,16 +1,16 @@
 $size_suffix: if($size == compact, -compact, '');
 
-$base_radius: if($size == compact, 2px, 3px);
+$base_radius: if($size == compact, 3px, 3px);
 
-$button_height: if($size == compact, 20px, 24px);
+$button_height: if($size == compact, 20px, 22px);
 $button_width: if($size == compact, 16px, 16px);
 $button_horz_padding: 4px;
-$button_vert_padding: if($size == compact, 6px, 8px);
+$button_vert_padding: if($size == compact, 6px, 7px);
 $text_button_side_padding: if($size == compact, 12px, 16px);
 
 $spinbutton_size: if($size == compact, 16px, 24px);
 
-$combobox_button_height: if($size == compact, 22px, 24px);
+$combobox_button_height: if($size == compact, 22px, 22px);
 $combobox_button_padding: if($size == compact, 3px 4px, 4px 6px);
 
 $entry_height: if($size == compact, 28px, 30px);

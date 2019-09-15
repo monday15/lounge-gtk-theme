@@ -495,6 +495,7 @@ button {
     border: 1px solid;
     border-radius: $base_radius;
     transition: $button_transition;
+    -gtk-outline-radius: $base_radius;
 
     @include button(normal);
 
@@ -650,19 +651,23 @@ button {
     }
   }
 
-  popover &:not(.flat) {
+  popover & {
 
     @include button(normal, $popover_button_color, $selected_fl_color);
+    box-shadow: none;
+
     @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
 
     &:hover {
       @include button(hover, $popover_button_color, $selected_fl_color);
+      box-shadow: none;
       @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
     }
 
     &:active,
     &:checked {
       @include button(active, $popover_button_color, $selected_fl_color);
+      box-shadow: none;
       @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
     }
 
@@ -670,12 +675,40 @@ button {
       @include button(insensitive, $popover_button_color, $selected_fl_color);
       @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
     }
+
+    // Flat Suggested and Destructive Action buttons inside popovers
+    @each $b_type, $b_color in (suggested-action, $selected_bg_color),
+                               (destructive-action, $error_color) {
+      &.#{$b_type} {
+        @include button(normal, $b_color, $selected_fg_color);
+        box-shadow: none;
+
+        &:hover {
+          @include button(hover, $b_color, $selected_fg_color);
+          box-shadow: none;
+        }
+
+        &:active,
+        &:checked {
+          @include button(active, if($variant == 'light', lighten($b_color, 4%), $b_color), $selected_fg_color);
+          @if $variant == 'light' { text-shadow: 0 1px transparentize(black, .7); }
+          box-shadow: none;
+        }
+
+        &:disabled {
+          @include button(insensitive, $popover_button_color, $selected_fl_color);
+
+          &:active,
+          &:checked { @include button(insensitive-active, $b_color, $insensitive_fg_color); }
+        }
+      }
+    }
   }
 
   // Suggested and Destructive Action buttons
   @each $b_type, $b_color in (suggested-action, $selected_bg_color),
                              (destructive-action, $error_color) {
-    &.#{$b_type}, popover.background &.#{$b_type} {
+    &.#{$b_type} {
       @include button(normal, $b_color, $selected_fg_color);
 
       &.flat {
@@ -717,6 +750,10 @@ button {
 
         &:disabled { @include button(osd-insensitive, $b_color); }
       }
+
+      headerbar &:backdrop {
+        color: if($variant == light, mix($b_color, $selected_fg_color, 25%),mix($b_color, $selected_fg_color, 30%));
+      }
     }
   }
 
@@ -725,7 +762,8 @@ button {
     // child, a label needs just lateral padding while an icon needs vertical
     // padding added too.
 
-    outline-offset: -3px; // needs to be set or it gets overriden by GtkRadioButton outline-offset
+    // needs to be set or it gets overriden by GtkRadioButton outline-offset
+    outline-offset: if($variant == light, -1px, -2px);
 
     > label {
       padding-left: 6px;  // label padding

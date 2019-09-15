@@ -97,8 +97,9 @@
 // buttons
 
 @function _border_color($c, $darker: false) {
-  @if $darker == true { @return desaturate(darken($c, 30%), 10%); }
-  @else { @return desaturate(darken($c, 20%), 10%); }
+  @if $darker == true { @return desaturate(darken($c, 25%), 10%); }
+  @else if lightness($c)>70% { @return desaturate(darken($c, 20%), 10%); }
+  @else { @return if($variant == 'light', desaturate(darken($c, 10%), 10%), desaturate(darken($c, 20%), 10%)); }
 }
 
 @function _text_shadow_color ($tc: $fg_color, $bg: $bg_color) {
@@ -120,11 +121,21 @@
 // $c: base color;
 //
   @if lightness($c)>95% { @return transparentize(white, 0.4); }
-  @else if lightness($c)>90% { @return transparentize(white, 0.6); }
+  @else if lightness($c)>90% { @return transparentize(white, 0.7); }
   @else if lightness($c)>80% { @return transparentize(white, 0.8); }
   @else if lightness($c)>50% { @return transparentize(white, 0.9); }
   @else if lightness($c)>40% { @return transparentize(white, 0.94); }
   @else { @return transparentize(white, 0.97); }
+}
+
+// lounge: calculate outline color for buttons
+@function _outline_formula($c) {
+  @if lightness($c)>70% { @return if($button_outlines == strong, transparentize(black, 0.75), gtkalpha($selected_bg_color, .7)); }
+  @else if lightness($c)>55% { @return transparentize(white, 0.5); }
+  @else if lightness($c)>45% { @return transparentize(white, 0.6); }
+  @else if lightness($c)>38% { @return transparentize(white, 0.72); }
+  @else if lightness($c)>25% { @return transparentize(white, 0.82); }
+  @else { @return transparentize(white, 0.85); }
 }
 
 @mixin _button_text_shadow ($tc:$fg_color, $bg:$bg_color) {
@@ -166,20 +177,42 @@
   $_hilight_color: _button_hilight_color($c);
   $_button_border_color: if($c != $bg_color, _border_color($c), $borders_color);
   $_button_alt_border_color: if($c != $bg_color, _border_color($c, true), $alt_borders_color);
+  $_outline_color: _outline_formula($c);
 
   @if $t==normal {
   //
   // normal button
   //
     color: $tc;
-    outline-color: transparentize($tc, 0.7);
+    outline-color: $_outline_color;
     border-color: $_button_border_color;
-    border-bottom-color: if($c != $bg_color, _border_color($c), darken($borders_color, 10%));
     $button_fill: if($variant == 'light', image(lighten($c, 2%)),
-                                          image(darken($c, 2%))) !global;
+                                          image(lighten($c, 2%))) !global;
     background-image: $button_fill;
+
+    outline-offset: if(lightness($c)>70%, -1px, -2px);
+
     @include _button_text_shadow($tc, $c);
-    @include _shadows(inset 0 1px $_hilight_color);
+
+    @if $style == standard {
+      @include _shadows(1px 1px transparentize($_button_border_color, .8),
+                        inset 0 0 0 1px $_hilight_color,
+                        inset 0 -1px transparentize($_button_border_color, .8));
+
+      // lounge: outset shadow at the right side of buttons causes issues in the next button
+      .nautilus-path-bar &,
+      filechooser .path-bar.linked &:not(:last-child) {
+        @include _shadows(0 1px transparentize($_button_border_color, .8),
+                          inset 0 0 0 1px $_hilight_color,
+                          inset 0 -1px transparentize($_button_border_color, .8));
+      }
+
+      // lounge: we dont need dark bottom shadow in vertical linked buttons
+      .linked.vertical &:not(:last-child) {
+        @include _shadows(1px 1px transparentize($_button_border_color, .8),
+                          inset 0 0 0 1px $_hilight_color);
+      }
+    }
   }
 
   @else if $t==hover {
@@ -187,14 +220,18 @@
   // hovered button
   //
     color: $tc;
-    outline-color: transparentize($tc, 0.7);
+    outline-color: $_outline_color;
     border-color: $_button_border_color;
-    border-bottom-color: if($c != $bg_color, _border_color($c), darken($borders_color, 10%));
     $button_fill: if($variant == 'light', image(lighten($c, 5%)),
-                                          image(lighten($c, 2%))) !global;
+                                          image(lighten($c, 5%))) !global;
     @include _button_text_shadow($tc,lighten($c, 6%));
     background-image: $button_fill;
-    @include _shadows(inset 0 1px $_hilight_color);
+
+    @if $style == standard {
+      @include _shadows(1px 1px transparentize($_button_border_color, .8),
+                        inset 0 0 0 1px $_hilight_color,
+                        inset 0 -1px transparentize($_button_border_color, .8));
+    }
   }
 
   @else if $t==active {
@@ -202,16 +239,23 @@
   // pushed button
   //
     color: $tc;
-    outline-color: transparentize($tc, 0.7);
+    outline-color: $_outline_color;
     border-color: $_button_border_color;
     $button_fill: if($variant == 'light', if($c == $bg_color, image(darken($c, 6%)), image(desaturate(darken($c, 6%), 10%))),
                                           image(darken($c, 5%))) !global;
     background-image: $button_fill;
-    // workaround, to avoid button_edge drawing or something like that
-    @include _shadows(inset 0 1px transparentize($_button_border_color, 1.0));
 
     text-shadow: none;
     -gtk-icon-shadow: none;
+
+    @if $style == standard {
+      @include _shadows(inset 1px 1px transparentize($_button_border_color, 0.8));
+
+      .nautilus-path-bar &,
+      filechooser .path-bar.linked &:not(:last-child) {
+        @include _shadows(inset 1px 1px transparentize($_button_border_color, 0.8));
+      }
+    }
   }
 
   @else if $t==insensitive {
@@ -220,7 +264,7 @@
   //
     $_bg: if($c != $bg_color, mix($c, $base_color, 85%), $insensitive_bg_color);
 
-    label, & { color: if($tc != $fg_color, mix($tc, $_bg, 50%), $insensitive_fg_color); }
+    label, & { color: if($tc != $fg_color, mix($tc, $_bg, 30%), $insensitive_fg_color); }
 
     border-color: if($c != $bg_color, _border_color($c), $insensitive_borders_color);
     $button_fill: image($_bg) !global;
