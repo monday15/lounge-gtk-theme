@@ -3559,16 +3559,17 @@ levelbar {
     border-radius: 1px;
 
     &.low {
-      background-color: $warning_color;
+      background-color: if($scales_style == greyscale, transparentize($fg_color, 0.78), $warning_color);
     }
 
     &.high,
     &:not(.empty) {
-      background-color: if($variant == 'light', darken($selected_bl_color, 10%), $selected_bl_color);
+      background-color: if($scales_style == greyscale, transparentize($fg_color, 0.7),
+                        if($variant == 'light', darken($selected_bl_color, 10%), $selected_bl_color));
     }
 
     &.full {
-      background-color: $success_color;
+      background-color: if($scales_style == greyscale, transparentize($fg_color, 0.6), $success_color);
     }
 
     &.empty {
