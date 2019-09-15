@@ -1513,7 +1513,7 @@ headerbar {
 
   &:backdrop {
     color: $backdrop_fg_color;
-    background-image: none;
+    background-image: image(darken($headerbar_color, 2%));
     box-shadow: inset 0 1px $top_hilight;
 
     transition: $backdrop_transition;
@@ -2854,11 +2854,6 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
     @if $variant == 'dark' {
       background-color: darken($dark_fill, 5%);
     }
-  }
-
-  // lounge: headerbar scale (affects lollypop)
-  headerbar & {
-    @if $variant == 'dark' { background-color: darken($dark_fill, 3%); }
   }
 }
 

@@ -19,10 +19,10 @@ $spinbutton_entry_width: if($size == compact, 24px, 28px);
 $popover_radius: if($size == compact, 3px, 5px);
 
 $headerbar_padding: if($size == compact, 4px, 5px);
-$headerbar_height: if($size == compact, 38px, 44px);
+$headerbar_height: if($size == compact, 38px, 42px);
 $headerbar_switch_padding: if($size == compact, 8px, 9px);
 
-$window_top_radius: if($size == compact, 3px, 5px);
+$window_top_radius: if($size == compact, 5px, 5px);
 $titlebar_height: if($size == compact, 20px, 24px);
 $titlebar_padding: if($size == compact, 3px, 4px);
 $titlebar_titlebutton_size: if($size == compact, 20px, 24px);
