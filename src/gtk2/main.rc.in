@@ -892,8 +892,8 @@ $compact   GtkCheckButton::indicator_spacing = 3
     image {
       function    = BOX
       detail      = "trough"
-      file        = "assets/scrollbar-trough.png"
-      border      = {4, 4, 4, 4}
+      file        = "assets/scrollbar-trough-$style.png"
+      border      = {5, 5, 5, 5}
     }
 
     # Disable insensitive sliders
@@ -910,27 +910,74 @@ $compact   GtkCheckButton::indicator_spacing = 3
       function        = SLIDER
       state           = NORMAL
       detail          = "slider"
-      file            = "assets/scrollbar-slider.png"
-      border          = {4, 4, 4, 4}
+      file            = "assets/scrollbar-slider-$style.png"
+      border          = {5, 5, 5, 5}
       stretch         = TRUE
+$with_handles       overlay_file    = "assets/scrollbar-handle-horz.png"
+$with_handles       overlay_stretch = FALSE
+      orientation     = HORIZONTAL
     }
 
     image {
       function        = SLIDER
       state           = PRELIGHT
       detail          = "slider"
-      file            = "assets/scrollbar-slider-active.png"
-      border          = {4, 4, 4, 4}
+      file            = "assets/scrollbar-slider-active-$style.png"
+      border          = {5, 5, 5, 5}
       stretch         = TRUE
+$with_handles       overlay_file    = "assets/scrollbar-handle-horz.png"
+$with_handles       overlay_stretch = FALSE
+      orientation     = HORIZONTAL
     }
 
     image {
       function        = SLIDER
       state           = ACTIVE
       detail          = "slider"
-      file            = "assets/scrollbar-slider-active.png"
-      border          = {4, 4, 4, 4}
+      file            = "assets/scrollbar-slider-active-$style.png"
+      border          = {5, 5, 5, 5}
       stretch         = TRUE
+$with_handles       overlay_file    = "assets/scrollbar-handle-horz.png"
+$with_handles       overlay_stretch = FALSE
+      orientation     = HORIZONTAL
+    }
+
+    # Vertical sliders
+
+    image {
+      function        = SLIDER
+      state           = NORMAL
+      detail          = "slider"
+      file            = "assets/scrollbar-slider-$style.png"
+      border          = {5, 5, 5, 5}
+      stretch         = TRUE
+$with_handles       overlay_file    = "assets/scrollbar-handle-vert.png"
+$with_handles       overlay_stretch = FALSE
+      orientation     = VERTICAL
+    }
+
+    image {
+      function        = SLIDER
+      state           = PRELIGHT
+      detail          = "slider"
+      file            = "assets/scrollbar-slider-active-$style.png"
+      border          = {5, 5, 5, 5}
+      stretch         = TRUE
+$with_handles       overlay_file    = "assets/scrollbar-handle-vert.png"
+$with_handles       overlay_stretch = FALSE
+      orientation     = VERTICAL
+    }
+
+    image {
+      function        = SLIDER
+      state           = ACTIVE
+      detail          = "slider"
+      file            = "assets/scrollbar-slider-active-$style.png"
+      border          = {5, 5, 5, 5}
+      stretch         = TRUE
+$with_handles       overlay_file    = "assets/scrollbar-handle-vert.png"
+$with_handles       overlay_stretch = FALSE
+      orientation     = VERTICAL
     }
 
 
