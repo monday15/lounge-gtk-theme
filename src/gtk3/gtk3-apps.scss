@@ -446,6 +446,8 @@ button.black-transparent.menu-button { margin-right: 0; }
         background-image: none;
         border-radius: 0;
 
+        @if $gnome == 3.30 { box-shadow: none; }
+
         &:not(:checked) {
           image { opacity: 0.8; }
         }
@@ -460,6 +462,8 @@ button.black-transparent.menu-button { margin-right: 0; }
           box-shadow: none;
           text-shadow: none;
           -gtk-icon-shadow: none;
+
+          &:first-child, &:last-child { border-color: transparent; }
 
           &.text-button {
             label {
