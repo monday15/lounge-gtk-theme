@@ -977,24 +977,63 @@ toolbar.inline-toolbar toolbutton {
 }
 
 %linked_middle {
+  &:not(.osd) {
+    margin-right: -1px;
+  }
+
   border-radius: 0;
-  border-right-style: none;
+  -gtk-outline-radius: 0;
+
+  popover &, &:not(entry) {
+    &, &:disabled { border-left-color: transparent; }
+
+    &.suggested-action:focus { border-left-color: _border_color($selected_bg_color); }
+
+    &.destructive-action:focus { border-left-color: _border_color($error_color); }
+  }
 }
 
 %linked_left {
-    border-top-left-radius: $base_radius;
-    border-bottom-left-radius: $base_radius;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right-style: none;
+  border-radius: $base_radius 0 0 $base_radius;
+  -gtk-outline-radius: $base_radius 0 0 $base_radius;
+
+  &:not(entry) {
+    border-left-color: $borders_color;
+
+    .osd & { border-left-color: $osd_borders_color; }
+
+    &:drop(active) { border-left-color: $drop_target_color; }
+  }
+  &.suggested-action:not(:disabled) {
+    border-left-color: _border_color($selected_bg_color);
+  }
+  &.destructive-action:not(:disabled) {
+    border-left-color: _border_color($error_color);
+  }
 }
 
 %linked_right {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: $base_radius;
-    border-bottom-right-radius: $base_radius;
-    border-right-style: solid;
+  margin-right: 0;
+  border-radius: 0 $base_radius $base_radius 0;
+  -gtk-outline-radius: 0 $base_radius $base_radius 0;
+
+  &:not(entry) {
+    border-right-color: $borders_color;
+
+    .osd & { border-right-color: $osd_borders_color; }
+
+    &:drop(active) { border-right-color: $drop_target_color; }
+  }
+  &.suggested-action:not(:disabled) {
+    border-right-color: _border_color($selected_bg_color);
+
+    &:focus { border-left-color: _border_color($selected_bg_color); }
+  }
+  &.destructive-action:not(:disabled) {
+    border-right-color: _border_color($error_color);
+
+    &:focus { border-left-color: _border_color($error_color); }
+  }
 }
 
 // .linked assumes Box, which reverses nodes in RTL, so 1st child is always left
@@ -1006,52 +1045,131 @@ toolbar.inline-toolbar toolbutton {
 
   &:only-child {
     border-radius: $base_radius;
-    border-style: solid;
+    -gtk-outline-radius: $base_radius;
   }
 }
 
+%linked_flippable_middle {
+
+  margin-right: -1px;
+  border-radius: 0;
+  -gtk-outline-radius: 0;
+
+  border-right-color: transparent;
+  border-left-color: $borders_color;
+
+  &:dir(rtl) {
+    border-right-color: $borders_color;
+    border-left-color: transparent;
+  }
+}
+
+%linked_flippable_left {
+  border-radius: $base_radius 0 0 $base_radius;
+  -gtk-outline-radius: $base_radius 0 0 $base_radius;
+
+  &:dir(rtl) {
+    border-left-color: $borders_color;
+    border-right-color: transparentize(black, .75);
+  }
+}
+
+%linked_flippable_right {
+  border-radius: 0 $base_radius $base_radius 0;
+  -gtk-outline-radius: 0 $base_radius $base_radius 0;
+
+  border-right-color: $borders_color;
+  border-left-color: transparentize(black, .75);
+
+  &:dir(rtl) {
+    border-right-color: $borders_color;
+    border-left-color: transparent;
+  }
+}
+
+
 // Other widgets let CSS give the order, so 1st/last child are at text start/end
 %linked_flippable {
-  @extend %linked_middle;
+  @extend %linked_flippable_middle;
 
   &:dir(ltr) {
-    &:first-child { @extend %linked_left; }
-    &:last-child { @extend %linked_right; }
+    &:first-child { @extend %linked_flippable_left; }
+    &:last-child { @extend %linked_flippable_right; }
   }
 
   &:dir(rtl) {
-    &:first-child { @extend %linked_right; }
-    &:last-child { @extend %linked_left; }
+    &:first-child { @extend %linked_flippable_right; }
+    &:last-child { @extend %linked_flippable_left; }
   }
 
   &:only-child {
     border-radius: $base_radius;
-    border-style: solid;
+    -gtk-outline-radius: $base_radius;
   }
 }
 
 %linked_vertical_middle {
-  border-style: solid solid none solid;
+  &:not(.osd) {
+    margin-top: -1px;
+  }
+
+  // lounge: need to overwrite right margin, otherwise it is inherited from regular %linked
+  margin-right: 0;
   border-radius: 0;
+  -gtk-outline-radius: 0;
+
+  popover &, &:not(entry) { // lounge: not(entry) doesnt work here, in entry:not(entry) things
+    &, &:disabled {
+      border-left-color: $borders_color;
+    }
+    &:not(button):focus {
+      border-left-color: entry_focus_border();
+    }
+    &.suggested-action {
+      border-left-color: _border_color($selected_bg_color);
+    }
+    &.destructive-action {
+      border-left-color: _border_color($error_color);
+    }
+  }
+
+  &:not(entry):not(:first-child) { // lounge: not(entry) doesnt work here, in entry:not(entry) things
+    &, &:disabled {
+      border-top-color: transparent;
+    }
+    // lounge: it looks like an entry overrides bottom border of a button, if the entry is placed under the button
+    // probably border-color for the entry is not transparent, but comes from background-color;
+    // downside of this workaround is incorrect outline for vertical-linked-button-above-entry 
+    // LOUNGE-FIXME: changing border background from bg-color to bg-image may help.
+    &:not(button), &:not(button):disabled {
+      border-top-color: $borders_color;
+    }
+    &:not(button):focus {
+      border-top-color: entry_focus_border();
+    }
+  }
 }
 
 %linked_vertical{
   @extend %linked_vertical_middle;
 
   &:first-child {
+    margin-top: 0;
+    margin-right: 0;
     border-top-left-radius: $base_radius;
     border-top-right-radius: $base_radius;
+    -gtk-outline-radius: $base_radius $base_radius 0 0;
   }
 
   &:last-child {
     border-bottom-left-radius: $base_radius;
     border-bottom-right-radius: $base_radius;
-    border-style: solid;
+    -gtk-outline-radius: 0 0 $base_radius $base_radius;
   }
 
   &:only-child {
     border-radius: $base_radius;
-    border-style: solid;
+    -gtk-outline-radius: $base_radius;
   }
 }
 
