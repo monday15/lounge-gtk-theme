@@ -3154,14 +3154,14 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   }
 
   // ...on selected list rows
-  @if $variant == light {
-    row:selected & { background-color: darken($dark_fill, 10%); }
-    row:selected:hover & { background-color: darken($dark_fill, 15%); }
-  }
-  @else {
-    row:selected & { box-shadow: 0 0 0 1px $bg_color; }
-  }
+  row:selected & {
+    @if $variant == light {
+      border-color: $alt_borders_color;
+      background-color: darken($dark_fill, 10%);
+    }
 
+    @else { row:selected & { box-shadow: 0 0 0 1px $bg_color; }}
+  }
   // OSD
   .osd & {
     border-color: darken($osd_borders_color, 10%);
@@ -3202,8 +3202,10 @@ treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a work
   }
 
   // ...on selected list rows
-  @if $variant == dark {
-    row:selected & { box-shadow: 0 0 0 1px $bg_color; }
+  row:selected & {
+    @if $variant == light and $scales_style == greyscale { border-color: $alt_borders_color; }
+
+    @if $variant == dark { box-shadow: 0 0 0 1px $bg_color; }
   }
 
   // OSD
