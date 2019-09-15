@@ -1,9 +1,13 @@
   // Xfce Panel
 
-$xfce_panel_bg_color: #333839;
-$xfce_panel_fg_color: #d2d2d2;
-$xfce_panel_selected_bg_color: desaturate(darken(#cee5fc, 50%), 35%);
-$xfce_panel_selected_fg_color: #e2e2e2;
+$xfce_panel_bg_color: #3a3a3a;
+$xfce_panel_fg_color: #dddddd;
+$xfce_panel_selected_bg_color: if($tone == tango, desaturate(darken(#3982d5, 5%), 10%),
+                               if($tone == salsa, desaturate(darken(#7f4979, 5%), 5%),
+                               if($tone == rumba, desaturate(darken(#7565c7, 10%), 10%),
+                               // lounge: tone is jive
+                               desaturate(darken(#369282, 10%), 0%))));
+$xfce_panel_selected_fg_color: #eeeeee;
 
 .xfce4-panel.background {
   background-color: $xfce_panel_bg_color;
