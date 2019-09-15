@@ -3975,6 +3975,15 @@ messagedialog { // Message Dialog styling
       }
     }
   }
+  &:not(.csd) {
+    .dialog-action-area {
+      margin: 0 10px 10px 10px;
+
+      button {
+        padding: 6px 12px; // labels are not vertically centered on message dialog, this is a workaround
+      }
+    }
+  }    
 }
 
 filechooser {
