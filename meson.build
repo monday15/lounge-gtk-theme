@@ -494,11 +494,21 @@ foreach file : gtk3_noconf_sources
                  configuration : copy)
 endforeach
 
+theme_tone = get_option('tone')
+theme_style = get_option('style')
+theme_scale_style = get_option('scale_style')
+theme_scrollbar_handles = get_option('scrollbar_handles')
+theme_button_outlines = get_option('button_outlines')
 
 foreach variant : gtk3_variants
   gtk3_conf = configuration_data()
   gtk3_conf.set('gtk_variant', variant[0])
   gtk3_conf.set('gtk_size', variant[2])
+  gtk3_conf.set('tone', theme_tone)
+  gtk3_conf.set('style', theme_style)
+  gtk3_conf.set('scale_style', theme_scale_style)
+  gtk3_conf.set('scrollbar_handles', theme_scrollbar_handles)
+  gtk3_conf.set('button_outlines', theme_button_outlines)
   gtk3_conf.set('gtk_version', gtk3_version)
   gtk3_conf.set('gnome_version', gnome_version)
 
@@ -530,9 +540,26 @@ set_variable(theme + '_assets_compact',
              run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
                                          ' | grep compact').stdout())
 
+  set_variable(theme + '_assets_excluded_from_prime',
+               run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                           ' | grep flat').stdout())
+  set_variable(theme + '_assets_tone',
+               run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                           ' | grep "tango\|salsa\|rumba\|jive" | grep -v tango').stdout())
+  set_variable(theme + '_assets_excluded_from_casual',
+               run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                           ' | grep fancy | grep ' + theme_tone).stdout())
+  set_variable(theme + '_assets_excluded_from_no_handles',
+               run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                           ' | grep scrollbar\-handle').stdout())
+
 install_subdir('src/' + theme +'/assets',
                 install_dir: gtk3_dir,
                 exclude_files : [get_variable(theme + '_assets' + exclude_assets[0]).split('\n'),
-                                 get_variable(theme + '_assets' + exclude_assets[1]).split('\n')])
+                                 get_variable(theme + '_assets' + exclude_assets[1]).split('\n'),
+                                 get_variable(theme + '_assets_excluded_from_prime').split('\n'),
+                                 get_variable(theme + '_assets_tone').split('\n'),
+                                 get_variable(theme + '_assets_excluded_from_casual').split('\n'),
+                                 get_variable(theme + '_assets_excluded_from_no_handles').split('\n')])
 
 endif
