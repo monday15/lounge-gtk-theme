@@ -812,7 +812,7 @@ StScrollBar {
   background-color: $_bubble_bg_color;
   border: 1px solid darken($_bubble_bg_color, 8%);
   box-shadow: 0 1px 0 1px transparentize(black, .9);
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 12px;
 }
 
