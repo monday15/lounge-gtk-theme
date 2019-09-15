@@ -2,11 +2,10 @@
 A GTK theme with a vintage scrollbars, inspired by Absolute, based on Adwaita.  
 Supported desktop environments: GNOME, XFCE.  
 
-Additional stuff:  
-Lounge-backgrounds - dynamic wallpaper for gnome-desktop [(repository)](https://github.com/monday15/lounge-backgrounds).
+[**Default theme screenshot**](https://user-images.githubusercontent.com/42862490/64915766-e0395300-d766-11e9-8a0b-1a9b93cc6d3d.png)  
+[**Availiable options screenshot**](https://user-images.githubusercontent.com/42862490/64915767-e0395300-d766-11e9-9ced-6516835ed114.png)
 
-**Default theme screenshot**  
-**Availiable options screenshot**
+Also check Lounge-backgrounds - dynamic wallpaper for gnome-desktop [(repository)](https://github.com/monday15/lounge-backgrounds).
  
 ## Installation
 **Fedora**:  
@@ -15,7 +14,7 @@ Lounge-backgrounds - dynamic wallpaper for gnome-desktop [(repository)](https://
 or  
 `sudo dnf install lounge-gtk-theme-xfce-sway` for xfce/sway users.
 
-> Lounge-aux-icon-theme comes as a weak dependency, with Adwaita as a main icon theme.
+> Lounge-aux-icon-theme comes as a weak dependency, with Adwaita as a main icon theme. Lounge-backgrounds is also a recommended dependency.
 
 
 **Ubuntu**:  
@@ -47,7 +46,7 @@ Requirements:
 - Build theme:  
 `meson build -Doption=value`
 
-  (availiable options screenshot)
+  [(availiable options screenshot)](https://user-images.githubusercontent.com/42862490/64915767-e0395300-d766-11e9-9ced-6516835ed114.png)
 
   Option | Default value | Other values | Description 
   --- | --- | --- | ---
