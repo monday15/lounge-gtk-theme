@@ -1603,7 +1603,7 @@ StScrollBar {
     .overview-icon { icon-size: 96px; }
 
     .app-well-app-running-dot { //running apps indicator
-      width: 75px;
+      width: 20px;
       height: 3px;
       background-color: transparentize($fg_color, .4);
       border-radius: 3px;
