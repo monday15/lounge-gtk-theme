@@ -584,35 +584,90 @@ button {
     min-height: 32px;
     padding: 4px 8px;
 
-    &.image-button { min-width: 32px; padding: 4px; }
+    &.image-button {
+      min-width: 32px;
+      padding: 4px;
+    }
 
     color: $osd_fg_color;
     border-radius: 3px;
 
     @include button(osd);
 
-    border: 1px solid $osd_borders_color;
-    box-shadow: none;
+    border: none;
+
+    margin-right: 1px;
+    margin-bottom: 1px;
+    box-shadow: 1px 1px transparentize(black, .7);
+    outline-offset: -1px;
 
     &:hover {
       @include button(osd-hover);
 
-      border: 1px solid $osd_borders_color;
-      box-shadow: none;
+      border: none;
+      box-shadow: 1px 1px transparentize(black, .7);
     }
 
     &:active,
     &:checked {
       @include button(osd-active);
 
-      border: 1px solid $osd_borders_color;
+      border: none;
       box-shadow: none;
     }
 
     &:disabled {
-        @include button(osd-insensitive);
+      @include button(osd-insensitive);
 
-        border: 1px solid $osd_borders_color;
+      border: none;
+    }
+
+    .linked.horizontal & {
+      margin-right: 0;
+      box-shadow: 0 1px transparentize(black, .7);
+
+      &:first-child {
+        margin-right: 0;
+        box-shadow: 0 1px transparentize(black, .7);
+      }
+
+      &:last-child {
+        margin-right: 1px;
+        box-shadow: 0 1px transparentize(black, .7), 1px 0 transparentize(black, .7);
+      }
+
+      &:only-child {
+        margin-right: 1px;
+        box-shadow: 1px 1px transparentize(black, .7);
+      }
+
+      &:active,
+      &:checked,
+      &:disabled { box-shadow: none; }
+    }
+
+    .linked.vertical & {
+      margin-bottom: 0;
+      box-shadow: 1px 0 transparentize(black, .7);
+
+      &:first-child {
+        margin-bottom: 0;
+        box-shadow: 1px 0 transparentize(black, .7);
+      }
+
+      &:last-child {
+        margin-bottom: 1px;
+        box-shadow: 0 1px transparentize(black, .7), 1px 0 transparentize(black, .7);
+      }
+
+      &:only-child {
+        margin-bottom: 1px;
+        box-shadow: 1px 1px transparentize(black, .7);
+      }
+
+      &:active,
+      &:checked,
+      &:disabled { box-shadow: none; }
     }
   }
 
@@ -627,6 +682,8 @@ button {
     &:checked { @include button(osd-active); }
 
     &:disabled { @include button(osd-insensitive); }
+
+    outline-offset: -2px;
 
     &.flat {
       @include button(undecorated);
