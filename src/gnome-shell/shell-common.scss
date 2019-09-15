@@ -1788,16 +1788,17 @@ StScrollBar {
     @include fontsize($font-size);
     width: 34em;
     margin: 5px;
-    border-radius: 3px;
+    border-radius: 5px;
     color: $_bubble_fg_color;
     background-color: $_bubble_bg_color;
     border: 1px solid $borders_color;
-    box-shadow: 0 1px 0 1px transparentize(black, .9);
+    box-shadow: inset 0 0 0 1px transparentize(white, .9);
+
     &:hover { background-color: $_bubble_bg_color; }
     &:focus { background-color: $_bubble_bg_color; }
 
     // close button
-    * > StIcon { border-radius: 2px; }
+    * > StIcon { border-radius: 3px; }
 
     *:hover > StIcon,
     *:focus > StIcon {
@@ -1813,15 +1814,15 @@ StScrollBar {
     .secondary-icon { icon-size: 1.09em; }
     .notification-actions {
       background-color: $borders_color;
-      padding-top: 1px;
+      padding-top: 0px;
       spacing: 1px;
     }
     .notification-button {
       padding: 4px 4px 5px;
       background-color: lighten($_bubble_bg_color, 4%);
-      box-shadow: inset 0 1px transparentize(white, .95);
-      &:first-child { border-radius: 0 0 0 3px; }
-      &:last-child { border-radius: 0 0 3px 0; }
+      box-shadow: inset 0 1px transparentize(white, .9);
+      &:first-child { border-radius: 0 0 0 5px; }
+      &:last-child { border-radius: 0 0 5px 0; }
       &:hover, &focus { background-color: lighten($_bubble_bg_color, 8%); }
     }
   }
