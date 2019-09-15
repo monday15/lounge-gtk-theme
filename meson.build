@@ -18,6 +18,11 @@ mid = '$MESON_INSTALL_DESTDIR_PREFIX/'
 
 if get_option('flatpak') == false
 
+theme_tone = get_option('tone')
+theme_style = get_option('style')
+theme_scales_style = get_option('scales_style')
+theme_scrollbar_handles = get_option('scrollbar_handles')
+theme_button_outlines = get_option('button_outlines')
 
   # CHECK GNOME VERSION
 
@@ -124,6 +129,7 @@ configure_file(input :  join_paths('src/gnome-shell/shell-common.scss'),
 # Configure main scss file
 shell_conf = configuration_data()
 shell_conf.set('gnome_version', gnome_version)
+shell_conf.set('tone', theme_tone)
 
 shell_scss = configure_file(input : 'src/gnome-shell/gnome-shell.scss',
                             output : 'gnome-shell.scss',
@@ -138,14 +144,20 @@ custom_target('Generate shell theme',
               install_dir: shell_dir)
 
 # Install assets
+shell_unused_assets_tone = run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', 'gnome-shell', 'assets') +
+                                                       ' | grep "tango\|salsa\|rumba\|jive" | grep -v ' + theme_tone).stdout()
+shell_unused_assets_332_and_later = run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', 'gnome-shell', 'assets') +
+                                                                ' | grep "close\-window\|calendar\-arrow"').stdout()
+
 if gnome_version.version_compare('<=3.30')
   install_subdir('src/gnome-shell/assets',
-                 install_dir: shell_dir)
+                 install_dir: shell_dir,
+                 exclude_files: [ shell_unused_assets_tone.split('\n') ])
 else
   install_subdir('src/gnome-shell/assets',
                  install_dir: shell_dir,
-                 exclude_files: ['close-window.svg', 'close-window-active.svg', 'close-window-hover.svg',
-                                 'calendar-arrow-left.svg', 'calendar-arrow-right.svg'])
+                 exclude_files: [ shell_unused_assets_tone.split('\n'),
+                                  shell_unused_assets_332_and_later.split('\n') ])
 endif
 
 
@@ -179,6 +191,11 @@ foreach theme : gtk3_array
   gtk3_conf = configuration_data()
   gtk3_conf.set('gtk_variant', theme[1])
   gtk3_conf.set('gtk_size', theme[2])
+  gtk3_conf.set('tone', theme_tone)
+  gtk3_conf.set('style', theme_style)
+  gtk3_conf.set('scales_style', theme_scales_style)
+  gtk3_conf.set('scrollbar_handles', theme_scrollbar_handles)
+  gtk3_conf.set('button_outlines', theme_button_outlines)
   gtk3_conf.set('gtk_version', gtk3_version)
   gtk3_conf.set('gnome_version', gnome_version)
 
@@ -245,6 +262,23 @@ foreach theme : gtk2_array
       set_assets_size = 's/\-$size//g'
     endif
 
+    # Scales style suffix
+    if theme_scales_style == 'fancy'
+      set_scales_style = 's/\-$scales_style\-$tone/\-fancy-' + theme_tone + '/g'
+    else
+      set_scales_style = 's/\-$scales_style\-$tone//g'
+    endif
+
+    # Set tone suffix
+    set_tone = 's/\-$tone/\-' + theme_tone +'/g'
+
+    # Style suffix
+    if theme_style == 'flat'
+      set_style = 's/\-$style/\-flat/g'
+    else
+      set_style = 's/\-$style//g'
+    endif
+
     # Add suffix for assets urls used in dark themes
     if theme[2] == '$dark '
       set_color_variant = 's/.png\"/\-dark.png\"/g'
@@ -260,9 +294,16 @@ foreach theme : gtk2_array
                    capture : true,
                    command: ['sed', '-e', 's/' + theme[1] + '//g',
                                     '-e', 's/' + theme[2] + '//g',
+                                    '-e', 's/^\$' + theme_scales_style + '\ //g',
+                                    '-e', 's/^\$' + theme_tone + '\ //g',
+                                    '-e', 's/^\$' + theme_style + '\ //g',
+                                    '-e', 's/^\$' + theme_scrollbar_handles + '\ //g',
                                     '-e', gtk2_menu_border,
                                     '-e', '/^\$/ d',
                                     '-e', set_assets_size,
+                                    '-e', set_scales_style,
+                                    '-e', set_tone,
+                                    '-e', set_style,
                                     '-e', set_color_variant,
                                     '@INPUT@'],
                    install_dir: get_variable(theme[0] + 'gtk2_dir'))
@@ -331,6 +372,28 @@ foreach theme : assets_themes
                run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
                                            ' | grep compact').stdout())
 
+  set_variable(theme + '_assets_excluded_from_flat',
+               run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                           ' | grep flat | sed s/-flat//').stdout())
+  set_variable(theme + '_assets_excluded_from_standard',
+               run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                           ' | grep flat').stdout())
+  set_variable(theme + '_assets_tone',
+               run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                           ' | grep "tango\|salsa\|rumba\|jive" | grep -v ' + theme_tone).stdout())
+  set_variable(theme + '_assets_excluded_from_greyscale',
+               run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                           ' | grep fancy | grep ' + theme_tone).stdout())
+  set_variable(theme + '_assets_excluded_from_fancy',
+               run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                           ' | grep fancy | grep ' + theme_tone + ' | sed s/-fancy-' + theme_tone + '//').stdout())
+  set_variable(theme + '_assets_excluded_from_no_handles',
+               run_command('sh', '-c', 'ls ' + join_paths(meson.source_root(), 'src', theme, 'assets') +
+                                           ' | grep scrollbar\-handle').stdout())
+  set_variable(theme + '_assets_excluded_from_with_handles', '')
+
+
+
   foreach assets : assets_array
     # Exclude different types of assets from gtk3 theme
     # (light gtk3 theme needs dark assets for dark variant)
@@ -350,12 +413,16 @@ foreach theme : assets_themes
     install_subdir('src/' + theme +'/assets',
                     install_dir: assets_install_dir,
                     exclude_files : [get_variable(theme + '_assets' + assets[1]).split('\n'),
-                                     get_variable(theme + '_assets' + exclude_color_variants).split('\n')],
+                                     get_variable(theme + '_assets' + exclude_color_variants).split('\n'),
+                                     get_variable(theme + '_assets_excluded_from_' + theme_style).split('\n'),
+                                     get_variable(theme + '_assets_tone').split('\n'),
+                                     get_variable(theme + '_assets_excluded_from_' + theme_scales_style).split('\n'),
+                                     get_variable(theme + '_assets_excluded_from_' + theme_scrollbar_handles).split('\n')],
                                      strip_directory: true)
 
     if theme == 'xfwm4'
       # Remove color/size suffixes from xfwm assets
-      meson.add_install_script('sh', '-c', 'for i in $(ls ' + mid + get_variable(assets[0] + 'xfwm4_dir') + ' | grep "compact\|dark"); do mv ' + mid + get_variable(assets[0] + 'xfwm4_dir') + '/$i ' + mid + get_variable(assets[0] + 'xfwm4_dir') + '/$(echo $i | sed s/\-compact// | sed s/\-dark//); done')
+      meson.add_install_script('sh', '-c', 'for i in $(ls ' + mid + get_variable(assets[0] + 'xfwm4_dir') + ' | grep "compact\|dark\|flat"); do mv ' + mid + get_variable(assets[0] + 'xfwm4_dir') + '/$i ' + mid + get_variable(assets[0] + 'xfwm4_dir') + '/$(echo $i | sed s/\-compact// | sed s/\-dark// | sed s/\-flat//); done')
     endif
 
   endforeach
