@@ -324,7 +324,9 @@ entry {
     background-image: none;
     border-radius: 0;
     border-width: 0 0 2px;
-    border-color: if($variant == 'light', darken($selected_bl_color, 15%), lighten($selected_bl_color, 2%));
+    border-color: if($scales_style == greyscale,
+                  if($variant == 'light', lighten($selected_bg_color, 20%), $selected_bg_color),
+                  $scale_highlight_color);
     border-style: solid;
     box-shadow: none;
   }
