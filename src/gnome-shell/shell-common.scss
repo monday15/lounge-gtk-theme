@@ -1386,6 +1386,12 @@ StScrollBar {
   }
 }
 
+// Rubberband for select-area screenshots
+.select-area-rubberband {
+  background-color: transparentize($selected_bg_color,0.7);
+  border: 1px solid $selected_bg_color;
+}
+
 // not really top bar only
 .popup-menu-arrow { width: 16px; height: 16px; }
 .popup-menu-icon { icon-size: 1.09em; }
