@@ -1006,9 +1006,13 @@ toolbar.inline-toolbar toolbutton {
 
     &:drop(active) { border-left-color: $drop_target_color; }
   }
+
+  &:not(button) { &:not(:focus) { border-left-color: $borders_color; }}
+
   &.suggested-action:not(:disabled) {
     border-left-color: _border_color($selected_bg_color);
   }
+
   &.destructive-action:not(:disabled) {
     border-left-color: _border_color($error_color);
   }
@@ -1026,11 +1030,15 @@ toolbar.inline-toolbar toolbutton {
 
     &:drop(active) { border-right-color: $drop_target_color; }
   }
+
+  &:not(button) { &:not(:focus) { border-right-color: $borders_color; }}
+
   &.suggested-action:not(:disabled) {
     border-right-color: _border_color($selected_bg_color);
 
     &:focus { border-left-color: _border_color($selected_bg_color); }
   }
+
   &.destructive-action:not(:disabled) {
     border-right-color: _border_color($error_color);
 
