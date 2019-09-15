@@ -39,6 +39,12 @@ $scale_slider: if($size == compact, 16px, 18px);
 $scale_slider_margin: if($size == compact, -7px, -8px);
 $scale_slider_finetune_margin: if($size == compact, -4px, -6px);
 
+$scale_with_marks_slider_width: if($size == compact, 20px, 22px);
+$scale_with_marks_slider_height: if($size == compact, 24px, 26px);
+$scale_with_marks_slider_margin: if($size == compact, -8px, -10px);
+$scale_with_marks_slider_finetune_margin: if($size == compact, -6px, -8px);
+$scale_with_marks_slider_asymmetric_margin: if($size == compact, -12px, -12px);
+
 $sidebar_row_height: if($size == compact, 28px, 30px);
 $sidebar_row_padding: if($size == compact, 0, 1px);
 
@@ -52,11 +58,6 @@ $scrollbar_slider_size: if($size == compact, 9px, 11px);
 
 $checkradio_padding: if($size == compact, 0, 1px);
 $check_radius: $base_radius;
-$scale_with_marks_slider_width: if($size == compact, 20px, 22px);
-$scale_with_marks_slider_height: if($size == compact, 24px, 26px);
-$scale_with_marks_slider_margin: if($size == compact, -6px, -8px);
-$scale_with_marks_slider_finetune_margin: if($size == compact, -4px, -6px);
-$scale_with_marks_slider_asymmetric_margin: if($size == compact, -12px, -12px);
 
 $text_handle_width: $scale_with_marks_slider_width;
 $text_handle_height: $scale_with_marks_slider_height;

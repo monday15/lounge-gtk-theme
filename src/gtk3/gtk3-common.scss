@@ -3238,6 +3238,12 @@ scale {
 
   // FIXME: OSD and selected list rows missing, I don't feel like adding the other 144 assets needed for those...
   $suffix: if($variant == 'light', '', '-dark');
+  $active_state_scale: if($scales_style == fancy and $variant == light and $tone == tango, '-active-fancy-tango',
+                       if($scales_style == fancy and $variant == light and $tone == rumba, '-active-fancy-rumba',
+                       if($scales_style == fancy and $variant == light and $tone == salsa, '-active-fancy-salsa',
+                       if($scales_style == fancy and $variant == light and $tone == jive, '-active-fancy-jive',
+                       '-active')))); 
+
 
   @each $dir_class, $dir_infix in ('horizontal', 'horz'),
                                   ('vertical', 'vert') {
@@ -3245,16 +3251,20 @@ scale {
                                         ('scale-has-marks-below', 'marks-after:not(.marks-before)') {
       @each $state, $state_infix in ('', ''),
                                     (':hover', '-hover'),
-                                    (':active', '-active'),
+                                    (':active', '#{$active_state_scale}'),
                                     (':disabled', '-insensitive') {
         &.#{$dir_class}.#{$marks_class} {
 
           slider {
             &#{$state} {
+              $style_suffix_marks: if($style == standard, '',
+                                   if($style == flat and $state == ':active', '',
+                                   if($style == flat and $state == ':disabled', '',
+                                   '-flat')));
               // an asymmetric slider asset is used here, so the margins are uneven, the smaller
               // margin is set on the point side.
               margin: $scale_with_marks_slider_margin;
-              $_scale_asset: 'assets/slider-#{$dir_infix}-#{$marks_infix}#{$state_infix}#{$size_suffix}#{$suffix}';
+              $_scale_asset: 'assets/slider-#{$dir_infix}-#{$marks_infix}#{$state_infix}#{$style_suffix_marks}#{$size_suffix}#{$suffix}';
               border-style: none;
               border-radius: 0;
 
