@@ -414,12 +414,18 @@ StScrollBar {
   .prompt-dialog-password-box {
     spacing: 1em;
     padding-bottom: 1em;
-    // Workaround, with roboto entry has different size at empty/not-empty states 
-    StEntry { font-family: Sans-serif; }
+    // lounge: workaround, with roboto entry has different size at empty/not-empty states 
+    StEntry {
+      font-family: Sans-serif;
+
+      &:focus,
+      &:active { border-color: $selected_bg_color; }
+    }
   }
 
   .prompt-dialog-error-label {
     font-size: 10pt;
+    font-weight: bold;
     color: $error_color;
     padding-bottom: 8px;
   }
