@@ -8,9 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    id="svg8"
    version="1.1"
-   viewBox="0 0 15.999999 15.999999"
-   height="15.999999"
-   width="15.999999">
+   viewBox="0 0 32 31.999998"
+   height="31.999998"
+   width="32">
   <defs
      id="defs2">
     <linearGradient
@@ -191,23 +191,22 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-200,-401.62499)"
+     transform="translate(-390.00001,-325.62493)"
      id="layer1">
     <g
-       transform="matrix(3.7795276,0,0,3.7795276,200,-704.89469)"
-       style="display:inline"
-       id="message-indicator-symbolic">
-      <path
-         id="path4485"
-         d="m 3.1749998,294.88333 a 1.0583333,1.0583333 0 0 1 -1.0583332,1.05833 1.0583333,1.0583333 0 0 1 -1.0583333,-1.05833 1.0583333,1.0583333 0 0 1 1.0583333,-1.05833 1.0583333,1.0583333 0 0 1 1.0583332,1.05833 z"
-         style="fill:#bebebe;fill-opacity:1;stroke:none;stroke-width:0.17969394" />
+       transform="translate(120.00001,-100.00001)"
+       id="key-shift-uppercase-rumba">
       <rect
-         y="292.76666"
-         x="0"
-         height="4.2333331"
-         width="4.2333331"
-         id="rect3515-3"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         y="425.62494"
+         x="270"
+         height="31.999998"
+         width="32"
+         id="rect3515-4"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#6c5eb4;fill-opacity:1;stroke:none;stroke-width:4;marker:none;enable-background:new"
+         d="m 281.99961,451.4062 v -8 h -6.2496 l 10.25,-11.5626 10.25,11.5626 h -6.375 v 8 z"
+         id="path16548-6-8" />
     </g>
   </g>
 </svg>

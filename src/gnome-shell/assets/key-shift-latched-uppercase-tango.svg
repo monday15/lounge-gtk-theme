@@ -8,9 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    id="svg8"
    version="1.1"
-   viewBox="0 0 15.999999 15.999999"
-   height="15.999999"
-   width="15.999999">
+   viewBox="0 0 32 31.999998"
+   height="31.999998"
+   width="32">
   <defs
      id="defs2">
     <linearGradient
@@ -191,23 +191,27 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-200,-401.62499)"
+     transform="translate(-430,-125.62495)"
      id="layer1">
     <g
-       transform="matrix(3.7795276,0,0,3.7795276,200,-704.89469)"
-       style="display:inline"
-       id="message-indicator-symbolic">
+       transform="matrix(2,0,0,2,147.99921,-1488.5938)"
+       style="display:inline;fill:#3e749e;fill-opacity:1"
+       id="key-shift-latched-uppercase-tango">
       <path
-         id="path4485"
-         d="m 3.1749998,294.88333 a 1.0583333,1.0583333 0 0 1 -1.0583332,1.05833 1.0583333,1.0583333 0 0 1 -1.0583333,-1.05833 1.0583333,1.0583333 0 0 1 1.0583333,-1.05833 1.0583333,1.0583333 0 0 1 1.0583332,1.05833 z"
-         style="fill:#bebebe;fill-opacity:1;stroke:none;stroke-width:0.17969394" />
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#4583c9;fill-opacity:1;stroke:none;stroke-width:2;marker:none;enable-background:new"
+         d="m 147.0002,817.99985 v -4 h -3.1248 l 5.125,-5.7813 5.125,5.7813 h -3.1875 v 4 z"
+         id="path16532-6" />
+      <path
+         id="path16534-3"
+         d="m 147.0002,821.99985 v -2 h 3.9377 v 2 z"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#4583c9;fill-opacity:1;stroke:none;stroke-width:2;marker:none;enable-background:new" />
       <rect
-         y="292.76666"
-         x="0"
-         height="4.2333331"
-         width="4.2333331"
-         id="rect3515-3"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.49999997;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect3515-2-2"
+         width="16"
+         height="15.999999"
+         x="141.0004"
+         y="807.10938" />
     </g>
   </g>
 </svg>
