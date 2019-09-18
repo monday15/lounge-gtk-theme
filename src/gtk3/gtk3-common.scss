@@ -2977,8 +2977,8 @@ switch {
   &:checked {
     background-image: -gtk-scaled(url("assets/checkbox-checked-selectionmode#{$style_suffix}#{$asset_suffix}.png"),
                                   url("assets/checkbox-checked-selectionmode#{$style_suffix}#{$asset_suffix}@2.png"));
-    -gtk-icon-source: -gtk-scaled(url("assets/check-selectionmode#{$style_suffix}#{$asset_suffix}.png"),
-                                  url("assets/check-selectionmode#{$style_suffix}#{$asset_suffix}@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/check-selectionmode-#{$tone}#{$style_suffix}#{$asset_suffix}.png"),
+                                  url("assets/check-selectionmode-#{$tone}#{$style_suffix}#{$asset_suffix}@2.png"));
   }
 }
 
