@@ -1,3 +1,9 @@
+1.21.1
+===
+
+gtk3: Fix missing selection-mode check assets.
+
+
 1.21
 ====
 
