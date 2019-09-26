@@ -2712,6 +2712,8 @@ scrollbar {
   background-color: transparent;
   transition: 300ms $ease-out-quad;
 
+  &:not(.overlay-indicator) { background-color: $bg_color; }
+
   &.horizontal trough {
     border-image: -gtk-scaled(url("assets/scrollbar-trough-horz#{$style_suffix}#{$asset_suffix}.png"), url("assets/scrollbar-trough-horz#{$style_suffix}#{$asset_suffix}@2.png")) 9 9 8 8 / 9px 9px 8px 8px stretch;
   }
