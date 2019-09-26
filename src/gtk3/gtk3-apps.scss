@@ -11,6 +11,8 @@ window.background.chromium {
   menuitem {
     border-radius: 0;
   }
+
+  scrollbar { background-color: transparent; }
 }
 
 
@@ -285,6 +287,8 @@ window:not(.incognito-mode) .main-notebook tab:not(.reorderable-page) {
       }
     }
   }
+
+  scrollbar { background-color: transparent; }
 
   menuitem {
     border-radius: 0;
