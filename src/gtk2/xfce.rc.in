@@ -1,10 +1,18 @@
-gtk-color-scheme = "xfce_panel_bg:#3a3a3a"
-gtk-color-scheme = "xfce_panel_fg:#dddddd"
-$tango gtk-color-scheme = "xfce_panel_selected_bg:#3776bd"
-$salsa gtk-color-scheme = "xfce_panel_selected_bg:#6a4466"
-$rumba gtk-color-scheme = "xfce_panel_selected_bg:#5e4faa"
-$jive gtk-color-scheme = "xfce_panel_selected_bg:#286d61"
-gtk-color-scheme = "xfce_panel_selected_fg:#eeeeee"
+$light gtk-color-scheme = "xfce_panel_bg:#e2e2e2"
+$light gtk-color-scheme = "xfce_panel_fg:#202020"
+$light $tango gtk-color-scheme = "xfce_panel_selected_bg:#bcd9fa"
+$light $salsa gtk-color-scheme = "xfce_panel_selected_bg:#dbbfd8"
+$light $rumba gtk-color-scheme = "xfce_panel_selected_bg:#cec7ef"
+$light $jive gtk-color-scheme = "xfce_panel_selected_bg:#b9e1da"
+$light gtk-color-scheme = "xfce_panel_selected_fg:#101010"
+
+$dark gtk-color-scheme = "xfce_panel_bg:#3a3a3a"
+$dark gtk-color-scheme = "xfce_panel_fg:#dddddd"
+$dark $tango gtk-color-scheme = "xfce_panel_selected_bg:#3776bd"
+$dark $salsa gtk-color-scheme = "xfce_panel_selected_bg:#6a4466"
+$dark $rumba gtk-color-scheme = "xfce_panel_selected_bg:#5e4faa"
+$dark $jive gtk-color-scheme = "xfce_panel_selected_bg:#286d61"
+$dark gtk-color-scheme = "xfce_panel_selected_fg:#eeeeee"
 
 style "theme-panel" {
 
@@ -12,9 +20,14 @@ style "theme-panel" {
   ythickness = 0
 
   bg[NORMAL]     = @xfce_panel_bg
-  bg[PRELIGHT]   = shade (1.4, @xfce_panel_bg)
-  bg[ACTIVE]     = shade (1.7, @xfce_panel_bg)
-  bg[SELECTED]   = shade (1.7, @xfce_panel_bg)
+
+$light   bg[PRELIGHT]   = shade (0.78, @xfce_panel_bg)
+$light   bg[ACTIVE]     = shade (0.85, @xfce_panel_bg)
+$light   bg[SELECTED]   = shade (0.85, @xfce_panel_bg)
+
+$dark   bg[PRELIGHT]   = shade (1.4, @xfce_panel_bg)
+$dark   bg[ACTIVE]     = shade (1.7, @xfce_panel_bg)
+$dark   bg[SELECTED]   = shade (1.7, @xfce_panel_bg)
 
   fg[NORMAL]     = @xfce_panel_fg
   fg[PRELIGHT]   = @xfce_panel_selected_fg
@@ -39,7 +52,9 @@ style "theme-panel" {
 }
 
 style "theme-panel-progressbar" {
-  bg[ACTIVE]      = shade (0.8, @xfce_panel_bg)
+# lounge: light theme variant is untested
+$light   bg[ACTIVE]      = shade (0.6, @xfce_panel_bg)
+$dark   bg[ACTIVE]      = shade (0.8, @xfce_panel_bg)
 }
 
 style "panelbar" {
@@ -104,12 +119,19 @@ style "theme-main-menu-text" = "theme-panel-text" {
 }
 
 style "workspace-switcher" = "theme-panel" {
-  bg[PRELIGHT]   = shade (1.3, @xfce_panel_bg)
-  bg[SELECTED]   = shade (1.2, @xfce_panel_bg)
+$light   bg[PRELIGHT]   = shade (0.7, @xfce_panel_bg)
+$light   bg[SELECTED]   = shade (0.8, @xfce_panel_bg)
 
-  fg[NORMAL]     = shade (1.7, @xfce_panel_bg)
-  fg[PRELIGHT]   = shade (1.7, @xfce_panel_bg)
-  fg[SELECTED]   = shade (1.7, @xfce_panel_bg)
+$light   fg[NORMAL]     = shade (0.5, @xfce_panel_bg)
+$light   fg[PRELIGHT]   = shade (0.6, @xfce_panel_selected_bg)
+$light   fg[SELECTED]   = shade (0.6, @xfce_panel_selected_bg)
+
+$dark   bg[PRELIGHT]   = shade (1.3, @xfce_panel_bg)
+$dark   bg[SELECTED]   = shade (1.7, @xfce_panel_bg)
+
+$dark   fg[NORMAL]     = shade (1.5, @xfce_panel_bg)
+$dark   fg[PRELIGHT]   = shade (1.1, @xfce_panel_selected_bg)
+$dark   fg[SELECTED]   = shade (1.1, @xfce_panel_selected_bg)
 }
 
 style "indicator" = "theme-panel" {
@@ -122,12 +144,16 @@ style "xfwm-tabwin" {
   Xfwm4TabwinWidget::border-alpha  = 1.0
   Xfwm4TabwinWidget::icon-size     = 64
   Xfwm4TabwinWidget::alpha         = 1.0
-  Xfwm4TabwinWidget::border-radius = 2
+  Xfwm4TabwinWidget::border-radius = 5
 
 	bg[NORMAL]   = @xfce_panel_bg
-	bg[SELECTED] = @xfce_panel_bg
+	bg[ACTIVE]   = @xfce_panel_selected_bg
+	bg[PRELIGHT] = @xfce_panel_selected_bg
+	bg[SELECTED] = shade (0.7, @xfce_panel_bg)
 
 	fg[NORMAL]   = @xfce_panel_fg
+	fg[ACTIVE]   = @xfce_panel_fg
+	fg[PRELIGHT] = @xfce_panel_fg
 
   engine "murrine" {
     contrast        = 0.9
@@ -135,7 +161,7 @@ style "xfwm-tabwin" {
     glowstyle       = 0
     highlight_shade = 1.0
     gradient_shades = {1.0,1.0,1.0,1.0}
-    border_shades   = { 0.8, 0.8 }
+    border_shades   = { 0.9, 0.9 }
   }
 }
 
@@ -144,9 +170,13 @@ style "xfwm-tabwin-button" {
   fg[ACTIVE]   = @xfce_panel_selected_fg
   fg[SELECTED] = @xfce_panel_selected_fg
 
-  bg[PRELIGHT] = shade (0.85,  @xfce_panel_selected_bg)
-  bg[ACTIVE]   = @xfce_panel_selected_bg
-  bg[SELECTED] = @xfce_panel_selected_bg
+$light   bg[PRELIGHT] = @selected_bg_color
+$light   bg[ACTIVE]   = shade (0.9,  @xfce_panel_bg)
+$light   bg[SELECTED] = shade (0.9,  @xfce_panel_bg)
+
+$dark   bg[PRELIGHT] = shade (0.85,  @xfce_panel_selected_bg)
+$dark   bg[ACTIVE]   = @xfce_panel_selected_bg
+$dark   bg[SELECTED] = @xfce_panel_selected_bg
 
   engine "murrine" {
     roundness = 3

@@ -1,13 +1,14 @@
   // Xfce Panel
 
-$xfce_panel_bg_color: #3a3a3a;
-$xfce_panel_fg_color: #dddddd;
-$xfce_panel_selected_bg_color: if($tone == tango, desaturate(darken(#3982d5, 5%), 10%),
+$xfce_panel_bg_color: if($variant == light, #e2e2e2, #3a3a3a);
+$xfce_panel_fg_color: if($variant == light, #202020, #dddddd);
+$xfce_panel_selected_bg_color: if($variant == light, $selected_bl_color,
+                               if($tone == tango, desaturate(darken(#3982d5, 5%), 10%),
                                if($tone == salsa, desaturate(darken(#7f4979, 5%), 5%),
                                if($tone == rumba, desaturate(darken(#7565c7, 10%), 10%),
                                // lounge: tone is jive
-                               desaturate(darken(#369282, 10%), 0%))));
-$xfce_panel_selected_fg_color: #eeeeee;
+                               desaturate(darken(#369282, 10%), 0%)))));
+$xfce_panel_selected_fg_color: if($variant == light, #101010, #eeeeee);
 
 .xfce4-panel.background {
   background-color: $xfce_panel_bg_color;
@@ -48,7 +49,7 @@ $xfce_panel_selected_fg_color: #eeeeee;
 
 %xfce_panel_button {
   border: none;
-  border-radius: 2px;
+  border-radius: 0;
   margin-left: 1px;
   margin-right: 1px;
   color: $xfce_panel_fg_color;
@@ -59,12 +60,12 @@ $xfce_panel_selected_fg_color: #eeeeee;
   &:hover {
     color: $xfce_panel_selected_fg_color;
     border: none;
-    background-color: lighten($xfce_panel_bg_color, 9%);
+    background-color: if($variant == light, darken($xfce_panel_bg_color, 22%), lighten($xfce_panel_bg_color, 9%));
   }
   &:active, &:checked {
     color: $xfce_panel_selected_fg_color;
     border: none;
-    background-color: lighten($xfce_panel_bg_color, 12%);
+    background-color: if($variant == light, darken($xfce_panel_bg_color, 15%), lighten($xfce_panel_bg_color, 12%));
 
     label, image { color: inherit; }
   }
@@ -114,6 +115,7 @@ $xfce_panel_selected_fg_color: #eeeeee;
   // Xfce tabwin (alt-tab switcher)
 
 #xfwm-tabwin {
+  border: 1px solid $borders_color;
   background-image: image($xfce_panel_bg_color);
   color: $xfce_panel_fg_color;
   text-shadow: none;
@@ -122,18 +124,22 @@ $xfce_panel_selected_fg_color: #eeeeee;
   button {
     background-image: none;
     color: $xfce_panel_fg_color;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 3px;
     box-shadow: none;
 
     &:active, &:checked, &:active:hover, &:checked:hover {
       color: $xfce_panel_selected_fg_color;
       background: transparentize($xfce_panel_selected_bg_color, .2);
+
+      @if $variant == light { border-color: _border_color($selected_bl_color); }
     }
     &:hover {
       color: $xfce_panel_selected_fg_color;
       background: $xfce_panel_selected_bg_color;
       transition-duration: 50ms;
+
+      @if $variant == light { border-color: _border_color($selected_bl_color); }
     }
   }
 }
@@ -181,7 +187,13 @@ $xfce_panel_selected_fg_color: #eeeeee;
   // Xfce workspace switcher
 
 wnck-pager {
-  color: mix($xfce_panel_fg_color, $xfce_panel_bg_color, 30%);
-  &:selected { background-color: transparentize(white, .95); }
-  &:hover { background-color: transparentize(white, .85); }
+  color: if($variant == light, mix($xfce_panel_fg_color, $xfce_panel_bg_color, 50%), mix($xfce_panel_fg_color, $xfce_panel_bg_color, 30%));
+  &:selected {
+    background-color: if($variant == light, darken($xfce_panel_bg_color, 20%), lighten($xfce_panel_bg_color, 10%));
+    color: mix($xfce_panel_fg_color, $selected_bg_color, 30%);
+  }
+  &:hover {
+    background-color: if($variant == light, darken($xfce_panel_bg_color, 27%), lighten($xfce_panel_bg_color, 15%));
+    color: mix($xfce_panel_fg_color, $selected_bg_color, 30%);
+  }
 }
