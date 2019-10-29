@@ -1,6 +1,6 @@
   // Xfce Panel
 
-$xfce_panel_bg_color: if($variant == light, #e2e2e2, #3a3a3a);
+$xfce_panel_bg_color: if($variant == light, #e9e9e9, #3a3a3a);
 $xfce_panel_fg_color: if($variant == light, #202020, #dddddd);
 $xfce_panel_selected_bg_color: if($variant == light, $selected_bl_color,
                                if($tone == tango, desaturate(darken(#3982d5, 5%), 10%),
@@ -60,7 +60,7 @@ $xfce_panel_selected_fg_color: if($variant == light, #101010, #eeeeee);
   &:hover {
     color: $xfce_panel_selected_fg_color;
     border: none;
-    background-color: if($variant == light, darken($xfce_panel_bg_color, 22%), lighten($xfce_panel_bg_color, 9%));
+    background-color: if($variant == light, darken($xfce_panel_bg_color, 20%), lighten($xfce_panel_bg_color, 9%));
   }
   &:active, &:checked {
     color: $xfce_panel_selected_fg_color;
@@ -189,11 +189,11 @@ $xfce_panel_selected_fg_color: if($variant == light, #101010, #eeeeee);
 wnck-pager {
   color: if($variant == light, mix($xfce_panel_fg_color, $xfce_panel_bg_color, 50%), mix($xfce_panel_fg_color, $xfce_panel_bg_color, 30%));
   &:selected {
-    background-color: if($variant == light, darken($xfce_panel_bg_color, 20%), lighten($xfce_panel_bg_color, 10%));
-    color: mix($xfce_panel_fg_color, $selected_bg_color, 30%);
+    background-color: if($variant == light, darken($xfce_panel_selected_bg_color, 5%), darken($xfce_panel_selected_bg_color, 0%));
+    color: if($variant == light, darken($xfce_panel_bg_color, 50%), mix($xfce_panel_fg_color, $xfce_panel_bg_color, 50%));
   }
   &:hover {
-    background-color: if($variant == light, darken($xfce_panel_bg_color, 27%), lighten($xfce_panel_bg_color, 15%));
-    color: mix($xfce_panel_fg_color, $selected_bg_color, 30%);
+    background-color: if($variant == light, darken($xfce_panel_selected_bg_color, 0%), lighten($xfce_panel_selected_bg_color, 7%));
+    color: if($variant == light, darken($xfce_panel_bg_color, 70%), mix($xfce_panel_fg_color, $xfce_panel_bg_color, 60%));
   }
 }

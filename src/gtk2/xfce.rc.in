@@ -1,4 +1,4 @@
-$light gtk-color-scheme = "xfce_panel_bg:#e2e2e2"
+$light gtk-color-scheme = "xfce_panel_bg:#e9e9e9"
 $light gtk-color-scheme = "xfce_panel_fg:#202020"
 $light $tango gtk-color-scheme = "xfce_panel_selected_bg:#bcd9fa"
 $light $salsa gtk-color-scheme = "xfce_panel_selected_bg:#dbbfd8"
@@ -21,7 +21,7 @@ style "theme-panel" {
 
   bg[NORMAL]     = @xfce_panel_bg
 
-$light   bg[PRELIGHT]   = shade (0.78, @xfce_panel_bg)
+$light   bg[PRELIGHT]   = shade (0.8, @xfce_panel_bg)
 $light   bg[ACTIVE]     = shade (0.85, @xfce_panel_bg)
 $light   bg[SELECTED]   = shade (0.85, @xfce_panel_bg)
 
@@ -119,19 +119,19 @@ style "theme-main-menu-text" = "theme-panel-text" {
 }
 
 style "workspace-switcher" = "theme-panel" {
-$light   bg[PRELIGHT]   = shade (0.7, @xfce_panel_bg)
-$light   bg[SELECTED]   = shade (0.8, @xfce_panel_bg)
+$light   bg[PRELIGHT]   = shade (1.1, @xfce_panel_selected_bg)
+$light   bg[SELECTED]   = shade (1.0, @xfce_panel_selected_bg)
 
 $light   fg[NORMAL]     = shade (0.5, @xfce_panel_bg)
-$light   fg[PRELIGHT]   = shade (0.6, @xfce_panel_selected_bg)
-$light   fg[SELECTED]   = shade (0.6, @xfce_panel_selected_bg)
+$light   fg[PRELIGHT]   = shade (0.3, @xfce_panel_bg)
+$light   fg[SELECTED]   = shade (0.3, @xfce_panel_bg)
 
-$dark   bg[PRELIGHT]   = shade (1.3, @xfce_panel_bg)
-$dark   bg[SELECTED]   = shade (1.7, @xfce_panel_bg)
+$dark   bg[PRELIGHT]   = shade (1.25, @xfce_panel_selected_bg)
+$dark   bg[SELECTED]   = shade (1.1, @xfce_panel_selected_bg)
 
-$dark   fg[NORMAL]     = shade (1.5, @xfce_panel_bg)
-$dark   fg[PRELIGHT]   = shade (1.1, @xfce_panel_selected_bg)
-$dark   fg[SELECTED]   = shade (1.1, @xfce_panel_selected_bg)
+$dark   fg[NORMAL]     = shade (2.0, @xfce_panel_bg)
+$dark   fg[PRELIGHT]   = shade (2.5, @xfce_panel_bg)
+$dark   fg[SELECTED]   = shade (2.5, @xfce_panel_bg)
 }
 
 style "indicator" = "theme-panel" {
