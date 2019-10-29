@@ -38,7 +38,7 @@ $light gtk-color-scheme = "menu_color:#fbfbfb"
 $dark gtk-color-scheme = "menu_color:#343434"
 # Links
 $tango $light gtk-color-scheme = "link_color:#225da0\nvisited_link_color:#194476"
-$tango $dark gtk-color-scheme = "link_color:#5390d4\nvisited_link_color:##337acc"
+$tango $dark gtk-color-scheme = "link_color:#5390d4\nvisited_link_color:#337acc"
 
 $salsa $light gtk-color-scheme = "link_color:#683b63\nvisited_link_color:#482944"
 $salsa $dark gtk-color-scheme = "link_color:#aa6ba3\nvisited_link_color:#96568f"
