@@ -4326,7 +4326,7 @@ infobar {
       progressbar {
         trough { background-color: if($variant == 'light', darken($barcolor, 8%), darken($barcolor, 4%)); }
 
-        progress { background-color: if($variant == 'light', desaturate(darken($barcolor, 20%), 5%), desaturate(lighten($barcolor, 12%), 5%)); }
+        progress { background-color: if($variant == 'light', desaturate(darken($barcolor, 30%), 5%), desaturate(lighten($barcolor, 12%), 5%)); box-shadow: none; }
       }
 
       selection { background-color: darken($barcolor, 10%); }
