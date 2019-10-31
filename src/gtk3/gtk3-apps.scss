@@ -1,3 +1,18 @@
+  //// Builder
+
+// dropdown search results from headerbar search button-entry
+revealer row.activatable {
+  &:selected {
+    color: $selected_fg_color;
+    background-color: desaturate(darken($selected_bl_color, 20%), 5%);
+
+    // doesnt work, just in case this style will backfire to other apps
+    label, image { color: $selected_fg_color; }
+  }
+  &:selected:hover { background-color: desaturate(darken($selected_bl_color, 25%), 5%); }
+}
+
+
   //// Chromium & Chrome
 
 // Chromium uses treeview background color for adressbar border
