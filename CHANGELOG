@@ -1,3 +1,17 @@
+1.22
+====
+
+gtk3: Added style for Builder (search widgets fixes);
+gtk3: Added style for Foliate (+/- buttons alignment in popover);
+gtk3: Improved LibreOffice scrollbar drawing;
+gtk3: Tooltip background color adjustemnt;
+gtk3: Simplified selection-mode;
+gtk3: Fixed banner buttons in Lollypop 1.2.3+;
+gtk3: Several other fixes;
+xfce: Added light panel for a light theme;
+xfce: Workspace switcher adjustemnts.
+
+
 1.21.1
 ===
 
