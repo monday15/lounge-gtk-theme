@@ -317,6 +317,9 @@ entry {
 
       &:disabled { @include entry(insensitive); }
     }
+
+    // lounge: remove shadows from entry inside entry (gnome-builder)
+    entry { box-shadow: none; }
   }
 
   progress {
