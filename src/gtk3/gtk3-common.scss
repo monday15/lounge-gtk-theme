@@ -2691,6 +2691,16 @@ scrollbar {
     &:disabled { background-color: transparent; }
   }
 
+  // lounge: libreoffice hack - libreoffice scrollbars has different behaviour, but they ignore direction (:dir),
+  //         so, we set values for libreoffice, and then override it with regular values using direction.
+  &.horizontal slider { margin-left: 1px; margin-right: 1px; }
+  &.vertical slider { margin-top: 1px; margin-bottom: 1px; }
+
+  &.horizontal:dir(ltr) slider { margin-left: 3px; margin-right: 3px; }
+  &.horizontal:dir(rtl) slider { margin-left: 3px; margin-right: 3px; }
+  &.vertical:dir(ltr) slider { margin-top: 3px; margin-bottom: 3px; }
+  &.vertical:dir(rtl) slider { margin-top: 3px; margin-bottom: 3px; }
+
   @if $scrollbar_handles == with_handles {
     &.horizontal slider {
       background-image: -gtk-scaled(url("assets/scrollbar-handle-horz#{$asset_suffix}.png"), url("assets/scrollbar-handle-horz#{$asset_suffix}@2.png"));
