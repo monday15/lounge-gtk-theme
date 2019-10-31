@@ -429,7 +429,9 @@ headerbar button.sources-button { min-height: 36px; }
 
 // these are linked semi-transparent buttons, regular %linked overlapping creates border
 button.black-transparent.menu-button-48,
-button.black-transparent.menu-button { margin-right: 0; }
+button.black-transparent.menu-button,
+  // for lollypop 1.2.3+
+.linked:not(.last-child) button.banner-button { margin-right: 0; }
 
 
   //// Nautilus
