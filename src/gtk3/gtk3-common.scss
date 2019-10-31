@@ -4256,9 +4256,17 @@ infobar {
 
       // gedit uses progressbar inside infobar
       progressbar {
-        trough { background-color: if($variant == 'light', darken($barcolor, 8%), darken($barcolor, 4%)); }
+        trough {
+          background-color: darken($barcolor, 10%);
+          border-color: darken($barcolor, 20%);
+        }
 
-        progress { background-color: if($variant == 'light', desaturate(darken($barcolor, 30%), 5%), desaturate(lighten($barcolor, 12%), 5%)); box-shadow: none; }
+        progress {
+          background-color: lighten($barcolor, 10%);
+          border-color: darken($barcolor, 20%);
+
+          @if $style == prime { box-shadow: inset 1px 1px transparentize(white, .9), inset -1px -1px transparentize(darken($barcolor, 20%), .9); }
+        }
       }
 
       selection { background-color: darken($barcolor, 10%); }
