@@ -732,6 +732,7 @@ button {
 
     &:disabled {
       @include button(insensitive, $popover_button_color, $selected_fl_color);
+      background-image: image($popover_bg_color);
       @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
     }
 
