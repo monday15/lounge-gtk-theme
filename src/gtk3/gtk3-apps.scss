@@ -303,6 +303,16 @@ window:not(.incognito-mode) .main-notebook tab:not(.reorderable-page) {
 }
 
 
+  //// Foliate
+
+// match font size +/- buttons with spacing/margin spinbuttons
+button.font + button,
+button.font + button + button {
+  padding-left: if($size == regular, 3px, 0);
+  padding-right: if($size == regular, 3px, 0);
+}
+
+
   //// Geary
 
 row.geary-settings entry {
