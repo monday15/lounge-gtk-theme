@@ -1710,7 +1710,7 @@ headerbar {
   &.selection-mode {
     .selection-menu {
       &:backdrop, & {
-        padding: 4px 10px;
+        padding: if($size == regular, 6px 10px 2px 10px, 5px 10px 3px 10px);
 
         arrow { -GtkArrow-arrow-scaling: 1; }
 
