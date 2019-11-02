@@ -569,6 +569,7 @@ StScrollBar {
 
 .popup-menu {
   min-width: 15em;
+  color: $fg_color;
 
   .popup-menu-arrow { } //defined globally in the TOP BAR
 
