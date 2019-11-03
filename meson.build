@@ -130,6 +130,7 @@ configure_file(input :  join_paths('src/gnome-shell/shell-common.scss'),
 shell_conf = configuration_data()
 shell_conf.set('gnome_version', gnome_version)
 shell_conf.set('tone', theme_tone)
+shell_conf.set('scale_style', theme_scale_style)
 
 shell_scss = configure_file(input : 'src/gnome-shell/gnome-shell.scss',
                             output : 'gnome-shell.scss',

@@ -137,8 +137,8 @@ StScrollBar {
     -slider-height: 0.3em;
     -slider-background-color: mix($borders_color, $bg_color, 50%); //background of the trough
     -slider-border-color: $borders_color; //trough border color
-    -slider-active-background-color: $selected_bg_color; //active trough fill
-    -slider-active-border-color: $borders_color; //active trough border
+    -slider-active-background-color: if($scale_style == casual, lighten($bg_color, 25%), $selected_bg_color); //active trough fill
+    -slider-active-border-color: if($scale_style == casual, $borders_color, darken($selected_bg_color, 30%)); //active trough border
     -slider-border-width: 1px;
     -slider-handle-radius: 6px;
   }
@@ -147,8 +147,8 @@ StScrollBar {
     -barlevel-height: 0.3em;
     -barlevel-background-color: mix($borders_color, $bg_color, 50%); //background of the trough
     -barlevel-border-color: mix($borders_color, $bg_color, 100%); //trough border color
-    -barlevel-active-background-color: lighten($bg_color, 25%); //active trough fill
-    -barlevel-active-border-color: $borders_color; //active trough border
+    -barlevel-active-background-color: if($scale_style == casual, lighten($bg_color, 25%), $selected_bg_color); //active trough fill
+    -barlevel-active-border-color: if($scale_style == casual, $borders_color, darken($selected_bg_color, 30%)); //active trough border
     -barlevel-overdrive-color: $destructive_color;
     -barlevel-overdrive-border-color: $borders_color;
     -barlevel-overdrive-separator-width: 0.2em;
@@ -162,7 +162,7 @@ StScrollBar {
       color: lighten($bg_color, 10%);
 
       &:hover,
-      &:active { color: lighten($bg_color, 25%); } // lounge: doesnt work, even in default theme
+      &:active { color: lighten($bg_color, 20%); } // lounge: doesnt work, even in default theme
     }
   }
 
