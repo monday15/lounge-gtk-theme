@@ -339,6 +339,17 @@ button.font + button + button {
 }
 
 
+  //// Fractal
+
+// hack, improve avatar visibility on selected row
+@if $variant == light {
+  .room-list list row:selected .direct-chat {
+    -gtk-icon-shadow: 0 0 black, 0 0 black;
+  }
+}
+
+button.osd.scroll_button { box-shadow: none; }
+
   //// Geary
 
 row.geary-settings entry {
