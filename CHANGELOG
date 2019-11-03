@@ -1,3 +1,13 @@
+1.23
+====
+
+shell: Fixed color in popup-menus;
+shell: Reverted shadow on window-close button;
+gtk3: Added styles for Inkscape 1.0 (Fixed scales in light theme);
+gtk3: Added styles for Fractal (Fixed avatar color in selected room);
+gtk3: Several fixes.
+
+
 1.22
 ====
 
