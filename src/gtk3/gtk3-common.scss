@@ -738,34 +738,6 @@ button {
       background-image: image($popover_bg_color);
       @if $variant == 'dark' { border-color: darken($menu_color, 7%); }
     }
-
-    // Flat Suggested and Destructive Action buttons inside popovers
-    @each $b_type, $b_color in (suggested-action, $selected_bg_color),
-                               (destructive-action, $error_color) {
-      &.#{$b_type} {
-        @include button(normal, $b_color, $selected_fg_color);
-        box-shadow: none;
-
-        &:hover {
-          @include button(hover, $b_color, $selected_fg_color);
-          box-shadow: none;
-        }
-
-        &:active,
-        &:checked {
-          @include button(active, if($variant == 'light', lighten($b_color, 4%), $b_color), $selected_fg_color);
-          @if $variant == 'light' { text-shadow: 0 1px transparentize(black, .7); }
-          box-shadow: none;
-        }
-
-        &:disabled {
-          @include button(insensitive, $popover_button_color, $selected_fl_color);
-
-          &:active,
-          &:checked { @include button(insensitive-active, $b_color, $insensitive_fg_color); }
-        }
-      }
-    }
   }
 
   // Suggested and Destructive Action buttons
@@ -781,12 +753,21 @@ button {
         color: $b_color; //FIXME: does it work on the dark variant?
       }
 
-      &:hover { @include button(hover, $b_color, $selected_fg_color); }
+      popover & { box-shadow: none; }
+
+      &:hover { 
+        @include button(hover, $b_color, $selected_fg_color);
+
+        popover & { box-shadow: none; }
+      }
 
       &:active,
       &:checked {
         @include button(active, if($variant == 'light', lighten($b_color, 4%), $b_color), $selected_fg_color);
+
         @if $variant == 'light' { text-shadow: 0 1px transparentize(black, .7); }
+
+        popover & { box-shadow: none; }
       }
 
       &.flat {
