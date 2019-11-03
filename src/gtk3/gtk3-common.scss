@@ -4132,7 +4132,7 @@ placessidebar {
 
       &:selected {
         color: $selected_fl_color;
-        background-color: if($variant == 'light', desaturate(lighten($drop_target_color, 30%), 30%), desaturate(darken($drop_target_color, 7%), 10%));
+        background-color: if($variant == 'light', desaturate(lighten($drop_target_color, 40%), 40%), desaturate(darken($drop_target_color, 7%), 10%));
       }
     }
   }
