@@ -448,6 +448,38 @@ headerbar button.sources-button { min-height: 36px; }
 }
 
 
+  //// Inkscape
+
+#InkSpinScale {
+  margin: 1px;
+
+  spinbutton {
+    border: 1px solid $borders_color;
+  }
+
+  trough {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  highlight {
+    @if $variant == light {
+      @if $scale_style == casual {
+        background-color: darken($bg_color, 30%);
+        border-color: darken($bg_color, 40%);
+
+        @if $style == prime {
+          box-shadow: inset 1px 1px transparentize(white, .8), inset -1px -1px transparentize(black, .9);
+        }
+      }
+      @else {
+        background-color: darken($scale_highlight_color, 10%);
+      }
+    }
+  }
+}
+
+
   //// Lollypop
 
 // these are linked semi-transparent buttons, regular %linked overlapping creates border
