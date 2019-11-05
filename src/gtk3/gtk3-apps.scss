@@ -446,6 +446,14 @@ row.geary-settings entry {
 headerbar button.sources-button { min-height: 36px; }
 
 
+  //// Gnome-disk-utility (Gnome-disks)
+
+// hack, improves selected partition visibility, especially in a ligth theme
+.gnome-disk-utility-grid:selected {
+  background-size: 1px 1px;
+}
+
+
   //// Gnome-todo
 
 .org-gnome-Todo {
