@@ -91,7 +91,7 @@ $tooltip_borders_color: transparentize(black, 0.8);
 $infobar_color: if($variant == 'light', opacify(darken(desaturate($tooltip_bg_color, 50%), 10%), 1), opacify($tooltip_bg_color, 1));
 $questionbar_color: if($variant == light, lighten($selected_bl_color, 2%), darken($selected_bl_color, 3%));
 $warningbar_color: if($variant == light, desaturate(lighten($warning_color, 30%), 15%), desaturate(darken($warning_color, 20%), 30%));
-$errorbar_color: if($variant == light, lighten($error_color, 20%), darken($error_color, 3%));
+$errorbar_color: if($variant == light, desaturate(lighten($error_color, 25%), 5%), darken($error_color, 3%));
 
 $osd_insensitive_bg_color: if($variant == 'light', transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), .2), transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5));
 $osd_insensitive_fg_color: if($variant == 'light', mix($osd_fg_color, opacify($osd_bg_color, 1), 40%), mix($osd_fg_color, opacify($osd_bg_color, 1), 30%));
