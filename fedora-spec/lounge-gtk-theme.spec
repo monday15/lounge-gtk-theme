@@ -1,5 +1,5 @@
 Name:           lounge-gtk-theme
-Version:        1.23
+Version:        1.24
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Simple and clean gtk theme
@@ -22,7 +22,6 @@ BuildRequires:  librsvg2
 Requires:       gdk-pixbuf2
 Requires:       gtk-murrine-engine
 Recommends:     lounge-aux-icon-theme
-Recommends:     lounge-backgrounds
 Recommends:     google-roboto-fonts
 Conflicts:      lounge-gtk-theme-xfce-sway
 
@@ -100,6 +99,10 @@ sed -i 's!#widget_class!widget_class!g' %{_datadir}/themes/Lounge-night-compact/
 
 
 %changelog
+* Sat Nov 09 2019 Alex Monday <monday15@gmx.com>
+- Update to 1.24
+- Remove lounge-backgrounds recommendation
+
 * Sat Jul 13 2019 Alex Monday <monday15@gmx.com>
 - Update to 1.20
 - Merge xfce/sway variant into regular spec

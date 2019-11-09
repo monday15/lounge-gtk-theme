@@ -1,5 +1,5 @@
 project('lounge-gtk-theme',
-        version: '1.23',
+        version: '1.24',
         meson_version: '>= 0.45',
         license : ['GPL3+'],
         default_options: ['prefix=/usr'])
@@ -40,7 +40,7 @@ else
 
   else
     message('Gnome-shell not found, using styles for last gnome version availible')
-    gnome_version = '3.32'
+    gnome_version = '3.34'
   endif
 endif
 message('Gnome ' + gnome_version)

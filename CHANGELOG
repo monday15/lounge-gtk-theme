@@ -1,3 +1,11 @@
+1.24
+====
+
+shell: Added scale_style option for shell theme;
+shell: Minor fix;
+gtk3: Several fixes.
+
+
 1.23
 ====
 
