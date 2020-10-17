@@ -973,7 +973,7 @@ toolbar.inline-toolbar toolbutton {
   -gtk-outline-radius: 0;
 
   popover &, &:not(entry) {
-    &, &:disabled { border-left-color: transparent; }
+    &:not(:first-child), &:not(:first-child):disabled { border-left-color: transparent; }
 
     &.suggested-action:focus { border-left-color: _border_color($selected_bg_color); }
 
