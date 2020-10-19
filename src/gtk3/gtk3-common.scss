@@ -965,7 +965,7 @@ toolbar.inline-toolbar toolbutton {
 }
 
 %linked_middle {
-  &:not(.osd) {
+  &:not(.osd):not(:only-child) {
     margin-right: -1px;
   }
 
@@ -973,7 +973,7 @@ toolbar.inline-toolbar toolbutton {
   -gtk-outline-radius: 0;
 
   popover &, &:not(entry) {
-    &, &:disabled { border-left-color: transparent; }
+    &:not(:first-child):not(:only-child), &:not(:first-child):not(:only-child):disabled { border-left-color: transparent; }
 
     &.suggested-action:focus { border-left-color: _border_color($selected_bg_color); }
 
