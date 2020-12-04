@@ -171,7 +171,8 @@ gtk3_noconf_sources = [
   'gtk3-drawing.scss',
   'gtk3-common.scss',
   'gtk3-apps.scss',
-  'gtk3-xfce.scss'
+  'gtk3-xfce.scss',
+  'gtk3-libhandy.scss'
 ]
 
 # Copy sources that doesnt require configuration to builddir
@@ -480,7 +481,8 @@ gtk3_noconf_sources = [
   'gtk3-drawing.scss',
   'gtk3-common.scss',
   'gtk3-apps.scss',
-  'gtk3-xfce.scss'
+  'gtk3-xfce.scss',
+  'gtk3-libhandy.scss'
 ]
 
 gtk3_version = '3.24'
