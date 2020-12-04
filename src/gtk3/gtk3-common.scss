@@ -957,11 +957,11 @@ button {
 toolbar.inline-toolbar toolbutton {
   > button.flat { @extend %linked_middle; }
 
-  &:first-child > button.flat { @extend %linked:first-child; }
+  &:first-child > button.flat { @extend %linked_left; }
 
-  &:last-child > button.flat { @extend %linked:last-child; }
+  &:last-child > button.flat { @extend %linked_right; }
 
-  &:only-child > button.flat { @extend %linked:only-child; }
+  &:only-child > button.flat { @extend %linked_only_child; }
 }
 
 %linked_middle {
@@ -1032,6 +1032,11 @@ toolbar.inline-toolbar toolbutton {
   }
 }
 
+%linked_only_child {
+    border-radius: $base_radius;
+    -gtk-outline-radius: $base_radius;
+}
+
 // .linked assumes Box, which reverses nodes in RTL, so 1st child is always left
 %linked {
   @extend %linked_middle;
@@ -1039,10 +1044,7 @@ toolbar.inline-toolbar toolbutton {
   &:first-child { @extend %linked_left; }
   &:last-child { @extend %linked_right; }
 
-  &:only-child {
-    border-radius: $base_radius;
-    -gtk-outline-radius: $base_radius;
-  }
+  &:only-child { @extend %linked_only_child; }
 }
 
 %linked_flippable_middle {
@@ -1146,27 +1148,32 @@ toolbar.inline-toolbar toolbutton {
   }
 }
 
-%linked_vertical{
-  @extend %linked_vertical_middle;
-
-  &:first-child {
+%linked_vertical_top {
     margin-top: 0;
     margin-right: 0;
     border-top-left-radius: $base_radius;
     border-top-right-radius: $base_radius;
     -gtk-outline-radius: $base_radius $base_radius 0 0;
-  }
+}
 
-  &:last-child {
+%linked_vertical_bottom {
     border-bottom-left-radius: $base_radius;
     border-bottom-right-radius: $base_radius;
     -gtk-outline-radius: 0 0 $base_radius $base_radius;
-  }
+}
 
-  &:only-child {
+%linked_vertical_only_child {
     border-radius: $base_radius;
     -gtk-outline-radius: $base_radius;
-  }
+}
+
+%linked_vertical{
+  @extend %linked_vertical_middle;
+
+  &:first-child { @extend %linked_vertical_top; }
+  &:last-child { @extend %linked_vertical_bottom; }
+
+  &:only-child { @extend %linked_vertical_only_child; }
 }
 
 %undecorated_button {
@@ -1525,8 +1532,8 @@ combobox {
 
   &.linked {
     button:nth-child(2) {
-      &:dir(ltr) { @extend %linked:last-child; }
-      &:dir(rtl) { @extend %linked:first-child; }
+      &:dir(ltr) { @extend %linked_right; }
+      &:dir(rtl) { @extend %linked_left; }
     }
   }
 
@@ -1546,14 +1553,14 @@ combobox {
   &:dir(rtl) { @extend %linked_middle; } // specificity bump
 }
 
-.linked:not(.vertical) > combobox:first-child > box > button.combo { @extend %linked:first-child; }
-.linked:not(.vertical) > combobox:last-child > box > button.combo { @extend %linked:last-child; }
-.linked:not(.vertical) > combobox:only-child > box > button.combo { @extend %linked:only-child; }
+.linked:not(.vertical) > combobox:first-child > box > button.combo { @extend %linked_left; }
+.linked:not(.vertical) > combobox:last-child > box > button.combo { @extend %linked_right; }
+.linked:not(.vertical) > combobox:only-child > box > button.combo { @extend %linked_only_child; }
 
 .linked.vertical > combobox > box > button.combo { @extend %linked_vertical_middle; }
-.linked.vertical > combobox:first-child > box > button.combo { @extend %linked_vertical:first-child;}
-.linked.vertical > combobox:last-child > box > button.combo { @extend %linked_vertical:last-child; }
-.linked.vertical > combobox:only-child > box > button.combo { @extend %linked_vertical:only-child; }
+.linked.vertical > combobox:first-child > box > button.combo { @extend %linked_vertical_top;}
+.linked.vertical > combobox:last-child > box > button.combo { @extend %linked_vertical_bottom; }
+.linked.vertical > combobox:only-child > box > button.combo { @extend %linked_vertical_only_child; }
 
 
 /************
